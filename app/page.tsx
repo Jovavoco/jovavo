@@ -1,6 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Services from "@/components/Services";
+import FeaturedWork from "@/components/FeaturedWork";
+import Process from "@/components/Process";
+import ContactCTA from "@/components/ContactCTA";
 
 export default function Home() {
   return (
@@ -42,8 +45,12 @@ export default function Home() {
           </a>
         </div>
       </section>
+    
+    <FeaturedWork />
 
-      <Services />
+<Services />
+<Process />
+<ContactCTA />
 
       <Footer />
 
