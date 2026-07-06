@@ -1,24 +1,53 @@
+import Link from "next/link";
+
+const navigation = [
+  {
+    name: "Work",
+    href: "/work",
+  },
+  {
+    name: "Services",
+    href: "/services",
+  },
+  {
+    name: "Process",
+    href: "/process",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+];
+
 export default function Navbar() {
   return (
-    <header className="fixed left-0 top-0 z-50 w-full px-6 py-5">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-black/10 bg-white/80 px-6 py-4 backdrop-blur-xl">
-        <a href="/" className="text-xl font-semibold tracking-tight">
+    <header className="fixed inset-x-0 top-0 z-50 px-6 py-5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-black/10 bg-white/80 px-7 py-4 backdrop-blur-xl shadow-sm">
+        <Link
+          href="/"
+          className="text-xl font-semibold tracking-tight transition-opacity hover:opacity-70"
+        >
           JOVAVO
-        </a>
+        </Link>
 
-        <div className="hidden items-center gap-8 text-sm font-medium md:flex">
-          <a href="/work">Work</a>
-          <a href="/services">Services</a>
-          <a href="/process">Process</a>
-          <a href="/pricing">Pricing</a>
+        <div className="hidden items-center gap-8 md:flex">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm font-medium text-black/70 transition hover:text-black"
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
 
-        <a
+        <Link
           href="/contact"
-          className="rounded-full bg-black px-5 py-3 text-sm font-medium text-white"
+          className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-black/90"
         >
           Let's Talk
-        </a>
+        </Link>
       </nav>
     </header>
   );
