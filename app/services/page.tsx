@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 export default function ServicesPage() {
   const capabilities = [
     {
       title: "Website Design",
-      headline: "Custom websites built to make your business stand out.",
+      headline: "Custom websites designed to make your business look established.",
       description:
-        "Modern, responsive websites designed to build trust, look professional, and create a strong first impression.",
+        "Modern, responsive websites built to create trust, improve first impressions, and give your business a polished online presence.",
       services: [
         "Custom Website Design",
         "Business Websites",
@@ -15,13 +16,14 @@ export default function ServicesPage() {
         "Website Redesigns",
         "Landing Pages",
         "Responsive Design",
+        "Mobile Optimization",
       ],
     },
     {
       title: "Web Development",
-      headline: "Powerful website functionality built around your business.",
+      headline: "Digital systems built around how your business actually works.",
       description:
-        "From ecommerce platforms to dashboards and customer portals, Jovavo builds digital systems that go beyond basic pages.",
+        "From ecommerce platforms to portals, dashboards, bookings, and internal tools, Jovavo builds functionality that goes beyond basic website pages.",
       services: [
         "Custom Web Development",
         "Ecommerce Platforms",
@@ -29,18 +31,20 @@ export default function ServicesPage() {
         "Admin Dashboards",
         "Booking Systems",
         "Inventory Management",
+        "Order Management",
         "Business Automation",
-        "API Integrations",
         "Membership Websites",
+        "API Integrations",
       ],
     },
     {
       title: "Digital Growth",
-      headline: "Marketing tools that help your website reach more people.",
+      headline: "Marketing tools that help your website reach the right people.",
       description:
-        "Support for search, analytics, ads, email marketing, and campaign pages designed to help businesses grow online.",
+        "Support for search, analytics, ads, email marketing, and campaign pages designed to help businesses bring more traffic, leads, and customers online.",
       services: [
         "Technical SEO",
+        "Local SEO",
         "SEO Strategy",
         "Google Analytics",
         "Google Search Console",
@@ -53,9 +57,9 @@ export default function ServicesPage() {
     },
     {
       title: "Website Care",
-      headline: "Ongoing support to keep your website running smoothly.",
+      headline: "Ongoing support to keep your website secure, fast, and updated.",
       description:
-        "Maintenance, monitoring, updates, and technical support so your website stays secure, fast, and up to date.",
+        "After launch, Jovavo can help manage hosting, updates, backups, monitoring, content edits, and ongoing improvements so your site continues performing.",
       services: [
         "Website Hosting",
         "Website Maintenance",
@@ -71,84 +75,96 @@ export default function ServicesPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#FAFAF8] px-6 pt-40 pb-28 text-[#111111]">
+    <main className="min-h-screen bg-[#f5f1e8] px-6 pt-40 pb-28 text-[#1b1713]">
       <section className="mx-auto max-w-7xl">
-        <p className="mb-6 text-xs uppercase tracking-[0.4em] text-black/40">
-          Services
-        </p>
+        <Reveal>
+          <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+            Services
+          </p>
 
-        <h1 className="max-w-6xl text-5xl font-semibold leading-[1.02] tracking-[-0.05em] md:text-8xl">
-          Websites.
-          <br />
-          Growth.
-          <br />
-          Results.
-        </h1>
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.75fr] lg:items-end">
+            <h1 className="font-serif text-5xl font-light uppercase leading-[1.06] tracking-[0.08em] md:text-7xl">
+              Websites.
+              <br />
+              Systems.
+              <br />
+              Growth.
+            </h1>
 
-        <p className="mt-8 max-w-3xl text-xl leading-relaxed text-black/55">
-          Jovavo helps businesses launch, manage, and grow online through custom
-          websites, digital systems, marketing tools, and ongoing support.
-        </p>
+            <p className="max-w-2xl text-lg leading-relaxed text-[#1b1713]/55 md:text-xl">
+              Jovavo helps businesses launch, manage, and grow online through
+              custom websites, ecommerce platforms, digital systems, marketing
+              tools, and ongoing website care.
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="mt-28 space-y-10">
-          {capabilities.map((capability) => (
-            <div
-              key={capability.title}
-              className="rounded-[3rem] border border-black/10 bg-white p-8 shadow-sm transition hover:shadow-[0_25px_90px_rgba(0,0,0,0.06)] md:p-12"
-            >
-              <div className="grid gap-10 lg:grid-cols-[0.7fr_1fr]">
-                <div>
-                  <p className="mb-6 text-xs uppercase tracking-[0.35em] text-black/35">
-                    {capability.title}
-                  </p>
+        <div className="mt-24 space-y-8">
+          {capabilities.map((capability, index) => (
+            <Reveal key={capability.title} delay={index * 120}>
+              <div className="group rounded-[2.75rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-8 shadow-[0_24px_80px_rgba(27,23,19,0.04)] transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_40px_130px_rgba(27,23,19,0.08)] md:p-12">
+                <div className="grid gap-10 lg:grid-cols-[0.75fr_1fr]">
+                  <div>
+                    <p className="mb-6 text-xs uppercase tracking-[0.35em] text-[#1b1713]/35">
+                      {capability.title}
+                    </p>
 
-                  <h2 className="text-4xl font-semibold leading-[1.05] tracking-[-0.04em] md:text-6xl">
-                    {capability.headline}
-                  </h2>
-                </div>
+                    <h2 className="font-serif text-4xl font-light uppercase leading-[1.12] tracking-[0.08em] md:text-5xl">
+                      {capability.headline}
+                    </h2>
+                  </div>
 
-                <div>
-                  <p className="max-w-2xl text-lg leading-relaxed text-black/55">
-                    {capability.description}
-                  </p>
+                  <div>
+                    <p className="max-w-2xl text-lg leading-relaxed text-[#1b1713]/55">
+                      {capability.description}
+                    </p>
 
-                  <div className="mt-10 flex flex-wrap gap-3">
-                    {capability.services.map((service) => (
-                      <span
-                        key={service}
-                        className="rounded-full border border-black/10 bg-[#FAFAF8] px-5 py-3 text-sm text-black/60"
-                      >
-                        {service}
-                      </span>
-                    ))}
+                    <div className="mt-10 flex flex-wrap gap-3">
+                      {capability.services.map((service) => (
+                        <span
+                          key={service}
+                          className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8] px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-[#1b1713]/55"
+                        >
+                          {service}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
-        <div className="mt-16 rounded-[3rem] bg-[#111111] p-8 text-white md:p-14">
-          <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
-            <div>
-              <p className="mb-5 text-xs uppercase tracking-[0.4em] text-white/35">
-                Start a Project
-              </p>
+        <Reveal>
+          <div className="mt-20 rounded-[3rem] bg-[#1b1713] p-10 text-white md:p-16">
+            <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
+              <div>
+                <p className="mb-5 text-xs uppercase tracking-[0.4em] text-white/35">
+                  Start a Project
+                </p>
 
-              <h2 className="max-w-4xl text-4xl font-semibold leading-[1.03] tracking-[-0.05em] md:text-6xl">
-                Ready to build something that works beautifully?
-              </h2>
+                <h2 className="max-w-4xl font-serif text-4xl font-light uppercase leading-[1.12] tracking-[0.08em] md:text-6xl">
+                  Ready to build something that works beautifully?
+                </h2>
+
+                <p className="mt-6 max-w-2xl leading-relaxed text-white/60">
+                  Whether you need a website, ecommerce platform, dashboard,
+                  automation, or growth support, Jovavo can help build the
+                  digital foundation for your business.
+                </p>
+              </div>
+
+              <Link
+                href="/contact"
+                className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-7 py-3 text-[11px] uppercase tracking-[0.28em] text-[#1b1713] transition hover:-translate-y-1 hover:bg-white/90"
+              >
+                Let’s Talk
+                <ArrowUpRight size={16} />
+              </Link>
             </div>
-
-            <Link
-              href="/contact"
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-medium text-black transition hover:bg-white/90"
-            >
-              Let’s Talk
-              <ArrowUpRight size={18} />
-            </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   );
