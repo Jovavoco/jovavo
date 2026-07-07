@@ -1,100 +1,73 @@
-import { Monitor, ShoppingBag, Search, Palette, Wrench } from "lucide-react";
+import { Monitor, ShoppingBag, Search, Palette } from "lucide-react";
 
-export default function ServicesPage() {
+export default function Services() {
   const services = [
     {
-      icon: <Monitor size={28} />,
-      title: "Website Design & Development",
+      icon: <Monitor size={26} />,
+      title: "Custom Websites",
       description:
-        "Custom websites built from the ground up with modern design, responsive layouts, and a polished user experience.",
+        "Modern, responsive websites designed around your business, brand, and customer experience.",
     },
     {
-      icon: <ShoppingBag size={28} />,
+      icon: <ShoppingBag size={26} />,
       title: "E-Commerce",
       description:
-        "Online storefronts with product pages, shopping flows, order management, and a premium customer experience.",
+        "Polished online stores with product pages, smooth shopping flows, and a premium customer experience.",
     },
     {
-      icon: <Palette size={28} />,
-      title: "Brand Identity",
-      description:
-        "Typography, colors, visual direction, and digital styling that help your business feel cohesive and recognizable.",
-    },
-    {
-      icon: <Search size={28} />,
+      icon: <Search size={26} />,
       title: "SEO & Performance",
       description:
-        "Fast, search-friendly websites optimized for visibility, speed, and long-term growth.",
+        "Fast-loading, search-friendly websites built to support visibility, trust, and long-term growth.",
     },
     {
-      icon: <Wrench size={28} />,
-      title: "Website Maintenance",
+      icon: <Palette size={26} />,
+      title: "Brand Direction",
       description:
-        "Ongoing updates, adjustments, improvements, and support after your website is launched.",
+        "Typography, colors, layout direction, and visual styling that make your business feel cohesive online.",
     },
   ];
 
   return (
-    <main className="min-h-screen bg-[#FAFAF8] text-[#111111] px-6 pt-36 pb-28">
-      <section className="mx-auto max-w-7xl">
-        <p className="mb-5 text-xs uppercase tracking-[0.35em] text-black/40">
-          Services Offered
-        </p>
+    <section className="bg-white text-[#111111] px-6 py-28">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-14 max-w-3xl">
+          <p className="text-xs uppercase tracking-[0.35em] text-black/40 mb-5">
+            Services
+          </p>
 
-        <h1 className="max-w-5xl text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
-          Everything your business needs to show up beautifully online.
-        </h1>
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
+            Everything you need
+            <br />
+            to build beautifully online.
+          </h2>
+        </div>
 
-        <p className="mt-8 max-w-3xl text-xl leading-relaxed text-black/55">
-          Jovavo helps businesses create thoughtful, modern, and functional
-          digital experiences built around their goals.
-        </p>
-
-        <div className="mt-20 grid gap-6 md:grid-cols-2">
-          {services.map((service) => (
+        <div className="grid md:grid-cols-4 gap-5">
+          {services.map((service, index) => (
             <div
               key={service.title}
-              className="rounded-[2rem] border border-black/10 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_25px_90px_rgba(0,0,0,0.06)]"
+              className="group rounded-[1.75rem] border border-black/10 bg-[#FAFAF8] p-6 hover:bg-white hover:-translate-y-1 hover:shadow-[0_20px_70px_rgba(0,0,0,0.07)] transition-all duration-300"
             >
-              <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-black/10 bg-[#FAFAF8] text-black/70">
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl border border-black/10 bg-white text-black/70 group-hover:text-black transition">
                 {service.icon}
               </div>
 
-              <h2 className="text-3xl font-semibold tracking-tight">
-                {service.title}
-              </h2>
+              <p className="text-sm text-black/35 mb-6">
+                0{index + 1}
+              </p>
 
-              <p className="mt-5 max-w-xl text-lg leading-relaxed text-black/55">
+              <h3 className="text-2xl font-semibold tracking-tight mb-4">
+                {service.title}
+              </h3>
+
+              <p className="text-black/55 leading-relaxed">
                 {service.description}
               </p>
             </div>
           ))}
         </div>
-
-        <div className="mt-20 rounded-[2rem] bg-black p-10 text-white md:p-14">
-          <p className="mb-5 text-xs uppercase tracking-[0.35em] text-white/40">
-            Project Investment
-          </p>
-
-          <h2 className="max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
-            Every project is tailored to the scope of work.
-          </h2>
-
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/60">
-            Pricing depends on the size of the website, features needed, design
-            complexity, and ongoing support. After learning about your project,
-            you’ll receive a custom proposal with the recommended approach,
-            timeline, and investment.
-          </p>
-
-          <a
-            href="/contact"
-            className="mt-9 inline-flex rounded-full bg-white px-7 py-4 text-sm font-medium text-black transition hover:bg-white/90"
-          >
-            Start a Project
-          </a>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
