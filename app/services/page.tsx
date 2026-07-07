@@ -4,45 +4,68 @@ import { ArrowUpRight } from "lucide-react";
 export default function ServicesPage() {
   const capabilities = [
     {
-      title: "Design",
-      headline: "Beautiful digital experiences built with intention.",
+      title: "Website Design",
+      headline: "Custom websites built to make your business stand out.",
       description:
-        "For businesses that want to look polished, trustworthy, and memorable online.",
+        "Modern, responsive websites designed to build trust, look professional, and create a strong first impression.",
       services: [
         "Custom Website Design",
+        "Business Websites",
+        "Ecommerce Websites",
         "Website Redesigns",
         "Landing Pages",
-        "Brand Direction",
-        "User Experience",
+        "Responsive Design",
       ],
     },
     {
-      title: "Development",
-      headline: "Custom functionality built around how your business works.",
+      title: "Web Development",
+      headline: "Powerful website functionality built around your business.",
       description:
-        "From ecommerce platforms to internal dashboards, Jovavo builds systems that go beyond basic websites.",
+        "From ecommerce platforms to dashboards and customer portals, Jovavo builds digital systems that go beyond basic pages.",
       services: [
         "Custom Web Development",
         "Ecommerce Platforms",
-        "Admin Dashboards",
         "Customer Portals",
+        "Admin Dashboards",
+        "Booking Systems",
         "Inventory Management",
         "Business Automation",
         "API Integrations",
+        "Membership Websites",
       ],
     },
     {
-      title: "Growth & Support",
-      headline: "Support that helps your website perform after launch.",
+      title: "Digital Growth",
+      headline: "Marketing tools that help your website reach more people.",
       description:
-        "Ongoing improvements, automation, optimization, and technical setup to keep your digital presence moving forward.",
+        "Support for search, analytics, ads, email marketing, and campaign pages designed to help businesses grow online.",
       services: [
+        "Technical SEO",
+        "SEO Strategy",
+        "Google Analytics",
+        "Google Search Console",
+        "Google Ads Management",
+        "Meta Ads Management",
+        "Email Marketing",
+        "Campaign Landing Pages",
+        "Conversion Optimization",
+      ],
+    },
+    {
+      title: "Website Care",
+      headline: "Ongoing support to keep your website running smoothly.",
+      description:
+        "Maintenance, monitoring, updates, and technical support so your website stays secure, fast, and up to date.",
+      services: [
+        "Website Hosting",
         "Website Maintenance",
-        "SEO Optimization",
-        "Performance Improvements",
-        "Email Automation",
-        "Analytics Setup",
-        "Domain & Deployment",
+        "Website Monitoring",
+        "Content Updates",
+        "Security Updates",
+        "Performance Optimization",
+        "Domain Management",
+        "Website Backups",
+        "Technical Support",
       ],
     },
   ];
@@ -51,24 +74,27 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-[#FAFAF8] px-6 pt-40 pb-28 text-[#111111]">
       <section className="mx-auto max-w-7xl">
         <p className="mb-6 text-xs uppercase tracking-[0.4em] text-black/40">
-          Capabilities
+          Services
         </p>
 
         <h1 className="max-w-6xl text-5xl font-semibold leading-[1.02] tracking-[-0.05em] md:text-8xl">
-          Digital platforms designed to help businesses grow.
+          Websites.
+          <br />
+          Growth.
+          <br />
+          Results.
         </h1>
 
         <p className="mt-8 max-w-3xl text-xl leading-relaxed text-black/55">
-          Jovavo creates websites, ecommerce systems, dashboards, and digital
-          tools that feel refined, functional, and built around real business
-          needs.
+          Jovavo helps businesses launch, manage, and grow online through custom
+          websites, digital systems, marketing tools, and ongoing support.
         </p>
 
         <div className="mt-28 space-y-10">
           {capabilities.map((capability) => (
             <div
               key={capability.title}
-              className="rounded-[3rem] border border-black/10 bg-white p-8 shadow-sm md:p-12"
+              className="rounded-[3rem] border border-black/10 bg-white p-8 shadow-sm transition hover:shadow-[0_25px_90px_rgba(0,0,0,0.06)] md:p-12"
             >
               <div className="grid gap-10 lg:grid-cols-[0.7fr_1fr]">
                 <div>
@@ -110,7 +136,7 @@ export default function ServicesPage() {
               </p>
 
               <h2 className="max-w-4xl text-4xl font-semibold leading-[1.03] tracking-[-0.05em] md:text-6xl">
-                Have an idea that needs to become real?
+                Ready to build something that works beautifully?
               </h2>
             </div>
 
