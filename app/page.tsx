@@ -1,5 +1,8 @@
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+
+function Reveal({ children }: { children: React.ReactNode; delay?: number }) {
+  return <>{children}</>;
+}
 
 export default function Home() {
   const work = [
