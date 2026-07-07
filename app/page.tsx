@@ -37,9 +37,10 @@ export default function Home() {
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-<div className="absolute inset-0 bg-black/8" />
+<div className="absolute inset-0 bg-black/10" />
 
-<div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-[#f5f1e8] via-[#f5f1e8]/40 to-transparent" />
+<div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#f5f1e8] to-transparent" />
+
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-start px-6 pt-28 text-center md:pt-32">
           <p className="mb-7 text-[11px] uppercase tracking-[0.45em] text-white/80">
             Custom Websites & Digital Growth
