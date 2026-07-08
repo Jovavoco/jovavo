@@ -284,39 +284,43 @@ export default function HomePage() {
 {/* WHY JOVAVO */}
 <section className="mx-auto max-w-7xl px-6 py-32">
   <Reveal>
-    <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-      <div>
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.42em] text-[#1b1713]/35">
-          Why Jovavo
-        </p>
+    <div className="border-y border-[#1b1713]/10 py-24">
+      <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <p className="mb-6 text-xs font-medium uppercase tracking-[0.48em] text-[#1b1713]/35">
+            The Jovavo Difference
+          </p>
 
-        <h2 className="max-w-2xl font-serif text-5xl font-light leading-[0.98] tracking-[-0.05em] text-[#1b1713] md:text-7xl">
-          Websites that look refined and feel easy to trust.
-        </h2>
+          <h2 className="max-w-xl font-serif text-5xl font-light leading-[0.95] tracking-[-0.055em] text-[#1b1713] md:text-7xl">
+            A website should feel as considered as the brand behind it.
+          </h2>
+        </div>
 
-        <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#1b1713]/58">
-          We create polished digital experiences with clean layouts, strong
-          messaging, smooth flow, and a premium feel across every page.
-        </p>
-      </div>
+        <div>
+          <p className="max-w-2xl text-xl font-light leading-relaxed tracking-[-0.02em] text-[#1b1713]/65">
+            Jovavo creates polished digital experiences for brands that want to
+            look established, trustworthy, and intentional from the very first
+            impression.
+          </p>
 
-      <div className="relative">
-        <div className="absolute -inset-6 rounded-[3rem] bg-[#eadfcd]/45 blur-2xl" />
-
-        <div className="relative rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-4 shadow-[0_35px_100px_rgba(27,23,19,0.08)]">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="mt-14 grid gap-8 md:grid-cols-2">
             {benefits.map((benefit) => (
               <div
                 key={benefit}
-                className="rounded-[2rem] border border-[#1b1713]/10 bg-white/65 p-7 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_24px_60px_rgba(27,23,19,0.08)]"
+                className="border-t border-[#1b1713]/12 pt-7"
               >
-                <div className="mb-8 h-10 w-10 rounded-full border border-[#1b1713]/10 bg-[#1b1713] text-center text-lg leading-10 text-[#fbf8f2]">
-                  ✦
-                </div>
+                <p className="mb-5 text-xs uppercase tracking-[0.34em] text-[#1b1713]/35">
+                  Refined Detail
+                </p>
 
-                <h3 className="font-serif text-2xl font-light leading-tight tracking-[-0.04em] text-[#1b1713]">
+                <h3 className="font-serif text-3xl font-light leading-tight tracking-[-0.04em] text-[#1b1713]">
                   {benefit}
                 </h3>
+
+                <p className="mt-5 text-sm leading-relaxed text-[#1b1713]/52">
+                  Every section is intentionally placed, visually balanced, and
+                  designed to guide visitors naturally toward action.
+                </p>
               </div>
             ))}
           </div>
