@@ -281,50 +281,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY JOVAVO */}
-      <section className="mx-auto max-w-7xl px-6 py-32">
-        <Reveal>
-          <div className="overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_100px_rgba(27,23,19,0.06)]">
-            <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="p-10 md:p-14">
-                <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
-                  Why Jovavo
-                </p>
+{/* WHY JOVAVO */}
+<section className="mx-auto max-w-7xl px-6 py-32">
+  <Reveal>
+    <div className="relative overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_35px_120px_rgba(27,23,19,0.08)]">
+      <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#d8c7a6]/35 blur-3xl" />
+      <div className="absolute -bottom-28 right-0 h-80 w-80 rounded-full bg-[#1b1713]/10 blur-3xl" />
 
-                <h2 className="font-serif text-5xl font-light uppercase leading-[1.04] tracking-[0.08em] md:text-6xl">
-                  More than
-                  <br />
-                  a pretty
-                  <br />
-                  homepage.
-                </h2>
+      <div className="relative grid lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="flex flex-col justify-between p-10 md:p-14 lg:p-16">
+          <div>
+            <p className="mb-6 text-xs font-medium uppercase tracking-[0.42em] text-[#1b1713]/45">
+              Why Jovavo
+            </p>
 
-                <p className="mt-10 max-w-xl text-lg leading-relaxed text-[#1b1713]/55">
-                  Your website should feel premium, work smoothly, guide people
-                  clearly, and help turn attention into action.
-                </p>
-              </div>
+            <h2 className="max-w-xl font-serif text-5xl font-light leading-[0.98] tracking-[-0.05em] text-[#1b1713] md:text-6xl">
+              Built to look sharp, feel effortless, and convert.
+            </h2>
 
-              <div className="grid grid-cols-2 gap-px bg-[#1b1713]/10">
-                {benefits.map((benefit, index) => (
-                  <div
-                    key={benefit}
-                    className="bg-[#fcfaf6] p-8 transition hover:bg-white md:p-10"
-                  >
-                    <p className="text-[11px] uppercase tracking-[0.3em] text-[#1b1713]/30">
-                      0{index + 1}
-                    </p>
-
-                    <h3 className="mt-8 font-serif text-2xl tracking-[-0.03em] text-[#1b1713]">
-                      {benefit}
-                    </h3>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#1b1713]/60">
+              A beautiful site matters — but the real value is in the structure,
+              flow, speed, messaging, and details that make people trust your
+              brand and take action.
+            </p>
           </div>
-        </Reveal>
-      </section>
+
+          <div className="mt-12 rounded-3xl border border-[#1b1713]/10 bg-white/45 p-6 backdrop-blur-sm">
+            <p className="text-sm leading-relaxed text-[#1b1713]/60">
+              Every page is designed with purpose: clear sections, polished
+              visuals, strong calls-to-action, and a smooth experience on every
+              screen.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-4 p-5 md:grid-cols-2 md:p-6 lg:p-8">
+          {benefits.map((benefit) => (
+            <div
+              key={benefit}
+              className="group relative overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fcfaf6]/85 p-8 shadow-[0_20px_60px_rgba(27,23,19,0.045)] transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_30px_80px_rgba(27,23,19,0.09)] md:p-9"
+            >
+              <div className="absolute right-6 top-6 h-10 w-10 rounded-full border border-[#1b1713]/10 bg-[#fbf8f2] transition group-hover:scale-110" />
+
+              <div className="mb-10 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#1b1713]/10 bg-[#1b1713] text-sm text-[#fbf8f2] shadow-sm">
+                ✓
+              </div>
+
+              <h3 className="max-w-xs font-serif text-2xl leading-tight tracking-[-0.04em] text-[#1b1713]">
+                {benefit}
+              </h3>
+
+              <div className="mt-8 h-px w-full bg-[#1b1713]/10" />
+
+              <p className="mt-5 text-sm leading-relaxed text-[#1b1713]/50">
+                Thoughtfully designed to make your website feel premium,
+                professional, and easy to navigate.
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </Reveal>
+</section>
 
 {/* FEATURE PANELS */}
 <section className="bg-[#ece5da] px-6 py-32">
