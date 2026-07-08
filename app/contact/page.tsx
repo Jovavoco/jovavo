@@ -10,8 +10,7 @@ export const metadata: Metadata = {
 };
 
 const inputStyle =
-  "w-full rounded-full border border-[#1b1713]/10 bg-white/75 px-6 py-4 text-sm text-[#1b1713] outline-none backdrop-blur-md transition placeholder:text-[#1b1713]/35 focus:border-[#1b1713]/30 focus:bg-white";
-
+  "w-full rounded-2xl border border-[#1b1713]/10 bg-white/80 px-5 py-4 text-sm text-[#1b1713] outline-none transition placeholder:text-[#1b1713]/35 focus:border-[#1b1713]/30 focus:bg-white";
 export default function ContactPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#f5f1e8] px-6 pt-40 pb-28 text-[#1b1713]">
@@ -102,81 +101,84 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <form className="rounded-[3rem] border border-white/70 bg-[#fbf8f2]/75 p-7 shadow-[0_40px_140px_rgba(27,23,19,0.14)] backdrop-blur-2xl md:p-10">
-              <p className="text-[11px] uppercase tracking-[0.35em] text-[#1b1713]/45">
-                Project Inquiry
-              </p>
+{/* FORM */}
+<form className="rounded-[2.25rem] border border-white/70 bg-white/60 p-6 shadow-[0_30px_100px_rgba(27,23,19,0.10)] backdrop-blur-2xl md:p-8">
+  <div className="mb-8 border-b border-[#1b1713]/10 pb-7">
+    <p className="text-[10px] uppercase tracking-[0.35em] text-[#1b1713]/40">
+      Project Inquiry
+    </p>
 
-              <h2 className="mt-4 font-serif text-4xl font-light uppercase leading-[1.05] tracking-[0.08em]">
-                Tell me what you’re building.
-              </h2>
+    <h2 className="mt-4 max-w-2xl font-serif text-4xl font-light uppercase leading-[1.02] tracking-[0.06em] md:text-5xl">
+      Tell me what you’re building.
+    </h2>
 
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#1b1713]/55">
-                Share a few details and I’ll get back to you with a clear
-                direction, estimated scope, and recommended next steps.
-              </p>
+    <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#1b1713]/55">
+      Share the essentials and I’ll respond with a clear direction, estimated
+      scope, and next steps.
+    </p>
+  </div>
 
-              <div className="mt-8 grid gap-4 md:grid-cols-2">
-                <input type="text" placeholder="Your name" className={inputStyle} />
-                <input type="email" placeholder="Email address" className={inputStyle} />
-              </div>
+  <div className="grid gap-4 md:grid-cols-2">
+    <input type="text" placeholder="Your name" className={inputStyle} />
+    <input type="email" placeholder="Email address" className={inputStyle} />
+  </div>
 
-              <input
-                type="text"
-                placeholder="Business / brand name"
-                className={`mt-4 ${inputStyle}`}
-              />
+  <input
+    type="text"
+    placeholder="Business / brand name"
+    className={`mt-4 ${inputStyle}`}
+  />
 
-              <select className={`mt-4 ${inputStyle} text-[#1b1713]/55`}>
-                <option>What do you need?</option>
-                <option>New website</option>
-                <option>Ecommerce store</option>
-                <option>Website redesign</option>
-                <option>Landing page</option>
-                <option>Admin dashboard</option>
-                <option>Customer portal</option>
-                <option>Business automation</option>
-                <option>SEO / digital growth</option>
-                <option>Google or Meta ads</option>
-                <option>Website maintenance</option>
-                <option>Not sure yet</option>
-              </select>
+  <select className={`mt-4 appearance-none ${inputStyle} text-[#1b1713]/55`}>
+    <option>What do you need?</option>
+    <option>New website</option>
+    <option>Ecommerce store</option>
+    <option>Website redesign</option>
+    <option>Landing page</option>
+    <option>Admin dashboard</option>
+    <option>Customer portal</option>
+    <option>Business automation</option>
+    <option>SEO / digital growth</option>
+    <option>Google or Meta ads</option>
+    <option>Website maintenance</option>
+    <option>Not sure yet</option>
+  </select>
 
-              <div className="mt-4 grid gap-4 md:grid-cols-2">
-                <select className={`${inputStyle} text-[#1b1713]/55`}>
-                  <option>Estimated budget</option>
-                  <option>$500 - $1,500</option>
-                  <option>$1,500 - $3,000</option>
-                  <option>$3,000 - $5,000</option>
-                  <option>$5,000 - $10,000</option>
-                  <option>$10,000+</option>
-                  <option>Let’s discuss</option>
-                </select>
+  <div className="mt-4 grid gap-4 md:grid-cols-2">
+    <select className={`appearance-none ${inputStyle} text-[#1b1713]/55`}>
+      <option>Estimated budget</option>
+      <option>$500 - $1,500</option>
+      <option>$1,500 - $3,000</option>
+      <option>$3,000 - $5,000</option>
+      <option>$5,000 - $10,000</option>
+      <option>$10,000+</option>
+      <option>Let’s discuss</option>
+    </select>
 
-                <select className={`${inputStyle} text-[#1b1713]/55`}>
-                  <option>Ideal timeline</option>
-                  <option>Immediately</option>
-                  <option>Within 1 month</option>
-                  <option>1 - 3 months</option>
-                  <option>3+ months</option>
-                  <option>Just exploring</option>
-                </select>
-              </div>
+    <select className={`appearance-none ${inputStyle} text-[#1b1713]/55`}>
+      <option>Ideal timeline</option>
+      <option>Immediately</option>
+      <option>Within 1 month</option>
+      <option>1 - 3 months</option>
+      <option>3+ months</option>
+      <option>Just exploring</option>
+    </select>
+  </div>
 
-              <textarea
-                placeholder="Tell me about your goals, current website, features you need, and anything else I should know..."
-                rows={7}
-                className={`mt-4 resize-none rounded-[1.75rem] ${inputStyle}`}
-              />
+  <textarea
+    placeholder="Tell me about your goals, current website, features you need, and anything else I should know..."
+    rows={6}
+    className={`mt-4 resize-none rounded-[1.75rem] ${inputStyle}`}
+  />
 
-              <button
-                type="submit"
-                className="mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-[#1b1713] px-8 py-5 text-[11px] uppercase tracking-[0.32em] text-white shadow-[0_18px_50px_rgba(27,23,19,0.22)] transition hover:-translate-y-1 hover:bg-[#2a241f]"
-              >
-                Request a Proposal
-                <ArrowUpRight size={16} />
-              </button>
-            </form>
+  <button
+    type="submit"
+    className="mt-6 flex w-full items-center justify-center gap-3 rounded-full bg-[#1b1713] px-8 py-5 text-[11px] uppercase tracking-[0.32em] text-white shadow-[0_18px_50px_rgba(27,23,19,0.22)] transition hover:-translate-y-1 hover:bg-[#2a241f]"
+  >
+    Request a Proposal
+    <ArrowUpRight size={16} />
+  </button>
+</form>
           </div>
         </Reveal>
       </section>
