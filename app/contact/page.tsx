@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Ready to build your next website? Contact Jovavo to discuss your project and request a free consultation.",
+};
+
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Clock } from "lucide-react";
 import Reveal from "@/components/Reveal";
