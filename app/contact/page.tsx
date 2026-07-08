@@ -34,7 +34,7 @@ export default function ContactPage() {
                   href="mailto:hello@jovavo.com"
                   className="transition hover:text-[#1b1713]"
                 >
-                  hello@jovavo.com
+                  contact@jovavo.com
                 </a>
               </div>
 
@@ -57,67 +57,77 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <form className="rounded-[2.75rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-6 shadow-[0_30px_100px_rgba(27,23,19,0.06)] md:p-8">
-              <div className="grid gap-5 md:grid-cols-2">
-                <input type="text" placeholder="Name" className={inputStyle} />
-                <input type="email" placeholder="Email" className={inputStyle} />
-              </div>
+<form className="rounded-[2.75rem] border border-[#1b1713]/10 bg-[#fbf8f2]/90 p-6 shadow-[0_35px_120px_rgba(27,23,19,0.08)] backdrop-blur md:p-8">
+  <div className="mb-8 border-b border-[#1b1713]/10 pb-6">
+    <p className="text-xs uppercase tracking-[0.35em] text-[#1b1713]/35">
+      Project Inquiry
+    </p>
 
-              <input
-                type="text"
-                placeholder="Company / Brand"
-                className={`mt-5 ${inputStyle}`}
-              />
+    <h2 className="mt-4 font-serif text-3xl font-light uppercase tracking-[0.08em] text-[#1b1713]">
+      Tell me what you’re building.
+    </h2>
+  </div>
 
-              <select className={`mt-5 ${inputStyle} text-[#1b1713]/55`}>
-                <option>Project Type</option>
-                <option>Custom Website</option>
-                <option>Ecommerce Website</option>
-                <option>Website Redesign</option>
-                <option>Landing Page</option>
-                <option>Admin Dashboard</option>
-                <option>Customer Portal</option>
-                <option>Business Automation</option>
-                <option>SEO / Digital Growth</option>
-                <option>Google or Meta Ads</option>
-                <option>Website Maintenance</option>
-                <option>Not Sure Yet</option>
-              </select>
+  <div className="grid gap-5 md:grid-cols-2">
+    <input type="text" placeholder="Name" className={inputStyle} />
+    <input type="email" placeholder="Email" className={inputStyle} />
+  </div>
 
-              <div className="grid gap-5 md:grid-cols-2">
-                <select className={`mt-5 ${inputStyle} text-[#1b1713]/55`}>
-                  <option>Budget Range</option>
-                  <option>$500 - $1,500</option>
-                  <option>$1,500 - $3,000</option>
-                  <option>$3,000 - $5,000</option>
-                  <option>$5,000 - $10,000</option>
-                  <option>$10,000+</option>
-                  <option>Let’s Discuss</option>
-                </select>
+  <input
+    type="text"
+    placeholder="Company / Brand"
+    className={`mt-5 ${inputStyle}`}
+  />
 
-                <select className={`mt-5 ${inputStyle} text-[#1b1713]/55`}>
-                  <option>Timeline</option>
-                  <option>Immediately</option>
-                  <option>Within 1 Month</option>
-                  <option>1 - 3 Months</option>
-                  <option>3+ Months</option>
-                  <option>Just Exploring</option>
-                </select>
-              </div>
+  <select className={`mt-5 ${inputStyle} text-[#1b1713]/55`}>
+    <option>Project Type</option>
+    <option>Custom Website</option>
+    <option>Ecommerce Website</option>
+    <option>Website Redesign</option>
+    <option>Landing Page</option>
+    <option>Admin Dashboard</option>
+    <option>Customer Portal</option>
+    <option>Business Automation</option>
+    <option>SEO / Digital Growth</option>
+    <option>Google or Meta Ads</option>
+    <option>Website Maintenance</option>
+    <option>Not Sure Yet</option>
+  </select>
 
-              <textarea
-                placeholder="Tell me about your project..."
-                rows={7}
-                className={`mt-5 resize-none ${inputStyle}`}
-              />
+  <div className="grid gap-5 md:grid-cols-2">
+    <select className={`mt-5 ${inputStyle} text-[#1b1713]/55`}>
+      <option>Budget Range</option>
+      <option>$500 - $1,500</option>
+      <option>$1,500 - $3,000</option>
+      <option>$3,000 - $5,000</option>
+      <option>$5,000 - $10,000</option>
+      <option>$10,000+</option>
+      <option>Let’s Discuss</option>
+    </select>
 
-              <button
-                type="submit"
-                className="mt-6 w-full rounded-full bg-[#1b1713] px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-white transition hover:-translate-y-1 hover:bg-[#2a241f]"
-              >
-                Request a Proposal
-              </button>
-            </form>
+    <select className={`mt-5 ${inputStyle} text-[#1b1713]/55`}>
+      <option>Timeline</option>
+      <option>Immediately</option>
+      <option>Within 1 Month</option>
+      <option>1 - 3 Months</option>
+      <option>3+ Months</option>
+      <option>Just Exploring</option>
+    </select>
+  </div>
+
+  <textarea
+    placeholder="Tell me about your project..."
+    rows={7}
+    className={`mt-5 resize-none ${inputStyle}`}
+  />
+
+  <button
+    type="submit"
+    className="mt-6 flex w-full items-center justify-center rounded-full bg-[#1b1713] px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-white shadow-[0_18px_50px_rgba(27,23,19,0.18)] transition hover:-translate-y-1 hover:bg-[#2a241f]"
+  >
+    Request a Proposal
+  </button>
+</form>
           </div>
         </Reveal>
       </section>
