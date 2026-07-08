@@ -134,7 +134,7 @@ export default function HomePage() {
               </div>
 
               <img
-                src="/images/nyc-skyline.jpg"
+                src="/images/services/nyc-skyline.jpg"
                 alt="New York City skyline"
                 className="h-[420px] w-full object-cover lg:h-full"
               />
