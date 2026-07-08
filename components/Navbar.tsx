@@ -3,7 +3,7 @@ import Link from "next/link";
 const navigation = [
   { name: "Work", href: "/work" },
   { name: "Services", href: "/services" },
-  { name: "Process", href: "/process" },
+  { name: "FAQ", href: "/faq" },
   { name: "About", href: "/about" },
 ];
 
@@ -25,7 +25,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="relative text-[11px] uppercase tracking-[0.28em] text-[#1b1713]/65 transition-all duration-300 hover:text-[#1b1713]"
+              className="group relative text-[11px] uppercase tracking-[0.28em] text-[#1b1713]/65 transition-all duration-300 hover:text-[#1b1713]"
             >
               {item.name}
 
