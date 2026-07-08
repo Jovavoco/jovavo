@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Custom Websites & Digital Experiences",
+  description:
+    "Jovavo designs and develops premium websites for businesses, startups, and brands looking to grow online through exceptional design and performance.",
+};
+
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
