@@ -190,42 +190,47 @@ export default function HomePage() {
         </div>
       </section>
 
- {/* JOVAVO DIFFERENCE */}
+{/* JOVAVO IMAGE SECTION */}
 <section className="mx-auto max-w-7xl px-6 py-28">
   <Reveal>
-    <div className="border-y border-[#1b1713]/10 py-24">
-      <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-        <div>
-          <p className="mb-6 text-xs uppercase tracking-[0.46em] text-[#1b1713]/35">
-            Jovavo
-          </p>
+    <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div>
+        <p className="mb-6 text-xs uppercase tracking-[0.46em] text-[#1b1713]/35">
+          Jovavo
+        </p>
 
-          <h2 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.07em] text-[#1b1713] md:text-7xl">
-            Designed
-            <br />
-            to convert.
-            <br />
-            Built to grow.
-          </h2>
+        <h2 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.07em] text-[#1b1713] md:text-7xl">
+          Designed
+          <br />
+          to convert.
+          <br />
+          Built to grow.
+        </h2>
+
+        <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#1b1713]/60">
+          We create polished websites for businesses that want to look
+          established, build trust quickly, and turn visitors into real
+          inquiries.
+        </p>
+
+        <div className="mt-10 grid gap-3 sm:grid-cols-3">
+          {["Websites", "Strategy", "Growth"].map((item) => (
+            <div
+              key={item}
+              className="rounded-full border border-[#1b1713]/10 bg-[#fbf8f2] px-5 py-4 text-center text-xs uppercase tracking-[0.24em] text-[#1b1713]/55"
+            >
+              {item}
+            </div>
+          ))}
         </div>
+      </div>
 
-        <div>
-          <p className="max-w-2xl text-xl font-light leading-relaxed tracking-[-0.02em] text-[#1b1713]/62">
-            Jovavo creates polished digital experiences for brands that want to
-            look established, earn trust quickly, and turn their online presence
-            into a stronger growth system.
-          </p>
-
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            {services.map((service, index) => (
-              <Reveal key={service} delay={index * 70}>
-                <div className="rounded-full border border-[#1b1713]/10 bg-[#fbf8f2] px-6 py-5 text-center text-xs uppercase tracking-[0.22em] text-[#1b1713]/58 shadow-[0_15px_50px_rgba(27,23,19,0.04)] transition hover:-translate-y-1 hover:bg-white">
-                  {service}
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
+      <div className="overflow-hidden rounded-[2.75rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_35px_100px_rgba(27,23,19,0.08)]">
+        <img
+          src="/images/jovavo-laptop.png"
+          alt="Jovavo website design on laptop"
+          className="h-full w-full object-cover"
+        />
       </div>
     </div>
   </Reveal>
