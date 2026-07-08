@@ -1,270 +1,201 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
-function Reveal({ children }: { children: React.ReactNode; delay?: number }) {
-  return <>{children}</>;
-}
-
-export default function Home() {
-  const work = [
+export default function ServicesPage() {
+  const capabilities = [
     {
-      title: "Apexx Biolabs",
-      type: "Custom Ecommerce Platform",
+      title: "Website Design",
+      image: "/images/services/website-design.jpg",
+      headline:
+        "Custom websites designed to make your business look established.",
       description:
-        "A custom ecommerce platform with admin tools, inventory updates, promo codes, customer portal, reviews, and automated emails.",
-      href: "/work/apexx-biolabs",
+        "Modern, responsive websites built to create trust, improve first impressions, and give your business a polished online presence.",
+      services: [
+        "Custom Website Design",
+        "Business Websites",
+        "Ecommerce Websites",
+        "Website Redesigns",
+        "Landing Pages",
+        "Responsive Design",
+        "Mobile Optimization",
+      ],
     },
     {
-      title: "Willow & Tallow",
-      type: "Brand & Website Experience",
+      title: "Web Development",
+      image: "/images/services/web-development.jpg",
+      headline: "Digital systems built around how your business actually works.",
       description:
-        "A refined lifestyle brand and website experience designed around elegance, warmth, and a premium digital presence.",
-      href: "/work/willow-and-tallow",
+        "From ecommerce platforms to portals, dashboards, bookings, and internal tools, Jovavo builds functionality that goes beyond basic website pages.",
+      services: [
+        "Custom Web Development",
+        "Ecommerce Platforms",
+        "Customer Portals",
+        "Admin Dashboards",
+        "Booking Systems",
+        "Inventory Management",
+        "Order Management",
+        "Business Automation",
+        "Membership Websites",
+        "API Integrations",
+      ],
+    },
+    {
+      title: "Digital Growth",
+      image: "/images/services/digital-growth.jpg",
+      headline: "Marketing tools that help your website reach the right people.",
+      description:
+        "Support for search, analytics, ads, email marketing, and campaign pages designed to help businesses bring more traffic, leads, and customers online.",
+      services: [
+        "Technical SEO",
+        "Local SEO",
+        "SEO Strategy",
+        "Google Analytics",
+        "Google Search Console",
+        "Google Ads Management",
+        "Meta Ads Management",
+        "Email Marketing",
+        "Campaign Landing Pages",
+        "Conversion Optimization",
+      ],
+    },
+    {
+      title: "Website Care",
+      image: "/images/services/website-care.jpg",
+      headline: "Ongoing support to keep your website secure, fast, and updated.",
+      description:
+        "After launch, Jovavo can help manage hosting, updates, backups, monitoring, content edits, and ongoing improvements so your site continues performing.",
+      services: [
+        "Website Hosting",
+        "Website Maintenance",
+        "Website Monitoring",
+        "Content Updates",
+        "Security Updates",
+        "Performance Optimization",
+        "Domain Management",
+        "Website Backups",
+        "Technical Support",
+      ],
     },
   ];
-
-  const services = [
-    "Custom Websites",
-    "Ecommerce Websites",
-    "Website Redesigns",
-    "Landing Pages",
-    "Digital Growth",
-    "Website Care",
-  ];
-
-  const button =
-    "inline-flex items-center justify-center rounded-full px-7 py-3 text-[11px] uppercase tracking-[0.28em] transition-all duration-300 hover:-translate-y-1";
 
   return (
-    <main className="bg-[#f5f1e8] text-[#1b1713]">
-      <section className="relative min-h-screen overflow-hidden">
-        <img
-          src="/images/jovavo-hero-bg.png"
-          alt="Jovavo studio workspace"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+    <main className="min-h-screen bg-[#f5f1e8] px-6 pt-40 pb-28 text-[#1b1713]">
+      <section className="mx-auto max-w-7xl">
+        <Reveal>
+          <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+                Services
+              </p>
 
-        <div className="absolute inset-0 bg-black/10" />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#f5f1e8] to-transparent" />
+              <h1 className="font-serif text-5xl font-light uppercase leading-[1.05] tracking-[0.08em] md:text-7xl">
+                Digital work
+                <br />
+                designed with
+                <br />
+                intention.
+              </h1>
 
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-start px-6 pt-28 text-center md:pt-32">
-          <Reveal>
-            <p className="mb-7 text-[11px] uppercase tracking-[0.45em] text-white/80">
-              Custom Websites & Digital Growth
-            </p>
+              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#1b1713]/55 md:text-xl">
+                Jovavo creates refined websites, ecommerce experiences, business
+                systems, and growth tools for brands, businesses, and creators
+                ready to build a stronger online presence.
+              </p>
 
-            <h1 className="max-w-4xl font-serif text-4xl font-light uppercase leading-[1.08] tracking-[0.13em] text-white drop-shadow-sm md:text-5xl lg:text-6xl">
-              Digital
-              <br />
-              Experiences
-              <br />
-              That Elevate Brands
-            </h1>
-
-            <div className="mx-auto my-6 h-px w-16 bg-white/60" />
-
-            <p className="mx-auto max-w-xl text-xs leading-7 tracking-[0.08em] text-white/85 md:text-sm">
-              Custom websites, ecommerce platforms, and digital systems designed
-              to help businesses grow with confidence.
-            </p>
-
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
-                href="/services"
-                className={`${button} border border-white/50 bg-white/10 text-white backdrop-blur-md hover:bg-white hover:text-black`}
+                href="#services"
+                className="mt-9 inline-flex w-fit rounded-full border border-[#1b1713]/15 px-7 py-3 text-[11px] uppercase tracking-[0.28em] text-[#1b1713] transition hover:-translate-y-1 hover:bg-[#1b1713] hover:text-white"
               >
-                View Services
+                Explore Services
               </Link>
+            </div>
+
+            <div className="overflow-hidden rounded-[2.5rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_100px_rgba(27,23,19,0.08)]">
+              <img
+                src="/images/services/capabilities-hero.jpg"
+                alt="Jovavo digital services"
+                className="h-[420px] w-full object-cover transition duration-700 hover:scale-105 md:h-[620px]"
+              />
+            </div>
+          </div>
+        </Reveal>
+
+        <div id="services" className="mt-24 space-y-3">
+          {capabilities.map((capability, index) => (
+            <Reveal key={capability.title} delay={index * 120}>
+              <div className="overflow-hidden rounded-[1.5rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_24px_80px_rgba(27,23,19,0.04)]">
+                <div className="grid lg:grid-cols-[0.95fr_1fr]">
+                  <div className="overflow-hidden">
+                    <img
+                      src={capability.image}
+                      alt={capability.title}
+                      className="h-[340px] w-full object-cover transition duration-700 hover:scale-105 lg:h-full"
+                    />
+                  </div>
+
+                  <div className="flex min-h-[430px] flex-col justify-center p-8 md:p-12">
+                    <p className="mb-6 text-xs uppercase tracking-[0.35em] text-[#1b1713]/45">
+                      {capability.title}
+                    </p>
+
+                    <h2 className="max-w-2xl font-serif text-4xl font-light leading-[1.05] tracking-[-0.03em] md:text-5xl">
+                      {capability.headline}
+                    </h2>
+
+                    <p className="mt-7 max-w-2xl text-base leading-relaxed text-[#1b1713]/60">
+                      {capability.description}
+                    </p>
+
+                    <div className="mt-9 flex flex-wrap gap-3">
+                      {capability.services.map((service) => (
+                        <span
+                          key={service}
+                          className="rounded-md border border-[#1b1713]/15 bg-[#f5f1e8]/70 px-4 py-2 text-[11px] text-[#1b1713]/65"
+                        >
+                          {service}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
+          <div
+            className="mt-3 overflow-hidden rounded-[1.5rem] bg-cover bg-center p-10 text-[#1b1713] md:p-16"
+            style={{
+              backgroundImage: "url('/images/services/lets-talk.jpg')",
+            }}
+          >
+            <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
+              <div>
+                <p className="mb-5 text-xs uppercase tracking-[0.4em] text-black/45">
+                  Start a Project
+                </p>
+
+                <h2 className="max-w-3xl font-serif text-4xl font-light leading-[1.05] tracking-[-0.03em] text-black md:text-5xl">
+                  Ready to build something that works beautifully?
+                </h2>
+
+                <p className="mt-6 max-w-2xl leading-relaxed text-black/60">
+                  Whether you need a website, ecommerce platform, dashboard,
+                  automation, or growth support, Jovavo can help build the
+                  digital foundation for your business.
+                </p>
+              </div>
 
               <Link
                 href="/contact"
-                className={`${button} bg-white text-black shadow-[0_15px_40px_rgba(0,0,0,0.18)] hover:bg-white/90`}
+                className="inline-flex w-fit items-center gap-3 rounded-md bg-white px-9 py-4 text-[11px] uppercase tracking-[0.28em] text-[#1b1713] transition hover:-translate-y-1 hover:bg-white/90"
               >
-                Start a Project
+                Let’s Talk
+                <ArrowUpRight size={16} />
               </Link>
             </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="px-6 py-28">
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <p className="mb-6 text-xs uppercase tracking-[0.4em] text-black/35">
-              Jovavo
-            </p>
-
-            <h2 className="max-w-5xl font-serif text-4xl font-light uppercase leading-[1.15] tracking-[0.1em] md:text-6xl">
-              A website studio
-              <br />
-              for modern businesses.
-            </h2>
-
-            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-black/55">
-              We design, develop, and support websites that feel refined,
-              functional, and built with intention — from elegant business sites
-              to ecommerce platforms and digital growth systems.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-[#eee8dd] px-6 py-28">
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-              <div>
-                <p className="mb-6 text-xs uppercase tracking-[0.4em] text-black/35">
-                  Selected Work
-                </p>
-
-                <h2 className="font-serif text-4xl font-light uppercase leading-[1.15] tracking-[0.1em] md:text-6xl">
-                  Built with
-                  <br />
-                  purpose.
-                </h2>
-              </div>
-
-              <Link
-                href="/work"
-                className={`${button} border border-black/20 text-black/70 hover:bg-black hover:text-white`}
-              >
-                View All Work
-              </Link>
-            </div>
-          </Reveal>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {work.map((project, index) => (
-              <Reveal key={project.title} delay={index * 150}>
-                <Link
-                  href={project.href}
-                  className="group block rounded-[2rem] border border-black/10 bg-[#f8f4ec] p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-[0_30px_90px_rgba(0,0,0,0.08)] md:p-10"
-                >
-                  <p className="mb-5 text-xs uppercase tracking-[0.35em] text-black/35">
-                    {project.type}
-                  </p>
-
-                  <h3 className="font-serif text-4xl font-light uppercase tracking-[0.08em] md:text-5xl">
-                    {project.title}
-                  </h3>
-
-                  <p className="mt-6 max-w-xl leading-relaxed text-black/55">
-                    {project.description}
-                  </p>
-
-                  <p className="mt-10 text-xs uppercase tracking-[0.3em] text-black/45 transition group-hover:translate-x-2 group-hover:text-black">
-                    View Case Study →
-                  </p>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-28">
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <p className="mb-6 text-xs uppercase tracking-[0.4em] text-black/35">
-              Capabilities
-            </p>
-
-            <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr]">
-              <h2 className="font-serif text-4xl font-light uppercase leading-[1.15] tracking-[0.1em] md:text-6xl">
-                Websites.
-                <br />
-                Growth.
-                <br />
-                Support.
-              </h2>
-
-              <div>
-                <p className="max-w-2xl text-lg leading-relaxed text-black/55">
-                  Jovavo helps businesses launch, manage, and grow online
-                  through custom websites, ecommerce systems, digital marketing
-                  tools, and ongoing website care.
-                </p>
-
-                <div className="mt-10 grid gap-3 sm:grid-cols-2">
-                  {services.map((service) => (
-                    <div
-                      key={service}
-                      className="rounded-full border border-black/10 bg-[#f8f4ec] px-5 py-4 text-sm uppercase tracking-[0.18em] text-black/60 transition hover:-translate-y-1 hover:bg-white"
-                    >
-                      {service}
-                    </div>
-                  ))}
-                </div>
-
-                <Link
-                  href="/services"
-                  className={`${button} mt-10 border border-black/20 text-black/70 hover:bg-black hover:text-white`}
-                >
-                  Explore Services
-                </Link>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-[#eee8dd] px-6 py-28">
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <p className="mb-6 text-xs uppercase tracking-[0.4em] text-black/35">
-              Process
-            </p>
-
-            <h2 className="max-w-4xl font-serif text-4xl font-light uppercase leading-[1.15] tracking-[0.1em] md:text-6xl">
-              From idea
-              <br />
-              to launch.
-            </h2>
-          </Reveal>
-
-          <div className="mt-16 grid gap-6 md:grid-cols-4">
-            {["Discover", "Design", "Develop", "Launch"].map((step, index) => (
-              <Reveal key={step} delay={index * 120}>
-                <div className="rounded-[2rem] border border-black/10 bg-[#f8f4ec] p-8 transition hover:-translate-y-2 hover:bg-white hover:shadow-[0_25px_80px_rgba(0,0,0,0.07)]">
-                  <h3 className="font-serif text-3xl font-light uppercase tracking-[0.08em]">
-                    {step}
-                  </h3>
-
-                  <p className="mt-5 leading-relaxed text-black/50">
-                    A clear, thoughtful workflow designed to bring your website
-                    to life with structure and intention.
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-32">
-        <Reveal>
-          <div className="mx-auto max-w-7xl rounded-[2.5rem] border border-black/10 bg-[#f8f4ec] px-8 py-20 text-center shadow-[0_35px_100px_rgba(0,0,0,0.06)] md:px-16">
-            <p className="mb-6 text-xs uppercase tracking-[0.4em] text-black/35">
-              Start a Project
-            </p>
-
-            <h2 className="mx-auto max-w-4xl font-serif text-4xl font-light uppercase leading-[1.15] tracking-[0.1em] md:text-6xl">
-              Ready to build
-              <br />
-              something refined?
-            </h2>
-
-            <p className="mx-auto mt-8 max-w-2xl leading-relaxed text-black/55">
-              Let’s create a website that feels premium, professional, and built
-              around your business goals.
-            </p>
-
-            <Link
-              href="/contact"
-              className={`${button} mt-10 bg-black text-white shadow-[0_15px_40px_rgba(0,0,0,0.18)] hover:bg-black/85`}
-            >
-              Let’s Talk
-            </Link>
           </div>
         </Reveal>
       </section>
