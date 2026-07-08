@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Work",
+  description:
+    "View recent website projects and digital experiences designed and developed by Jovavo.",
+};
+
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
