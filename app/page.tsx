@@ -151,43 +151,65 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      {/* PROCESS */}
-      <section className="bg-[#ece5da] px-6 py-28">
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
-              Process
-            </p>
+{/* PROCESS */}
+<section className="bg-[#ece5da] px-6 py-32">
+  <div className="mx-auto max-w-7xl">
+    <Reveal>
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-end">
+        <div>
+          <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/35">
+            Process
+          </p>
 
-            <h2 className="font-serif text-5xl font-light uppercase leading-[1.05] tracking-[0.08em] md:text-7xl">
-              From idea
-              <br />
-              to launch.
-            </h2>
-          </Reveal>
-
-          <div className="mt-16 grid gap-6 md:grid-cols-4">
-            {process.map(([number, title], index) => (
-              <Reveal key={title} delay={index * 100}>
-                <div className="rounded-[2rem] border border-[#1b1713]/10 bg-[#f5f1e8] p-8">
-                  <p className="font-serif text-4xl text-[#1b1713]/35">
-                    {number}
-                  </p>
-
-                  <h3 className="mt-10 font-serif text-3xl uppercase tracking-[0.08em]">
-                    {title}
-                  </h3>
-
-                  <p className="mt-5 leading-relaxed text-[#1b1713]/55">
-                    A clear, thoughtful step designed to bring your website to
-                    life with structure, polish, and intention.
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <h2 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.08em] md:text-7xl">
+            From idea
+            <br />
+            to launch.
+          </h2>
         </div>
-      </section>
+
+        <p className="max-w-2xl text-lg leading-relaxed text-[#1b1713]/50">
+          A clear, thoughtful workflow built to move your project from first
+          conversation to polished launch with structure, clarity, and intention.
+        </p>
+      </div>
+    </Reveal>
+
+    <div className="mt-20 grid gap-4 md:grid-cols-4">
+      {process.map(([number, title], index) => (
+        <Reveal key={title} delay={index * 100}>
+          <div className="group rounded-[1.75rem] border border-[#1b1713]/10 bg-[#f8f4ec]/70 p-8 transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_30px_90px_rgba(27,23,19,0.07)]">
+            <div className="mb-16 flex items-center justify-between">
+              <p className="font-serif text-4xl text-[#1b1713]/25">
+                {number}
+              </p>
+
+              <div className="h-px w-12 bg-[#1b1713]/15 transition-all duration-500 group-hover:w-20 group-hover:bg-[#1b1713]/35" />
+            </div>
+
+            <h3 className="font-serif text-3xl uppercase tracking-[0.08em]">
+              {title}
+            </h3>
+
+            <p className="mt-6 text-base leading-relaxed text-[#1b1713]/50">
+              {title === "Discover" &&
+                "We clarify your goals, audience, timeline, and vision before anything is designed."}
+
+              {title === "Design" &&
+                "We shape the visual direction, page structure, user flow, and overall experience."}
+
+              {title === "Develop" &&
+                "We build the site with clean structure, responsive design, and scalable foundations."}
+
+              {title === "Launch" &&
+                "We test, refine, connect your domain, and prepare your website for a smooth launch."}
+            </p>
+          </div>
+        </Reveal>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 py-28">
