@@ -160,9 +160,9 @@ style={{
                   Start a Project
                 </p>
 
-                <h2 className="max-w-3xl font-serif text-4xl font-light leading-[1.05] tracking-[-0.03em] md:text-5xl">
-                  Ready to build something that works beautifully?
-                </h2>
+<h2 className="max-w-3xl font-serif text-4xl font-light leading-[1.05] tracking-[-0.03em] text-black md:text-5xl">
+  Ready to build something that works beautifully?
+</h2>
 
                 <p className="mt-6 max-w-2xl leading-relaxed text-black/60">
                   Whether you need a website, ecommerce platform, dashboard,
