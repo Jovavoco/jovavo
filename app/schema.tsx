@@ -7,12 +7,12 @@ export default function Schema() {
 
     url: "https://jovavo.com",
 
-logo: "https://jovavo.com/og-image.png",
+    logo: "https://jovavo.com/og-image.png",
 
     image: "https://jovavo.com/og-image.png",
 
     description:
-      "Jovavo designs and develops premium websites for businesses looking to grow online through exceptional design, performance, and user experience.",
+      "Jovavo creates custom websites and manages Google and Meta advertising campaigns for businesses looking to grow online, generate leads, and convert more customers.",
 
     email: "contact@jovavo.com",
 
@@ -22,18 +22,38 @@ logo: "https://jovavo.com/og-image.png",
     },
 
     serviceType: [
-      "Website Design",
+      "Website Creation",
+      "Custom Website Design",
       "Website Development",
       "Website Redesign",
-      "Ecommerce Development",
-      "SEO Optimization",
-      "Brand Strategy",
-      "UI/UX Design",
+      "Landing Page Design",
+      "Ecommerce Website Development",
+      "Google Ads Management",
+      "Meta Ads Management",
+      "Facebook Advertising",
+      "Instagram Advertising",
+      "Search Engine Optimization",
+      "Conversion Rate Optimization",
     ],
 
     sameAs: [
       "https://instagram.com/jovavo.co",
       "https://github.com/Jovavoco",
+    ],
+
+    knowsAbout: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Google Ads",
+      "Meta Ads",
+      "Facebook Ads",
+      "Instagram Ads",
+      "SEO",
+      "UI Design",
+      "UX Design",
+      "Website Performance",
+      "Responsive Design",
     ],
   };
 
