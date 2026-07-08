@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Website Design & Development Services",
+  description:
+    "Explore Jovavo's website design, ecommerce development, SEO optimization, website redesigns, and custom digital solutions.",
+};
+
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
