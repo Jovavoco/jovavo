@@ -361,15 +361,13 @@ export default function HomePage() {
               
               <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#1b1713]/5 blur-3xl transition duration-500 group-hover:bg-[#1b1713]/10" />
 
-              <div className="relative z-10 flex items-center justify-between">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1b1713] text-white shadow-[0_18px_45px_rgba(27,23,19,0.18)]">
-                  <MainIcon size={28} strokeWidth={1.8} />
-                </div>
+<div className="relative z-10">
+  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1b1713] text-white shadow-[0_18px_45px_rgba(27,23,19,0.18)]">
+    <MainIcon size={28} />
+  </div>
 
-                <span className="rounded-full border border-[#1b1713]/10 px-5 py-2 text-[10px] uppercase tracking-[0.28em] text-[#1b1713]/45">
-                  0{index + 1}
-                </span>
-              </div>
+  <div className="mt-12 h-px w-20 bg-[#1b1713]/12" />
+</div>
 
               <div className="relative z-10 mt-16">
                 <p className="mb-6 text-xs uppercase tracking-[0.36em] text-[#1b1713]/40">
