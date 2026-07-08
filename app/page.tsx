@@ -204,45 +204,54 @@ export default function HomePage() {
           </div>
 
 {/* FEATURE CARDS */}
-<div className="grid gap-8 lg:grid-cols-3">
+<div className="grid gap-7 lg:grid-cols-3">
   {featurePanels.slice(0, 3).map((panel, index) => {
     const MainIcon = panel.icon;
 
     return (
       <Reveal key={panel.title} delay={index * 120}>
-        <div className="group relative flex min-h-[520px] flex-col overflow-hidden rounded-[999px] border border-white/60 bg-white/55 px-9 py-14 text-center shadow-[0_35px_110px_rgba(27,23,19,0.09)] backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:bg-white/75 hover:shadow-[0_45px_140px_rgba(27,23,19,0.13)]">
-          <div className="pointer-events-none absolute inset-0 rounded-[999px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.95),rgba(251,248,242,0.45)_45%,rgba(214,176,107,0.16)_100%)]" />
+        <div className="group relative flex min-h-[540px] flex-col overflow-hidden rounded-[2.75rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-8 shadow-[0_30px_90px_rgba(27,23,19,0.07)] transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-[0_45px_130px_rgba(27,23,19,0.11)] md:p-10">
+          <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#d6b06b]/15 blur-3xl transition duration-500 group-hover:bg-[#d6b06b]/25" />
+          <div className="pointer-events-none absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-[#efe7da]/70 to-transparent" />
 
-          <div className="pointer-events-none absolute -top-20 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-white/80 blur-3xl" />
+          <div className="relative z-10 flex items-center justify-between">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1b1713] text-white shadow-[0_18px_45px_rgba(27,23,19,0.18)]">
+              <MainIcon size={27} strokeWidth={1.7} />
+            </div>
 
-          <div className="relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-[#1b1713]/10 bg-[#1b1713] text-white shadow-[0_20px_55px_rgba(27,23,19,0.2)]">
-            <MainIcon size={30} strokeWidth={1.6} />
+            <span className="text-xs uppercase tracking-[0.28em] text-[#1b1713]/30">
+              0{index + 1}
+            </span>
           </div>
 
-          <p className="relative z-10 mt-10 text-xs uppercase tracking-[0.36em] text-[#1b1713]/40">
-            {panel.eyebrow}
-          </p>
+          <div className="relative z-10 mt-12">
+            <p className="mb-5 text-xs uppercase tracking-[0.34em] text-[#1b1713]/40">
+              {panel.eyebrow}
+            </p>
 
-          <h3 className="relative z-10 mx-auto mt-6 max-w-sm font-serif text-4xl font-light uppercase leading-[1.08] tracking-[0.06em] text-[#1b1713]">
-            {panel.title}
-          </h3>
+            <h3 className="font-serif text-4xl font-light uppercase leading-[1.06] tracking-[0.06em] text-[#1b1713]">
+              {panel.title}
+            </h3>
 
-          <p className="relative z-10 mx-auto mt-7 max-w-sm text-[15px] leading-7 text-[#1b1713]/58">
-            {panel.description}
-          </p>
+            <p className="mt-7 text-[16px] leading-8 text-[#1b1713]/58">
+              {panel.description}
+            </p>
+          </div>
 
-          <div className="relative z-10 mt-9 grid gap-3">
-            {panel.features.slice(0, 3).map((feature) => {
+          <div className="relative z-10 mt-9 space-y-3">
+            {panel.features.slice(0, 4).map((feature) => {
               const FeatureIcon = feature.icon;
 
               return (
                 <div
                   key={feature.label}
-                  className="mx-auto flex w-full max-w-xs items-center justify-center gap-3 rounded-full border border-[#1b1713]/10 bg-white/65 px-5 py-3 shadow-sm backdrop-blur transition group-hover:bg-white"
+                  className="flex items-center gap-3 rounded-2xl border border-[#1b1713]/10 bg-white/65 px-4 py-3 backdrop-blur transition group-hover:bg-white"
                 >
-                  <FeatureIcon size={16} strokeWidth={1.7} />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#f0e8dc] text-[#1b1713]/65">
+                    <FeatureIcon size={16} strokeWidth={1.8} />
+                  </div>
 
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#1b1713]/55">
+                  <span className="text-[11px] uppercase tracking-[0.2em] text-[#1b1713]/55">
                     {feature.label}
                   </span>
                 </div>
@@ -253,7 +262,7 @@ export default function HomePage() {
           <div className="relative z-10 mt-auto pt-10">
             <Link
               href={panel.link}
-              className="inline-flex items-center gap-3 rounded-full bg-[#1b1713] px-7 py-4 text-[10px] uppercase tracking-[0.28em] text-white shadow-[0_16px_45px_rgba(27,23,19,0.18)] transition hover:-translate-y-1 hover:bg-[#2a241f]"
+              className="inline-flex items-center gap-3 rounded-full bg-[#1b1713] px-6 py-3 text-[10px] uppercase tracking-[0.26em] text-white transition hover:-translate-y-1 hover:bg-[#2a241f]"
             >
               {panel.linkText}
               <ArrowUpRight size={14} />
