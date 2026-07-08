@@ -284,43 +284,42 @@ export default function HomePage() {
 {/* WHY JOVAVO */}
 <section className="mx-auto max-w-7xl px-6 py-32">
   <Reveal>
-    <div className="relative overflow-hidden rounded-[3.5rem] bg-[#1b1713] px-8 py-10 text-[#fbf8f2] shadow-[0_40px_120px_rgba(27,23,19,0.18)] md:px-14 md:py-14 lg:px-16 lg:py-16">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(251,248,242,0.16),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(216,199,166,0.18),transparent_35%)]" />
+    <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+      <div>
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.42em] text-[#1b1713]/35">
+          Why Jovavo
+        </p>
 
-      <div className="relative grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
-        <div>
-          <p className="mb-6 text-xs font-medium uppercase tracking-[0.45em] text-[#d8c7a6]/70">
-            Why Jovavo
-          </p>
+        <h2 className="max-w-2xl font-serif text-5xl font-light leading-[0.98] tracking-[-0.05em] text-[#1b1713] md:text-7xl">
+          Websites that look refined and feel easy to trust.
+        </h2>
 
-          <h2 className="max-w-xl font-serif text-5xl font-light leading-[0.95] tracking-[-0.06em] md:text-7xl">
-            Design that makes your brand feel established.
-          </h2>
+        <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#1b1713]/58">
+          We create polished digital experiences with clean layouts, strong
+          messaging, smooth flow, and a premium feel across every page.
+        </p>
+      </div>
 
-          <p className="mt-8 max-w-lg text-lg leading-relaxed text-[#fbf8f2]/60">
-            Your website should do more than look nice. It should build trust,
-            explain what you offer clearly, and make people want to take the
-            next step.
-          </p>
-        </div>
+      <div className="relative">
+        <div className="absolute -inset-6 rounded-[3rem] bg-[#eadfcd]/45 blur-2xl" />
 
-        <div className="grid gap-4 md:grid-cols-2">
-          {benefits.map((benefit) => (
-            <div
-              key={benefit}
-              className="group relative min-h-[210px] overflow-hidden rounded-[2.25rem] border border-white/10 bg-white/[0.06] p-8 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/[0.1]"
-            >
-              <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-full bg-[#fbf8f2] text-sm font-semibold text-[#1b1713]">
-                ✦
+        <div className="relative rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-4 shadow-[0_35px_100px_rgba(27,23,19,0.08)]">
+          <div className="grid gap-4 md:grid-cols-2">
+            {benefits.map((benefit) => (
+              <div
+                key={benefit}
+                className="rounded-[2rem] border border-[#1b1713]/10 bg-white/65 p-7 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_24px_60px_rgba(27,23,19,0.08)]"
+              >
+                <div className="mb-8 h-10 w-10 rounded-full border border-[#1b1713]/10 bg-[#1b1713] text-center text-lg leading-10 text-[#fbf8f2]">
+                  ✦
+                </div>
+
+                <h3 className="font-serif text-2xl font-light leading-tight tracking-[-0.04em] text-[#1b1713]">
+                  {benefit}
+                </h3>
               </div>
-
-              <h3 className="max-w-xs font-serif text-3xl font-light leading-tight tracking-[-0.04em] text-[#fbf8f2]">
-                {benefit}
-              </h3>
-
-              <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-[#d8c7a6] via-white/20 to-transparent opacity-0 transition group-hover:opacity-100" />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
