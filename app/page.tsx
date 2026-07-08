@@ -157,10 +157,12 @@ export default function HomePage() {
                 </div>
               </div>
 
+
               {/* DIGITAL GROWTH IMAGE */}
-              <div className="relative border-t border-[#1b1713]/10">
-                <div className="relative h-[400px] overflow-hidden md:h-[520px]">
-                  <img
+<div className="relative mt-24">
+  <div className="mx-auto mb-20 h-px w-32 bg-[#1b1713]/10" />
+
+  <div className="relative h-[400px] overflow-hidden md:h-[520px]">                  <img
                     src="/images/jovavo-digital-growth.png"
                     alt="Abstract digital analytics interface"
                     className="h-full w-full object-cover"
