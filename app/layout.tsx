@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Jovavo | Custom Websites & Digital Experiences",
     description:
       "Premium websites designed and developed for ambitious businesses.",
-    images: ["/images/og-image.png"],
+    images: ["/og-image.png"],
   },
 
   icons: {
