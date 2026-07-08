@@ -19,90 +19,19 @@ export const metadata: Metadata = {
     "Jovavo creates custom websites and manages Google and Meta advertising for businesses looking to grow online, generate leads, and convert more customers.",
 };
 
-const services = [
-  "Custom Websites",
-  "Landing Pages",
-  "Ecommerce",
-  "Google Ads",
-  "Meta Ads",
-  "SEO & Growth",
-];
-
-const growthServices = [
-  {
-    title: "Website Creation",
-    description:
-      "Custom websites, landing pages, ecommerce experiences, and redesigns built to look premium, load fast, and convert visitors into customers.",
-  },
-  {
-    title: "Google Advertising",
-    description:
-      "Search campaigns designed to help your business appear when customers are actively looking for your products or services.",
-  },
-  {
-    title: "Meta Advertising",
-    description:
-      "Facebook and Instagram campaigns built for awareness, retargeting, lead generation, and customer growth.",
-  },
-];
-
-const processSteps = [
-  {
-    title: "Discover",
-    text: "We learn about your business, audience, goals, current website, and what growth means for you.",
-  },
-  {
-    title: "Strategy",
-    text: "We plan the structure, content, user experience, and direction before anything is designed.",
-  },
-  {
-    title: "Design",
-    text: "We create a polished visual system that feels premium, intentional, and aligned with your brand.",
-  },
-  {
-    title: "Develop",
-    text: "We build a fast, responsive website with clean code, strong performance, and scalable foundations.",
-  },
-  {
-    title: "Launch",
-    text: "We test, optimize, connect analytics, and prepare your website for a confident launch.",
-  },
-  {
-    title: "Grow",
-    text: "We support your next phase with SEO foundations, analytics, updates, and digital advertising.",
-  },
-];
-
-const benefits = [
-  "Custom designed",
-  "Mobile optimized",
-  "Fast loading",
-  "SEO ready",
-  "Conversion focused",
-  "Built to scale",
-];
 const featurePanels = [
   {
     eyebrow: "Website Design",
     icon: MonitorSmartphone,
     title: "Custom websites built to make your business look established.",
     description:
-      "Jovavo creates polished, responsive websites with clean layouts, strong messaging, fast performance, and a premium visual direction tailored to your brand.",
+      "Polished, responsive websites with clean layouts, strong messaging, fast performance, and a premium visual direction tailored to your brand.",
     link: "/services",
     linkText: "Explore Websites",
     features: [
-      {
-        icon: Sparkles,
-        label: "Custom Design",
-      },
-      {
-        icon: Gauge,
-        label: "Fast Performance",
-      },
-      {
-        icon: ShieldCheck,
-        label: "SEO Ready",
-      },
+      { icon: Sparkles, label: "Custom Design" },
+      { icon: Gauge, label: "Fast Performance" },
+      { icon: ShieldCheck, label: "SEO Ready" },
     ],
   },
   {
@@ -110,22 +39,13 @@ const featurePanels = [
     icon: Megaphone,
     title: "Campaigns built to turn attention into real customer action.",
     description:
-      "From Google Ads to Meta campaigns, Jovavo helps businesses drive qualified traffic, generate leads, retarget visitors, and understand what is working.",
+      "Google Ads and Meta campaigns built to drive qualified traffic, generate leads, retarget visitors, and show what is working.",
     link: "/services",
     linkText: "Explore Growth",
     features: [
-      {
-        icon: Search,
-        label: "Google Ads",
-      },
-      {
-        icon: MousePointerClick,
-        label: "Meta Ads",
-      },
-      {
-        icon: BarChart3,
-        label: "Analytics",
-      },
+      { icon: Search, label: "Google Ads" },
+      { icon: MousePointerClick, label: "Meta Ads" },
+      { icon: BarChart3, label: "Analytics" },
     ],
   },
 ];
@@ -190,181 +110,181 @@ export default function HomePage() {
         </div>
       </section>
 
-{/* JOVAVO IMAGE SECTION */}
-<section className="mx-auto max-w-7xl px-6 py-28">
-  <Reveal>
-    <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-      <div>
-        <p className="mb-6 text-xs uppercase tracking-[0.46em] text-[#1b1713]/35">
-          Jovavo
-        </p>
+      {/* MERGED INTRO / WHAT WE DO */}
+      <section className="px-6 pt-16 pb-32">
+        <div className="mx-auto max-w-7xl">
+          <Reveal>
+            <div className="overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_40px_120px_rgba(27,23,19,0.07)]">
+              {/* LAPTOP INTRO */}
+              <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+                <div className="flex flex-col justify-center p-8 md:p-14">
+                  <p className="mb-6 text-xs uppercase tracking-[0.46em] text-[#1b1713]/35">
+                    Jovavo
+                  </p>
 
-        <h2 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.07em] text-[#1b1713] md:text-7xl">
-          Designed
-          <br />
-          to convert.
-          <br />
-          Built to grow.
-        </h2>
+                  <h2 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.07em] text-[#1b1713] md:text-7xl">
+                    Digital
+                    <br />
+                    experiences
+                    <br />
+                    built to grow.
+                  </h2>
 
-        <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#1b1713]/60">
-          We create polished websites for businesses that want to look
-          established, build trust quickly, and turn visitors into real
-          inquiries.
-        </p>
+                  <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#1b1713]/60">
+                    We create polished websites and digital growth systems that
+                    help businesses look established, earn trust quickly, and
+                    turn visitors into real inquiries.
+                  </p>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-3">
-          {["Websites", "Strategy", "Growth"].map((item) => (
-            <div
-              key={item}
-              className="rounded-full border border-[#1b1713]/10 bg-[#fbf8f2] px-5 py-4 text-center text-xs uppercase tracking-[0.24em] text-[#1b1713]/55"
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="overflow-hidden rounded-[2.75rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_35px_100px_rgba(27,23,19,0.08)]">
-        <img
-          src="/images/jovavo-laptop.png"
-          alt="Jovavo website design on laptop"
-          className="h-full w-full object-cover"
-        />
-      </div>
-    </div>
-  </Reveal>
-</section>
-
-{/* FEATURE PANELS */}
-<section className="bg-[#ece5da] px-6 py-32">
-  <div className="mx-auto max-w-7xl">
-    <Reveal>
-      <div className="overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_40px_120px_rgba(27,23,19,0.08)]">
-        {/* IMAGE */}
-        <div className="relative h-[420px] overflow-hidden md:h-[520px]">
-          <img
-            src="/images/jovavo-digital-growth.png"
-            alt="Abstract digital analytics interface"
-            className="h-full w-full object-cover"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf8f2]/5 via-transparent to-[#fbf8f2]" />
-
-          <div className="absolute bottom-0 left-0 z-10 max-w-4xl p-8 md:p-14">
-            <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/45">
-              What We Do
-            </p>
-
-            <h2 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.08em] text-[#1b1713] md:text-7xl">
-              Build the site.
-              <br />
-              Drive the growth.
-            </h2>
-          </div>
-        </div>
-
-        {/* INTRO */}
-        <div className="grid gap-10 border-t border-[#1b1713]/10 p-8 md:p-14 lg:grid-cols-[0.85fr_1fr] lg:items-end">
-          <p className="max-w-xl text-lg leading-relaxed text-[#1b1713]/55">
-            Jovavo combines premium website design with digital advertising
-            strategy so your business does not just look better online — it has
-            a stronger foundation for growth.
-          </p>
-
-          <div className="grid gap-3 sm:grid-cols-3">
-            {["Websites", "Google Ads", "Meta Ads"].map((item) => (
-              <div
-                key={item}
-                className="rounded-full border border-[#1b1713]/10 bg-white px-5 py-3 text-center text-[11px] uppercase tracking-[0.22em] text-[#1b1713]/55"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CARDS */}
-        <div className="grid gap-px bg-[#1b1713]/10 lg:grid-cols-2">
-          {featurePanels.map((panel, index) => {
-            const MainIcon = panel.icon;
-
-            return (
-              <Reveal key={panel.title} delay={index * 120}>
-                <div className="group relative flex min-h-[520px] flex-col overflow-hidden bg-[#fbf8f2] p-9 transition-all duration-500 hover:bg-white md:p-12">
-                  <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#1b1713]/5 blur-3xl transition duration-500 group-hover:bg-[#1b1713]/10" />
-
-                  <div className="relative z-10">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1b1713] text-white shadow-[0_18px_45px_rgba(27,23,19,0.18)]">
-                      <MainIcon size={28} />
-                    </div>
-
-                    <div className="mt-12 h-px w-20 bg-[#1b1713]/12" />
-                  </div>
-
-                  <div className="relative z-10 mt-14">
-                    <p className="mb-6 text-xs uppercase tracking-[0.36em] text-[#1b1713]/40">
-                      {panel.eyebrow}
-                    </p>
-
-                    <h3 className="max-w-xl font-serif text-4xl font-light leading-[1.08] tracking-[-0.04em] text-[#1b1713] md:text-5xl">
-                      {panel.title}
-                    </h3>
-
-                    <p className="mt-7 max-w-xl text-[17px] leading-8 text-[#1b1713]/60">
-                      {panel.description}
-                    </p>
-                  </div>
-
-                  <div className="relative z-10 mt-12 grid gap-3">
-                    {panel.features.map((feature) => {
-                      const FeatureIcon = feature.icon;
-
-                      return (
-                        <div
-                          key={feature.label}
-                          className="flex items-center justify-between rounded-2xl border border-[#1b1713]/10 bg-white/60 px-5 py-4 transition group-hover:bg-[#f8f4ec]"
-                        >
-                          <div className="flex items-center gap-3">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f3eee6] text-[#1b1713]/70">
-                              <FeatureIcon size={18} strokeWidth={1.8} />
-                            </div>
-
-                            <span className="text-sm uppercase tracking-[0.2em] text-[#1b1713]/60">
-                              {feature.label}
-                            </span>
-                          </div>
-
-                          <ArrowUpRight
-                            size={16}
-                            className="text-[#1b1713]/25"
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                  <div className="relative z-10 mt-auto pt-12">
-                    <Link
-                      href={panel.link}
-                      className="inline-flex items-center gap-3 rounded-full bg-[#1b1713] px-7 py-3 text-[11px] uppercase tracking-[0.26em] text-white transition hover:-translate-y-1 hover:bg-[#1b1713]/90"
-                    >
-                      {panel.linkText}
-                      <ArrowUpRight size={15} />
-                    </Link>
+                  <div className="mt-10 grid gap-3 sm:grid-cols-3">
+                    {["Websites", "Strategy", "Growth"].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8] px-5 py-4 text-center text-xs uppercase tracking-[0.22em] text-[#1b1713]/55"
+                      >
+                        {item}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </Reveal>
-            );
-          })}
+
+                <div className="relative min-h-[420px] overflow-hidden lg:min-h-[620px]">
+                  <img
+                    src="/images/jovavo-laptop.png"
+                    alt="Jovavo website design on laptop"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* DIGITAL GROWTH IMAGE */}
+              <div className="relative border-t border-[#1b1713]/10">
+                <div className="relative h-[400px] overflow-hidden md:h-[520px]">
+                  <img
+                    src="/images/jovavo-digital-growth.png"
+                    alt="Abstract digital analytics interface"
+                    className="h-full w-full object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#fbf8f2]/10 via-[#fbf8f2]/25 to-[#fbf8f2]" />
+
+                  <div className="absolute bottom-0 left-0 z-10 max-w-4xl p-8 md:p-14">
+                    <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+                      What We Do
+                    </p>
+
+                    <h3 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.08em] text-[#1b1713] md:text-7xl">
+                      Build the site.
+                      <br />
+                      Drive the growth.
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="grid gap-10 border-t border-[#1b1713]/10 p-8 md:p-14 lg:grid-cols-[0.85fr_1fr] lg:items-end">
+                  <p className="max-w-xl text-lg leading-relaxed text-[#1b1713]/55">
+                    A beautiful website is only the beginning. Jovavo pairs
+                    premium design with clear strategy, analytics, and
+                    advertising foundations so your business has room to grow.
+                  </p>
+
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {["Websites", "Google Ads", "Meta Ads"].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-full border border-[#1b1713]/10 bg-white px-5 py-3 text-center text-[11px] uppercase tracking-[0.22em] text-[#1b1713]/55"
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* FEATURE CARDS */}
+              <div className="grid gap-px bg-[#1b1713]/10 lg:grid-cols-2">
+                {featurePanels.map((panel, index) => {
+                  const MainIcon = panel.icon;
+
+                  return (
+                    <Reveal key={panel.title} delay={index * 120}>
+                      <div className="group relative flex min-h-[520px] flex-col overflow-hidden bg-[#fbf8f2] p-9 transition-all duration-500 hover:bg-white md:p-12">
+                        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#1b1713]/5 blur-3xl transition duration-500 group-hover:bg-[#1b1713]/10" />
+
+                        <div className="relative z-10">
+                          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1b1713] text-white shadow-[0_18px_45px_rgba(27,23,19,0.18)]">
+                            <MainIcon size={28} />
+                          </div>
+
+                          <div className="mt-12 h-px w-20 bg-[#1b1713]/12" />
+                        </div>
+
+                        <div className="relative z-10 mt-14">
+                          <p className="mb-6 text-xs uppercase tracking-[0.36em] text-[#1b1713]/40">
+                            {panel.eyebrow}
+                          </p>
+
+                          <h3 className="max-w-xl font-serif text-4xl font-light leading-[1.08] tracking-[-0.04em] text-[#1b1713] md:text-5xl">
+                            {panel.title}
+                          </h3>
+
+                          <p className="mt-7 max-w-xl text-[17px] leading-8 text-[#1b1713]/60">
+                            {panel.description}
+                          </p>
+                        </div>
+
+                        <div className="relative z-10 mt-12 grid gap-3">
+                          {panel.features.map((feature) => {
+                            const FeatureIcon = feature.icon;
+
+                            return (
+                              <div
+                                key={feature.label}
+                                className="flex items-center justify-between rounded-2xl border border-[#1b1713]/10 bg-white/60 px-5 py-4 transition group-hover:bg-[#f8f4ec]"
+                              >
+                                <div className="flex items-center gap-3">
+                                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f3eee6] text-[#1b1713]/70">
+                                    <FeatureIcon
+                                      size={18}
+                                      strokeWidth={1.8}
+                                    />
+                                  </div>
+
+                                  <span className="text-sm uppercase tracking-[0.2em] text-[#1b1713]/60">
+                                    {feature.label}
+                                  </span>
+                                </div>
+
+                                <ArrowUpRight
+                                  size={16}
+                                  className="text-[#1b1713]/25"
+                                />
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        <div className="relative z-10 mt-auto pt-12">
+                          <Link
+                            href={panel.link}
+                            className="inline-flex items-center gap-3 rounded-full bg-[#1b1713] px-7 py-3 text-[11px] uppercase tracking-[0.26em] text-white transition hover:-translate-y-1 hover:bg-[#1b1713]/90"
+                          >
+                            {panel.linkText}
+                            <ArrowUpRight size={15} />
+                          </Link>
+                        </div>
+                      </div>
+                    </Reveal>
+                  );
+                })}
+              </div>
+            </div>
+          </Reveal>
         </div>
-      </div>
-    </Reveal>
-  </div>
-</section>
+      </section>
 
       {/* NYC SECTION */}
-      <section className="mx-auto max-w-7xl px-6 py-32">
+      <section className="mx-auto max-w-7xl px-6 pb-32">
         <Reveal>
           <div className="overflow-hidden rounded-[2.5rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_100px_rgba(27,23,19,0.06)]">
             <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
