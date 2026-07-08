@@ -119,8 +119,7 @@ export default function WorkPage() {
                       <img
                         src={project.image}
                         alt={`${project.title} website preview`}
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
+className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"                      />
                     </div>
                   </div>
                 </div>
