@@ -215,73 +215,117 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PROCESS PREVIEW */}
-<section className="mx-auto max-w-7xl px-6 py-32">
+{/* PROCESS PREVIEW */}
+<section className="mx-auto max-w-7xl px-6 py-36">
   <Reveal>
-    <div className="overflow-hidden rounded-[2.75rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_100px_rgba(27,23,19,0.06)]">
-      <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+    <div className="overflow-hidden rounded-[3rem] border border-[#1b1713]/8 bg-gradient-to-br from-[#fdfcf9] to-[#f7f3ec] shadow-[0_40px_120px_rgba(27,23,19,0.08)]">
 
-        {/* Left */}
-        <div className="flex flex-col justify-between p-10 md:p-14">
+      <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
+
+        {/* LEFT */}
+        <div className="flex flex-col justify-between p-12 lg:p-16">
 
           <div>
-            <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
-              Our Process
-            </p>
 
-            <h2 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.08em] md:text-6xl">
-              Great websites
+            <span className="inline-flex items-center rounded-full border border-[#1b1713]/10 bg-white px-5 py-2 text-[10px] font-medium uppercase tracking-[0.35em] text-[#1b1713]/55">
+              Our Process
+            </span>
+
+            <h2 className="mt-8 font-serif text-[54px] leading-[0.95] tracking-[-0.04em] text-[#1b1713] md:text-7xl">
+              Beautiful
               <br />
-              don't happen
+              websites
               <br />
-              by accident.
+              built with
+              <br />
+              purpose.
             </h2>
 
-            <p className="mt-10 max-w-xl text-lg leading-relaxed text-[#1b1713]/55">
-              Every project follows a structured process—from discovery and
-              strategy to design, development, launch, and long-term growth.
-              Our goal is to make building your website simple, transparent,
-              and collaborative.
+            <div className="mt-10 h-px w-20 bg-[#1b1713]/15" />
+
+            <p className="mt-10 max-w-lg text-[18px] leading-8 text-[#1b1713]/60">
+              Every project follows a refined process—from learning about your
+              business to launching a website that's designed to grow with it.
+              You'll always know what's happening, what comes next, and what to
+              expect.
             </p>
+
           </div>
 
           <Link
             href="/process"
-            className="mt-12 inline-flex w-fit items-center gap-3 rounded-full border border-[#1b1713]/15 px-7 py-3 text-[11px] uppercase tracking-[0.28em] transition hover:bg-[#1b1713] hover:text-white"
+            className="group mt-14 inline-flex w-fit items-center gap-3 rounded-full border border-[#1b1713]/12 bg-white px-7 py-3 text-[11px] font-medium uppercase tracking-[0.3em] transition-all duration-300 hover:-translate-y-1 hover:border-[#1b1713]/20 hover:bg-[#1b1713] hover:text-white"
           >
             View Our Process
-            <ArrowUpRight size={15} />
+
+            <ArrowUpRight
+              size={15}
+              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+            />
           </Link>
 
         </div>
 
-        {/* Right */}
-        <div className="grid grid-cols-2 gap-px bg-[#1b1713]/10">
+        {/* RIGHT */}
+
+        <div className="grid grid-cols-2 gap-px bg-[#1b1713]/8">
 
           {[
-            "Discover",
-            "Strategy",
-            "Design",
-            "Develop",
-            "Launch",
-            "Grow",
+            {
+              title: "Discover",
+              text: "Learn about your business, audience, and goals.",
+            },
+            {
+              title: "Strategy",
+              text: "Plan the structure, content, and user experience.",
+            },
+            {
+              title: "Design",
+              text: "Create a refined interface tailored to your brand.",
+            },
+            {
+              title: "Develop",
+              text: "Build a fast, responsive website with clean code.",
+            },
+            {
+              title: "Launch",
+              text: "Deploy your site with testing, SEO, and optimization.",
+            },
+            {
+              title: "Grow",
+              text: "Support, updates, analytics, and continuous improvement.",
+            },
           ].map((step, index) => (
             <div
-              key={step}
-              className="flex flex-col justify-center bg-[#fbf8f2] p-10 transition duration-300 hover:bg-[#f5f1e8]"
+              key={step.title}
+              className="group bg-[#fcfaf6] p-10 transition-all duration-300 hover:-translate-y-1 hover:bg-white"
             >
-              <p className="font-serif text-5xl text-[#1b1713]/20">
-                0{index + 1}
+
+              <div className="flex items-center justify-between">
+
+                <span className="text-[12px] font-medium tracking-[0.3em] text-[#1b1713]/30">
+                  0{index + 1}
+                </span>
+
+                <div className="h-px w-10 bg-[#1b1713]/10 transition-all group-hover:w-16" />
+
+              </div>
+
+              <h3 className="mt-8 font-serif text-3xl tracking-[-0.03em] text-[#1b1713]">
+                {step.title}
+              </h3>
+
+              <p className="mt-4 text-[15px] leading-7 text-[#1b1713]/55">
+                {step.text}
               </p>
 
-              <h3 className="mt-5 font-serif text-2xl uppercase tracking-[0.08em]">
-                {step}
-              </h3>
             </div>
           ))}
 
         </div>
+
       </div>
+
     </div>
   </Reveal>
 </section>
