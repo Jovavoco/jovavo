@@ -201,9 +201,8 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* FEATURE CARDS */}
-              <div className="grid gap-px bg-[#1b1713]/10 lg:grid-cols-2">
-                {featurePanels.map((panel, index) => {
+{/* FEATURE CARDS */}
+<div className="mt-24 grid gap-6 lg:grid-cols-2">                {featurePanels.map((panel, index) => {
                   const MainIcon = panel.icon;
 
                   return (
