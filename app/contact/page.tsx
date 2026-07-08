@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight, Mail, MapPin, Clock } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -6,21 +9,28 @@ export const metadata: Metadata = {
     "Ready to build your next website? Contact Jovavo to discuss your project and request a free consultation.",
 };
 
-import Link from "next/link";
-import { ArrowUpRight, Mail, MapPin, Clock } from "lucide-react";
-import Reveal from "@/components/Reveal";
-
 const inputStyle =
-  "w-full rounded-[1.35rem] border border-[#1b1713]/10 bg-[#f5f1e8]/80 px-6 py-4 text-sm text-[#1b1713] outline-none transition placeholder:text-[#1b1713]/35 focus:border-[#1b1713]/35 focus:bg-white";
+  "w-full rounded-[1.35rem] border border-[#1b1713]/10 bg-white/80 px-6 py-4 text-sm text-[#1b1713] shadow-sm backdrop-blur outline-none transition duration-300 placeholder:text-[#1b1713]/35 focus:border-[#d6b06b] focus:bg-white focus:ring-4 focus:ring-[#d6b06b]/15";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[#f5f1e8] px-6 pt-40 pb-28 text-[#1b1713]">
-      <section className="mx-auto max-w-7xl">
+    <main className="relative min-h-screen overflow-hidden text-[#1b1713]">
+      {/* BACKGROUND IMAGE */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/contact/contact-bg.png"
+          alt=""
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#f5f1e8]/82 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,transparent_20%,rgba(245,241,232,0.18)_60%,rgba(245,241,232,0.7)_100%)]" />
+      </div>
+
+      <section className="relative z-10 mx-auto max-w-7xl px-6 pt-40 pb-28">
         <Reveal>
-          <div className="grid gap-16 lg:grid-cols-[0.9fr_1fr] lg:items-start">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1fr] lg:items-start">
             {/* LEFT SIDE */}
-            <div className="lg:sticky lg:top-32">
+            <div className="rounded-[2.5rem] border border-white/50 bg-white/45 p-8 shadow-[0_30px_90px_rgba(27,23,19,0.08)] backdrop-blur-xl md:p-10 lg:sticky lg:top-32">
               <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
                 Contact
               </p>
@@ -33,14 +43,14 @@ export default function ContactPage() {
                 exceptional.
               </h1>
 
-              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#1b1713]/55 md:text-xl">
+              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#1b1713]/58 md:text-xl">
                 Tell me about your business, your goals, and the digital
-                experience you want to create. I’ll help you figure out the best
-                next step.
+                experience you want to create. I’ll help you figure out the
+                best next step with clarity and intention.
               </p>
 
               <div className="mt-10 space-y-5">
-                <div className="flex items-center gap-4 text-[#1b1713]/60">
+                <div className="flex items-center gap-4 text-[#1b1713]/65">
                   <Mail size={18} />
                   <a
                     href="mailto:support@jovavo.com"
@@ -50,12 +60,12 @@ export default function ContactPage() {
                   </a>
                 </div>
 
-                <div className="flex items-center gap-4 text-[#1b1713]/60">
+                <div className="flex items-center gap-4 text-[#1b1713]/65">
                   <MapPin size={18} />
                   <span>New York, NY</span>
                 </div>
 
-                <div className="flex items-center gap-4 text-[#1b1713]/60">
+                <div className="flex items-center gap-4 text-[#1b1713]/65">
                   <Clock size={18} />
                   <span>Response within 24–48 hours</span>
                 </div>
@@ -72,7 +82,7 @@ export default function ContactPage() {
                 ].map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-[#1b1713]/10 bg-[#fbf8f2] px-5 py-3 text-[11px] uppercase tracking-[0.2em] text-[#1b1713]/45"
+                    className="rounded-full border border-[#1b1713]/10 bg-white/60 px-5 py-3 text-[11px] uppercase tracking-[0.2em] text-[#1b1713]/50 backdrop-blur"
                   >
                     {item}
                   </span>
@@ -81,8 +91,8 @@ export default function ContactPage() {
             </div>
 
             {/* FORM */}
-            <form className="rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2]/95 p-7 shadow-[0_40px_140px_rgba(27,23,19,0.10)] backdrop-blur md:p-10">
-              <div className="mb-8 rounded-[2rem] bg-[#efe9df] p-6">
+            <form className="rounded-[3rem] border border-white/50 bg-white/70 p-7 shadow-[0_50px_150px_rgba(27,23,19,0.10)] backdrop-blur-2xl md:p-10">
+              <div className="mb-8 rounded-[2rem] border border-white/50 bg-white/65 p-6 shadow-sm backdrop-blur">
                 <p className="text-[11px] uppercase tracking-[0.35em] text-[#1b1713]/40">
                   Project Inquiry
                 </p>
@@ -98,8 +108,17 @@ export default function ContactPage() {
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                <input type="text" placeholder="Your name" className={inputStyle} />
-                <input type="email" placeholder="Email address" className={inputStyle} />
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  className={inputStyle}
+                />
+
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  className={inputStyle}
+                />
               </div>
 
               <input
@@ -150,7 +169,7 @@ export default function ContactPage() {
                 className={`mt-4 resize-none ${inputStyle}`}
               />
 
-              <div className="mt-6 grid gap-3 text-xs leading-relaxed text-[#1b1713]/45 md:grid-cols-3">
+              <div className="mt-6 grid gap-3 text-xs leading-relaxed text-[#1b1713]/50 md:grid-cols-3">
                 <p>✓ Response within 24–48 hours</p>
                 <p>✓ Custom recommendations</p>
                 <p>✓ No pressure, just clarity</p>
@@ -158,13 +177,13 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-[#1b1713] px-8 py-5 text-[11px] uppercase tracking-[0.32em] text-white shadow-[0_18px_50px_rgba(27,23,19,0.20)] transition hover:-translate-y-1 hover:bg-[#2a241f]"
+                className="mt-7 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#1b1713] to-[#3b342d] px-8 py-5 text-[11px] uppercase tracking-[0.32em] text-white shadow-[0_18px_50px_rgba(27,23,19,0.20)] transition duration-300 hover:scale-[1.015] hover:shadow-[0_25px_60px_rgba(0,0,0,0.18)]"
               >
                 Request a Proposal
                 <ArrowUpRight size={16} />
               </button>
 
-              <p className="mt-5 text-center text-xs leading-relaxed text-[#1b1713]/40">
+              <p className="mt-5 text-center text-xs leading-relaxed text-[#1b1713]/45">
                 Prefer email? Reach out directly at support@jovavo.com.
               </p>
             </form>
