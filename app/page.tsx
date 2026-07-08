@@ -150,7 +150,7 @@ export default function HomePage() {
           </div>
         </Reveal>
       </section>
-
+    
 {/* PROCESS */}
 <section className="bg-[#ece5da] px-6 py-32">
   <div className="mx-auto max-w-7xl">
@@ -214,13 +214,13 @@ export default function HomePage() {
 {/* CTA */}
 <section className="mx-auto max-w-7xl px-6 py-28">
   <Reveal>
-    <div
-      className="overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-cover bg-center p-10 text-[#1b1713] shadow-[0_30px_100px_rgba(27,23,19,0.06)] md:p-16"
-      style={{
-        backgroundImage:
-          "linear-gradient(90deg, rgba(245,241,232,0.94), rgba(245,241,232,0.78)), url('/images/services/lets-talk.jpg')",
-      }}
-    >
+<div
+  className="absolute inset-x-0 bottom-0 z-0 h-[280px]"
+  style={{
+    background:
+      "linear-gradient(to bottom, rgba(245,241,232,0) 0%, rgba(245,241,232,0.04) 70%, #f5f1e8 100%)",
+  }}
+/>
       <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
         <div>
           <p className="mb-5 text-xs uppercase tracking-[0.4em] text-[#1b1713]/40">
@@ -238,7 +238,7 @@ export default function HomePage() {
           <p className="mt-6 max-w-2xl leading-relaxed text-[#1b1713]/60">
             Whether you're launching your first business or reimagining an
             existing one, Jovavo creates thoughtful digital experiences designed
-            to grow with you.
+            to grow with you. 
           </p>
         </div>
 
@@ -250,7 +250,6 @@ export default function HomePage() {
           <ArrowUpRight size={16} />
         </Link>
       </div>
-    </div>
   </Reveal>
 </section>
     </main>
