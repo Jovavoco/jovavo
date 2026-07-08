@@ -30,6 +30,14 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 bg-[#1b1713]/35" />
 
+  <div
+    className="absolute inset-x-0 bottom-0 z-0 h-[420px]"
+    style={{
+      background:
+        "linear-gradient(to bottom, rgba(245,241,232,0) 0%, rgba(245,241,232,0.15) 35%, #f5f1e8 100%)",
+    }}
+  />
+
         <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center pt-28 text-center text-white">
           <Reveal>
             <p className="mb-8 text-xs uppercase tracking-[0.45em] text-white/70">
