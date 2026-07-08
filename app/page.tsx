@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import {
+  ArrowUpRight,
+  MonitorSmartphone,
+  Megaphone,
+  Search,
+  BarChart3,
+  Gauge,
+  Sparkles,
+  ShieldCheck,
+  MousePointerClick,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Websites & Digital Advertising",
@@ -70,6 +80,54 @@ const benefits = [
   "SEO ready",
   "Conversion focused",
   "Built to scale",
+];
+const featurePanels = [
+  {
+    eyebrow: "Website Design",
+    icon: MonitorSmartphone,
+    title: "Custom websites built to make your business look established.",
+    description:
+      "Jovavo creates polished, responsive websites with clean layouts, strong messaging, fast performance, and a premium visual direction tailored to your brand.",
+    link: "/services",
+    linkText: "Explore Websites",
+    features: [
+      {
+        icon: Sparkles,
+        label: "Custom Design",
+      },
+      {
+        icon: Gauge,
+        label: "Fast Performance",
+      },
+      {
+        icon: ShieldCheck,
+        label: "SEO Ready",
+      },
+    ],
+  },
+  {
+    eyebrow: "Digital Advertising",
+    icon: Megaphone,
+    title: "Campaigns built to turn attention into real customer action.",
+    description:
+      "From Google Ads to Meta campaigns, Jovavo helps businesses drive qualified traffic, generate leads, retarget visitors, and understand what is working.",
+    link: "/services",
+    linkText: "Explore Growth",
+    features: [
+      {
+        icon: Search,
+        label: "Google Ads",
+      },
+      {
+        icon: MousePointerClick,
+        label: "Meta Ads",
+      },
+      {
+        icon: BarChart3,
+        label: "Analytics",
+      },
+    ],
+  },
 ];
 
 export default function HomePage() {
@@ -268,74 +326,106 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      {/* PROCESS */}
-      <section className="bg-[#ece5da] px-6 py-32">
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <div className="grid gap-10 lg:grid-cols-[0.85fr_1fr] lg:items-end">
-              <div>
-                <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/35">
-                  Our Process
-                </p>
+{/* FEATURE PANELS */}
+<section className="bg-[#ece5da] px-6 py-32">
+  <div className="mx-auto max-w-7xl">
+    <Reveal>
+      <div className="mb-16 grid gap-10 lg:grid-cols-[0.85fr_1fr] lg:items-end">
+        <div>
+          <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/35">
+            What We Do
+          </p>
 
-                <h2 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.08em] md:text-7xl">
-                  From idea
-                  <br />
-                  to launch.
-                </h2>
+          <h2 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.08em] md:text-7xl">
+            Build the site.
+            <br />
+            Drive the growth.
+          </h2>
+        </div>
+
+        <p className="max-w-2xl text-lg leading-relaxed text-[#1b1713]/55">
+          Jovavo combines premium website design with digital advertising
+          strategy so your business does not just look better online — it has a
+          stronger foundation for growth.
+        </p>
+      </div>
+    </Reveal>
+
+    <div className="grid gap-6 lg:grid-cols-2">
+      {featurePanels.map((panel, index) => {
+        const MainIcon = panel.icon;
+
+        return (
+          <Reveal key={panel.title} delay={index * 120}>
+            <div className="group relative flex min-h-[560px] flex-col overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-9 shadow-[0_30px_100px_rgba(27,23,19,0.06)] transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-[0_45px_130px_rgba(27,23,19,0.12)] md:p-12">
+              
+              <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#1b1713]/5 blur-3xl transition duration-500 group-hover:bg-[#1b1713]/10" />
+
+              <div className="relative z-10 flex items-center justify-between">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1b1713] text-white shadow-[0_18px_45px_rgba(27,23,19,0.18)]">
+                  <MainIcon size={28} strokeWidth={1.8} />
+                </div>
+
+                <span className="rounded-full border border-[#1b1713]/10 px-5 py-2 text-[10px] uppercase tracking-[0.28em] text-[#1b1713]/45">
+                  0{index + 1}
+                </span>
               </div>
 
-              <p className="max-w-2xl text-lg leading-relaxed text-[#1b1713]/55">
-                Every project follows a clear, collaborative process so you
-                always know what is happening, what comes next, and how your
-                website is moving toward launch.
-              </p>
-            </div>
-          </Reveal>
+              <div className="relative z-10 mt-16">
+                <p className="mb-6 text-xs uppercase tracking-[0.36em] text-[#1b1713]/40">
+                  {panel.eyebrow}
+                </p>
 
-          <div className="mt-20 overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-gradient-to-br from-[#fdfcf9] to-[#f7f3ec] shadow-[0_40px_120px_rgba(27,23,19,0.08)]">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3">
-              {processSteps.map((step, index) => (
-                <div
-                  key={step.title}
-                  className="group min-h-[260px] border-b border-r border-[#1b1713]/10 bg-[#fcfaf6] p-8 transition-all duration-300 hover:bg-white md:p-10"
+                <h3 className="max-w-xl font-serif text-4xl font-light leading-[1.08] tracking-[-0.04em] text-[#1b1713] md:text-5xl">
+                  {panel.title}
+                </h3>
+
+                <p className="mt-7 max-w-xl text-[17px] leading-8 text-[#1b1713]/60">
+                  {panel.description}
+                </p>
+              </div>
+
+              <div className="relative z-10 mt-12 grid gap-3">
+                {panel.features.map((feature) => {
+                  const FeatureIcon = feature.icon;
+
+                  return (
+                    <div
+                      key={feature.label}
+                      className="flex items-center justify-between rounded-2xl border border-[#1b1713]/10 bg-white/60 px-5 py-4 transition group-hover:bg-[#f8f4ec]"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f3eee6] text-[#1b1713]/70">
+                          <FeatureIcon size={18} strokeWidth={1.8} />
+                        </div>
+
+                        <span className="text-sm uppercase tracking-[0.2em] text-[#1b1713]/60">
+                          {feature.label}
+                        </span>
+                      </div>
+
+                      <ArrowUpRight size={16} className="text-[#1b1713]/25" />
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="relative z-10 mt-auto pt-12">
+                <Link
+                  href={panel.link}
+                  className="inline-flex items-center gap-3 rounded-full bg-[#1b1713] px-7 py-3 text-[11px] uppercase tracking-[0.26em] text-white transition hover:-translate-y-1 hover:bg-[#1b1713]/90"
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="text-[12px] font-medium tracking-[0.3em] text-[#1b1713]/30">
-                      0{index + 1}
-                    </span>
-
-                    <div className="h-px w-10 bg-[#1b1713]/10 transition-all group-hover:w-16" />
-                  </div>
-
-                  <h3 className="mt-8 font-serif text-3xl tracking-[-0.03em] text-[#1b1713]">
-                    {step.title}
-                  </h3>
-
-                  <p className="mt-4 text-[15px] leading-7 text-[#1b1713]/55">
-                    {step.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <Reveal>
-            <div className="mt-12 flex justify-center">
-              <Link
-                href="/process"
-                className="group inline-flex items-center gap-3 rounded-full border border-[#1b1713]/15 bg-[#f8f4ec] px-7 py-3 text-[11px] uppercase tracking-[0.28em] transition hover:bg-[#1b1713] hover:text-white"
-              >
-                View Full Process
-                <ArrowUpRight
-                  size={15}
-                  className="transition group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-              </Link>
+                  {panel.linkText}
+                  <ArrowUpRight size={15} />
+                </Link>
+              </div>
             </div>
           </Reveal>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
       {/* NYC SECTION */}
       <section className="mx-auto max-w-7xl px-6 py-32">
