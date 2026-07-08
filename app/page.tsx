@@ -83,42 +83,65 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-[#f5f1e8] px-6 pt-40 pb-28 text-[#1b1713]">
       <section className="mx-auto max-w-7xl">
         <Reveal>
-          <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div>
-              <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
-                Services
-              </p>
+          <section className="overflow-hidden rounded-[2.5rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_100px_rgba(27,23,19,0.05)]">
+            <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="flex min-h-[620px] flex-col justify-between p-10 md:p-16">
+                <div>
+                  <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+                    Services
+                  </p>
 
-              <h1 className="font-serif text-5xl font-light uppercase leading-[1.05] tracking-[0.08em] md:text-7xl">
-                Digital work
-                <br />
-                designed with
-                <br />
-                intention.
-              </h1>
+                  <h1 className="font-serif text-5xl font-light uppercase leading-[0.98] tracking-[0.08em] md:text-7xl">
+                    From
+                    <br />
+                    vision
+                    <br />
+                    to reality.
+                  </h1>
 
-              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#1b1713]/55 md:text-xl">
-                Jovavo creates refined websites, ecommerce experiences, business
-                systems, and growth tools for brands, businesses, and creators
-                ready to build a stronger online presence.
-              </p>
+                  <div className="mt-10 h-px w-16 bg-[#1b1713]/20" />
 
-              <Link
-                href="#services"
-                className="mt-9 inline-flex w-fit rounded-full border border-[#1b1713]/15 px-7 py-3 text-[11px] uppercase tracking-[0.28em] text-[#1b1713] transition hover:-translate-y-1 hover:bg-[#1b1713] hover:text-white"
-              >
-                Explore Services
-              </Link>
+                  <p className="mt-10 max-w-xl text-lg leading-relaxed text-[#1b1713]/55">
+                    Every project begins with thoughtful strategy and ends with
+                    a polished digital experience — crafted to elevate your
+                    brand, simplify your workflow, and create lasting impact.
+                  </p>
+                </div>
+
+                <div className="mt-16 grid grid-cols-2 gap-x-10 gap-y-8">
+                  {[
+                    ["01", "Strategy"],
+                    ["02", "Design"],
+                    ["03", "Development"],
+                    ["04", "Growth"],
+                  ].map(([number, label]) => (
+                    <div key={label}>
+                      <p className="font-serif text-4xl">{number}</p>
+                      <p className="mt-3 text-xs uppercase tracking-[0.28em] text-[#1b1713]/45">
+                        {label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <Link
+                  href="#services"
+                  className="mt-14 inline-flex w-fit items-center gap-3 rounded-full border border-[#1b1713]/10 bg-white px-7 py-3 text-[11px] uppercase tracking-[0.28em] text-[#1b1713] transition hover:-translate-y-1 hover:bg-[#1b1713] hover:text-white"
+                >
+                  Explore Services
+                  <ArrowUpRight size={15} />
+                </Link>
+              </div>
+
+              <div className="min-h-[420px] lg:min-h-[620px]">
+                <img
+                  src="/images/services/nyc-hero.jpg"
+                  alt="New York City"
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
-
-            <div className="overflow-hidden rounded-[2.5rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_100px_rgba(27,23,19,0.08)]">
-              <img
-                src="/images/services/capabilities-hero.jpg"
-                alt="Jovavo digital services"
-                className="h-[420px] w-full object-cover transition duration-700 hover:scale-105 md:h-[620px]"
-              />
-            </div>
-          </div>
+          </section>
         </Reveal>
 
         <div id="services" className="mt-24 space-y-3">
