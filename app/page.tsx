@@ -284,59 +284,41 @@ export default function HomePage() {
 {/* WHY JOVAVO */}
 <section className="mx-auto max-w-7xl px-6 py-32">
   <Reveal>
-    <div className="relative overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_35px_120px_rgba(27,23,19,0.08)]">
-      <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-[#d8c7a6]/35 blur-3xl" />
-      <div className="absolute -bottom-28 right-0 h-80 w-80 rounded-full bg-[#1b1713]/10 blur-3xl" />
+    <div className="relative overflow-hidden rounded-[3.5rem] bg-[#1b1713] px-8 py-10 text-[#fbf8f2] shadow-[0_40px_120px_rgba(27,23,19,0.18)] md:px-14 md:py-14 lg:px-16 lg:py-16">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(251,248,242,0.16),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(216,199,166,0.18),transparent_35%)]" />
 
-      <div className="relative grid lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="flex flex-col justify-between p-10 md:p-14 lg:p-16">
-          <div>
-            <p className="mb-6 text-xs font-medium uppercase tracking-[0.42em] text-[#1b1713]/45">
-              Why Jovavo
-            </p>
+      <div className="relative grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div>
+          <p className="mb-6 text-xs font-medium uppercase tracking-[0.45em] text-[#d8c7a6]/70">
+            Why Jovavo
+          </p>
 
-            <h2 className="max-w-xl font-serif text-5xl font-light leading-[0.98] tracking-[-0.05em] text-[#1b1713] md:text-6xl">
-              Built to look sharp, feel effortless, and convert.
-            </h2>
+          <h2 className="max-w-xl font-serif text-5xl font-light leading-[0.95] tracking-[-0.06em] md:text-7xl">
+            Design that makes your brand feel established.
+          </h2>
 
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#1b1713]/60">
-              A beautiful site matters — but the real value is in the structure,
-              flow, speed, messaging, and details that make people trust your
-              brand and take action.
-            </p>
-          </div>
-
-          <div className="mt-12 rounded-3xl border border-[#1b1713]/10 bg-white/45 p-6 backdrop-blur-sm">
-            <p className="text-sm leading-relaxed text-[#1b1713]/60">
-              Every page is designed with purpose: clear sections, polished
-              visuals, strong calls-to-action, and a smooth experience on every
-              screen.
-            </p>
-          </div>
+          <p className="mt-8 max-w-lg text-lg leading-relaxed text-[#fbf8f2]/60">
+            Your website should do more than look nice. It should build trust,
+            explain what you offer clearly, and make people want to take the
+            next step.
+          </p>
         </div>
 
-        <div className="grid gap-4 p-5 md:grid-cols-2 md:p-6 lg:p-8">
+        <div className="grid gap-4 md:grid-cols-2">
           {benefits.map((benefit) => (
             <div
               key={benefit}
-              className="group relative overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fcfaf6]/85 p-8 shadow-[0_20px_60px_rgba(27,23,19,0.045)] transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_30px_80px_rgba(27,23,19,0.09)] md:p-9"
+              className="group relative min-h-[210px] overflow-hidden rounded-[2.25rem] border border-white/10 bg-white/[0.06] p-8 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/[0.1]"
             >
-              <div className="absolute right-6 top-6 h-10 w-10 rounded-full border border-[#1b1713]/10 bg-[#fbf8f2] transition group-hover:scale-110" />
-
-              <div className="mb-10 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#1b1713]/10 bg-[#1b1713] text-sm text-[#fbf8f2] shadow-sm">
-                ✓
+              <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-full bg-[#fbf8f2] text-sm font-semibold text-[#1b1713]">
+                ✦
               </div>
 
-              <h3 className="max-w-xs font-serif text-2xl leading-tight tracking-[-0.04em] text-[#1b1713]">
+              <h3 className="max-w-xs font-serif text-3xl font-light leading-tight tracking-[-0.04em] text-[#fbf8f2]">
                 {benefit}
               </h3>
 
-              <div className="mt-8 h-px w-full bg-[#1b1713]/10" />
-
-              <p className="mt-5 text-sm leading-relaxed text-[#1b1713]/50">
-                Thoughtfully designed to make your website feel premium,
-                professional, and easy to navigate.
-              </p>
+              <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-[#d8c7a6] via-white/20 to-transparent opacity-0 transition group-hover:opacity-100" />
             </div>
           ))}
         </div>
