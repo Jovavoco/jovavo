@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Our Work",
   description:
     "View recent website projects and digital experiences designed and developed by Jovavo.",
 };
-
-import Link from "next/link";
-import Reveal from "@/components/Reveal";
 
 const projects = [
   {
@@ -30,7 +29,6 @@ const projects = [
       "Analytics",
     ],
   },
-
   {
     title: "Willow & Tallow",
     category: "Luxury Brand Experience",
@@ -81,12 +79,12 @@ export default function WorkPage() {
               >
                 <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
                   <div className="p-10 md:p-14">
-                    <div className="mb-8 flex items-center justify-between">
+                    <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                       <p className="text-xs uppercase tracking-[0.35em] text-[#1b1713]/35">
                         {project.category}
                       </p>
 
-                      <span className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8] px-5 py-2 text-[11px] uppercase tracking-[0.22em] text-[#1b1713]/45">
+                      <span className="w-fit rounded-full border border-[#1b1713]/10 bg-[#f5f1e8] px-5 py-2 text-[11px] uppercase tracking-[0.22em] text-[#1b1713]/45">
                         {project.status}
                       </span>
                     </div>
@@ -110,15 +108,19 @@ export default function WorkPage() {
                       ))}
                     </div>
 
-                    <div className="mt-12 flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-[#1b1713]/50 transition group-hover:translate-x-2 group-hover:text-[#1b1713]">
+                    <div className="mt-12 flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-[#1b1713]/50 transition-all duration-300 group-hover:translate-x-2 group-hover:text-[#1b1713]">
                       View Case Study
                       <span>→</span>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-center border-l border-[#1b1713]/10 bg-gradient-to-br from-[#efe9df] via-[#faf7f2] to-[#e8e0d3] p-10">
-                    <div className="aspect-[16/10] w-full max-w-md rounded-[1.5rem] border border-black/10 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.08)] flex items-center justify-center text-sm uppercase tracking-[0.3em] text-black/35">
-                      Website Preview
+                  <div className="flex items-center justify-center border-t border-[#1b1713]/10 bg-gradient-to-br from-[#efe9df] via-[#faf7f2] to-[#e8e0d3] p-8 lg:border-l lg:border-t-0">
+                    <div className="relative aspect-[16/10] w-full max-w-xl overflow-hidden rounded-[1.75rem] border border-black/10 bg-white shadow-[0_35px_90px_rgba(0,0,0,0.08)]">
+                      <img
+                        src={project.image}
+                        alt={`${project.title} website preview`}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
                     </div>
                   </div>
                 </div>
