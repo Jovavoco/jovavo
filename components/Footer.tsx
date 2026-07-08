@@ -70,7 +70,7 @@ export default function Footer() {
                   href="mailto:hello@jovavo.com"
                   className="block transition hover:text-[#1b1713]"
                 >
-                  hello@jovavo.com
+                  support@jovavo.com
                 </a>
 
                 <p>New York, NY</p>
