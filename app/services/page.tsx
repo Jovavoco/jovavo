@@ -156,7 +156,7 @@ style={{
           >
             <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
               <div>
-                <p className="mb-5 text-xs uppercase tracking-[0.4em] text-white/45">
+                <p className="mb-5 text-xs uppercase tracking-[0.4em] text-black/45">
                   Start a Project
                 </p>
 
@@ -164,7 +164,7 @@ style={{
                   Ready to build something that works beautifully?
                 </h2>
 
-                <p className="mt-6 max-w-2xl leading-relaxed text-white/60">
+                <p className="mt-6 max-w-2xl leading-relaxed text-black/60">
                   Whether you need a website, ecommerce platform, dashboard,
                   automation, or growth support, Jovavo can help build the
                   digital foundation for your business.
