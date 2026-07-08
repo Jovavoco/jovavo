@@ -211,38 +211,48 @@ export default function HomePage() {
   </div>
 </section>
 
-      {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 py-28">
-        <Reveal>
-          <div className="rounded-[3rem] bg-[#1b1713] p-10 text-white md:p-16">
-            <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
-              <div>
-                <p className="mb-5 text-xs uppercase tracking-[0.4em] text-white/35">
-                  Start a Project
-                </p>
+{/* CTA */}
+<section className="mx-auto max-w-7xl px-6 py-28">
+  <Reveal>
+    <div
+      className="overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-cover bg-center p-10 text-[#1b1713] shadow-[0_30px_100px_rgba(27,23,19,0.06)] md:p-16"
+      style={{
+        backgroundImage:
+          "linear-gradient(90deg, rgba(245,241,232,0.94), rgba(245,241,232,0.78)), url('/images/services/lets-talk.jpg')",
+      }}
+    >
+      <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
+        <div>
+          <p className="mb-5 text-xs uppercase tracking-[0.4em] text-[#1b1713]/40">
+            Start a Project
+          </p>
 
-                <h2 className="max-w-4xl font-serif text-4xl font-light uppercase leading-[1.1] tracking-[0.08em] md:text-6xl">
-                  Ready to build something that works beautifully?
-                </h2>
+          <h2 className="max-w-4xl font-serif text-4xl font-light uppercase leading-[1.1] tracking-[0.08em] md:text-6xl">
+            Beautiful websites
+            <br />
+            begin with great
+            <br />
+            conversations.
+          </h2>
 
-                <p className="mt-6 max-w-2xl leading-relaxed text-white/60">
-                  Whether you need a website, ecommerce platform, digital
-                  system, or long-term growth support, Jovavo can help bring
-                  your vision to life.
-                </p>
-              </div>
+          <p className="mt-6 max-w-2xl leading-relaxed text-[#1b1713]/60">
+            Whether you're launching your first business or reimagining an
+            existing one, Jovavo creates thoughtful digital experiences designed
+            to grow with you.
+          </p>
+        </div>
 
-              <Link
-                href="/contact"
-                className="inline-flex w-fit items-center gap-3 rounded-full bg-white px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-[#1b1713] transition hover:-translate-y-1 hover:bg-white/90"
-              >
-                Start Project
-                <ArrowUpRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </Reveal>
-      </section>
+        <Link
+          href="/contact"
+          className="inline-flex w-fit items-center gap-3 rounded-full bg-[#1b1713] px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-white transition hover:-translate-y-1 hover:bg-[#1b1713]/90"
+        >
+          Start Project
+          <ArrowUpRight size={16} />
+        </Link>
+      </div>
+    </div>
+  </Reveal>
+</section>
     </main>
   );
 }
