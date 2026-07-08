@@ -112,9 +112,8 @@ export default function HomePage() {
 
 {/* MERGED INTRO / WHAT WE DO */}
 <section className="px-6 pt-16 pb-32">
-  <div className="mx-auto max-w-7xl">
+    <div className="mx-auto max-w-7xl">
     <Reveal>
-      <>
         {/* CARD 1 — LAPTOP INTRO */}
         <div className="overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_40px_120px_rgba(27,23,19,0.07)]">
           <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
@@ -204,85 +203,71 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* FEATURE CARDS */}
-          <div className="grid gap-px bg-[#1b1713]/10 lg:grid-cols-2">
-            {featurePanels.map((panel, index) => {
-              const MainIcon = panel.icon;
+{/* FEATURE CARDS */}
+<div className="grid gap-8 lg:grid-cols-3">
+  {featurePanels.slice(0, 3).map((panel, index) => {
+    const MainIcon = panel.icon;
+
+    return (
+      <Reveal key={panel.title} delay={index * 120}>
+        <div className="group relative flex min-h-[520px] flex-col overflow-hidden rounded-[999px] border border-white/60 bg-white/55 px-9 py-14 text-center shadow-[0_35px_110px_rgba(27,23,19,0.09)] backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:bg-white/75 hover:shadow-[0_45px_140px_rgba(27,23,19,0.13)]">
+          <div className="pointer-events-none absolute inset-0 rounded-[999px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.95),rgba(251,248,242,0.45)_45%,rgba(214,176,107,0.16)_100%)]" />
+
+          <div className="pointer-events-none absolute -top-20 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-white/80 blur-3xl" />
+
+          <div className="relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-[#1b1713]/10 bg-[#1b1713] text-white shadow-[0_20px_55px_rgba(27,23,19,0.2)]">
+            <MainIcon size={30} strokeWidth={1.6} />
+          </div>
+
+          <p className="relative z-10 mt-10 text-xs uppercase tracking-[0.36em] text-[#1b1713]/40">
+            {panel.eyebrow}
+          </p>
+
+          <h3 className="relative z-10 mx-auto mt-6 max-w-sm font-serif text-4xl font-light uppercase leading-[1.08] tracking-[0.06em] text-[#1b1713]">
+            {panel.title}
+          </h3>
+
+          <p className="relative z-10 mx-auto mt-7 max-w-sm text-[15px] leading-7 text-[#1b1713]/58">
+            {panel.description}
+          </p>
+
+          <div className="relative z-10 mt-9 grid gap-3">
+            {panel.features.slice(0, 3).map((feature) => {
+              const FeatureIcon = feature.icon;
 
               return (
-                <Reveal key={panel.title} delay={index * 120}>
-                  <div className="group relative flex min-h-[520px] flex-col overflow-hidden bg-[#fbf8f2] p-9 transition-all duration-500 hover:bg-white md:p-12">
-                    <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#1b1713]/5 blur-3xl transition duration-500 group-hover:bg-[#1b1713]/10" />
+                <div
+                  key={feature.label}
+                  className="mx-auto flex w-full max-w-xs items-center justify-center gap-3 rounded-full border border-[#1b1713]/10 bg-white/65 px-5 py-3 shadow-sm backdrop-blur transition group-hover:bg-white"
+                >
+                  <FeatureIcon size={16} strokeWidth={1.7} />
 
-                    <div className="relative z-10">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1b1713] text-white shadow-[0_18px_45px_rgba(27,23,19,0.18)]">
-                        <MainIcon size={28} />
-                      </div>
-
-                      <div className="mt-12 h-px w-20 bg-[#1b1713]/12" />
-                    </div>
-
-                    <div className="relative z-10 mt-14">
-                      <p className="mb-6 text-xs uppercase tracking-[0.36em] text-[#1b1713]/40">
-                        {panel.eyebrow}
-                      </p>
-
-                      <h3 className="max-w-xl font-serif text-4xl font-light leading-[1.08] tracking-[-0.04em] text-[#1b1713] md:text-5xl">
-                        {panel.title}
-                      </h3>
-
-                      <p className="mt-7 max-w-xl text-[17px] leading-8 text-[#1b1713]/60">
-                        {panel.description}
-                      </p>
-                    </div>
-
-                    <div className="relative z-10 mt-12 grid gap-3">
-                      {panel.features.map((feature) => {
-                        const FeatureIcon = feature.icon;
-
-                        return (
-                          <div
-                            key={feature.label}
-                            className="flex items-center justify-between rounded-2xl border border-[#1b1713]/10 bg-white/60 px-5 py-4 transition group-hover:bg-[#f8f4ec]"
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f3eee6] text-[#1b1713]/70">
-                                <FeatureIcon size={18} strokeWidth={1.8} />
-                              </div>
-
-                              <span className="text-sm uppercase tracking-[0.2em] text-[#1b1713]/60">
-                                {feature.label}
-                              </span>
-                            </div>
-
-                            <ArrowUpRight
-                              size={16}
-                              className="text-[#1b1713]/25"
-                            />
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    <div className="relative z-10 mt-auto pt-12">
-                      <Link
-                        href={panel.link}
-                        className="inline-flex items-center gap-3 rounded-full bg-[#1b1713] px-7 py-3 text-[11px] uppercase tracking-[0.26em] text-white transition hover:-translate-y-1 hover:bg-[#1b1713]/90"
-                      >
-                        {panel.linkText}
-                        <ArrowUpRight size={15} />
-                      </Link>
-                    </div>
-                  </div>
-                </Reveal>
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#1b1713]/55">
+                    {feature.label}
+                  </span>
+                </div>
               );
             })}
           </div>
+
+          <div className="relative z-10 mt-auto pt-10">
+            <Link
+              href={panel.link}
+              className="inline-flex items-center gap-3 rounded-full bg-[#1b1713] px-7 py-4 text-[10px] uppercase tracking-[0.28em] text-white shadow-[0_16px_45px_rgba(27,23,19,0.18)] transition hover:-translate-y-1 hover:bg-[#2a241f]"
+            >
+              {panel.linkText}
+              <ArrowUpRight size={14} />
+            </Link>
+          </div>
         </div>
-      </>
-    </Reveal>
-  </div>
-</section>
+      </Reveal>
+    );
+  })}
+</div>
+        </div>
+      </Reveal>
+    </div>
+  </section>
 
       {/* NYC SECTION */}
       <section className="mx-auto max-w-7xl px-6 pb-32">
