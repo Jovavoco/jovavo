@@ -150,10 +150,9 @@ export default function ServicesPage() {
         <Reveal>
           <div
             className="mt-3 overflow-hidden rounded-[1.5rem] bg-[#1b1713] bg-cover bg-center p-10 text-white md:p-16"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, rgba(27,23,19,0.92), rgba(27,23,19,0.72)), url('/images/services/lets-talk.jpg')",
-            }}
+style={{
+  backgroundImage: "url('/images/services/lets-talk.jpg')",
+}}
           >
             <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
               <div>
