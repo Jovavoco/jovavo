@@ -17,7 +17,7 @@ const projects = [
       "Designed and developed a complete ecommerce platform featuring a custom storefront, secure checkout, customer accounts, automated email workflows, inventory synchronization, promo code management, reviews, subscriptions, and a powerful administrative dashboard built specifically around the business.",
     href: "/work/apexx-biolabs",
     status: "Live",
-
+    image: "/images/work/apexx-biolabs-homepage.png",
     services: [
       "Website Design",
       "Ecommerce",
@@ -38,7 +38,7 @@ const projects = [
       "A premium lifestyle brand focused on elegant storytelling, refined visuals, and a luxury ecommerce experience currently being designed and developed.",
     href: "/work/willow-and-tallow",
     status: "In Development",
-
+    image: "/images/work/willow-and-tallow-homepage.png",
     services: [
       "Brand Identity",
       "Luxury Design",
