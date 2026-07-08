@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight, Mail, MapPin, Clock } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -6,22 +9,27 @@ export const metadata: Metadata = {
     "Ready to build your next website? Contact Jovavo to discuss your project and request a free consultation.",
 };
 
-import Link from "next/link";
-import { ArrowUpRight, Mail, MapPin, Clock } from "lucide-react";
-import Reveal from "@/components/Reveal";
-
 const inputStyle =
-  "w-full rounded-[1.35rem] border border-[#1b1713]/10 bg-[#f5f1e8]/80 px-6 py-4 text-sm text-[#1b1713] outline-none transition placeholder:text-[#1b1713]/35 focus:border-[#1b1713]/35 focus:bg-white";
+  "w-full rounded-[1.35rem] border border-[#1b1713]/10 bg-white/65 px-6 py-4 text-sm text-[#1b1713] outline-none transition placeholder:text-[#1b1713]/35 focus:border-[#1b1713]/35 focus:bg-white";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[#f5f1e8] px-6 pt-40 pb-28 text-[#1b1713]">
-      <section className="mx-auto max-w-7xl">
+    <main className="relative min-h-screen overflow-hidden bg-[#f5f1e8] px-6 pt-40 pb-28 text-[#1b1713]">
+      {/* BACKGROUND IMAGE */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
+        style={{ backgroundImage: "url('/images/contact-bg.png')" }}
+      />
+
+      {/* SOFT OVERLAY */}
+      <div className="absolute inset-0 bg-[#f5f1e8]/35" />
+
+      <section className="relative z-10 mx-auto max-w-7xl">
         <Reveal>
           <div className="grid gap-16 lg:grid-cols-[0.9fr_1fr] lg:items-start">
             {/* LEFT SIDE */}
             <div className="lg:sticky lg:top-32">
-              <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+              <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/45">
                 Contact
               </p>
 
@@ -33,14 +41,14 @@ export default function ContactPage() {
                 exceptional.
               </h1>
 
-              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#1b1713]/55 md:text-xl">
+              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#1b1713]/60 md:text-xl">
                 Tell me about your business, your goals, and the digital
                 experience you want to create. I’ll help you figure out the best
                 next step.
               </p>
 
               <div className="mt-10 space-y-5">
-                <div className="flex items-center gap-4 text-[#1b1713]/60">
+                <div className="flex items-center gap-4 text-[#1b1713]/65">
                   <Mail size={18} />
                   <a
                     href="mailto:support@jovavo.com"
@@ -50,12 +58,12 @@ export default function ContactPage() {
                   </a>
                 </div>
 
-                <div className="flex items-center gap-4 text-[#1b1713]/60">
+                <div className="flex items-center gap-4 text-[#1b1713]/65">
                   <MapPin size={18} />
                   <span>New York, NY</span>
                 </div>
 
-                <div className="flex items-center gap-4 text-[#1b1713]/60">
+                <div className="flex items-center gap-4 text-[#1b1713]/65">
                   <Clock size={18} />
                   <span>Response within 24–48 hours</span>
                 </div>
@@ -72,7 +80,7 @@ export default function ContactPage() {
                 ].map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-[#1b1713]/10 bg-[#fbf8f2] px-5 py-3 text-[11px] uppercase tracking-[0.2em] text-[#1b1713]/45"
+                    className="rounded-full border border-[#1b1713]/10 bg-white/55 px-5 py-3 text-[11px] uppercase tracking-[0.2em] text-[#1b1713]/55 backdrop-blur"
                   >
                     {item}
                   </span>
@@ -81,9 +89,9 @@ export default function ContactPage() {
             </div>
 
             {/* FORM */}
-            <form className="rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2]/95 p-7 shadow-[0_40px_140px_rgba(27,23,19,0.10)] backdrop-blur md:p-10">
-              <div className="mb-8 rounded-[2rem] bg-[#efe9df] p-6">
-                <p className="text-[11px] uppercase tracking-[0.35em] text-[#1b1713]/40">
+            <form className="rounded-[3rem] border border-white/60 bg-[#fbf8f2]/75 p-7 shadow-[0_40px_140px_rgba(27,23,19,0.12)] backdrop-blur-xl md:p-10">
+              <div className="mb-8 rounded-[2rem] border border-[#1b1713]/10 bg-white/45 p-6">
+                <p className="text-[11px] uppercase tracking-[0.35em] text-[#1b1713]/45">
                   Project Inquiry
                 </p>
 
@@ -91,7 +99,7 @@ export default function ContactPage() {
                   Tell me what you’re building.
                 </h2>
 
-                <p className="mt-4 text-sm leading-relaxed text-[#1b1713]/55">
+                <p className="mt-4 text-sm leading-relaxed text-[#1b1713]/60">
                   Share a few details about your project and Jovavo will get
                   back to you with a clear direction.
                 </p>
@@ -150,7 +158,7 @@ export default function ContactPage() {
                 className={`mt-4 resize-none ${inputStyle}`}
               />
 
-              <div className="mt-6 grid gap-3 text-xs leading-relaxed text-[#1b1713]/45 md:grid-cols-3">
+              <div className="mt-6 grid gap-3 text-xs leading-relaxed text-[#1b1713]/50 md:grid-cols-3">
                 <p>✓ Response within 24–48 hours</p>
                 <p>✓ Custom recommendations</p>
                 <p>✓ No pressure, just clarity</p>
@@ -164,7 +172,7 @@ export default function ContactPage() {
                 <ArrowUpRight size={16} />
               </button>
 
-              <p className="mt-5 text-center text-xs leading-relaxed text-[#1b1713]/40">
+              <p className="mt-5 text-center text-xs leading-relaxed text-[#1b1713]/45">
                 Prefer email? Reach out directly at support@jovavo.com.
               </p>
             </form>
