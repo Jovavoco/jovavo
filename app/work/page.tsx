@@ -114,16 +114,15 @@ export default function WorkPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-center border-t border-[#1b1713]/10 bg-gradient-to-br from-[#efe9df] via-[#faf7f2] to-[#e8e0d3] p-8 lg:border-l lg:border-t-0">
-                    <div className="relative aspect-[16/10] w-full max-w-xl overflow-hidden rounded-[1.75rem] border border-black/10 bg-white shadow-[0_35px_90px_rgba(0,0,0,0.08)]">
-                      <img
-                        src={project.image}
-                        alt={`${project.title} website preview`}
-className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"                      />
-                    </div>
+<div className="flex items-center justify-center border-t border-[#1b1713]/10 bg-gradient-to-br from-[#efe9df] via-[#faf7f2] to-[#e8e0d3] p-8 lg:border-l lg:border-t-0">
+  <div className="relative aspect-[16/10] w-full max-w-xl overflow-hidden rounded-[1.75rem] border border-black/10 bg-white p-3 shadow-[0_35px_90px_rgba(0,0,0,0.08)]">
+    <img
+      src={project.image}
+      alt={`${project.title} website preview`}
+      className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
+    />
                   </div>
-                </div>
-              </Link>
+                </div>              </div>              </Link>
             </Reveal>
           ))}
         </div>
