@@ -215,6 +215,77 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* PROCESS PREVIEW */}
+<section className="mx-auto max-w-7xl px-6 py-32">
+  <Reveal>
+    <div className="overflow-hidden rounded-[2.75rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_100px_rgba(27,23,19,0.06)]">
+      <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+
+        {/* Left */}
+        <div className="flex flex-col justify-between p-10 md:p-14">
+
+          <div>
+            <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+              Our Process
+            </p>
+
+            <h2 className="font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.08em] md:text-6xl">
+              Great websites
+              <br />
+              don't happen
+              <br />
+              by accident.
+            </h2>
+
+            <p className="mt-10 max-w-xl text-lg leading-relaxed text-[#1b1713]/55">
+              Every project follows a structured process—from discovery and
+              strategy to design, development, launch, and long-term growth.
+              Our goal is to make building your website simple, transparent,
+              and collaborative.
+            </p>
+          </div>
+
+          <Link
+            href="/process"
+            className="mt-12 inline-flex w-fit items-center gap-3 rounded-full border border-[#1b1713]/15 px-7 py-3 text-[11px] uppercase tracking-[0.28em] transition hover:bg-[#1b1713] hover:text-white"
+          >
+            View Our Process
+            <ArrowUpRight size={15} />
+          </Link>
+
+        </div>
+
+        {/* Right */}
+        <div className="grid grid-cols-2 gap-px bg-[#1b1713]/10">
+
+          {[
+            "Discover",
+            "Strategy",
+            "Design",
+            "Develop",
+            "Launch",
+            "Grow",
+          ].map((step, index) => (
+            <div
+              key={step}
+              className="flex flex-col justify-center bg-[#fbf8f2] p-10 transition duration-300 hover:bg-[#f5f1e8]"
+            >
+              <p className="font-serif text-5xl text-[#1b1713]/20">
+                0{index + 1}
+              </p>
+
+              <h3 className="mt-5 font-serif text-2xl uppercase tracking-[0.08em]">
+                {step}
+              </h3>
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </div>
+  </Reveal>
+</section>
+
       {/* NYC SECTION */}
       <section className="mx-auto max-w-7xl px-6 py-28">
         <Reveal>
