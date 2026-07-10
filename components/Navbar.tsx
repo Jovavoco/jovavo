@@ -11,36 +11,29 @@ export default function Navbar() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4 md:px-6 md:pt-6">
       {/* MOBILE NAVBAR */}
-      <div className="mx-auto w-full max-w-md md:hidden">
-        {/* MOBILE TOP BAR */}
+      <div className="mx-auto w-full max-w-[380px] md:hidden">
+        {/* MOBILE BRAND BAR */}
         <nav
           aria-label="Mobile navigation"
-          className="pointer-events-auto flex items-center justify-between gap-3 rounded-full border border-white/30 bg-[#f8f4ed]/90 px-4 py-3 shadow-[0_12px_35px_rgba(27,23,19,0.12)] backdrop-blur-2xl"
+          className="pointer-events-auto flex items-center justify-center rounded-full border border-white/30 bg-[#f8f4ed]/92 px-5 py-3.5 shadow-[0_12px_35px_rgba(27,23,19,0.12)] backdrop-blur-2xl"
         >
           <Link
             href="/"
             aria-label="Jovavo home"
-            className="shrink-0 font-serif text-lg font-light tracking-[0.18em] text-[#1b1713] transition-opacity duration-300 hover:opacity-70"
+            className="font-serif text-xl font-light tracking-[0.2em] text-[#1b1713] transition-opacity duration-300 hover:opacity-70"
           >
             JOVAVO
-          </Link>
-
-          <Link
-            href="/contact"
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#1b1713] px-4 py-2.5 text-[9px] uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-[#2a241f] active:scale-[0.98]"
-          >
-            Start Project
           </Link>
         </nav>
 
         {/* MOBILE PAGE LINKS */}
-        <div className="pointer-events-auto mx-auto mt-2 w-[calc(100%-1rem)] rounded-full border border-white/25 bg-[#f8f4ed]/88 p-1.5 shadow-[0_10px_30px_rgba(27,23,19,0.1)] backdrop-blur-2xl">
+        <div className="pointer-events-auto mx-auto mt-2 w-[calc(100%-1rem)] rounded-full border border-white/25 bg-[#f8f4ed]/90 p-1.5 shadow-[0_10px_30px_rgba(27,23,19,0.1)] backdrop-blur-2xl">
           <div className="grid grid-cols-4 gap-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="flex min-h-10 items-center justify-center rounded-full px-1 text-center text-[9px] uppercase tracking-[0.08em] text-[#1b1713]/60 transition-all duration-300 hover:bg-white/70 hover:text-[#1b1713] active:bg-white min-[390px]:tracking-[0.11em]"
+                className="flex min-h-10 items-center justify-center rounded-full bg-transparent px-1 text-center text-[9px] uppercase tracking-[0.08em] text-[#1b1713]/60 transition-all duration-300 hover:bg-white hover:text-[#1b1713] active:bg-white min-[390px]:tracking-[0.11em]"
               >
                 {item.name}
               </Link>
