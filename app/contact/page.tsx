@@ -101,9 +101,9 @@ export default function ContactPage() {
       }
 
       setStatus("success");
-      setFeedback(
-        "Your proposal request has been sent. I’ll respond within 24–48 hours.",
-      );
+    setFeedback(
+  "Your proposal request has been sent successfully. We will respond within 24–48 hours.",
+);
       setFormData(initialFormData);
     } catch (error) {
       setStatus("error");
