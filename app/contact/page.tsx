@@ -12,6 +12,12 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 const inputStyle =
   "w-full rounded-2xl border border-[#1b1713]/10 bg-white/80 px-5 py-4 text-sm text-[#1b1713] outline-none transition placeholder:text-[#1b1713]/35 focus:border-[#1b1713]/30 focus:bg-white disabled:cursor-not-allowed disabled:opacity-60";
 
@@ -80,13 +86,25 @@ export default function ContactPage() {
         );
       }
 
+      /*
+       * Only count the visitor as a Meta Lead after the server confirms
+       * that the inquiry was successfully sent.
+       */
+      if (
+        typeof window !== "undefined" &&
+        typeof window.fbq === "function"
+      ) {
+        window.fbq("track", "Lead", {
+          content_name: "Jovavo Project Inquiry",
+          content_category: formData.service || "Project Inquiry",
+        });
+      }
+
       setStatus("success");
       setFeedback(
         "Your proposal request has been sent. I’ll respond within 24–48 hours.",
       );
       setFormData(initialFormData);
-
-      window.fbq?.("track", "Lead");
     } catch (error) {
       setStatus("error");
       setFeedback(
@@ -110,6 +128,7 @@ export default function ContactPage() {
       />
 
       <div className="absolute inset-0 -z-10 bg-[#f5f1e8]/30" />
+
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#f5f1e8]/95 via-[#f5f1e8]/65 to-transparent" />
 
       <section className="mx-auto max-w-7xl">
@@ -212,6 +231,7 @@ export default function ContactPage() {
                   type="text"
                   name="name"
                   placeholder="Your name"
+                  autoComplete="name"
                   required
                   disabled={isSubmitting}
                   value={formData.name}
@@ -225,6 +245,7 @@ export default function ContactPage() {
                   type="email"
                   name="email"
                   placeholder="Email address"
+                  autoComplete="email"
                   required
                   disabled={isSubmitting}
                   value={formData.email}
@@ -239,6 +260,7 @@ export default function ContactPage() {
                 type="text"
                 name="business"
                 placeholder="Business / brand name"
+                autoComplete="organization"
                 disabled={isSubmitting}
                 value={formData.business}
                 onChange={(event) =>
@@ -260,24 +282,30 @@ export default function ContactPage() {
                 <option value="" disabled>
                   What do you need?
                 </option>
+
                 <option value="New website">New website</option>
                 <option value="Ecommerce store">Ecommerce store</option>
                 <option value="Website redesign">Website redesign</option>
                 <option value="Landing page">Landing page</option>
                 <option value="Admin dashboard">Admin dashboard</option>
                 <option value="Customer portal">Customer portal</option>
+
                 <option value="Business automation">
                   Business automation
                 </option>
+
                 <option value="SEO / digital growth">
                   SEO / digital growth
                 </option>
+
                 <option value="Google or Meta ads">
                   Google or Meta ads
                 </option>
+
                 <option value="Website maintenance">
                   Website maintenance
                 </option>
+
                 <option value="Not sure yet">Not sure yet</option>
               </select>
 
@@ -295,16 +323,23 @@ export default function ContactPage() {
                   <option value="" disabled>
                     Estimated budget
                   </option>
-                  <option value="$500 - $1,500">$500 - $1,500</option>
+
+                  <option value="$500 - $1,500">
+                    $500 - $1,500
+                  </option>
+
                   <option value="$1,500 - $3,000">
                     $1,500 - $3,000
                   </option>
+
                   <option value="$3,000 - $5,000">
                     $3,000 - $5,000
                   </option>
+
                   <option value="$5,000 - $10,000">
                     $5,000 - $10,000
                   </option>
+
                   <option value="$10,000+">$10,000+</option>
                   <option value="Let’s discuss">Let’s discuss</option>
                 </select>
@@ -322,6 +357,7 @@ export default function ContactPage() {
                   <option value="" disabled>
                     Ideal timeline
                   </option>
+
                   <option value="Immediately">Immediately</option>
                   <option value="Within 1 month">Within 1 month</option>
                   <option value="1 - 3 months">1 - 3 months</option>
@@ -346,6 +382,7 @@ export default function ContactPage() {
               {feedback ? (
                 <div
                   role="status"
+                  aria-live="polite"
                   className={`mt-5 rounded-2xl border px-5 py-4 text-sm leading-relaxed ${
                     status === "success"
                       ? "border-green-700/20 bg-green-50/80 text-green-900"
