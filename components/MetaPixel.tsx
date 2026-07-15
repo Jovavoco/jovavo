@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
 const META_PIXEL_ID = "1550859170107811";
@@ -15,7 +15,6 @@ declare global {
 
 export default function MetaPixel() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const hasTrackedInitialPageView = useRef(false);
 
   useEffect(() => {
@@ -25,7 +24,7 @@ export default function MetaPixel() {
     }
 
     window.fbq?.("track", "PageView");
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <>
@@ -37,10 +36,11 @@ export default function MetaPixel() {
             !function(f,b,e,v,n,t,s)
             {
               if(f.fbq)return;
+
               n=f.fbq=function(){
                 n.callMethod
                   ? n.callMethod.apply(n,arguments)
-                  : n.queue.push(arguments)
+                  : n.queue.push(arguments);
               };
 
               if(!f._fbq)f._fbq=n;
