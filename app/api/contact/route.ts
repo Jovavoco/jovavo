@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 type ContactRequest = {
   name?: string;
   email?: string;
@@ -24,14 +22,20 @@ function escapeHtml(value: string) {
 
 export async function POST(request: Request) {
   try {
-    if (!process.env.RESEND_API_KEY) {
-      console.error("Missing RESEND_API_KEY");
+    const apiKey = process.env.RESEND_API_KEY;
+
+    if (!apiKey) {
+      console.error("RESEND_API_KEY is missing");
 
       return NextResponse.json(
         { error: "Email service is not configured." },
         { status: 500 },
       );
     }
+
+    // Initialize Resend only when the form is submitted,
+    // not while Vercel is building the website.
+    const resend = new Resend(apiKey);
 
     const body = (await request.json()) as ContactRequest;
 
@@ -45,7 +49,7 @@ export async function POST(request: Request) {
 
     if (!name || !email || !message) {
       return NextResponse.json(
-        { error: "Name, email and project details are required." },
+        { error: "Name, email, and project details are required." },
         { status: 400 },
       );
     }
@@ -83,43 +87,15 @@ export async function POST(request: Request) {
               New proposal request
             </h1>
 
-            <table style="width:100%;border-collapse:collapse;">
-              <tr>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;font-weight:600;">Name</td>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;text-align:right;">${safeName}</td>
-              </tr>
-              <tr>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;font-weight:600;">Email</td>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;text-align:right;">
-                  <a href="mailto:${safeEmail}" style="color:#1b1713;">${safeEmail}</a>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;font-weight:600;">Business</td>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;text-align:right;">${safeBusiness}</td>
-              </tr>
-              <tr>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;font-weight:600;">Service</td>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;text-align:right;">${safeService}</td>
-              </tr>
-              <tr>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;font-weight:600;">Budget</td>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;text-align:right;">${safeBudget}</td>
-              </tr>
-              <tr>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;font-weight:600;">Timeline</td>
-                <td style="padding:12px 0;border-bottom:1px solid #eee7df;text-align:right;">${safeTimeline}</td>
-              </tr>
-            </table>
+            <p><strong>Name:</strong> ${safeName}</p>
+            <p><strong>Email:</strong> ${safeEmail}</p>
+            <p><strong>Business:</strong> ${safeBusiness}</p>
+            <p><strong>Service:</strong> ${safeService}</p>
+            <p><strong>Budget:</strong> ${safeBudget}</p>
+            <p><strong>Timeline:</strong> ${safeTimeline}</p>
 
-            <div style="margin-top:28px;">
-              <p style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#857d73;margin-bottom:10px;">
-                Project details
-              </p>
-
-              <div style="background:#f8f5ef;border-radius:16px;padding:20px;line-height:1.7;">
-                ${safeMessage}
-              </div>
+            <div style="margin-top:24px;background:#f8f5ef;border-radius:16px;padding:20px;line-height:1.7;">
+              ${safeMessage}
             </div>
           </div>
         </div>
