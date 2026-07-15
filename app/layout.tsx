@@ -22,6 +22,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jovavo.com"),
 
+  verification: {
+    other: {
+      "facebook-domain-verification": "rbc0rb1i4glgz2gbivc74ek7g3hjut",
+    },
+  },
+
   title: {
     default: "Jovavo | Custom Websites & Digital Experiences",
     template: "%s | Jovavo",
