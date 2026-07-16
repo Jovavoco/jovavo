@@ -16,6 +16,24 @@ const services = [
   "Ecommerce",
 ];
 
+const socialLinks = [
+  {
+    name: "Instagram",
+    handle: "@jovavo.co",
+    href: "https://instagram.com/jovavo.co",
+  },
+  {
+    name: "TikTok",
+    handle: "@jovavo.co",
+    href: "https://tiktok.com/@jovavo.co",
+  },
+  {
+    name: "X",
+    handle: "@jovavoco",
+    href: "https://x.com/jovavoco",
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="w-full overflow-hidden border-t border-[#d8d0c5] bg-[#f5f1e8]">
@@ -93,23 +111,24 @@ export default function Footer() {
 
                 <p>New York, NY</p>
 
-                <a
-                  href="https://instagram.com/jovavo.co"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-fit transition hover:text-[#1b1713]"
-                >
-                  Instagram
-                </a>
+                <div className="space-y-3.5 sm:space-y-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${social.name} ${social.handle}`}
+                      className="group flex w-fit items-center gap-2 transition hover:text-[#1b1713]"
+                    >
+                      <span>{social.name}</span>
 
-                <a
-                  href="https://github.com/Jovavoco"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-fit transition hover:text-[#1b1713]"
-                >
-                  GitHub
-                </a>
+                      <span className="text-xs text-[#1b1713]/35 transition group-hover:text-[#1b1713]/60">
+                        {social.handle}
+                      </span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
