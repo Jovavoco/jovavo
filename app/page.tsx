@@ -137,18 +137,18 @@ export default function HomePage() {
   <div className="mx-auto max-w-7xl">
     <Reveal>
 {/* CARD 1 — WHAT WE BUILD */}
-<div className="overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] md:rounded-[2.75rem]">
-  <div className="px-6 py-14 sm:px-10 sm:py-16 md:px-14 md:py-20 lg:px-20 lg:py-24">
+<div className="overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] md:rounded-[2.5rem]">
+  <div className="px-6 py-12 sm:px-10 sm:py-14 md:px-14 md:py-18 lg:px-18 lg:py-20">
     <Reveal>
-      <div className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:gap-24">
+      <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:gap-20">
 
         {/* LEFT */}
         <div>
-          <p className="mb-7 text-[10px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[11px] sm:tracking-[0.44em]">
+          <p className="mb-6 text-[10px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[11px] sm:tracking-[0.42em]">
             What We Build
           </p>
 
-          <h2 className="font-serif text-[3rem] font-light leading-[1.01] tracking-[-0.025em] text-[#1b1713] sm:text-[3.75rem] md:text-[4.5rem] lg:text-[5rem]">
+          <h2 className="font-serif text-[2.8rem] font-light leading-[1.01] tracking-[-0.025em] text-[#1b1713] sm:text-[3.4rem] md:text-[4.1rem] lg:text-[4.6rem]">
             Built around
             <br />
 
@@ -164,19 +164,19 @@ export default function HomePage() {
 
         {/* RIGHT */}
         <div>
-          <div className="mb-8 h-px w-16 bg-[#1b1713]/20" />
+          <div className="mb-7 h-px w-16 bg-[#1b1713]/20" />
 
-          <p className="max-w-xl text-base leading-8 text-[#1b1713]/55 sm:text-lg sm:leading-8">
+          <p className="max-w-xl text-base leading-7 text-[#1b1713]/55 sm:text-[17px] sm:leading-8">
             Jovavo designs and develops custom websites and e-commerce
             experiences around your business — from how your brand looks to
             how customers browse, interact, and take action.
           </p>
 
-          <div className="mt-9 flex flex-wrap gap-2.5">
+          <div className="mt-8 flex flex-wrap gap-2.5">
             {["Web Design", "E-Commerce", "Development"].map((item) => (
               <div
                 key={item}
-                className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8]/60 px-5 py-3 text-[9px] uppercase tracking-[0.2em] text-[#1b1713]/50 sm:px-6 sm:py-3.5 sm:text-[10px] sm:tracking-[0.23em]"
+                className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8]/60 px-5 py-3 text-[9px] uppercase tracking-[0.2em] text-[#1b1713]/50 sm:px-6 sm:text-[10px] sm:tracking-[0.22em]"
               >
                 {item}
               </div>
