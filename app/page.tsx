@@ -135,23 +135,26 @@ export default function HomePage() {
 {/* INTRO / WHAT WE DO */}
 <section className="px-4 pb-20 pt-10 sm:px-6 sm:pb-24 sm:pt-14 md:pb-32 md:pt-16">
   <div className="mx-auto max-w-7xl">
+    <Reveal>
 {/* INTRO HEADER */}
 <Reveal>
-  <div className="mx-auto max-w-5xl px-4 py-12 text-center sm:py-14 md:py-16">
-    <p className="mb-4 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.4em]">
+  <div className="mx-auto max-w-5xl px-2 pb-12 pt-6 text-center sm:pb-14 sm:pt-8 md:pb-16">
+    <p className="mb-5 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.42em]">
       What We Build
     </p>
 
-    <h2 className="font-serif text-[2.4rem] font-light leading-[1.04] tracking-[-0.02em] text-[#1b1713] sm:text-[2.9rem] md:text-[3.5rem] lg:text-[3.8rem]">
+    <h2 className="font-serif text-[2.5rem] font-light leading-[1.03] tracking-[-0.02em] text-[#1b1713] sm:text-[3rem] md:text-[3.6rem] lg:text-[4rem]">
       Built around{" "}
       <span className="italic text-[#1b1713]/60">
         your brand.
       </span>
-      <br />
-      Designed to work.
+      <br className="hidden sm:block" />
+      {" "}Designed to work.
     </h2>
 
-    <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-base">
+    <div className="mx-auto mt-6 h-px w-12 bg-[#1b1713]/20" />
+
+    <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-base sm:leading-7">
       Jovavo designs and develops custom websites and e-commerce experiences
       around your business — from how your brand looks to how customers browse,
       interact, and take action.
@@ -161,7 +164,7 @@ export default function HomePage() {
       {["Web Design", "E-Commerce", "Development"].map((item) => (
         <div
           key={item}
-          className="rounded-full border border-[#1b1713]/10 bg-[#fbf8f2] px-5 py-2.5 text-[9px] uppercase tracking-[0.18em] text-[#1b1713]/50 sm:text-[10px]"
+          className="rounded-full border border-[#1b1713]/10 px-4 py-2.5 text-[9px] uppercase tracking-[0.18em] text-[#1b1713]/50 sm:px-5 sm:text-[10px]"
         >
           {item}
         </div>
@@ -170,57 +173,51 @@ export default function HomePage() {
   </div>
 </Reveal>
 
+      {/* CARD 2 */}
+      <div className="mt-8 overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_90px_rgba(27,23,19,0.06)] sm:mt-10 md:mt-12 md:rounded-[3rem] md:shadow-[0_40px_120px_rgba(27,23,19,0.07)]">
+        {/* IMAGE HEADER */}
+        <div className="relative h-[300px] overflow-hidden sm:h-[380px] md:h-[520px]">
+          <img
+            src="/images/jovavo-digital-growth.png"
+            alt="Digital growth and advertising strategy"
+            className="h-full w-full object-cover"
+          />
 
-{/* CARD 2 */}
-<Reveal>
-  <div className="mx-auto mt-6 max-w-5xl overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] sm:mt-8 md:rounded-[2.5rem]">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf8f2]/10 via-[#fbf8f2]/35 to-[#fbf8f2]" />
 
-    {/* IMAGE */}
-    <div className="relative h-[240px] overflow-hidden sm:h-[300px] md:h-[360px]">
-      <img
-        src="/images/jovavo-digital-growth.png"
-        alt="Digital growth and advertising strategy"
-        className="h-full w-full object-cover"
-      />
+          <div className="absolute bottom-0 left-0 z-10 max-w-4xl p-6 sm:p-8 md:p-14">
+            <p className="mb-4 text-[10px] uppercase tracking-[0.28em] text-[#1b1713]/40 sm:mb-6 sm:text-xs sm:tracking-[0.42em]">
+              What We Do
+            </p>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#fbf8f2]/20 to-[#fbf8f2]" />
-
-      {/* HEADING */}
-      <div className="absolute inset-x-0 bottom-0 px-6 pb-7 text-center sm:px-10 sm:pb-9 md:px-14 md:pb-10">
-        <p className="mb-4 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.4em]">
-          What We Do
-        </p>
-
-        <h3 className="font-serif text-[2.4rem] font-light leading-[1.04] tracking-[-0.02em] text-[#1b1713] sm:text-[2.9rem] md:text-[3.5rem] lg:text-[3.8rem]">
-          Build the site.
-          <br />
-          <span className="italic text-[#1b1713]/60">
-            Drive the growth.
-          </span>
-        </h3>
-      </div>
-    </div>
-
-    {/* CONTENT */}
-    <div className="border-t border-[#1b1713]/10 px-6 py-7 sm:px-10 sm:py-8 md:px-12 md:py-9">
-      <p className="mx-auto max-w-2xl text-center text-[15px] leading-7 text-[#1b1713]/55 sm:text-base">
-        Your website is the foundation. Jovavo can take it further with
-        Google Ads, Meta advertising, search visibility, analytics, and
-        conversion-focused strategy designed to bring more of the right
-        people to your business.
-      </p>
-
-      <div className="mt-7 flex flex-wrap justify-center gap-2">
-        {["Google Ads", "Meta Ads", "Analytics"].map((item) => (
-          <div
-            key={item}
-            className="rounded-full border border-[#1b1713]/10 bg-white px-5 py-2.5 text-[9px] uppercase tracking-[0.18em] text-[#1b1713]/50 sm:text-[10px]"
-          >
-            {item}
+            <h3 className="font-serif text-[2.15rem] font-light uppercase leading-[1.03] tracking-[0.045em] text-[#1b1713] sm:text-5xl sm:tracking-[0.08em] md:text-7xl">
+              Build the site.
+              <br />
+              Drive the growth.
+            </h3>
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+
+        {/* INTRO TEXT */}
+        <div className="grid gap-7 border-t border-[#1b1713]/10 p-6 sm:p-8 md:p-14 lg:grid-cols-[0.85fr_1fr] lg:items-end">
+          <p className="max-w-xl text-base leading-7 text-[#1b1713]/55 sm:text-lg sm:leading-relaxed">
+            Your website is the foundation. Jovavo can take it further with
+            Google Ads, Meta advertising, search visibility, analytics, and
+            conversion-focused strategy designed to bring more of the right
+            people to your business.
+          </p>
+
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-3">
+            {["Google Ads", "Meta Ads", "Analytics"].map((item) => (
+              <div
+                key={item}
+                className="rounded-full border border-[#1b1713]/10 bg-white px-4 py-3 text-center text-[10px] uppercase tracking-[0.18em] text-[#1b1713]/55 sm:px-5 sm:text-[11px] sm:tracking-[0.22em]"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* SERVICE CARDS */}
         <div className="grid gap-px bg-[#1b1713]/10 lg:grid-cols-3">
