@@ -132,145 +132,176 @@ export default function HomePage() {
   </div>
 </section>
 
-{/* WHAT WE DO — COMBINED SECTION */}
-<section className="px-4 pb-20 pt-10 sm:px-6 sm:pb-24 sm:pt-14 md:pb-28 md:pt-16">
+{/* INTRO / WHAT WE DO */}
+<section className="px-4 pb-20 pt-10 sm:px-6 sm:pb-24 sm:pt-14 md:pb-32 md:pt-16">
   <div className="mx-auto max-w-7xl">
     <Reveal>
-      <div className="overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] md:rounded-[2.5rem]">
+{/* INTRO HEADER */}
+<Reveal>
+  <div className="mx-auto max-w-5xl px-2 pb-12 pt-6 text-center sm:pb-14 sm:pt-8 md:pb-16">
+    <p className="mb-5 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.42em]">
+      What We Build
+    </p>
 
-        {/* TOP INTRO */}
-        <div className="border-b border-[#1b1713]/10 px-6 py-10 sm:px-10 sm:py-12 md:px-14 md:py-14">
-          <div className="grid gap-7 md:grid-cols-[1fr_0.9fr] md:items-end md:gap-14">
+    <h2 className="font-serif text-[2.5rem] font-light leading-[1.03] tracking-[-0.02em] text-[#1b1713] sm:text-[3rem] md:text-[3.6rem] lg:text-[4rem]">
+      Built around{" "}
+      <span className="italic text-[#1b1713]/60">
+        your brand.
+      </span>
+      <br className="hidden sm:block" />
+      {" "}Designed to work.
+    </h2>
 
-            <div>
-              <p className="mb-4 text-[9px] uppercase tracking-[0.36em] text-[#1b1713]/40 sm:text-[10px]">
-                What We Do
-              </p>
+    <div className="mx-auto mt-6 h-px w-12 bg-[#1b1713]/20" />
 
-              <h2 className="font-serif text-[2.5rem] font-light leading-[1.02] tracking-[-0.02em] text-[#1b1713] sm:text-[3rem] md:text-[3.6rem]">
-                Built around{" "}
-                <span className="italic text-[#1b1713]/55">
-                  your brand.
-                </span>
-                <br />
-                Designed to work.
-              </h2>
-            </div>
+    <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-base sm:leading-7">
+      Jovavo designs and develops custom websites and e-commerce experiences
+      around your business — from how your brand looks to how customers browse,
+      interact, and take action.
+    </p>
 
-            <p className="max-w-xl text-[14px] leading-6 text-[#1b1713]/55 sm:text-[15px] sm:leading-7">
-              Jovavo builds custom websites and e-commerce experiences, then
-              helps businesses grow through digital advertising, search
-              visibility, analytics, and strategy.
+    <div className="mt-7 flex flex-wrap justify-center gap-2">
+      {["Web Design", "E-Commerce", "Development"].map((item) => (
+        <div
+          key={item}
+          className="rounded-full border border-[#1b1713]/10 px-4 py-2.5 text-[9px] uppercase tracking-[0.18em] text-[#1b1713]/50 sm:px-5 sm:text-[10px]"
+        >
+          {item}
+        </div>
+      ))}
+    </div>
+  </div>
+</Reveal>
+
+      {/* CARD 2 */}
+      <div className="mt-8 overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_90px_rgba(27,23,19,0.06)] sm:mt-10 md:mt-12 md:rounded-[3rem] md:shadow-[0_40px_120px_rgba(27,23,19,0.07)]">
+        {/* IMAGE HEADER */}
+        <div className="relative h-[300px] overflow-hidden sm:h-[380px] md:h-[520px]">
+          <img
+            src="/images/jovavo-digital-growth.png"
+            alt="Digital growth and advertising strategy"
+            className="h-full w-full object-cover"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf8f2]/10 via-[#fbf8f2]/35 to-[#fbf8f2]" />
+
+          <div className="absolute bottom-0 left-0 z-10 max-w-4xl p-6 sm:p-8 md:p-14">
+            <p className="mb-4 text-[10px] uppercase tracking-[0.28em] text-[#1b1713]/40 sm:mb-6 sm:text-xs sm:tracking-[0.42em]">
+              What We Do
             </p>
 
+            <h3 className="font-serif text-[2.15rem] font-light uppercase leading-[1.03] tracking-[0.045em] text-[#1b1713] sm:text-5xl sm:tracking-[0.08em] md:text-7xl">
+              Build the site.
+              <br />
+              Drive the growth.
+            </h3>
           </div>
         </div>
 
-        {/* SERVICES */}
-        <div className="grid md:grid-cols-3">
+        {/* INTRO TEXT */}
+        <div className="grid gap-7 border-t border-[#1b1713]/10 p-6 sm:p-8 md:p-14 lg:grid-cols-[0.85fr_1fr] lg:items-end">
+          <p className="max-w-xl text-base leading-7 text-[#1b1713]/55 sm:text-lg sm:leading-relaxed">
+            Your website is the foundation. Jovavo can take it further with
+            Google Ads, Meta advertising, search visibility, analytics, and
+            conversion-focused strategy designed to bring more of the right
+            people to your business.
+          </p>
 
-          {/* WEB DESIGN */}
-          <div className="group border-b border-[#1b1713]/10 p-6 sm:p-8 md:border-b-0 md:border-r md:p-9 lg:p-10">
-            <div className="mb-8 flex items-center justify-between">
-              <span className="text-[9px] uppercase tracking-[0.28em] text-[#1b1713]/35">
-                01
-              </span>
-
-              <MonitorSmartphone
-                size={19}
-                strokeWidth={1.4}
-                className="text-[#1b1713]/45"
-              />
-            </div>
-
-            <h3 className="font-serif text-[1.7rem] font-light leading-tight text-[#1b1713] sm:text-[1.9rem]">
-              Web Design
-              <br />
-              & Development
-            </h3>
-
-            <p className="mt-4 text-[14px] leading-6 text-[#1b1713]/55">
-              Custom, responsive websites designed around your brand,
-              customers, and business goals.
-            </p>
-
-            <Link
-              href="/services"
-              className="mt-7 inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.22em] text-[#1b1713]/55 transition hover:text-[#1b1713]"
-            >
-              Explore Websites
-              <ArrowUpRight size={13} strokeWidth={1.5} />
-            </Link>
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 sm:gap-3">
+            {["Google Ads", "Meta Ads", "Analytics"].map((item) => (
+              <div
+                key={item}
+                className="rounded-full border border-[#1b1713]/10 bg-white px-4 py-3 text-center text-[10px] uppercase tracking-[0.18em] text-[#1b1713]/55 sm:px-5 sm:text-[11px] sm:tracking-[0.22em]"
+              >
+                {item}
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* E-COMMERCE */}
-          <div className="group border-b border-[#1b1713]/10 p-6 sm:p-8 md:border-b-0 md:border-r md:p-9 lg:p-10">
-            <div className="mb-8 flex items-center justify-between">
-              <span className="text-[9px] uppercase tracking-[0.28em] text-[#1b1713]/35">
-                02
-              </span>
+        {/* SERVICE CARDS */}
+        <div className="grid gap-px bg-[#1b1713]/10 lg:grid-cols-3">
+          {featurePanels.map((panel, index) => {
+            const MainIcon = panel.icon;
 
-              <ShoppingBag
-                size={19}
-                strokeWidth={1.4}
-                className="text-[#1b1713]/45"
-              />
-            </div>
+            return (
+              <Reveal key={panel.title} delay={index * 120}>
+                <div className="h-full">
+                  <div className="group relative flex h-full flex-col overflow-hidden bg-[#fbf8f2] p-6 transition-all duration-500 hover:bg-white sm:p-8 md:min-h-[610px] lg:p-9 xl:p-10">
+                    {/* SOFT BACKGROUND GLOW */}
+                    <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#1b1713]/5 blur-3xl transition duration-500 group-hover:bg-[#1b1713]/10" />
 
-            <h3 className="font-serif text-[1.7rem] font-light leading-tight text-[#1b1713] sm:text-[1.9rem]">
-              E-Commerce
-              <br />
-              Experiences
-            </h3>
+                    {/* ICON */}
+                    <div className="relative z-10">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1b1713] text-white shadow-[0_18px_45px_rgba(27,23,19,0.18)]">
+                        <MainIcon size={24} />
+                      </div>
 
-            <p className="mt-4 text-[14px] leading-6 text-[#1b1713]/55">
-              Thoughtful online stores that make discovering products,
-              shopping, and checkout feel effortless.
-            </p>
+                      <div className="mt-8 h-px w-16 bg-[#1b1713]/12 md:mt-10 md:w-20" />
+                    </div>
 
-            <Link
-              href="/services"
-              className="mt-7 inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.22em] text-[#1b1713]/55 transition hover:text-[#1b1713]"
-            >
-              Explore E-Commerce
-              <ArrowUpRight size={13} strokeWidth={1.5} />
-            </Link>
-          </div>
+                    {/* CONTENT */}
+                    <div className="relative z-10 mt-8">
+                      <p className="mb-4 text-[10px] uppercase tracking-[0.25em] text-[#1b1713]/40 sm:text-xs sm:tracking-[0.3em]">
+                        {panel.eyebrow}
+                      </p>
 
-          {/* DIGITAL GROWTH */}
-          <div className="group p-6 sm:p-8 md:p-9 lg:p-10">
-            <div className="mb-8 flex items-center justify-between">
-              <span className="text-[9px] uppercase tracking-[0.28em] text-[#1b1713]/35">
-                03
-              </span>
+                      <h3 className="max-w-xl font-serif text-[1.85rem] font-light leading-[1.08] tracking-[-0.03em] text-[#1b1713] sm:text-3xl xl:text-[2.35rem]">
+                        {panel.title}
+                      </h3>
 
-              <Megaphone
-                size={19}
-                strokeWidth={1.4}
-                className="text-[#1b1713]/45"
-              />
-            </div>
+                      <p className="mt-5 max-w-xl text-[15px] leading-7 text-[#1b1713]/60">
+                        {panel.description}
+                      </p>
+                    </div>
 
-            <h3 className="font-serif text-[1.7rem] font-light leading-tight text-[#1b1713] sm:text-[1.9rem]">
-              Digital
-              <br />
-              Growth
-            </h3>
+                    {/* FEATURES */}
+                    <div className="relative z-10 mt-7 grid gap-2.5">
+                      {panel.features.map((feature) => {
+                        const FeatureIcon = feature.icon;
 
-            <p className="mt-4 text-[14px] leading-6 text-[#1b1713]/55">
-              Google Ads, Meta advertising, analytics, and strategy designed
-              to bring the right audience to your business.
-            </p>
+                        return (
+                          <div
+                            key={feature.label}
+                            className="flex min-h-[68px] items-center justify-between rounded-2xl border border-[#1b1713]/10 bg-white/60 px-4 py-3 transition group-hover:bg-[#f8f4ec]"
+                          >
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#f3eee6] text-[#1b1713]/70">
+                                <FeatureIcon
+                                  size={16}
+                                  strokeWidth={1.8}
+                                />
+                              </div>
 
-            <Link
-              href="/services"
-              className="mt-7 inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.22em] text-[#1b1713]/55 transition hover:text-[#1b1713]"
-            >
-              Explore Growth
-              <ArrowUpRight size={13} strokeWidth={1.5} />
-            </Link>
-          </div>
+                              <span className="text-[10px] uppercase tracking-[0.13em] text-[#1b1713]/60 xl:text-[11px] xl:tracking-[0.16em]">
+                                {feature.label}
+                              </span>
+                            </div>
 
+                            <ArrowUpRight
+                              size={14}
+                              className="shrink-0 text-[#1b1713]/25"
+                            />
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* BUTTON */}
+                    <div className="relative z-10 mt-8 md:mt-auto md:pt-10">
+                      <Link
+                        href={panel.link}
+                        className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#1b1713] px-5 py-3.5 text-[9px] uppercase tracking-[0.18em] text-white transition hover:-translate-y-1 hover:bg-[#1b1713]/90 xl:px-6 xl:text-[10px] xl:tracking-[0.22em]"
+                      >
+                        {panel.linkText}
+                        <ArrowUpRight size={14} />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </Reveal>
