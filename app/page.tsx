@@ -308,53 +308,6 @@ export default function HomePage() {
   </div>
 </section>
 
-      {/* NYC SECTION */}
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24 md:pb-32">
-        <Reveal>
-          <div className="overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_90px_rgba(27,23,19,0.06)] md:rounded-[2.5rem] md:shadow-[0_30px_100px_rgba(27,23,19,0.06)]">
-            <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="flex flex-col justify-between p-6 sm:p-8 md:min-h-[520px] md:p-14">
-                <div>
-                  <p className="mb-4 text-[10px] uppercase tracking-[0.28em] text-[#1b1713]/40 sm:mb-6 sm:text-xs sm:tracking-[0.42em]">
-                    New York Studio
-                  </p>
-
-                  <h2 className="font-serif text-[2.2rem] font-light uppercase leading-[1.03] tracking-[0.045em] sm:text-4xl sm:tracking-[0.08em] md:text-6xl">
-                    Built in
-                    <br />
-                    New York.
-                    <br />
-                    Made for
-                    <br />
-                    anywhere.
-                  </h2>
-
-                  <p className="mt-6 max-w-xl text-base leading-7 text-[#1b1713]/55 sm:mt-10 sm:text-lg sm:leading-relaxed">
-                    Rooted in a city built on ambition, Jovavo creates refined
-                    websites and digital growth systems for businesses ready to
-                    look better, perform better, and reach more customers.
-                  </p>
-                </div>
-
-                <Link
-                  href="/about"
-                  className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-full border border-[#1b1713]/15 px-6 py-3.5 text-[10px] uppercase tracking-[0.2em] transition hover:bg-[#1b1713] hover:text-white sm:mt-12 sm:w-fit sm:px-7 sm:text-[11px] sm:tracking-[0.28em]"
-                >
-                  About Jovavo
-                  <ArrowUpRight size={15} />
-                </Link>
-              </div>
-
-              <img
-                src="/images/services/nyc-skyline.jpg"
-                alt="New York City skyline"
-                className="h-[280px] w-full object-cover sm:h-[360px] lg:h-full"
-              />
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
       {/* CTA */}
       <section className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24 md:pb-32">
         <Reveal>
