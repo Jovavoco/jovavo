@@ -308,43 +308,56 @@ export default function HomePage() {
   </div>
 </section>
 
-      {/* CTA */}
-      <section className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24 md:pb-32">
-        <Reveal>
-          <div className="overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#1b1713] p-6 text-white shadow-[0_30px_90px_rgba(27,23,19,0.16)] sm:p-8 md:rounded-[3rem] md:p-16 md:shadow-[0_40px_120px_rgba(27,23,19,0.18)]">
-            <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center md:gap-10">
-              <div>
-                <p className="mb-4 text-[10px] uppercase tracking-[0.28em] text-white/45 sm:mb-5 sm:text-xs sm:tracking-[0.4em]">
-                  Start a Project
-                </p>
+{/* CTA */}
+<section className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24 md:pb-28">
+  <Reveal>
+    <div className="overflow-hidden rounded-[2rem] border border-white/5 bg-[#1b1713] md:rounded-[2.5rem]">
+      <div className="px-6 py-12 sm:px-10 sm:py-14 md:px-14 md:py-16 lg:px-16">
+        <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-center md:gap-16">
 
-                <h2 className="max-w-4xl font-serif text-[2.15rem] font-light uppercase leading-[1.08] tracking-[0.045em] sm:text-4xl sm:tracking-[0.08em] md:text-6xl">
-                  Your website
-                  <br />
-                  should do more
-                  <br />
-                  than look good.
-                </h2>
+          {/* TEXT */}
+          <div>
+            <p className="mb-5 text-[9px] uppercase tracking-[0.34em] text-white/40 sm:text-[10px] sm:tracking-[0.4em]">
+              Start a Project
+            </p>
 
-                <p className="mt-5 max-w-2xl text-sm leading-6 text-white/60 sm:mt-6 sm:text-base sm:leading-relaxed">
-                  Whether you&apos;re launching a new business, redesigning your
-                  current site, or looking to bring in more leads through Google
-                  and Meta advertising, Jovavo helps you build a stronger
-                  digital foundation.
-                </p>
-              </div>
+            <h2 className="max-w-3xl font-serif text-[2.4rem] font-light leading-[1.04] tracking-[-0.02em] text-white sm:text-[2.9rem] md:text-[3.5rem] lg:text-[3.8rem]">
+              Ready to build something
+              <br className="hidden sm:block" />
+              {" "}
+              <span className="italic text-white/55">
+                that works?
+              </span>
+            </h2>
 
-              <Link
-                href="/contact"
-                className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-[10px] uppercase tracking-[0.22em] text-[#1b1713] transition hover:-translate-y-1 hover:bg-[#f5f1e8] sm:w-fit sm:px-8 sm:text-[11px] sm:tracking-[0.28em]"
-              >
-                Start Project
-                <ArrowUpRight size={16} />
-              </Link>
-            </div>
+            <p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/55 sm:text-base">
+              Whether you&apos;re starting from scratch or ready to improve
+              what you already have, Jovavo can help build a stronger digital
+              presence around your business.
+            </p>
           </div>
-        </Reveal>
-      </section>
+
+          {/* BUTTON */}
+          <div className="md:flex md:justify-end">
+            <Link
+              href="/contact"
+              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#f5f1e8] px-7 py-3.5 text-[9px] uppercase tracking-[0.22em] text-[#1b1713] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white sm:w-auto sm:px-8 sm:py-4 sm:text-[10px]"
+            >
+              Start a Project
+
+              <ArrowUpRight
+                size={15}
+                strokeWidth={1.5}
+                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </Link>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </Reveal>
+</section>
     </main>
   );
 }
