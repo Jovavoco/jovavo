@@ -136,55 +136,42 @@ export default function HomePage() {
 <section className="px-4 pb-20 pt-10 sm:px-6 sm:pb-24 sm:pt-14 md:pb-32 md:pt-16">
   <div className="mx-auto max-w-7xl">
     <Reveal>
-{/* CARD 1 — WHAT WE BUILD */}
-<div className="overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] md:rounded-[2.25rem]">
-  <div className="px-6 py-10 sm:px-9 sm:py-12 md:px-12 md:py-14 lg:px-14 lg:py-16">
-    <Reveal>
-      <div className="grid gap-9 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:gap-16">
+{/* INTRO HEADER */}
+<Reveal>
+  <div className="mx-auto max-w-5xl px-2 pb-12 pt-6 text-center sm:pb-14 sm:pt-8 md:pb-16">
+    <p className="mb-5 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.42em]">
+      What We Build
+    </p>
 
-        {/* LEFT */}
-        <div>
-          <p className="mb-5 text-[9px] uppercase tracking-[0.32em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.4em]">
-            What We Build
-          </p>
+    <h2 className="font-serif text-[2.5rem] font-light leading-[1.03] tracking-[-0.02em] text-[#1b1713] sm:text-[3rem] md:text-[3.6rem] lg:text-[4rem]">
+      Built around{" "}
+      <span className="italic text-[#1b1713]/60">
+        your brand.
+      </span>
+      <br className="hidden sm:block" />
+      {" "}Designed to work.
+    </h2>
 
-          <h2 className="font-serif text-[2.5rem] font-light leading-[1.02] tracking-[-0.02em] text-[#1b1713] sm:text-[3rem] md:text-[3.6rem] lg:text-[4rem]">
-            Built around
-            <br />
-            <span className="italic text-[#1b1713]/60">
-              your brand.
-            </span>
-            <br />
-            Designed to work.
-          </h2>
+    <div className="mx-auto mt-6 h-px w-12 bg-[#1b1713]/20" />
+
+    <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-base sm:leading-7">
+      Jovavo designs and develops custom websites and e-commerce experiences
+      around your business — from how your brand looks to how customers browse,
+      interact, and take action.
+    </p>
+
+    <div className="mt-7 flex flex-wrap justify-center gap-2">
+      {["Web Design", "E-Commerce", "Development"].map((item) => (
+        <div
+          key={item}
+          className="rounded-full border border-[#1b1713]/10 px-4 py-2.5 text-[9px] uppercase tracking-[0.18em] text-[#1b1713]/50 sm:px-5 sm:text-[10px]"
+        >
+          {item}
         </div>
-
-        {/* RIGHT */}
-        <div>
-          <div className="mb-6 h-px w-14 bg-[#1b1713]/20" />
-
-          <p className="max-w-xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-base sm:leading-7">
-            Jovavo designs and develops custom websites and e-commerce
-            experiences around your business — from how your brand looks to
-            how customers browse, interact, and take action.
-          </p>
-
-          <div className="mt-7 flex flex-wrap gap-2">
-            {["Web Design", "E-Commerce", "Development"].map((item) => (
-              <div
-                key={item}
-                className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8]/50 px-4 py-2.5 text-[9px] uppercase tracking-[0.18em] text-[#1b1713]/50 sm:px-5 sm:text-[10px]"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-
-      </div>
-    </Reveal>
+      ))}
+    </div>
   </div>
-</div>
+</Reveal>
 
       {/* CARD 2 */}
       <div className="mt-8 overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_90px_rgba(27,23,19,0.06)] sm:mt-10 md:mt-12 md:rounded-[3rem] md:shadow-[0_40px_120px_rgba(27,23,19,0.07)]">
