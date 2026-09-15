@@ -53,62 +53,69 @@ const featurePanels = [
 export default function HomePage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f5f1e8] text-[#1b1713]">
-      {/* HERO */}
-      <section
-        className="relative min-h-[100svh] overflow-hidden bg-cover bg-center px-4 sm:px-6"
-        style={{
-          backgroundImage: "url('/images/jovavo-hero-bg.png')",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, black 0%, black 94%, transparent 100%)",
-          maskImage:
-            "linear-gradient(to bottom, black 0%, black 94%, transparent 100%)",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#1b1713]/50" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-[#f5f1e8]/10" />
+{/* HERO */}
+<section
+  className="relative min-h-[100svh] overflow-hidden bg-cover bg-center px-4 sm:px-6"
+  style={{
+    backgroundImage: "url('/images/jovavo-hero-bg.png')",
+    WebkitMaskImage:
+      "linear-gradient(to bottom, black 0%, black 94%, transparent 100%)",
+    maskImage:
+      "linear-gradient(to bottom, black 0%, black 94%, transparent 100%)",
+  }}
+>
+  {/* OVERLAYS */}
+  <div className="absolute inset-0 bg-[#1b1713]/50" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-[#f5f1e8]/10" />
 
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center pb-14 pt-44 text-center text-white sm:pt-40 md:min-h-screen md:pb-0 md:pt-32">
-          <Reveal>
-            <p className="mb-5 px-2 text-[9px] uppercase leading-relaxed tracking-[0.2em] text-white/75 sm:text-[10px] sm:tracking-[0.28em] md:mb-8 md:text-xs md:tracking-[0.45em]">
-              Websites &amp; Digital Advertising
-            </p>
+  {/* CONTENT */}
+  <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center pb-14 pt-44 text-center text-white sm:pt-40 md:min-h-screen md:pb-0 md:pt-32">
+    <Reveal>
+      {/* EYEBROW */}
+      <p className="mb-5 px-2 text-[9px] uppercase leading-relaxed tracking-[0.2em] text-white/75 sm:text-[10px] sm:tracking-[0.28em] md:mb-8 md:text-xs md:tracking-[0.45em]">
+        Web Design · E-Commerce · Digital Growth
+      </p>
 
-            <h1 className="mx-auto max-w-6xl font-serif text-[2.45rem] font-light uppercase leading-[1.02] tracking-[0.045em] sm:text-5xl sm:tracking-[0.07em] md:text-7xl md:tracking-[0.1em]">
-              Premium websites
-              <br />
-              built to grow
-              <br />
-              your business.
-            </h1>
+      {/* HEADING */}
+      <h1 className="mx-auto max-w-6xl font-serif text-[2.45rem] font-light uppercase leading-[1.02] tracking-[0.045em] sm:text-5xl sm:tracking-[0.07em] md:text-7xl md:tracking-[0.1em]">
+        Digital experiences
+        <br />
+        built around
+        <br />
+        your business.
+      </h1>
 
-            <div className="mx-auto mt-6 h-px w-16 bg-white/50 sm:mt-8 sm:w-24" />
+      {/* DIVIDER */}
+      <div className="mx-auto mt-6 h-px w-16 bg-white/50 sm:mt-8 sm:w-24" />
 
-            <p className="mx-auto mt-6 max-w-3xl px-2 text-sm leading-6 tracking-[0.01em] text-white/80 sm:text-base sm:leading-7 md:mt-8 md:px-0 md:text-lg md:leading-relaxed md:tracking-[0.08em]">
-              Jovavo designs and develops custom websites, then supports growth
-              through Google Ads, Meta advertising, SEO foundations, and
-              conversion-focused digital strategy.
-            </p>
+      {/* DESCRIPTION */}
+      <p className="mx-auto mt-6 max-w-3xl px-2 text-sm leading-6 tracking-[0.01em] text-white/80 sm:text-base sm:leading-7 md:mt-8 md:px-0 md:text-lg md:leading-relaxed md:tracking-[0.04em]">
+        Jovavo designs and develops custom websites and e-commerce
+        experiences, then helps businesses grow through digital advertising,
+        search visibility, analytics, and strategy.
+      </p>
 
-            <div className="mx-auto mt-8 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:mt-10 sm:max-w-none sm:flex-row sm:items-center">
-              <Link
-                href="/contact"
-                className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-white px-6 py-4 text-[10px] uppercase tracking-[0.22em] text-[#1b1713] transition hover:-translate-y-1 hover:bg-[#f5f1e8] sm:w-auto sm:px-8 sm:text-[11px] sm:tracking-[0.3em]"
-              >
-                Start a Project
-                <ArrowUpRight size={15} />
-              </Link>
+      {/* BUTTONS */}
+      <div className="mx-auto mt-8 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:mt-10 sm:max-w-none sm:flex-row sm:items-center">
+        <Link
+          href="/contact"
+          className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-white px-6 py-4 text-[10px] uppercase tracking-[0.22em] text-[#1b1713] transition duration-300 hover:-translate-y-1 hover:bg-[#f5f1e8] sm:w-auto sm:px-8 sm:text-[11px] sm:tracking-[0.3em]"
+        >
+          Start a Project
+          <ArrowUpRight size={15} />
+        </Link>
 
-              <Link
-                href="/services"
-                className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/50 px-6 py-4 text-[10px] uppercase tracking-[0.22em] text-white transition hover:bg-white hover:text-[#1b1713] sm:w-auto sm:px-8 sm:text-[11px] sm:tracking-[0.3em]"
-              >
-                View Services
-                <ArrowUpRight size={15} />
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+        <Link
+          href="/work"
+          className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/50 px-6 py-4 text-[10px] uppercase tracking-[0.22em] text-white transition duration-300 hover:bg-white hover:text-[#1b1713] sm:w-auto sm:px-8 sm:text-[11px] sm:tracking-[0.3em]"
+        >
+          View Our Work
+          <ArrowUpRight size={15} />
+        </Link>
+      </div>
+    </Reveal>
+  </div>
+</section>
 
       {/* INTRO / WHAT WE DO */}
       <section className="px-4 pb-20 pt-10 sm:px-6 sm:pb-24 sm:pt-14 md:pb-32 md:pt-16">
