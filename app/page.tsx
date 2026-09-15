@@ -136,49 +136,60 @@ export default function HomePage() {
 <section className="px-4 pb-20 pt-10 sm:px-6 sm:pb-24 sm:pt-14 md:pb-32 md:pt-16">
   <div className="mx-auto max-w-7xl">
     <Reveal>
-      {/* CARD 1 */}
-      <div className="overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_90px_rgba(27,23,19,0.06)] md:rounded-[3rem] md:shadow-[0_40px_120px_rgba(27,23,19,0.07)]">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="flex flex-col justify-center p-6 sm:p-8 md:p-14">
-            <p className="mb-4 text-[10px] uppercase tracking-[0.3em] text-[#1b1713]/35 sm:mb-6 sm:text-xs sm:tracking-[0.46em]">
-              What We Build
-            </p>
+{/* CARD 1 — WHAT WE BUILD */}
+<div className="relative overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_90px_rgba(27,23,19,0.06)] md:rounded-[3rem] md:shadow-[0_40px_120px_rgba(27,23,19,0.07)]">
+  {/* SUBTLE BACKGROUND DETAILS */}
+  <div className="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full bg-[#d8cdbd]/20 blur-[100px]" />
+  <div className="pointer-events-none absolute -bottom-40 -right-32 h-[460px] w-[460px] rounded-full bg-[#e8dfd2]/40 blur-[110px]" />
 
-            <h2 className="font-serif text-[2.25rem] font-light uppercase leading-[1.02] tracking-[0.045em] text-[#1b1713] sm:text-5xl sm:tracking-[0.07em] md:text-7xl">
-              Built around
-              <br />
-              your brand.
-              <br />
-              Designed to work.
-            </h2>
+  <div className="relative z-10 px-6 py-16 text-center sm:px-10 sm:py-20 md:px-16 md:py-28 lg:px-24 lg:py-32">
+    <Reveal>
+      {/* EYEBROW */}
+      <div className="flex items-center justify-center gap-4">
+        <div className="h-px w-8 bg-[#1b1713]/20 sm:w-12" />
 
-            <p className="mt-6 max-w-xl text-base leading-7 text-[#1b1713]/60 sm:mt-8 sm:text-lg sm:leading-relaxed">
-              Jovavo designs and develops custom websites and e-commerce
-              experiences around your business — from how your brand looks to
-              how customers browse, interact, and take action.
-            </p>
+        <p className="text-[9px] uppercase tracking-[0.3em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.42em]">
+          What We Build
+        </p>
 
-            <div className="mt-8 grid grid-cols-1 gap-2.5 sm:mt-10 sm:grid-cols-3 sm:gap-3">
-              {["Web Design", "E-Commerce", "Development"].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8] px-4 py-3 text-center text-[10px] uppercase tracking-[0.18em] text-[#1b1713]/55 sm:px-5 sm:py-4 sm:text-xs sm:tracking-[0.22em]"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative h-[260px] overflow-hidden sm:h-[340px] lg:h-auto lg:min-h-[620px]">
-            <img
-              src="/images/jovavo-laptop.png"
-              alt="Custom website design and development by Jovavo"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
+        <div className="h-px w-8 bg-[#1b1713]/20 sm:w-12" />
       </div>
+
+      {/* MAIN STATEMENT */}
+      <h2 className="mx-auto mt-8 max-w-5xl font-serif text-[2.65rem] font-light uppercase leading-[0.98] tracking-[0.035em] text-[#1b1713] sm:mt-10 sm:text-5xl sm:tracking-[0.055em] md:text-7xl lg:text-[5.25rem]">
+        Built around
+        <br />
+        <span className="italic normal-case tracking-[-0.02em] text-[#1b1713]/65">
+          your brand.
+        </span>
+        <br />
+        Designed to work.
+      </h2>
+
+      {/* DIVIDER */}
+      <div className="mx-auto mt-9 h-px w-20 bg-[#1b1713]/20 sm:mt-12 sm:w-28" />
+
+      {/* DESCRIPTION */}
+      <p className="mx-auto mt-8 max-w-2xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-lg sm:leading-8">
+        Jovavo designs and develops custom websites and e-commerce
+        experiences around your business — from how your brand looks to
+        how customers browse, interact, and take action.
+      </p>
+
+      {/* SERVICES */}
+      <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-2.5 sm:mt-12 sm:grid-cols-3 sm:gap-3">
+        {["Web Design", "E-Commerce", "Development"].map((item) => (
+          <div
+            key={item}
+            className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8]/70 px-5 py-3.5 text-center text-[9px] uppercase tracking-[0.2em] text-[#1b1713]/55 transition duration-300 hover:border-[#1b1713]/20 hover:bg-[#f5f1e8] sm:py-4 sm:text-[10px] sm:tracking-[0.24em]"
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+    </Reveal>
+  </div>
+</div>
 
       {/* CARD 2 */}
       <div className="mt-8 overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] shadow-[0_30px_90px_rgba(27,23,19,0.06)] sm:mt-10 md:mt-12 md:rounded-[3rem] md:shadow-[0_40px_120px_rgba(27,23,19,0.07)]">
