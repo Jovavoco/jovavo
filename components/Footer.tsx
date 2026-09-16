@@ -67,7 +67,7 @@ export default function Footer() {
             TOP
         ========================================================= */}
 
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
           {/* LEFT / BRAND */}
 
           <div>
@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* RIGHT */}
 
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-[0.7fr_1fr_1.35fr] sm:gap-x-8 lg:gap-x-10">
             {/* EXPLORE */}
 
             <div>
@@ -148,7 +148,7 @@ export default function Footer() {
 
             {/* CONNECT */}
 
-            <div className="col-span-2 sm:col-span-1">
+            <div className="col-span-2 min-w-[190px] sm:col-span-1">
               <p className="mb-5 text-[14px] font-semibold text-[#1b1713]/45">
                 Connect
               </p>
@@ -158,17 +158,15 @@ export default function Footer() {
 
                 <a
                   href="mailto:contact@jovavo.com"
-                  className="group flex w-fit max-w-full items-center gap-2.5 text-[14px] text-[#1b1713]/60 transition-colors duration-300 hover:text-[#1b1713]"
+                  className="group flex w-fit items-center gap-2.5 whitespace-nowrap text-[14px] text-[#1b1713]/60 transition-colors duration-300 hover:text-[#1b1713]"
                 >
                   <Mail
                     size={15}
                     strokeWidth={1.6}
-                    className="shrink-0"
+                    className="shrink-0 text-[#1b1713]/45 transition-colors group-hover:text-[#1b1713]"
                   />
 
-                  <span className="break-all">
-                    contact@jovavo.com
-                  </span>
+                  <span>contact@jovavo.com</span>
                 </a>
 
                 {/* SOCIALS */}
@@ -180,7 +178,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${social.name} ${social.handle}`}
-                    className="group flex w-fit items-center gap-2.5 text-[14px] text-[#1b1713]/60 transition-colors duration-300 hover:text-[#1b1713]"
+                    className="group flex w-fit items-center gap-2.5 whitespace-nowrap text-[14px] text-[#1b1713]/60 transition-colors duration-300 hover:text-[#1b1713]"
                   >
                     <AtSign
                       size={15}
@@ -190,7 +188,7 @@ export default function Footer() {
 
                     <span>{social.name}</span>
 
-                    <span className="hidden text-[12px] text-[#1b1713]/30 transition-colors group-hover:text-[#1b1713]/50 xl:inline">
+                    <span className="text-[11px] text-[#1b1713]/30 transition-colors group-hover:text-[#1b1713]/50">
                       {social.handle}
                     </span>
                   </a>
@@ -209,20 +207,20 @@ export default function Footer() {
             <Link
               key={name}
               href={href}
-              className="group flex items-center gap-3 rounded-xl bg-[#fffdf9] px-4 py-3.5 transition-all duration-300 hover:-translate-y-0.5"
+              className="group flex min-w-0 items-center gap-3 rounded-xl bg-[#fffdf9] px-4 py-3.5 transition-all duration-300 hover:-translate-y-0.5"
             >
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f1ece3] text-[#1b1713]/60 transition-all duration-300 group-hover:bg-[#1b1713] group-hover:text-white">
                 <Icon size={15} strokeWidth={1.6} />
               </div>
 
-              <span className="flex-1 text-[13px] font-medium text-[#1b1713]/60 transition-colors group-hover:text-[#1b1713]">
+              <span className="min-w-0 flex-1 text-[13px] font-medium text-[#1b1713]/60 transition-colors group-hover:text-[#1b1713]">
                 {name}
               </span>
 
               <ArrowUpRight
                 size={13}
                 strokeWidth={1.5}
-                className="text-[#1b1713]/25 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                className="shrink-0 text-[#1b1713]/25 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
               />
             </Link>
           ))}
