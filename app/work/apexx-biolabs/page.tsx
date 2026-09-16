@@ -9,6 +9,7 @@ import {
   Mail,
   PackageCheck,
   ShoppingBag,
+  Sparkles,
   Truck,
   UserRound,
   Users,
