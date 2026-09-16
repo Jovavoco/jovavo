@@ -311,9 +311,9 @@ export default function HomePage() {
 {/* CTA */}
 <section className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24 md:pb-28">
   <Reveal>
-    <div className="overflow-hidden rounded-[2rem] border border-white/5 bg-[#1b1713] md:rounded-[2.5rem]">
-      <div className="px-6 py-12 sm:px-10 sm:py-14 md:px-14 md:py-16 lg:px-16">
-        <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-center md:gap-16">
+    <div className="overflow-hidden rounded-[2rem] border border-white/5 bg-[#1b1713] text-white md:rounded-[2.5rem]">
+      <div className="px-6 py-11 sm:px-10 sm:py-13 md:px-14 md:py-16">
+        <div className="grid gap-9 md:grid-cols-[1fr_auto] md:items-end md:gap-14">
 
           {/* TEXT */}
           <div>
@@ -322,36 +322,33 @@ export default function HomePage() {
             </p>
 
             <h2 className="max-w-3xl font-serif text-[2.4rem] font-light leading-[1.04] tracking-[-0.02em] text-white sm:text-[2.9rem] md:text-[3.5rem] lg:text-[3.8rem]">
-              Ready to build something
-              <br className="hidden sm:block" />
-              {" "}
+              Your website should
+              <br />
+              do more than{" "}
               <span className="italic text-white/55">
-                that works?
+                look good.
               </span>
             </h2>
 
-            <p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/55 sm:text-base">
-              Whether you&apos;re starting from scratch or ready to improve
-              what you already have, Jovavo can help build a stronger digital
-              presence around your business.
+            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/55 sm:text-base">
+              From custom websites and e-commerce to digital advertising,
+              Jovavo builds thoughtful digital experiences designed to support
+              your business and its growth.
             </p>
           </div>
 
           {/* BUTTON */}
-          <div className="md:flex md:justify-end">
-            <Link
-              href="/contact"
-              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#f5f1e8] px-7 py-3.5 text-[9px] uppercase tracking-[0.22em] text-[#1b1713] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white sm:w-auto sm:px-8 sm:py-4 sm:text-[10px]"
-            >
-              Start a Project
-
-              <ArrowUpRight
-                size={15}
-                strokeWidth={1.5}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#f5f1e8] px-7 py-3.5 text-[9px] uppercase tracking-[0.22em] text-[#1b1713] transition-all duration-300 hover:bg-white sm:w-fit sm:px-8 sm:py-4 sm:text-[10px]"
+          >
+            Start a Project
+            <ArrowUpRight
+              size={15}
+              strokeWidth={1.5}
+              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </Link>
 
         </div>
       </div>
