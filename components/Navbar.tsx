@@ -3,6 +3,7 @@ import Link from "next/link";
 const navigation = [
   { name: "Work", href: "/work" },
   { name: "Services", href: "/services" },
+  { name: "Process", href: "/process" },
   { name: "FAQ", href: "/faq" },
   { name: "About", href: "/about" },
 ];
@@ -10,9 +11,13 @@ const navigation = [
 export default function Navbar() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4 md:px-6 md:pt-6">
-      {/* MOBILE NAVBAR */}
+      {/* =========================================================
+          MOBILE NAVBAR
+      ========================================================= */}
+
       <div className="mx-auto w-full max-w-md md:hidden">
         {/* MOBILE TOP BAR */}
+
         <nav
           aria-label="Mobile navigation"
           className="pointer-events-auto flex items-center justify-between gap-3 rounded-full border border-white/30 bg-[#f8f4ed]/90 px-4 py-3 shadow-[0_12px_35px_rgba(27,23,19,0.12)] backdrop-blur-2xl"
@@ -34,13 +39,14 @@ export default function Navbar() {
         </nav>
 
         {/* MOBILE PAGE LINKS */}
+
         <div className="pointer-events-auto mx-auto mt-2 w-[calc(100%-1rem)] rounded-full border border-white/25 bg-[#f8f4ed]/88 p-1.5 shadow-[0_10px_30px_rgba(27,23,19,0.1)] backdrop-blur-2xl">
-          <div className="grid grid-cols-4 gap-1">
+          <div className="grid grid-cols-5 gap-0.5">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="flex min-h-10 items-center justify-center rounded-full px-1 text-center text-[9px] uppercase tracking-[0.08em] text-[#1b1713]/60 transition-all duration-300 hover:bg-white/70 hover:text-[#1b1713] active:bg-white min-[390px]:tracking-[0.11em]"
+                className="flex min-h-10 min-w-0 items-center justify-center rounded-full px-0.5 text-center text-[8px] uppercase tracking-[0.04em] text-[#1b1713]/60 transition-all duration-300 hover:bg-white/70 hover:text-[#1b1713] active:bg-white min-[390px]:text-[8.5px] min-[390px]:tracking-[0.06em]"
               >
                 {item.name}
               </Link>
@@ -49,12 +55,16 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* DESKTOP NAVBAR */}
+      {/* =========================================================
+          DESKTOP NAVBAR
+      ========================================================= */}
+
       <nav
         aria-label="Main navigation"
         className="pointer-events-auto mx-auto hidden max-w-7xl items-center justify-between rounded-full border border-[#d8d0c5]/70 bg-[#f8f4ed]/70 px-8 py-4 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl md:flex"
       >
         {/* DESKTOP LOGO */}
+
         <Link
           href="/"
           aria-label="Jovavo home"
@@ -64,12 +74,13 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP LINKS */}
-        <div className="flex items-center gap-7 lg:gap-10">
+
+        <div className="flex items-center gap-5 lg:gap-8 xl:gap-10">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="group relative text-[10px] uppercase tracking-[0.22em] text-[#1b1713]/65 transition-colors duration-300 hover:text-[#1b1713] lg:text-[11px] lg:tracking-[0.28em]"
+              className="group relative text-[10px] uppercase tracking-[0.18em] text-[#1b1713]/65 transition-colors duration-300 hover:text-[#1b1713] lg:text-[11px] lg:tracking-[0.22em] xl:tracking-[0.28em]"
             >
               {item.name}
 
@@ -79,6 +90,7 @@ export default function Navbar() {
         </div>
 
         {/* DESKTOP CTA */}
+
         <Link
           href="/contact"
           className="shrink-0 rounded-full border border-[#1b1713]/15 bg-[#1b1713] px-5 py-3 text-[10px] uppercase tracking-[0.22em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2a241f] hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)] lg:px-6 lg:text-[11px] lg:tracking-[0.28em]"
