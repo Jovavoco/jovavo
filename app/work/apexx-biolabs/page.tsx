@@ -13,6 +13,7 @@ import {
   Mail,
   PackageCheck,
   ShoppingBag,
+  Smartphone,
   Sparkles,
   Truck,
   UserRound,
@@ -86,18 +87,22 @@ const affiliateFeatures = [
   {
     icon: BadgePercent,
     title: "Affiliate Codes",
+    description: "Unique promotional codes for each affiliate.",
   },
   {
-    icon: ShoppingBag,
-    title: "Order Tracking",
+    icon: Users,
+    title: "Affiliate Dashboard",
+    description: "A dedicated dashboard for affiliate activity.",
   },
   {
     icon: CircleDollarSign,
-    title: "Commissions",
+    title: "Commission Tracking",
+    description: "Track commissions generated through affiliate codes.",
   },
   {
     icon: Mail,
     title: "Automated Emails",
+    description: "Automatic communication connected to the affiliate program.",
   },
 ];
 
@@ -112,7 +117,7 @@ const automationFeatures = [
 
 export default function ApexxBiolabsCaseStudy() {
   return (
-    <main className="min-h-screen bg-[#f8f5ef] text-[#1b1713]">
+    <main className="min-h-screen overflow-x-hidden bg-[#f8f5ef] text-[#1b1713]">
       {/* =========================================================
           HERO
       ========================================================= */}
@@ -133,7 +138,7 @@ export default function ApexxBiolabsCaseStudy() {
           <div className="mt-10 grid gap-8 md:mt-12 lg:grid-cols-[1fr_0.85fr] lg:items-end lg:gap-16">
             <div>
               <div className="mb-5 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#172437] text-white shadow-[0_10px_30px_rgba(23,36,55,0.12)]">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#172437] text-white shadow-[0_10px_30px_rgba(23,36,55,0.12)]">
                   <ShoppingBag size={20} strokeWidth={1.6} />
                 </div>
 
@@ -142,23 +147,24 @@ export default function ApexxBiolabsCaseStudy() {
                     Apexx Biolabs
                   </p>
 
-                  <p className="mt-0.5 text-[13px] text-[#1b1713]/45">
+                  <p className="mt-0.5 text-[13px] leading-5 text-[#1b1713]/45">
                     E-Commerce · Web Design · Development
                   </p>
                 </div>
               </div>
 
-              <h1 className="font-serif text-[3.4rem] font-light leading-[0.95] tracking-[-0.04em] sm:text-[4.2rem] md:text-[5rem]">
+              <h1 className="font-serif text-[3rem] font-light leading-[0.97] tracking-[-0.04em] sm:text-[4rem] md:text-[4.7rem] lg:text-[5rem]">
                 A custom platform
-                <br />
+                <br className="hidden sm:block" />
                 <span className="italic text-[#345b88]/65">
+                  {" "}
                   built to grow.
                 </span>
               </h1>
             </div>
 
             <div>
-              <p className="max-w-lg text-[16px] leading-7 text-[#1b1713]/60">
+              <p className="max-w-lg text-[15px] leading-7 text-[#1b1713]/60 sm:text-[16px]">
                 We designed and developed a complete e-commerce experience for
                 Apexx Biolabs — from the storefront customers see to the tools
                 used to run the business behind it.
@@ -168,7 +174,7 @@ export default function ApexxBiolabsCaseStudy() {
                 href="https://apexxbiolabs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group mt-6 inline-flex items-center justify-center gap-2.5 rounded-full bg-[#172437] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#28466d]"
+                className="group mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#172437] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#28466d] sm:w-auto"
               >
                 Visit Live Website
 
@@ -186,12 +192,12 @@ export default function ApexxBiolabsCaseStudy() {
       {/* =========================================================
           WHAT THEY NEEDED / WHAT WE CREATED
       ========================================================= */}
-      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
-        <div className="grid overflow-hidden rounded-[1.75rem] border border-[#1b1713]/10 bg-[#fffdf9] shadow-[0_18px_55px_rgba(27,23,19,0.035)] md:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-6 sm:pb-20 md:pb-24">
+        <div className="grid overflow-hidden rounded-[1.6rem] border border-[#1b1713]/10 bg-[#fffdf9] shadow-[0_18px_55px_rgba(27,23,19,0.035)] md:grid-cols-2 md:rounded-[1.75rem]">
           {/* WHAT THEY NEEDED */}
           <Reveal>
-            <div className="h-full p-7 sm:p-9 md:p-10">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d]">
+            <div className="h-full p-6 sm:p-8 md:p-10">
+              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d] sm:h-12 sm:w-12">
                 <Sparkles size={21} strokeWidth={1.6} />
               </div>
 
@@ -199,7 +205,7 @@ export default function ApexxBiolabsCaseStudy() {
                 What They Needed
               </p>
 
-              <h2 className="mt-3 font-serif text-[2.1rem] font-light leading-[1.05] tracking-[-0.025em] sm:text-[2.5rem]">
+              <h2 className="mt-3 font-serif text-[2rem] font-light leading-[1.05] tracking-[-0.025em] sm:text-[2.4rem]">
                 More than a basic
                 <br />
                 <span className="italic text-[#1b1713]/55">
@@ -209,17 +215,17 @@ export default function ApexxBiolabsCaseStudy() {
 
               <p className="mt-5 text-[15px] leading-7 text-[#1b1713]/55">
                 Apexx needed a website that could support a growing product
-                catalog while also handling customer accounts, rewards, orders,
-                affiliates, inventory, promotions, and everyday business
-                operations.
+                catalog while also handling customer accounts, rewards, order
+                tracking, affiliates, inventory, promotions, and everyday
+                business operations.
               </p>
             </div>
           </Reveal>
 
           {/* WHAT WE CREATED */}
           <Reveal delay={80}>
-            <div className="h-full border-t border-[#1b1713]/10 bg-[#e8f0fa] p-7 sm:p-9 md:border-l md:border-t-0 md:p-10">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#28466d] text-white">
+            <div className="h-full border-t border-[#1b1713]/10 bg-[#e8f0fa] p-6 sm:p-8 md:border-l md:border-t-0 md:p-10">
+              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#28466d] text-white sm:h-12 sm:w-12">
                 <LayoutDashboard size={21} strokeWidth={1.6} />
               </div>
 
@@ -227,7 +233,7 @@ export default function ApexxBiolabsCaseStudy() {
                 What We Created
               </p>
 
-              <h2 className="mt-3 font-serif text-[2.1rem] font-light leading-[1.05] tracking-[-0.025em] text-[#172437] sm:text-[2.5rem]">
+              <h2 className="mt-3 font-serif text-[2rem] font-light leading-[1.05] tracking-[-0.025em] text-[#172437] sm:text-[2.4rem]">
                 One connected
                 <br />
                 <span className="italic text-[#345b88]/65">
@@ -236,9 +242,10 @@ export default function ApexxBiolabsCaseStudy() {
               </h2>
 
               <p className="mt-5 text-[15px] leading-7 text-[#28466d]/65">
-                We built a custom e-commerce platform that brings the
-                storefront, customer experience, affiliate program, automation,
-                and business management together in one place.
+                We built a custom, mobile-friendly e-commerce platform that
+                brings the storefront, customer accounts, rewards, order
+                tracking, affiliate program, automation, and business
+                management together in one place.
               </p>
             </div>
           </Reveal>
@@ -248,14 +255,14 @@ export default function ApexxBiolabsCaseStudy() {
       {/* =========================================================
           WEBSITE
       ========================================================= */}
-      <section className="mx-auto max-w-5xl px-5 pb-20 sm:px-6 md:pb-24">
+      <section className="mx-auto max-w-5xl px-5 pb-16 sm:px-6 sm:pb-20 md:pb-24">
         <Reveal>
           <div className="mb-6 text-center">
             <p className="text-sm font-semibold text-[#28466d]">
               The Website
             </p>
 
-            <h2 className="mt-2 font-serif text-[2.3rem] font-light tracking-[-0.03em] sm:text-[2.8rem]">
+            <h2 className="mt-2 font-serif text-[2.15rem] font-light leading-tight tracking-[-0.03em] sm:text-[2.7rem]">
               Designed for{" "}
               <span className="italic text-[#345b88]/65">
                 Apexx.
@@ -268,12 +275,46 @@ export default function ApexxBiolabsCaseStudy() {
             </p>
           </div>
 
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-[1.5rem] border border-[#1b1713]/10 bg-[#081526] shadow-[0_20px_60px_rgba(27,23,19,0.08)] sm:rounded-[1.75rem]">
+          {/* SMALLER WEBSITE IMAGE */}
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-[1.35rem] border border-[#1b1713]/10 bg-[#081526] shadow-[0_20px_60px_rgba(27,23,19,0.08)] sm:rounded-[1.6rem]">
             <img
               src="/images/work/apexx-homepagebiolabs.png"
               alt="Apexx Biolabs homepage"
               className="block h-auto w-full object-top"
             />
+          </div>
+
+          {/* WEBSITE HIGHLIGHTS */}
+          <div className="mx-auto mt-4 grid max-w-3xl gap-3 sm:grid-cols-3">
+            <div className="flex items-center gap-3 rounded-xl border border-[#1b1713]/10 bg-[#fffdf9] px-4 py-3.5">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#e8f0fa] text-[#28466d]">
+                <Smartphone size={18} strokeWidth={1.6} />
+              </div>
+
+              <span className="text-sm font-medium text-[#1b1713]/65">
+                Mobile Friendly
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3 rounded-xl border border-[#1b1713]/10 bg-[#fffdf9] px-4 py-3.5">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#e8f0fa] text-[#28466d]">
+                <ShoppingBag size={18} strokeWidth={1.6} />
+              </div>
+
+              <span className="text-sm font-medium text-[#1b1713]/65">
+                Custom E-Commerce
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3 rounded-xl border border-[#1b1713]/10 bg-[#fffdf9] px-4 py-3.5">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#e8f0fa] text-[#28466d]">
+                <Zap size={18} strokeWidth={1.6} />
+              </div>
+
+              <span className="text-sm font-medium text-[#1b1713]/65">
+                Fast & Responsive
+              </span>
+            </div>
           </div>
         </Reveal>
       </section>
@@ -281,10 +322,10 @@ export default function ApexxBiolabsCaseStudy() {
       {/* =========================================================
           FOR CUSTOMERS
       ========================================================= */}
-      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
+      <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-6 sm:pb-20 md:pb-24">
         <Reveal>
-          <div className="mb-9 max-w-2xl">
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#e8f0fa] text-[#28466d]">
+          <div className="mb-8 max-w-2xl sm:mb-9">
+            <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8f0fa] text-[#28466d] sm:h-12 sm:w-12">
               <UserRound size={21} strokeWidth={1.6} />
             </div>
 
@@ -292,10 +333,11 @@ export default function ApexxBiolabsCaseStudy() {
               For Customers
             </p>
 
-            <h2 className="mt-2 font-serif text-[2.5rem] font-light leading-[1.03] tracking-[-0.03em] sm:text-[3.1rem]">
+            <h2 className="mt-2 font-serif text-[2.2rem] font-light leading-[1.04] tracking-[-0.03em] sm:text-[3rem]">
               Everything they need
-              <br />
+              <br className="hidden sm:block" />
               <span className="italic text-[#345b88]/60">
+                {" "}
                 in one account.
               </span>
             </h2>
@@ -311,18 +353,20 @@ export default function ApexxBiolabsCaseStudy() {
           {customerFeatures.map(
             ({ icon: Icon, title, description }, index) => (
               <Reveal key={title} delay={(index % 5) * 50}>
-                <div className="h-full rounded-[1.4rem] border border-[#1b1713]/10 bg-[#fffdf9] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#28466d]/20 hover:shadow-[0_15px_40px_rgba(27,23,19,0.05)]">
-                  <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d]">
+                <div className="flex h-full items-start gap-4 rounded-[1.3rem] border border-[#1b1713]/10 bg-[#fffdf9] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#28466d]/20 hover:shadow-[0_15px_40px_rgba(27,23,19,0.05)] sm:block">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d] sm:mb-5">
                     <Icon size={19} strokeWidth={1.6} />
                   </div>
 
-                  <h3 className="font-serif text-[1.25rem] font-light leading-tight">
-                    {title}
-                  </h3>
+                  <div>
+                    <h3 className="font-serif text-[1.2rem] font-light leading-tight sm:text-[1.25rem]">
+                      {title}
+                    </h3>
 
-                  <p className="mt-2 text-[13px] leading-5 text-[#1b1713]/45">
-                    {description}
-                  </p>
+                    <p className="mt-1.5 text-[13px] leading-5 text-[#1b1713]/45 sm:mt-2">
+                      {description}
+                    </p>
+                  </div>
                 </div>
               </Reveal>
             )
@@ -333,12 +377,12 @@ export default function ApexxBiolabsCaseStudy() {
       {/* =========================================================
           FOR APEXX
       ========================================================= */}
-      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
+      <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-6 sm:pb-20 md:pb-24">
         <Reveal>
-          <div className="rounded-[2rem] bg-[#172437] p-7 text-white shadow-[0_20px_60px_rgba(23,36,55,0.1)] sm:p-9 md:p-11">
-            <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
+          <div className="rounded-[1.6rem] bg-[#172437] p-6 text-white shadow-[0_20px_60px_rgba(23,36,55,0.1)] sm:rounded-[2rem] sm:p-9 md:p-11">
+            <div className="grid gap-9 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
               <div>
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-white">
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white sm:h-12 sm:w-12">
                   <LayoutDashboard size={21} strokeWidth={1.6} />
                 </div>
 
@@ -346,10 +390,11 @@ export default function ApexxBiolabsCaseStudy() {
                   For Apexx
                 </p>
 
-                <h2 className="mt-2 font-serif text-[2.5rem] font-light leading-[1.03] tracking-[-0.03em] sm:text-[3rem]">
+                <h2 className="mt-2 font-serif text-[2.2rem] font-light leading-[1.04] tracking-[-0.03em] sm:text-[3rem]">
                   Simple tools to run
-                  <br />
+                  <br className="hidden sm:block" />
                   <span className="italic text-[#a9c2df]">
+                    {" "}
                     the business.
                   </span>
                 </h2>
@@ -365,14 +410,14 @@ export default function ApexxBiolabsCaseStudy() {
                   ({ icon: Icon, title, description }) => (
                     <div
                       key={title}
-                      className="flex items-start gap-4 rounded-[1.25rem] border border-white/[0.06] bg-white/[0.07] p-4 sm:p-5"
+                      className="flex items-start gap-4 rounded-[1.15rem] border border-white/[0.06] bg-white/[0.07] p-4 sm:p-5"
                     >
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#a9c2df]">
                         <Icon size={18} strokeWidth={1.6} />
                       </div>
 
                       <div>
-                        <h3 className="font-serif text-[1.2rem] font-light">
+                        <h3 className="font-serif text-[1.15rem] font-light sm:text-[1.2rem]">
                           {title}
                         </h3>
 
@@ -392,12 +437,12 @@ export default function ApexxBiolabsCaseStudy() {
       {/* =========================================================
           AFFILIATE SYSTEM
       ========================================================= */}
-      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
+      <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-6 sm:pb-20 md:pb-24">
         <Reveal>
-          <div className="rounded-[2rem] bg-[#dfeafa] p-7 sm:p-9 md:p-11">
-            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16">
+          <div className="rounded-[1.6rem] bg-[#dfeafa] p-6 sm:rounded-[2rem] sm:p-9 md:p-11">
+            <div className="grid gap-9 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16">
               <div>
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#28466d] text-white">
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#28466d] text-white sm:h-12 sm:w-12">
                   <Users size={21} strokeWidth={1.6} />
                 </div>
 
@@ -405,35 +450,45 @@ export default function ApexxBiolabsCaseStudy() {
                   Affiliate System
                 </p>
 
-                <h2 className="mt-2 font-serif text-[2.5rem] font-light leading-[1.03] tracking-[-0.03em] text-[#172437] sm:text-[3rem]">
+                <h2 className="mt-2 font-serif text-[2.2rem] font-light leading-[1.04] tracking-[-0.03em] text-[#172437] sm:text-[3rem]">
                   Affiliate growth,
-                  <br />
+                  <br className="hidden sm:block" />
                   <span className="italic text-[#345b88]/65">
+                    {" "}
                     built in.
                   </span>
                 </h2>
 
                 <p className="mt-5 max-w-md text-[15px] leading-7 text-[#28466d]/60">
                   Affiliates have their own promo codes and dashboards while
-                  Apexx can track activity and commissions from the admin side.
+                  Apexx can manage affiliate activity and commissions from the
+                  admin side.
                 </p>
               </div>
 
               <div className="grid gap-3 sm:grid-cols-2">
-                {affiliateFeatures.map(({ icon: Icon, title }) => (
-                  <div
-                    key={title}
-                    className="flex items-center gap-4 rounded-[1.25rem] border border-[#28466d]/10 bg-[#fffdf9]/85 p-5"
-                  >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d]">
-                      <Icon size={18} strokeWidth={1.6} />
-                    </div>
+                {affiliateFeatures.map(
+                  ({ icon: Icon, title, description }) => (
+                    <div
+                      key={title}
+                      className="flex items-start gap-4 rounded-[1.15rem] border border-[#28466d]/10 bg-[#fffdf9]/90 p-4 sm:p-5"
+                    >
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d]">
+                        <Icon size={18} strokeWidth={1.6} />
+                      </div>
 
-                    <p className="font-serif text-[1.2rem] font-light text-[#172437]">
-                      {title}
-                    </p>
-                  </div>
-                ))}
+                      <div>
+                        <h3 className="font-serif text-[1.15rem] font-light text-[#172437] sm:text-[1.2rem]">
+                          {title}
+                        </h3>
+
+                        <p className="mt-1 text-[13px] leading-5 text-[#28466d]/55">
+                          {description}
+                        </p>
+                      </div>
+                    </div>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -443,11 +498,11 @@ export default function ApexxBiolabsCaseStudy() {
       {/* =========================================================
           AUTOMATION
       ========================================================= */}
-      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
+      <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-6 sm:pb-20 md:pb-24">
         <Reveal>
-          <div className="grid gap-10 rounded-[2rem] border border-[#1b1713]/10 bg-[#fffdf9] p-7 shadow-[0_15px_45px_rgba(27,23,19,0.03)] sm:p-9 md:p-11 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:gap-16">
+          <div className="grid gap-9 rounded-[1.6rem] border border-[#1b1713]/10 bg-[#fffdf9] p-6 shadow-[0_15px_45px_rgba(27,23,19,0.03)] sm:rounded-[2rem] sm:p-9 md:p-11 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:gap-16">
             <div>
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f1ece3] text-[#8a621e]">
+              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#f1ece3] text-[#8a621e] sm:h-12 sm:w-12">
                 <Zap size={21} strokeWidth={1.7} />
               </div>
 
@@ -455,10 +510,11 @@ export default function ApexxBiolabsCaseStudy() {
                 Automation
               </p>
 
-              <h2 className="mt-2 font-serif text-[2.4rem] font-light leading-[1.03] tracking-[-0.03em] sm:text-[2.9rem]">
+              <h2 className="mt-2 font-serif text-[2.2rem] font-light leading-[1.04] tracking-[-0.03em] sm:text-[2.9rem]">
                 Less manual work.
-                <br />
+                <br className="hidden sm:block" />
                 <span className="italic text-[#345b88]/60">
+                  {" "}
                   More automation.
                 </span>
               </h2>
@@ -492,12 +548,12 @@ export default function ApexxBiolabsCaseStudy() {
       {/* =========================================================
           RESULT
       ========================================================= */}
-      <section className="mx-auto max-w-6xl px-5 pb-12 sm:px-6">
+      <section className="mx-auto max-w-6xl px-5 pb-10 sm:px-6 sm:pb-12">
         <Reveal>
-          <div className="rounded-[2rem] bg-[#edf3fa] p-7 sm:p-9 md:p-11">
+          <div className="rounded-[1.6rem] bg-[#edf3fa] p-6 sm:rounded-[2rem] sm:p-9 md:p-11">
             <div className="grid gap-8 md:grid-cols-[1fr_0.85fr] md:items-end md:gap-14">
               <div>
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#172437] text-white">
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#172437] text-white sm:h-12 sm:w-12">
                   <Sparkles size={21} strokeWidth={1.6} />
                 </div>
 
@@ -505,7 +561,7 @@ export default function ApexxBiolabsCaseStudy() {
                   The Result
                 </p>
 
-                <h2 className="mt-2 font-serif text-[2.8rem] font-light leading-[1] tracking-[-0.035em] text-[#172437] sm:text-[3.5rem]">
+                <h2 className="mt-2 font-serif text-[2.4rem] font-light leading-[1.02] tracking-[-0.035em] text-[#172437] sm:text-[3.4rem]">
                   47 products.
                   <br />
                   <span className="italic text-[#345b88]/60">
@@ -517,8 +573,8 @@ export default function ApexxBiolabsCaseStudy() {
               <div>
                 <p className="text-[15px] leading-7 text-[#28466d]/60">
                   Apexx now has one connected platform for its storefront,
-                  customers, rewards, orders, affiliates, inventory,
-                  promotions, and automated communication.
+                  customer accounts, rewards, order tracking, affiliates,
+                  inventory, promotions, and automated communication.
                 </p>
 
                 <a
@@ -544,14 +600,14 @@ export default function ApexxBiolabsCaseStudy() {
       {/* =========================================================
           CTA
       ========================================================= */}
-      <section className="mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-6 md:pb-28">
+      <section className="mx-auto max-w-6xl px-5 pb-24 pt-6 sm:px-6 sm:pt-8 md:pb-28">
         <Reveal>
-          <div className="rounded-[2rem] border border-[#1b1713]/10 bg-[#fffdf9] px-6 py-12 text-center sm:px-10 sm:py-14">
-            <div className="mx-auto mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d]">
+          <div className="rounded-[1.6rem] border border-[#1b1713]/10 bg-[#fffdf9] px-5 py-10 text-center sm:rounded-[2rem] sm:px-10 sm:py-14">
+            <div className="mx-auto mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d]">
               <ArrowUpRight size={19} strokeWidth={1.6} />
             </div>
 
-            <h2 className="font-serif text-[2.6rem] font-light leading-[1.03] tracking-[-0.03em] sm:text-[3.3rem]">
+            <h2 className="font-serif text-[2.25rem] font-light leading-[1.04] tracking-[-0.03em] sm:text-[3.2rem]">
               Have a project{" "}
               <span className="italic text-[#345b88]/60">
                 in mind?
