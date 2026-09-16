@@ -112,7 +112,7 @@ const automationFeatures = [
 
 export default function ApexxBiolabsCaseStudy() {
   return (
-    <main className="min-h-screen bg-[#fcfcfb] text-[#171717]">
+    <main className="min-h-screen bg-[#f8f5ef] text-[#1b1713]">
       {/* =========================================================
           HERO
       ========================================================= */}
@@ -120,12 +120,12 @@ export default function ApexxBiolabsCaseStudy() {
         <Reveal>
           <Link
             href="/work"
-            className="group inline-flex items-center gap-2 text-sm font-medium text-[#171717]/50 transition hover:text-[#171717]"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-[#1b1713]/50 transition-colors duration-300 hover:text-[#1b1713]"
           >
             <ArrowLeft
               size={17}
               strokeWidth={1.7}
-              className="transition-transform group-hover:-translate-x-1"
+              className="transition-transform duration-300 group-hover:-translate-x-1"
             />
             Back to Work
           </Link>
@@ -133,16 +133,16 @@ export default function ApexxBiolabsCaseStudy() {
           <div className="mt-10 grid gap-8 md:mt-12 lg:grid-cols-[1fr_0.85fr] lg:items-end lg:gap-16">
             <div>
               <div className="mb-5 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#172437] text-white">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#172437] text-white shadow-[0_10px_30px_rgba(23,36,55,0.12)]">
                   <ShoppingBag size={20} strokeWidth={1.6} />
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium text-[#172437]">
+                  <p className="text-sm font-semibold text-[#172437]">
                     Apexx Biolabs
                   </p>
 
-                  <p className="mt-0.5 text-[13px] text-[#171717]/45">
+                  <p className="mt-0.5 text-[13px] text-[#1b1713]/45">
                     E-Commerce · Web Design · Development
                   </p>
                 </div>
@@ -158,7 +158,7 @@ export default function ApexxBiolabsCaseStudy() {
             </div>
 
             <div>
-              <p className="max-w-lg text-[16px] leading-7 text-[#171717]/60">
+              <p className="max-w-lg text-[16px] leading-7 text-[#1b1713]/60">
                 We designed and developed a complete e-commerce experience for
                 Apexx Biolabs — from the storefront customers see to the tools
                 used to run the business behind it.
@@ -168,13 +168,14 @@ export default function ApexxBiolabsCaseStudy() {
                 href="https://apexxbiolabs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group mt-6 inline-flex items-center justify-center gap-2.5 rounded-full bg-[#172437] px-6 py-3.5 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-[#28466d]"
+                className="group mt-6 inline-flex items-center justify-center gap-2.5 rounded-full bg-[#172437] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#28466d]"
               >
                 Visit Live Website
+
                 <ArrowUpRight
                   size={16}
                   strokeWidth={1.7}
-                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </a>
             </div>
@@ -186,11 +187,11 @@ export default function ApexxBiolabsCaseStudy() {
           WHAT THEY NEEDED / WHAT WE CREATED
       ========================================================= */}
       <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
-        <div className="grid overflow-hidden rounded-[1.75rem] border border-black/[0.07] bg-white md:grid-cols-2">
+        <div className="grid overflow-hidden rounded-[1.75rem] border border-[#1b1713]/10 bg-[#fffdf9] shadow-[0_18px_55px_rgba(27,23,19,0.035)] md:grid-cols-2">
           {/* WHAT THEY NEEDED */}
           <Reveal>
             <div className="h-full p-7 sm:p-9 md:p-10">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#eef3f8] text-[#28466d]">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d]">
                 <Sparkles size={21} strokeWidth={1.6} />
               </div>
 
@@ -201,10 +202,12 @@ export default function ApexxBiolabsCaseStudy() {
               <h2 className="mt-3 font-serif text-[2.1rem] font-light leading-[1.05] tracking-[-0.025em] sm:text-[2.5rem]">
                 More than a basic
                 <br />
-                online store.
+                <span className="italic text-[#1b1713]/55">
+                  online store.
+                </span>
               </h2>
 
-              <p className="mt-5 text-[15px] leading-7 text-[#171717]/55">
+              <p className="mt-5 text-[15px] leading-7 text-[#1b1713]/55">
                 Apexx needed a website that could support a growing product
                 catalog while also handling customer accounts, rewards, orders,
                 affiliates, inventory, promotions, and everyday business
@@ -215,7 +218,7 @@ export default function ApexxBiolabsCaseStudy() {
 
           {/* WHAT WE CREATED */}
           <Reveal delay={80}>
-            <div className="h-full border-t border-black/[0.07] bg-[#e8f0fa] p-7 sm:p-9 md:border-l md:border-t-0 md:p-10">
+            <div className="h-full border-t border-[#1b1713]/10 bg-[#e8f0fa] p-7 sm:p-9 md:border-l md:border-t-0 md:p-10">
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#28466d] text-white">
                 <LayoutDashboard size={21} strokeWidth={1.6} />
               </div>
@@ -227,7 +230,9 @@ export default function ApexxBiolabsCaseStudy() {
               <h2 className="mt-3 font-serif text-[2.1rem] font-light leading-[1.05] tracking-[-0.025em] text-[#172437] sm:text-[2.5rem]">
                 One connected
                 <br />
-                platform.
+                <span className="italic text-[#345b88]/65">
+                  platform.
+                </span>
               </h2>
 
               <p className="mt-5 text-[15px] leading-7 text-[#28466d]/65">
@@ -241,7 +246,7 @@ export default function ApexxBiolabsCaseStudy() {
       </section>
 
       {/* =========================================================
-          WEBSITE — SMALLER IMAGE
+          WEBSITE
       ========================================================= */}
       <section className="mx-auto max-w-5xl px-5 pb-20 sm:px-6 md:pb-24">
         <Reveal>
@@ -251,16 +256,19 @@ export default function ApexxBiolabsCaseStudy() {
             </p>
 
             <h2 className="mt-2 font-serif text-[2.3rem] font-light tracking-[-0.03em] sm:text-[2.8rem]">
-              Designed for Apexx.
+              Designed for{" "}
+              <span className="italic text-[#345b88]/65">
+                Apexx.
+              </span>
             </h2>
 
-            <p className="mx-auto mt-3 max-w-xl text-[15px] leading-7 text-[#171717]/50">
+            <p className="mx-auto mt-3 max-w-xl text-[15px] leading-7 text-[#1b1713]/50">
               A clean, responsive storefront designed around the brand and its
               growing catalog.
             </p>
           </div>
 
-          <div className="mx-auto max-w-4xl overflow-hidden rounded-[1.5rem] border border-black/[0.08] bg-[#081526] shadow-[0_20px_60px_rgba(8,21,38,0.1)] sm:rounded-[1.75rem]">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-[1.5rem] border border-[#1b1713]/10 bg-[#081526] shadow-[0_20px_60px_rgba(27,23,19,0.08)] sm:rounded-[1.75rem]">
             <img
               src="/images/work/apexx-homepagebiolabs.png"
               alt="Apexx Biolabs homepage"
@@ -291,6 +299,11 @@ export default function ApexxBiolabsCaseStudy() {
                 in one account.
               </span>
             </h2>
+
+            <p className="mt-4 max-w-xl text-[15px] leading-7 text-[#1b1713]/50">
+              Customers can manage their account, rewards, saved products, and
+              orders without leaving the Apexx experience.
+            </p>
           </div>
         </Reveal>
 
@@ -298,8 +311,8 @@ export default function ApexxBiolabsCaseStudy() {
           {customerFeatures.map(
             ({ icon: Icon, title, description }, index) => (
               <Reveal key={title} delay={(index % 5) * 50}>
-                <div className="h-full rounded-[1.4rem] border border-black/[0.07] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#28466d]/20 hover:shadow-[0_15px_40px_rgba(20,30,45,0.05)]">
-                  <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-[#eef3f8] text-[#28466d]">
+                <div className="h-full rounded-[1.4rem] border border-[#1b1713]/10 bg-[#fffdf9] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#28466d]/20 hover:shadow-[0_15px_40px_rgba(27,23,19,0.05)]">
+                  <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d]">
                     <Icon size={19} strokeWidth={1.6} />
                   </div>
 
@@ -307,7 +320,7 @@ export default function ApexxBiolabsCaseStudy() {
                     {title}
                   </h3>
 
-                  <p className="mt-2 text-[13px] leading-5 text-[#171717]/45">
+                  <p className="mt-2 text-[13px] leading-5 text-[#1b1713]/45">
                     {description}
                   </p>
                 </div>
@@ -322,7 +335,7 @@ export default function ApexxBiolabsCaseStudy() {
       ========================================================= */}
       <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
         <Reveal>
-          <div className="rounded-[2rem] bg-[#172437] p-7 text-white sm:p-9 md:p-11">
+          <div className="rounded-[2rem] bg-[#172437] p-7 text-white shadow-[0_20px_60px_rgba(23,36,55,0.1)] sm:p-9 md:p-11">
             <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
               <div>
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-white">
@@ -341,7 +354,7 @@ export default function ApexxBiolabsCaseStudy() {
                   </span>
                 </h2>
 
-                <p className="mt-5 max-w-md text-[15px] leading-7 text-white/50">
+                <p className="mt-5 max-w-md text-[15px] leading-7 text-white/55">
                   The administrative side keeps the important parts of the
                   business organized and easy to manage.
                 </p>
@@ -352,7 +365,7 @@ export default function ApexxBiolabsCaseStudy() {
                   ({ icon: Icon, title, description }) => (
                     <div
                       key={title}
-                      className="flex items-start gap-4 rounded-[1.25rem] bg-white/[0.07] p-4 sm:p-5"
+                      className="flex items-start gap-4 rounded-[1.25rem] border border-white/[0.06] bg-white/[0.07] p-4 sm:p-5"
                     >
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#a9c2df]">
                         <Icon size={18} strokeWidth={1.6} />
@@ -377,7 +390,7 @@ export default function ApexxBiolabsCaseStudy() {
       </section>
 
       {/* =========================================================
-          AFFILIATES
+          AFFILIATE SYSTEM
       ========================================================= */}
       <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
         <Reveal>
@@ -410,9 +423,9 @@ export default function ApexxBiolabsCaseStudy() {
                 {affiliateFeatures.map(({ icon: Icon, title }) => (
                   <div
                     key={title}
-                    className="flex items-center gap-4 rounded-[1.25rem] bg-white/70 p-5"
+                    className="flex items-center gap-4 rounded-[1.25rem] border border-[#28466d]/10 bg-[#fffdf9]/85 p-5"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#eef3f8] text-[#28466d]">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d]">
                       <Icon size={18} strokeWidth={1.6} />
                     </div>
 
@@ -432,13 +445,13 @@ export default function ApexxBiolabsCaseStudy() {
       ========================================================= */}
       <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
         <Reveal>
-          <div className="grid gap-10 border-y border-black/[0.08] py-12 sm:py-14 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:gap-16">
+          <div className="grid gap-10 rounded-[2rem] border border-[#1b1713]/10 bg-[#fffdf9] p-7 shadow-[0_15px_45px_rgba(27,23,19,0.03)] sm:p-9 md:p-11 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:gap-16">
             <div>
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#fff0d3] text-[#8a621e]">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f1ece3] text-[#8a621e]">
                 <Zap size={21} strokeWidth={1.7} />
               </div>
 
-              <p className="text-sm font-semibold text-[#171717]/50">
+              <p className="text-sm font-semibold text-[#1b1713]/50">
                 Automation
               </p>
 
@@ -449,21 +462,24 @@ export default function ApexxBiolabsCaseStudy() {
                   More automation.
                 </span>
               </h2>
+
+              <p className="mt-5 max-w-md text-[15px] leading-7 text-[#1b1713]/50">
+                Routine updates happen automatically as customers and orders
+                move through the platform.
+              </p>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
               {automationFeatures.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3 rounded-xl bg-[#f4f6f8] px-4 py-4"
+                  className="flex items-center gap-3 rounded-xl bg-[#f1ece3] px-4 py-4"
                 >
-                  <Check
-                    size={17}
-                    strokeWidth={1.8}
-                    className="shrink-0 text-[#28466d]"
-                  />
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#fffdf9] text-[#28466d]">
+                    <Check size={16} strokeWidth={1.8} />
+                  </div>
 
-                  <span className="text-[14px] font-medium text-[#171717]/60">
+                  <span className="text-[14px] font-medium text-[#1b1713]/60">
                     {item}
                   </span>
                 </div>
@@ -509,13 +525,14 @@ export default function ApexxBiolabsCaseStudy() {
                   href="https://apexxbiolabs.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#172437] transition hover:opacity-60"
+                  className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#172437] transition-opacity duration-300 hover:opacity-60"
                 >
                   Explore Apexx Biolabs
+
                   <ArrowUpRight
                     size={16}
                     strokeWidth={1.7}
-                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </a>
               </div>
@@ -529,7 +546,11 @@ export default function ApexxBiolabsCaseStudy() {
       ========================================================= */}
       <section className="mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-6 md:pb-28">
         <Reveal>
-          <div className="py-12 text-center sm:py-14">
+          <div className="rounded-[2rem] border border-[#1b1713]/10 bg-[#fffdf9] px-6 py-12 text-center sm:px-10 sm:py-14">
+            <div className="mx-auto mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-[#f1ece3] text-[#28466d]">
+              <ArrowUpRight size={19} strokeWidth={1.6} />
+            </div>
+
             <h2 className="font-serif text-[2.6rem] font-light leading-[1.03] tracking-[-0.03em] sm:text-[3.3rem]">
               Have a project{" "}
               <span className="italic text-[#345b88]/60">
@@ -537,19 +558,20 @@ export default function ApexxBiolabsCaseStudy() {
               </span>
             </h2>
 
-            <p className="mx-auto mt-4 max-w-md text-[15px] leading-7 text-[#171717]/50">
+            <p className="mx-auto mt-4 max-w-md text-[15px] leading-7 text-[#1b1713]/50">
               Tell us what your business needs. We&apos;ll build around it.
             </p>
 
             <Link
               href="/contact"
-              className="group mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#172437] px-7 py-3.5 text-sm font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-[#28466d] sm:w-auto"
+              className="group mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#172437] px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#28466d] sm:w-auto"
             >
               Start a Project
+
               <ArrowUpRight
                 size={16}
                 strokeWidth={1.7}
-                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </Link>
           </div>
