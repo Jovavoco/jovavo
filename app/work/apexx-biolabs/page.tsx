@@ -1,90 +1,90 @@
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 const stats = [
   ["Industry", "Biotechnology"],
-  ["Platform", "Custom E-Commerce"],
-  ["Catalog", "47 Products"],
-  ["Role", "Design · Development · Deployment"],
+  ["Project Type", "Custom Ecommerce Platform"],
+  ["Products", "47 Active Products"],
+  ["Role", "Design • Development • Deployment"],
 ];
 
 const capabilities = [
   {
-    number: "01",
-    title: "Commerce",
-    description:
-      "A complete storefront designed around the brand and its growing product catalog.",
+    title: "Storefront",
     items: [
-      "47 Product Catalog",
-      "Product Pages",
-      "Shopping Cart",
-      "Promo Codes",
-      "COA Library",
-      "Responsive Design",
+      "Custom ecommerce website",
+      "47 active products",
+      "Product catalog",
+      "Product pages",
+      "Shopping cart",
+      "Customer accounts",
+      "Customer portal",
+      "Product reviews",
+      "Newsletter signup",
+      "COA library",
+      "Responsive design",
     ],
   },
   {
-    number: "02",
     title: "Customer Experience",
-    description:
-      "Dedicated account tools give customers a simple way to manage their experience after checkout.",
     items: [
-      "Customer Accounts",
-      "Customer Dashboard",
-      "Points & Rewards",
-      "Order Tracking",
-      "Order History",
+      "Account creation",
+      "Customer dashboard",
+      "Points & rewards",
+      "Points history",
+      "Order tracking",
+      "Previous order history",
       "Favorites",
+      "Promo codes",
+      "Order status updates",
+      "Account management",
     ],
   },
   {
-    number: "03",
     title: "Affiliate System",
-    description:
-      "Custom affiliate infrastructure connects promo codes, commissions, communication, and reporting.",
     items: [
-      "Affiliate Accounts",
-      "Unique Promo Codes",
-      "Commission Tracking",
-      "Affiliate Dashboard",
-      "Automated Emails",
-      "Admin Management",
+      "Affiliate accounts",
+      "Unique affiliate promo codes",
+      "Commission tracking",
+      "Affiliate dashboards",
+      "Affiliate order tracking",
+      "Automated affiliate emails",
+      "Affiliate management tools",
+      "Admin affiliate dashboard",
     ],
   },
   {
-    number: "04",
-    title: "Operations",
-    description:
-      "Centralized business tools make products, customers, orders, inventory, and promotions easier to manage.",
+    title: "Business Operations",
     items: [
-      "Admin Dashboard",
-      "Inventory Tracking",
-      "Order Management",
-      "Product Management",
-      "Customer Management",
-      "Revenue Tracking",
+      "Custom admin dashboard",
+      "Inventory tracking",
+      "Product management",
+      "Order management",
+      "Revenue tracking",
+      "Customer management",
+      "Subscriber management",
+      "Review moderation",
+      "Promo code system",
+      "Affiliate management",
     ],
   },
   {
-    number: "05",
     title: "Automation",
-    description:
-      "Automated workflows connect customer communication with orders, shipping, inventory, and marketing.",
     items: [
-      "Order Emails",
-      "Payment Emails",
-      "Shipping Updates",
-      "Tracking Emails",
-      "Inventory Updates",
-      "Email Campaigns",
+      "Order confirmation emails",
+      "Payment confirmation emails",
+      "Shipping notifications",
+      "Tracking emails",
+      "Promotional email campaigns",
+      "Affiliate emails",
+      "Automatic inventory deduction",
+      "Order quantity updates",
+      "Subscriber workflows",
     ],
   },
   {
-    number: "06",
     title: "Technology",
-    description:
-      "A modern custom stack provides the foundation for performance, flexibility, and continued development.",
     items: [
       "Next.js",
       "React",
@@ -92,460 +92,363 @@ const capabilities = [
       "Tailwind CSS",
       "Supabase",
       "Resend",
+      "GitHub",
       "Vercel",
       "Cloudflare",
+      "Google Analytics",
     ],
   },
 ];
 
 const delivered = [
-  "Custom Website Design",
-  "Full E-Commerce Development",
-  "47-Product Catalog",
-  "Customer Accounts",
-  "Points & Rewards",
-  "Order Tracking",
-  "Order History",
-  "Favorites",
-  "Affiliate System",
-  "Affiliate Promo Codes",
-  "Commission Tracking",
-  "Affiliate Dashboards",
-  "Affiliate Admin Tools",
-  "Automated Affiliate Emails",
-  "Inventory Tracking",
-  "Custom Admin Dashboard",
-  "Promo Code System",
-  "Transactional Emails",
-  "Email Campaign Workflows",
-  "Review Management",
-  "Newsletter Signup",
-  "Analytics Setup",
-  "SEO Foundation",
-  "Cloudflare Setup",
-  "Vercel Deployment",
+  "Custom website design",
+  "Full ecommerce development",
+  "47 product catalog",
+  "Customer accounts",
+  "Customer dashboard",
+  "Points & rewards system",
+  "Order tracking",
+  "Previous order history",
+  "Favorites system",
+  "Affiliate system",
+  "Affiliate promo codes",
+  "Commission tracking",
+  "Affiliate dashboards",
+  "Affiliate admin tools",
+  "Automated affiliate emails",
+  "Inventory tracking",
+  "Custom admin dashboard",
+  "Promo code system",
+  "Automated transactional emails",
+  "Promotional email workflows",
+  "Review moderation",
+  "Newsletter signup",
+  "Google Analytics setup",
+  "SEO foundation",
+  "Cloudflare domain setup",
+  "Vercel deployment",
 ];
 
 export default function ApexxBiolabsCaseStudy() {
   return (
     <main className="min-h-screen bg-[#f5f1e8] text-[#1b1713]">
-      {/* HERO */}
-      <section className="mx-auto max-w-7xl px-5 pb-16 pt-32 sm:px-6 sm:pb-20 sm:pt-36 md:pt-40">
+      <section className="mx-auto max-w-7xl px-6 pb-28 pt-40">
         <Reveal>
           <Link
             href="/work"
-            className="group mb-12 inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.24em] text-[#1b1713]/40 transition-colors hover:text-[#1b1713] sm:text-[10px]"
+            className="mb-14 inline-flex items-center gap-3 text-xs uppercase tracking-[0.28em] text-[#1b1713]/45 transition hover:text-[#1b1713]"
           >
-            <span className="transition-transform group-hover:-translate-x-1">
-              ←
-            </span>
-            Back to Work
+            ← Back to Work
           </Link>
 
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.75fr] lg:items-end lg:gap-20">
-            <div>
-              <p className="mb-5 text-[9px] uppercase tracking-[0.36em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.42em]">
-                Case Study · E-Commerce
-              </p>
+          <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+            Case Study
+          </p>
 
-              <h1 className="font-serif text-[3.5rem] font-light leading-[0.9] tracking-[-0.04em] text-[#1b1713] sm:text-[4.5rem] md:text-[5.8rem] lg:text-[6.7rem]">
-                Apexx
-                <br />
-                <span className="italic text-[#1b1713]/55">Biolabs.</span>
-              </h1>
-            </div>
+          <div className="grid gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-end">
+            <h1 className="max-w-6xl font-serif text-5xl font-light uppercase leading-[1.02] tracking-[0.08em] md:text-7xl">
+              Apexx
+              <br />
+              Biolabs.
+            </h1>
 
-            <div className="lg:pb-2">
-              <p className="max-w-xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-base sm:leading-7">
-                A custom e-commerce platform connecting a 47-product
-                storefront with customer accounts, rewards, order management,
-                affiliate infrastructure, automation, and business operations.
-              </p>
-
-              <a
-                href="https://apexxbiolabs.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group mt-7 inline-flex items-center gap-2.5 text-[9px] uppercase tracking-[0.22em] text-[#1b1713]/60 transition-colors hover:text-[#1b1713] sm:text-[10px]"
-              >
-                Visit Live Website
-                <ArrowUpRight
-                  size={14}
-                  strokeWidth={1.5}
-                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </a>
-            </div>
+            <p className="max-w-3xl text-lg leading-relaxed text-[#1b1713]/60 md:text-xl">
+              A fully custom ecommerce platform built around a 47-product
+              catalog, customer accounts, rewards, order tracking, affiliate
+              infrastructure, automated communication, inventory management,
+              promotions, and custom administrative tools.
+            </p>
           </div>
         </Reveal>
 
         {/* STATS */}
-        <div className="mt-14 grid grid-cols-2 border-y border-[#1b1713]/10 md:mt-16 md:grid-cols-4">
+        <div className="mt-20 grid gap-5 md:grid-cols-4">
           {stats.map(([label, value], index) => (
-            <Reveal key={label} delay={index * 70}>
-              <div
-                className={`py-6 sm:py-7 md:px-6 ${
-                  index % 2 === 0 ? "pr-4" : "pl-4"
-                } ${
-                  index !== 0
-                    ? "md:border-l md:border-[#1b1713]/10"
-                    : ""
-                }`}
-              >
-                <p className="mb-2 text-[8px] uppercase tracking-[0.22em] text-[#1b1713]/35 sm:text-[9px]">
+            <Reveal key={label} delay={index * 90}>
+              <div className="rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-7 shadow-[0_20px_70px_rgba(27,23,19,0.04)]">
+                <p className="mb-4 text-xs uppercase tracking-[0.25em] text-[#1b1713]/35">
                   {label}
                 </p>
 
-                <p className="text-[13px] leading-5 text-[#1b1713]/75 sm:text-sm">
+                <p className="text-lg font-medium leading-snug tracking-tight text-[#1b1713]/80">
                   {value}
                 </p>
               </div>
             </Reveal>
           ))}
         </div>
-      </section>
 
-      {/* HOMEPAGE */}
-      <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-6 md:pb-24">
+        {/* HOMEPAGE IMAGE */}
         <Reveal>
-          <div className="mb-5 flex items-end justify-between gap-4">
-            <p className="text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px]">
+          <section className="mt-20">
+            <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
               Homepage
             </p>
 
-            <p className="hidden text-[9px] uppercase tracking-[0.2em] text-[#1b1713]/30 sm:block">
-              Desktop Experience
-            </p>
-          </div>
-
-          <div className="overflow-hidden rounded-[1.5rem] border border-[#1b1713]/10 bg-[#081526] sm:rounded-[2rem]">
-            <img
-              src="/images/work/apexx-homepagebiolabs.png"
-              alt="Apexx Biolabs homepage"
-              className="h-auto w-full object-cover object-top"
-            />
-          </div>
+            <div className="overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-[#081526] shadow-[0_40px_120px_rgba(27,23,19,0.14)]">
+              <img
+                src="/images/work/apexx-homepagebiolabs.png"
+                alt="Apexx Biolabs homepage"
+                className="h-auto w-full object-cover object-top"
+              />
+            </div>
+          </section>
         </Reveal>
-      </section>
 
-      {/* OVERVIEW */}
-      <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-6 md:pb-24">
+        {/* OVERVIEW */}
         <Reveal>
-          <div className="border-y border-[#1b1713]/10 py-14 sm:py-16 md:py-20">
-            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-              <div>
-                <p className="mb-5 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px]">
-                  Overview
-                </p>
+          <section className="mt-24 rounded-[3rem] bg-[#1b1713] p-8 text-white md:p-16">
+            <p className="mb-6 text-xs uppercase tracking-[0.4em] text-white/35">
+              Overview
+            </p>
 
-                <h2 className="font-serif text-[2.6rem] font-light leading-[1.02] tracking-[-0.03em] sm:text-[3.2rem] md:text-[3.8rem]">
-                  More than
-                  <br />
-                  <span className="italic text-[#1b1713]/55">
-                    a storefront.
-                  </span>
-                </h2>
-              </div>
+            <h2 className="max-w-5xl font-serif text-4xl font-light uppercase leading-[1.08] tracking-[0.08em] md:text-6xl">
+              More than a website.
+              <br />
+              A complete ecommerce system.
+            </h2>
 
-              <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
-                <p className="text-[14px] leading-7 text-[#1b1713]/55 sm:text-[15px]">
-                  Apexx Biolabs was developed as a complete digital platform
-                  connecting a polished customer-facing storefront with the
-                  operational systems required to manage 47 products, orders,
-                  customers, inventory, promotions, affiliates, and
-                  communication.
-                </p>
-
-                <p className="text-[14px] leading-7 text-[#1b1713]/55 sm:text-[15px]">
-                  Customers can create accounts, earn and manage points, save
-                  favorites, track active orders, and review previous orders
-                  through their own portal, while automated workflows handle
-                  key processes behind the scenes.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* CHALLENGE + SOLUTION */}
-      <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-6 md:pb-24">
-        <div className="grid gap-px overflow-hidden rounded-[1.75rem] border border-[#1b1713]/10 bg-[#1b1713]/10 md:grid-cols-2 md:rounded-[2rem]">
-          <Reveal>
-            <div className="h-full bg-[#fbf8f2] p-7 sm:p-9 md:p-11">
-              <p className="mb-8 text-[9px] uppercase tracking-[0.32em] text-[#1b1713]/35 sm:text-[10px]">
-                01 · The Challenge
+            <div className="mt-10 grid gap-8 md:grid-cols-2">
+              <p className="text-lg leading-relaxed text-white/60">
+                Apexx Biolabs was built as a custom digital platform that
+                combines a polished customer-facing storefront with the systems
+                needed to manage 47 active products, customers, orders,
+                inventory, rewards, affiliates, promotions, subscribers, and
+                day-to-day business operations.
               </p>
 
-              <h2 className="max-w-lg font-serif text-[2.1rem] font-light leading-[1.05] tracking-[-0.025em] sm:text-[2.5rem]">
-                A premium storefront with{" "}
-                <span className="italic text-[#1b1713]/55">
-                  serious infrastructure.
-                </span>
-              </h2>
-
-              <p className="mt-6 max-w-lg text-[14px] leading-7 text-[#1b1713]/55">
-                The platform needed to go far beyond product browsing. It had
-                to support a growing catalog, customer accounts, rewards,
-                orders, inventory, promotions, affiliates, reviews,
-                subscribers, and ongoing customer communication.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={100}>
-            <div className="h-full bg-[#efe9df] p-7 sm:p-9 md:p-11">
-              <p className="mb-8 text-[9px] uppercase tracking-[0.32em] text-[#1b1713]/35 sm:text-[10px]">
-                02 · The Solution
-              </p>
-
-              <h2 className="max-w-lg font-serif text-[2.1rem] font-light leading-[1.05] tracking-[-0.025em] sm:text-[2.5rem]">
-                One system built around{" "}
-                <span className="italic text-[#1b1713]/55">
-                  the business.
-                </span>
-              </h2>
-
-              <p className="mt-6 max-w-lg text-[14px] leading-7 text-[#1b1713]/55">
-                Jovavo created a tailored e-commerce ecosystem connecting the
-                storefront, customer portal, rewards, affiliate infrastructure,
-                inventory, promotions, automated communication, analytics, and
+              <p className="text-lg leading-relaxed text-white/60">
+                Customers can create their own accounts, earn and manage points,
+                track active orders, review previous purchases, save favorites,
+                and manage their shopping experience through a dedicated
+                customer portal. Behind the storefront, automated workflows
+                connect orders, inventory, email communication, promotions, and
                 administrative tools.
               </p>
             </div>
-          </Reveal>
-        </div>
-      </section>
+          </section>
+        </Reveal>
 
-      {/* CAPABILITIES */}
-      <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-6 md:pb-24">
-        <Reveal>
-          <div className="max-w-3xl">
-            <p className="mb-5 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px]">
+        {/* CHALLENGE / SOLUTION */}
+        <section className="mt-24 grid gap-6 lg:grid-cols-2">
+          <Reveal>
+            <div className="h-full rounded-[2.5rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-8 shadow-[0_20px_70px_rgba(27,23,19,0.04)] md:p-12">
+              <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+                The Challenge
+              </p>
+
+              <h2 className="font-serif text-4xl font-light uppercase leading-[1.12] tracking-[0.08em] md:text-5xl">
+                Create a premium storefront with powerful tools behind it.
+              </h2>
+
+              <p className="mt-8 text-lg leading-relaxed text-[#1b1713]/55">
+                The project needed to support far more than product browsing.
+                Apexx Biolabs required a scalable ecommerce foundation capable
+                of managing a growing product catalog, inventory, orders,
+                customer accounts, rewards, promotional campaigns, affiliates,
+                subscriber workflows, reviews, and customer communication.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="h-full rounded-[2.5rem] border border-[#1b1713]/10 bg-[#efe9df] p-8 md:p-12">
+              <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+                The Solution
+              </p>
+
+              <h2 className="font-serif text-4xl font-light uppercase leading-[1.12] tracking-[0.08em] md:text-5xl">
+                A custom platform designed around real business operations.
+              </h2>
+
+              <p className="mt-8 text-lg leading-relaxed text-[#1b1713]/55">
+                Jovavo designed and developed a tailored ecommerce ecosystem
+                connecting the storefront, customer portal, rewards system,
+                affiliate infrastructure, inventory tracking, promotions,
+                automated emails, analytics, and administrative tools into one
+                cohesive platform.
+              </p>
+            </div>
+          </Reveal>
+        </section>
+
+        {/* CAPABILITIES */}
+        <section className="mt-24">
+          <Reveal>
+            <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
               Platform Capabilities
             </p>
 
-            <h2 className="font-serif text-[2.6rem] font-light leading-[1.02] tracking-[-0.03em] sm:text-[3.2rem] md:text-[3.8rem]">
-              Everything connected.
-              <br />
-              <span className="italic text-[#1b1713]/55">
-                Nothing off the shelf.
-              </span>
+            <h2 className="max-w-5xl font-serif text-4xl font-light uppercase leading-[1.12] tracking-[0.08em] md:text-6xl">
+              Built to support the full ecommerce workflow.
             </h2>
-          </div>
-        </Reveal>
+          </Reveal>
 
-        <div className="mt-12 grid border-t border-[#1b1713]/10 md:grid-cols-2">
-          {capabilities.map((section, index) => (
-            <Reveal key={section.title} delay={(index % 2) * 80}>
-              <div
-                className={`h-full border-b border-[#1b1713]/10 py-9 sm:py-10 md:p-10 ${
-                  index % 2 !== 0
-                    ? "md:border-l md:border-[#1b1713]/10"
-                    : ""
-                }`}
-              >
-                <div className="flex items-start gap-5">
-                  <span className="pt-1 text-[9px] tracking-[0.2em] text-[#1b1713]/30">
-                    {section.number}
-                  </span>
+          <div className="mt-16 grid gap-6 md:grid-cols-2">
+            {capabilities.map((section, index) => (
+              <Reveal key={section.title} delay={index * 100}>
+                <div className="h-full rounded-[2.5rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-8 shadow-[0_20px_70px_rgba(27,23,19,0.04)] transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_35px_100px_rgba(27,23,19,0.08)] md:p-10">
+                  <h3 className="mb-8 font-serif text-3xl font-light uppercase tracking-[0.08em] md:text-4xl">
+                    {section.title}
+                  </h3>
 
-                  <div>
-                    <h3 className="font-serif text-[1.8rem] font-light tracking-[-0.02em] sm:text-[2rem]">
-                      {section.title}
-                    </h3>
-
-                    <p className="mt-3 max-w-md text-[13px] leading-6 text-[#1b1713]/50 sm:text-[14px]">
-                      {section.description}
-                    </p>
+                  <div className="flex flex-wrap gap-3">
+                    {section.items.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8] px-4 py-2 text-xs uppercase tracking-[0.16em] text-[#1b1713]/55"
+                      >
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
 
-                <div className="mt-7 flex flex-wrap gap-2">
-                  {section.items.map((item) => (
+        {/* AFFILIATE SYSTEM */}
+        <Reveal>
+          <section className="mt-24 overflow-hidden rounded-[3rem] border border-[#1b1713]/10 bg-[#efe9df] p-8 md:p-16">
+            <div className="grid gap-12 lg:grid-cols-[0.9fr_1fr] lg:items-end">
+              <div>
+                <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+                  Affiliate Infrastructure
+                </p>
+
+                <h2 className="font-serif text-4xl font-light uppercase leading-[1.08] tracking-[0.08em] md:text-6xl">
+                  Built-in tools
+                  <br />
+                  for affiliate
+                  <br />
+                  growth.
+                </h2>
+              </div>
+
+              <div>
+                <p className="max-w-2xl text-lg leading-relaxed text-[#1b1713]/55">
+                  A custom affiliate system gives affiliates dedicated promo
+                  codes, commission tracking, order visibility, automated
+                  communication, and their own dashboards. Administrative tools
+                  provide centralized visibility into affiliate activity and
+                  performance.
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {[
+                    "Affiliate Accounts",
+                    "Unique Promo Codes",
+                    "Commission Tracking",
+                    "Affiliate Dashboards",
+                    "Automated Emails",
+                    "Admin Management",
+                  ].map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-[#1b1713]/10 px-3.5 py-2 text-[8px] uppercase tracking-[0.15em] text-[#1b1713]/45 sm:text-[9px]"
+                      className="rounded-full border border-[#1b1713]/10 bg-[#fbf8f2] px-4 py-2 text-xs uppercase tracking-[0.16em] text-[#1b1713]/55"
                     >
                       {item}
                     </span>
                   ))}
                 </div>
               </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+            </div>
+          </section>
+        </Reveal>
 
-      {/* AFFILIATE SYSTEM */}
-      <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-6 md:pb-24">
+        {/* WHAT WE DELIVERED */}
         <Reveal>
-          <div className="overflow-hidden rounded-[1.75rem] border border-[#1b1713]/10 bg-[#fbf8f2] md:rounded-[2rem]">
-            <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
-              <div className="border-b border-[#1b1713]/10 p-7 sm:p-9 md:p-11 lg:border-b-0 lg:border-r">
-                <p className="mb-6 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px]">
-                  Affiliate Infrastructure
+          <section className="mt-24 rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-8 shadow-[0_20px_70px_rgba(27,23,19,0.04)] md:p-14">
+            <div className="grid gap-12 lg:grid-cols-[0.8fr_1fr] lg:items-start">
+              <div>
+                <p className="mb-6 text-xs uppercase tracking-[0.42em] text-[#1b1713]/40">
+                  What We Delivered
                 </p>
 
-                <h2 className="font-serif text-[2.4rem] font-light leading-[1.02] tracking-[-0.03em] sm:text-[2.9rem] md:text-[3.3rem]">
-                  Growth tools,
+                <h2 className="font-serif text-4xl font-light uppercase leading-[1.1] tracking-[0.08em] md:text-6xl">
+                  Strategy,
                   <br />
-                  <span className="italic text-[#1b1713]/55">
-                    built in.
-                  </span>
+                  storefront,
+                  <br />
+                  systems.
                 </h2>
               </div>
 
-              <div className="p-7 sm:p-9 md:p-11">
-                <p className="max-w-2xl text-[14px] leading-7 text-[#1b1713]/55 sm:text-[15px]">
-                  The platform includes a custom affiliate system with unique
-                  promotional codes, commission tracking, dedicated affiliate
-                  dashboards, automated email communication, and centralized
-                  administrative tools for managing affiliate activity.
-                </p>
-
-                <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                  {[
-                    "Unique Affiliate Codes",
-                    "Commission Tracking",
-                    "Affiliate Dashboards",
-                    "Order Attribution",
-                    "Automated Emails",
-                    "Admin Management",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-3 border-t border-[#1b1713]/10 pt-3 text-[10px] uppercase tracking-[0.15em] text-[#1b1713]/50"
-                    >
-                      <Check
-                        size={13}
-                        strokeWidth={1.5}
-                        className="shrink-0 text-[#1b1713]/40"
-                      />
-                      {item}
-                    </div>
-                  ))}
-                </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {delivered.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8] px-5 py-3 text-xs uppercase tracking-[0.16em] text-[#1b1713]/60"
+                  >
+                    ✓ {item}
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
+          </section>
         </Reveal>
-      </section>
 
-      {/* DELIVERED */}
-      <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-6 md:pb-24">
+        {/* RESULT */}
         <Reveal>
-          <div className="grid gap-10 border-y border-[#1b1713]/10 py-14 sm:py-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
-            <div>
-              <p className="mb-5 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px]">
-                What We Delivered
-              </p>
-
-              <h2 className="font-serif text-[2.5rem] font-light leading-[1.02] tracking-[-0.03em] sm:text-[3rem]">
-                Strategy.
-                <br />
-                Storefront.
-                <br />
-                <span className="italic text-[#1b1713]/55">Systems.</span>
-              </h2>
-            </div>
-
-            <div className="grid sm:grid-cols-2">
-              {delivered.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 border-b border-[#1b1713]/10 py-3.5 text-[9px] uppercase tracking-[0.15em] text-[#1b1713]/50 sm:text-[10px]"
-                >
-                  <Check
-                    size={13}
-                    strokeWidth={1.5}
-                    className="shrink-0 text-[#1b1713]/35"
-                  />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* RESULT */}
-      <section className="mx-auto max-w-7xl px-5 pb-8 sm:px-6">
-        <Reveal>
-          <div className="rounded-[1.75rem] border border-[#1b1713]/10 bg-[#efe9df] p-7 sm:p-10 md:rounded-[2rem] md:p-12 lg:p-14">
-            <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end lg:gap-20">
+          <section className="mt-24 rounded-[3rem] bg-[#1b1713] p-10 text-white md:p-16">
+            <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
               <div>
-                <p className="mb-5 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px]">
+                <p className="mb-5 text-xs uppercase tracking-[0.4em] text-white/35">
                   The Result
                 </p>
 
-                <h2 className="max-w-3xl font-serif text-[2.5rem] font-light leading-[1.02] tracking-[-0.03em] sm:text-[3.1rem] md:text-[3.6rem]">
-                  One platform.
-                  <br />
-                  <span className="italic text-[#1b1713]/55">
-                    Built to grow.
-                  </span>
+                <h2 className="max-w-4xl font-serif text-4xl font-light uppercase leading-[1.12] tracking-[0.08em] md:text-6xl">
+                  A custom platform built for long-term growth.
                 </h2>
-              </div>
 
-              <div>
-                <p className="text-[14px] leading-7 text-[#1b1713]/55 sm:text-[15px]">
-                  Apexx Biolabs now operates on a custom e-commerce platform
-                  supporting 47 products alongside customer accounts, rewards,
-                  order history, order tracking, affiliate management,
+                <p className="mt-6 max-w-3xl leading-relaxed text-white/60">
+                  Apexx Biolabs now operates on a custom ecommerce platform
+                  supporting 47 active products alongside customer accounts,
+                  rewards, order history, order tracking, affiliate management,
                   inventory operations, promotional tools, automated
                   communication, and centralized administrative workflows.
                 </p>
-
-                <a
-                  href="https://apexxbiolabs.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group mt-6 inline-flex items-center gap-2.5 text-[9px] uppercase tracking-[0.22em] text-[#1b1713]/60 transition-colors hover:text-[#1b1713] sm:text-[10px]"
-                >
-                  Visit Apexx Biolabs
-                  <ArrowUpRight
-                    size={14}
-                    strokeWidth={1.5}
-                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                </a>
               </div>
+
+              <a
+                href="https://apexxbiolabs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center gap-3 rounded-full bg-white px-7 py-3 text-[11px] uppercase tracking-[0.28em] text-[#1b1713] transition hover:-translate-y-1 hover:bg-white/90"
+              >
+                Visit Website
+                <ArrowUpRight size={15} />
+              </a>
             </div>
-          </div>
+          </section>
         </Reveal>
-      </section>
 
-      {/* CTA */}
-      <section className="mx-auto max-w-7xl px-5 pb-20 pt-4 sm:px-6 sm:pb-24 md:pb-28">
+        {/* CTA */}
         <Reveal>
-          <div className="px-4 py-12 text-center sm:py-16">
-            <p className="mb-4 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px]">
-              Start a Project
-            </p>
+          <section className="mt-10 rounded-[3rem] border border-[#1b1713]/10 bg-[#fbf8f2] p-10 md:p-16">
+            <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-center">
+              <div>
+                <p className="mb-5 text-xs uppercase tracking-[0.4em] text-[#1b1713]/40">
+                  Start Your Build
+                </p>
 
-            <h2 className="font-serif text-[2.5rem] font-light leading-[1.03] tracking-[-0.03em] sm:text-[3rem] md:text-[3.5rem]">
-              Need something{" "}
-              <span className="italic text-[#1b1713]/55">this custom?</span>
-            </h2>
+                <h2 className="max-w-4xl font-serif text-4xl font-light uppercase leading-[1.08] tracking-[0.08em] md:text-6xl">
+                  Need something
+                  <br />
+                  this custom?
+                </h2>
+              </div>
 
-            <p className="mx-auto mt-5 max-w-lg text-[14px] leading-6 text-[#1b1713]/50 sm:text-[15px]">
-              Tell us what you&apos;re building and what your business needs
-              behind the scenes.
-            </p>
-
-            <Link
-              href="/contact"
-              className="group mt-7 inline-flex items-center gap-2.5 rounded-full bg-[#1b1713] px-7 py-3.5 text-[9px] uppercase tracking-[0.2em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#302a24] sm:text-[10px]"
-            >
-              Start a Project
-              <ArrowUpRight
-                size={14}
-                strokeWidth={1.5}
-                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Link>
-          </div>
+              <Link
+                href="/contact"
+                className="inline-flex w-fit items-center gap-3 rounded-full bg-[#1b1713] px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-white transition hover:-translate-y-1 hover:bg-[#1b1713]/90"
+              >
+                Start Project
+                <ArrowUpRight size={16} />
+              </Link>
+            </div>
+          </section>
         </Reveal>
       </section>
     </main>
