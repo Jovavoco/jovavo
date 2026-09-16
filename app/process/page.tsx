@@ -23,9 +23,7 @@ const steps = [
   {
     number: "01",
     title: "Discover",
-    eyebrow: "Step One",
     icon: Compass,
-    image: "/images/process/discover.jpg",
     description:
       "We clarify your goals, audience, brand direction, website needs, timeline, and what success should look like.",
     details: ["Business Goals", "Audience", "Project Scope"],
@@ -33,9 +31,7 @@ const steps = [
   {
     number: "02",
     title: "Structure",
-    eyebrow: "Step Two",
     icon: LayoutTemplate,
-    image: "/images/process/structure.jpg",
     description:
       "We plan the pages, user flow, content sections, calls-to-action, and the overall experience before design begins.",
     details: ["Sitemap", "Page Flow", "Content Direction"],
@@ -43,9 +39,7 @@ const steps = [
   {
     number: "03",
     title: "Design",
-    eyebrow: "Step Three",
     icon: Sparkles,
-    image: "/images/process/design.jpg",
     description:
       "Your website begins to take shape through refined layouts, typography, spacing, colors, and visual direction.",
     details: ["Visual Style", "Responsive Layout", "User Experience"],
@@ -53,9 +47,7 @@ const steps = [
   {
     number: "04",
     title: "Develop",
-    eyebrow: "Step Four",
     icon: Code2,
-    image: "/images/process/develop.jpg",
     description:
       "The design is built into a fast, responsive, functional website with clean structure and scalable foundations.",
     details: ["Frontend Build", "Integrations", "Mobile Optimization"],
@@ -63,9 +55,7 @@ const steps = [
   {
     number: "05",
     title: "Launch",
-    eyebrow: "Step Five",
     icon: Rocket,
-    image: "/images/process/launch.jpg",
     description:
       "Your site is tested, optimized, connected to your domain, and prepared for a smooth public launch.",
     details: ["Testing", "Deployment", "Domain Setup"],
@@ -73,9 +63,7 @@ const steps = [
   {
     number: "06",
     title: "Support",
-    eyebrow: "Step Six",
     icon: Headphones,
-    image: "/images/process/support.jpg",
     description:
       "After launch, Jovavo can help with maintenance, updates, performance improvements, and ongoing growth support.",
     details: ["Maintenance", "Updates", "Growth Support"],
@@ -89,7 +77,7 @@ export default function ProcessPage() {
           HERO
       ========================================================= */}
 
-      <section className="mx-auto max-w-6xl px-5 pb-20 pt-32 sm:px-6 sm:pb-24 sm:pt-36 md:pt-40">
+      <section className="mx-auto max-w-6xl px-5 pb-16 pt-32 sm:px-6 sm:pb-20 sm:pt-36 md:pt-40">
         <Reveal>
           <div className="mx-auto max-w-4xl text-center">
             <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#1b1713] text-white">
@@ -111,8 +99,8 @@ export default function ProcessPage() {
 
             <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-[16px]">
               Every project follows a thoughtful workflow built around
-              clarity, collaboration, and execution — so your website feels
-              intentional from the first conversation to the final launch.
+              clarity, collaboration, and execution — from the first
+              conversation through launch and continued support.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -141,12 +129,12 @@ export default function ProcessPage() {
       </section>
 
       {/* =========================================================
-          PROCESS INTRO
+          INTRO
       ========================================================= */}
 
-      <section className="mx-auto max-w-6xl px-5 pb-14 sm:px-6 sm:pb-16">
+      <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-6 sm:pb-20">
         <Reveal>
-          <div className="grid gap-7 rounded-[1.6rem] border border-[#1b1713]/10 bg-[#fffdf9] p-6 sm:rounded-[2rem] sm:p-8 md:grid-cols-[0.8fr_1.2fr] md:items-center md:p-10 lg:gap-14 lg:p-12">
+          <div className="grid gap-8 rounded-[1.6rem] border border-[#1b1713]/10 bg-[#fffdf9] p-6 sm:rounded-[2rem] sm:p-8 md:grid-cols-[0.8fr_1.2fr] md:items-center md:p-10 lg:gap-14 lg:p-12">
             <div>
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#f1ece3] text-[#1b1713]/70">
                 <Compass size={19} strokeWidth={1.6} />
@@ -168,14 +156,14 @@ export default function ProcessPage() {
             <div>
               <p className="text-[15px] leading-7 text-[#1b1713]/55 sm:text-[16px]">
                 Building a strong website starts long before development. We
-                first understand the business, organize the experience, and
+                first understand your business, organize the experience, and
                 establish the direction before bringing everything together.
               </p>
 
               <p className="mt-4 text-[15px] leading-7 text-[#1b1713]/55 sm:text-[16px]">
-                Each stage builds on the one before it, creating a more focused
-                process from the first conversation through launch and
-                continued support.
+                Each stage builds on the one before it, giving the project a
+                clear structure while leaving room to build around what your
+                business actually needs.
               </p>
             </div>
           </div>
@@ -183,7 +171,7 @@ export default function ProcessPage() {
       </section>
 
       {/* =========================================================
-          STEPS
+          PROCESS
       ========================================================= */}
 
       <section
@@ -191,86 +179,115 @@ export default function ProcessPage() {
         className="scroll-mt-28 px-5 pb-20 sm:px-6 md:pb-24"
       >
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-5">
+          {/* SECTION HEADING */}
+
+          <Reveal>
+            <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+              <p className="text-[15px] font-semibold text-[#1b1713]/50">
+                From Start to Launch
+              </p>
+
+              <h2 className="mt-3 font-serif text-[2.6rem] font-light leading-[1.02] tracking-[-0.035em] sm:text-[3.3rem] md:text-[3.8rem]">
+                Six steps. One
+                <br />
+                <span className="italic text-[#1b1713]/50">
+                  focused process.
+                </span>
+              </h2>
+            </div>
+          </Reveal>
+
+          {/* PROCESS GRID */}
+
+          <div className="relative grid gap-4 md:grid-cols-2">
             {steps.map((step, index) => {
               const Icon = step.icon;
 
               return (
-                <Reveal key={step.title} delay={index * 80}>
-                  <div className="group overflow-hidden rounded-[1.5rem] border border-[#1b1713]/10 bg-[#fffdf9] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1b1713]/15 sm:rounded-[2rem]">
-                    <div
-                      className={`grid lg:grid-cols-2 ${
-                        index % 2 === 1
-                          ? "lg:[&>*:first-child]:order-2"
-                          : ""
-                      }`}
-                    >
-                      {/* IMAGE */}
+                <Reveal key={step.title} delay={index * 70}>
+                  <div className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-[#1b1713]/10 bg-[#fffdf9] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#1b1713]/15 sm:p-7 md:p-8">
+                    {/* TOP */}
 
-                      <div className="relative min-h-[280px] overflow-hidden sm:min-h-[340px] lg:min-h-[430px]">
-                        <img
-                          src={step.image}
-                          alt={`${step.title} process step`}
-                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
-                        />
-
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1b1713]/25 via-transparent to-transparent" />
-
-                        {/* STEP NUMBER */}
-
-                        <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full bg-[#fffdf9]/90 px-3.5 py-2 backdrop-blur-md sm:left-6 sm:top-6">
-                          <span className="text-[12px] font-semibold text-[#1b1713]/45">
-                            {step.number}
-                          </span>
-
-                          <span className="h-3 w-px bg-[#1b1713]/15" />
-
-                          <span className="text-[12px] font-medium text-[#1b1713]/60">
-                            {step.eyebrow}
-                          </span>
-                        </div>
+                    <div className="flex items-start justify-between gap-5">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#f1ece3] text-[#1b1713]/70 transition-all duration-300 group-hover:bg-[#1b1713] group-hover:text-white">
+                        <Icon size={20} strokeWidth={1.6} />
                       </div>
 
-                      {/* CONTENT */}
+                      <span className="font-serif text-[2.6rem] font-light leading-none text-[#1b1713]/10 sm:text-[3rem]">
+                        {step.number}
+                      </span>
+                    </div>
 
-                      <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 lg:p-12">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f1ece3] text-[#1b1713]/70">
-                          <Icon size={19} strokeWidth={1.6} />
+                    {/* TITLE */}
+
+                    <h3 className="mt-7 font-serif text-[2rem] font-light leading-none tracking-[-0.03em] sm:text-[2.3rem]">
+                      {step.title}
+                    </h3>
+
+                    {/* DESCRIPTION */}
+
+                    <p className="mt-4 max-w-lg text-[14px] leading-7 text-[#1b1713]/55 sm:text-[15px]">
+                      {step.description}
+                    </p>
+
+                    {/* DIVIDER */}
+
+                    <div className="my-6 h-px w-full bg-[#1b1713]/10" />
+
+                    {/* DETAILS */}
+
+                    <div className="mt-auto grid gap-2 sm:grid-cols-3">
+                      {step.details.map((detail) => (
+                        <div
+                          key={detail}
+                          className="flex items-center gap-2 rounded-xl bg-[#f8f5ef] px-3 py-3"
+                        >
+                          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#fffdf9] text-[#1b1713]/50">
+                            <Check size={12} strokeWidth={1.8} />
+                          </div>
+
+                          <span className="text-[12px] font-medium leading-5 text-[#1b1713]/55">
+                            {detail}
+                          </span>
                         </div>
-
-                        <h2 className="mt-6 font-serif text-[2.5rem] font-light leading-none tracking-[-0.035em] sm:text-[3rem]">
-                          {step.title}
-                        </h2>
-
-                        <p className="mt-5 max-w-xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-[16px]">
-                          {step.description}
-                        </p>
-
-                        {/* DETAILS */}
-
-                        <div className="mt-7 grid gap-2 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-                          {step.details.map((detail) => (
-                            <div
-                              key={detail}
-                              className="flex items-center gap-2.5 rounded-xl bg-[#f8f5ef] px-3.5 py-3"
-                            >
-                              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#fffdf9] text-[#1b1713]/55">
-                                <Check size={13} strokeWidth={1.8} />
-                              </div>
-
-                              <span className="text-[12px] font-medium leading-5 text-[#1b1713]/55">
-                                {detail}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </Reveal>
               );
             })}
           </div>
+
+          {/* =====================================================
+              SIMPLE PROCESS FLOW
+          ===================================================== */}
+
+          <Reveal>
+            <div className="mt-5 hidden rounded-[1.5rem] bg-[#f1ece3] px-7 py-6 md:block">
+              <div className="flex items-center justify-between">
+                {steps.map((step, index) => (
+                  <div
+                    key={step.title}
+                    className="flex flex-1 items-center"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#fffdf9] text-[11px] font-semibold text-[#1b1713]/55">
+                        {step.number}
+                      </div>
+
+                      <span className="text-[12px] font-medium text-[#1b1713]/55">
+                        {step.title}
+                      </span>
+                    </div>
+
+                    {index < steps.length - 1 && (
+                      <div className="mx-3 h-px flex-1 bg-[#1b1713]/10" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -281,7 +298,9 @@ export default function ProcessPage() {
       <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
         <Reveal>
           <div className="rounded-[1.6rem] bg-[#f1ece3] p-6 sm:rounded-[2rem] sm:p-8 md:p-10 lg:p-12">
-            <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-12">
+            <div className="grid gap-9 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-14">
+              {/* LEFT */}
+
               <div>
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#fffdf9] text-[#1b1713]">
                   <Headphones size={19} strokeWidth={1.6} />
@@ -300,6 +319,8 @@ export default function ProcessPage() {
                 </h2>
               </div>
 
+              {/* RIGHT */}
+
               <div>
                 <p className="text-[15px] leading-7 text-[#1b1713]/55 sm:text-[16px]">
                   Launch doesn&apos;t have to be the end of the relationship.
@@ -310,7 +331,7 @@ export default function ProcessPage() {
 
                 <Link
                   href="/services#website-care"
-                  className="group mt-6 inline-flex items-center gap-2 text-[14px] font-semibold text-[#1b1713]/65 transition-colors hover:text-[#1b1713]"
+                  className="group mt-6 inline-flex items-center gap-2.5 text-[14px] font-semibold text-[#1b1713]/65 transition-colors duration-300 hover:text-[#1b1713]"
                 >
                   Explore Website Care
 
