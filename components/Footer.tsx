@@ -1,4 +1,13 @@
 import Link from "next/link";
+import {
+  ArrowUpRight,
+  AtSign,
+  Code2,
+  Mail,
+  Megaphone,
+  MonitorSmartphone,
+  ShoppingBag,
+} from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -10,10 +19,26 @@ const navigation = [
 ];
 
 const services = [
-  "Custom Websites",
-  "Google Ads",
-  "Meta Advertising",
-  "Ecommerce",
+  {
+    name: "Web Design",
+    href: "/services#website-design",
+    icon: MonitorSmartphone,
+  },
+  {
+    name: "E-Commerce",
+    href: "/services#web-development",
+    icon: ShoppingBag,
+  },
+  {
+    name: "Custom Development",
+    href: "/services#web-development",
+    icon: Code2,
+  },
+  {
+    name: "Digital Growth",
+    href: "/services#digital-growth",
+    icon: Megaphone,
+  },
 ];
 
 const socialLinks = [
@@ -36,109 +61,185 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="w-full overflow-hidden border-t border-[#d8d0c5] bg-[#f5f1e8]">
-      <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 md:py-24">
-        <div className="grid gap-14 lg:grid-cols-[1.3fr_0.9fr] lg:gap-20">
-          {/* LEFT SIDE */}
+    <footer className="w-full overflow-hidden border-t border-[#1b1713]/10 bg-[#f8f5ef] text-[#1b1713]">
+      <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-6 sm:py-16 md:py-20">
+        {/* =========================================================
+            TOP
+        ========================================================= */}
+
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+          {/* LEFT / BRAND */}
+
           <div>
             <Link
               href="/"
-              className="inline-block font-serif text-3xl font-light tracking-[0.16em] text-[#1b1713] transition duration-300 hover:opacity-70 sm:text-4xl sm:tracking-[0.18em] lg:text-5xl"
+              className="inline-block font-serif text-[2.2rem] font-light tracking-[0.12em] transition-opacity duration-300 hover:opacity-60 sm:text-[2.6rem]"
             >
               JOVAVO
             </Link>
 
-            <p className="mt-6 max-w-lg text-base leading-7 text-[#1b1713]/60 sm:mt-8 sm:text-lg sm:leading-8">
-              Premium websites, Google Ads, and Meta advertising designed to
-              help businesses attract more customers and grow online.
+            <p className="mt-5 max-w-md text-[15px] leading-7 text-[#1b1713]/55 sm:text-[16px]">
+              Custom websites, e-commerce, digital growth, and business
+              systems built around the way your business works.
             </p>
 
             <Link
               href="/contact"
-              className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-[#1b1713]/15 px-7 py-3.5 text-[10px] uppercase tracking-[0.22em] text-[#1b1713] transition-all duration-300 hover:-translate-y-1 hover:bg-[#1b1713] hover:text-white sm:mt-10 sm:w-fit sm:text-[11px] sm:tracking-[0.28em]"
+              className="group mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#1b1713] px-7 py-3.5 text-[14px] font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#302a24] sm:w-auto"
             >
-              Start Your Project
+              Start a Project
+
+              <ArrowUpRight
+                size={16}
+                strokeWidth={1.6}
+                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
             </Link>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 sm:gap-10 lg:gap-12">
-            {/* NAVIGATION */}
+          {/* RIGHT */}
+
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3">
+            {/* EXPLORE */}
+
             <div>
-              <p className="mb-5 text-[10px] uppercase tracking-[0.26em] text-[#1b1713]/40 sm:mb-6 sm:text-[11px] sm:tracking-[0.32em]">
+              <p className="mb-5 text-[14px] font-semibold text-[#1b1713]/45">
                 Explore
               </p>
 
-              <div className="flex flex-col gap-3.5 sm:gap-4">
+              <div className="flex flex-col gap-3">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="w-fit text-sm text-[#1b1713]/65 transition duration-300 hover:translate-x-1 hover:text-[#1b1713] sm:text-base"
+                    className="group flex w-fit items-center gap-1.5 text-[14px] text-[#1b1713]/60 transition-all duration-300 hover:text-[#1b1713]"
                   >
                     {item.name}
+
+                    <ArrowUpRight
+                      size={12}
+                      strokeWidth={1.5}
+                      className="opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
+                    />
                   </Link>
                 ))}
               </div>
             </div>
 
             {/* SERVICES */}
+
             <div>
-              <p className="mb-5 text-[10px] uppercase tracking-[0.26em] text-[#1b1713]/40 sm:mb-6 sm:text-[11px] sm:tracking-[0.32em]">
+              <p className="mb-5 text-[14px] font-semibold text-[#1b1713]/45">
                 Services
               </p>
 
-              <div className="flex flex-col gap-3.5 text-sm text-[#1b1713]/65 sm:gap-4 sm:text-base">
-                {services.map((service) => (
-                  <p key={service}>{service}</p>
+              <div className="flex flex-col gap-3">
+                {services.map(({ name, href }) => (
+                  <Link
+                    key={name}
+                    href={href}
+                    className="text-[14px] leading-5 text-[#1b1713]/60 transition-colors duration-300 hover:text-[#1b1713]"
+                  >
+                    {name}
+                  </Link>
                 ))}
               </div>
             </div>
 
-            {/* CONTACT */}
-            <div className="col-span-2 min-w-0 sm:col-span-1">
-              <p className="mb-5 text-[10px] uppercase tracking-[0.26em] text-[#1b1713]/40 sm:mb-6 sm:text-[11px] sm:tracking-[0.32em]">
-                Contact
+            {/* CONNECT */}
+
+            <div className="col-span-2 sm:col-span-1">
+              <p className="mb-5 text-[14px] font-semibold text-[#1b1713]/45">
+                Connect
               </p>
 
-              <div className="min-w-0 space-y-3.5 text-sm text-[#1b1713]/65 sm:space-y-4 sm:text-base">
+              <div className="flex flex-col gap-3">
+                {/* EMAIL */}
+
                 <a
                   href="mailto:contact@jovavo.com"
-                  className="block max-w-full overflow-hidden break-words transition hover:text-[#1b1713]"
+                  className="group flex w-fit max-w-full items-center gap-2.5 text-[14px] text-[#1b1713]/60 transition-colors duration-300 hover:text-[#1b1713]"
                 >
-                  contact@jovavo.com
+                  <Mail
+                    size={15}
+                    strokeWidth={1.6}
+                    className="shrink-0"
+                  />
+
+                  <span className="break-all">
+                    contact@jovavo.com
+                  </span>
                 </a>
 
-                <p>New York, NY</p>
+                {/* SOCIALS */}
 
-                <div className="space-y-3.5 sm:space-y-4">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${social.name} ${social.handle}`}
-                      className="group flex w-fit items-center gap-2 transition hover:text-[#1b1713]"
-                    >
-                      <span>{social.name}</span>
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${social.name} ${social.handle}`}
+                    className="group flex w-fit items-center gap-2.5 text-[14px] text-[#1b1713]/60 transition-colors duration-300 hover:text-[#1b1713]"
+                  >
+                    <AtSign
+                      size={15}
+                      strokeWidth={1.6}
+                      className="shrink-0 text-[#1b1713]/45 transition-colors group-hover:text-[#1b1713]"
+                    />
 
-                      <span className="text-xs text-[#1b1713]/35 transition group-hover:text-[#1b1713]/60">
-                        {social.handle}
-                      </span>
-                    </a>
-                  ))}
-                </div>
+                    <span>{social.name}</span>
+
+                    <span className="hidden text-[12px] text-[#1b1713]/30 transition-colors group-hover:text-[#1b1713]/50 xl:inline">
+                      {social.handle}
+                    </span>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM */}
-        <div className="mt-16 flex flex-col gap-4 border-t border-[#d8d0c5] pt-8 text-center text-[10px] uppercase leading-5 tracking-[0.16em] text-[#1b1713]/35 sm:text-[11px] sm:tracking-[0.18em] md:mt-24 md:flex-row md:items-center md:justify-between md:text-left md:text-[12px] md:tracking-[0.22em]">
-          <p>© {new Date().getFullYear()} Jovavo. All Rights Reserved.</p>
+        {/* =========================================================
+            SERVICE STRIP
+        ========================================================= */}
 
-          <p>Designed &amp; Developed by Jovavo.</p>
+        <div className="mt-12 grid gap-2 border-t border-[#1b1713]/10 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map(({ name, href, icon: Icon }) => (
+            <Link
+              key={name}
+              href={href}
+              className="group flex items-center gap-3 rounded-xl bg-[#fffdf9] px-4 py-3.5 transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f1ece3] text-[#1b1713]/60 transition-all duration-300 group-hover:bg-[#1b1713] group-hover:text-white">
+                <Icon size={15} strokeWidth={1.6} />
+              </div>
+
+              <span className="flex-1 text-[13px] font-medium text-[#1b1713]/60 transition-colors group-hover:text-[#1b1713]">
+                {name}
+              </span>
+
+              <ArrowUpRight
+                size={13}
+                strokeWidth={1.5}
+                className="text-[#1b1713]/25 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </Link>
+          ))}
+        </div>
+
+        {/* =========================================================
+            BOTTOM
+        ========================================================= */}
+
+        <div className="mt-8 flex flex-col gap-3 border-t border-[#1b1713]/10 pt-7 text-[12px] text-[#1b1713]/35 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} Jovavo. All Rights Reserved.
+          </p>
+
+          <p>
+            Designed &amp; Developed by Jovavo.
+          </p>
         </div>
       </div>
     </footer>
