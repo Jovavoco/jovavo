@@ -23,6 +23,10 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
+/* =========================================================
+   QUICK NAVIGATION
+========================================================= */
+
 const quickServices = [
   {
     title: "Websites",
@@ -50,12 +54,15 @@ const quickServices = [
   },
 ];
 
+/* =========================================================
+   SERVICES
+========================================================= */
+
 const capabilities = [
   {
     id: "website-design",
     title: "Website Design",
     icon: MonitorSmartphone,
-    image: "/images/services/website-design.jpg",
     headline: "A website designed around your business.",
     description:
       "We create responsive websites that feel polished, communicate clearly, and give your business a professional presence online.",
@@ -103,7 +110,6 @@ const capabilities = [
     id: "web-development",
     title: "Web Development",
     icon: Code2,
-    image: "/images/services/web-development.jpg",
     headline: "Systems built around the way your business works.",
     description:
       "When your business needs more than standard pages, we build custom functionality around your customers, operations, and workflow.",
@@ -151,7 +157,6 @@ const capabilities = [
     id: "digital-growth",
     title: "Digital Growth",
     icon: Megaphone,
-    image: "/images/services/digital-growth.jpg",
     headline: "Turn your website into a tool for growth.",
     description:
       "Once your digital foundation is in place, we can help bring the right people to it through search, advertising, analytics, and conversion-focused strategy.",
@@ -199,7 +204,6 @@ const capabilities = [
     id: "website-care",
     title: "Website Care",
     icon: HeartHandshake,
-    image: "/images/services/website-care.jpg",
     headline: "Support that continues after launch.",
     description:
       "Your website should keep working after it goes live. We can help manage updates, performance, security, content changes, and ongoing improvements.",
@@ -258,6 +262,7 @@ export default function ServicesPage() {
       {/* =========================================================
           HERO
       ========================================================= */}
+
       <section className="mx-auto max-w-6xl px-5 pb-14 pt-28 sm:px-6 sm:pb-16 sm:pt-32 md:pt-36">
         <Reveal>
           <div className="mx-auto max-w-4xl text-center">
@@ -278,13 +283,14 @@ export default function ServicesPage() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-[16px]">
-              Websites, custom systems, digital growth, and ongoing
-              support — built around what your business actually needs.
+              Websites, custom systems, digital growth, and ongoing support —
+              built around what your business actually needs.
             </p>
           </div>
         </Reveal>
 
-        {/* QUICK NAVIGATION */}
+        {/* QUICK LINKS */}
+
         <Reveal>
           <div className="mx-auto mt-10 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {quickServices.map(
@@ -294,7 +300,7 @@ export default function ServicesPage() {
                   href={href}
                   className="group flex items-start gap-4 rounded-[1.25rem] border border-[#1b1713]/10 bg-[#fffdf9] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#1b1713]/20 hover:shadow-[0_15px_40px_rgba(27,23,19,0.05)]"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f1ece3] text-[#1b1713]/65 transition-colors group-hover:bg-[#1b1713] group-hover:text-white">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f1ece3] text-[#1b1713]/65 transition-all duration-300 group-hover:bg-[#1b1713] group-hover:text-white">
                     <Icon size={18} strokeWidth={1.6} />
                   </div>
 
@@ -325,8 +331,9 @@ export default function ServicesPage() {
       {/* =========================================================
           SERVICE SECTIONS
       ========================================================= */}
+
       <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
-        <div className="space-y-6">
+        <div className="space-y-5 sm:space-y-6">
           {capabilities.map((capability, index) => {
             const SectionIcon = capability.icon;
 
@@ -334,94 +341,99 @@ export default function ServicesPage() {
               <Reveal key={capability.id} delay={index * 70}>
                 <article
                   id={capability.id}
-                  className="scroll-mt-28 overflow-hidden rounded-[1.6rem] border border-[#1b1713]/10 bg-[#fffdf9] shadow-[0_18px_55px_rgba(27,23,19,0.035)] sm:scroll-mt-32 sm:rounded-[2rem]"
+                  className="scroll-mt-28 overflow-hidden rounded-[1.6rem] border border-[#1b1713]/10 bg-[#fffdf9] sm:scroll-mt-32 sm:rounded-[2rem]"
                 >
-                  <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
-                    {/* IMAGE */}
-                    <div className="relative h-[220px] overflow-hidden bg-[#f1ece3] sm:h-[280px] lg:h-auto lg:min-h-[520px]">
-                      <img
-                        src={capability.image}
-                        alt={capability.title}
-                        className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
-                      />
+                  <div className="p-6 sm:p-8 md:p-10 lg:p-12">
+                    {/* SECTION HEADER */}
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1b1713]/10 via-transparent to-transparent" />
-                    </div>
+                    <div className="grid gap-7 border-b border-[#1b1713]/10 pb-8 md:grid-cols-[0.75fr_1.25fr] md:items-end md:gap-12 md:pb-10">
+                      <div>
+                        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f1ece3] text-[#1b1713]/70">
+                          <SectionIcon
+                            size={21}
+                            strokeWidth={1.6}
+                          />
+                        </div>
 
-                    {/* CONTENT */}
-                    <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 lg:p-12">
-                      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#f1ece3] text-[#1b1713]/65">
-                        <SectionIcon size={20} strokeWidth={1.6} />
+                        <p className="text-[15px] font-semibold text-[#1b1713]/50">
+                          {capability.title}
+                        </p>
+
+                        <h2 className="mt-3 max-w-xl font-serif text-[2.15rem] font-light leading-[1.04] tracking-[-0.03em] sm:text-[2.7rem] md:text-[3rem]">
+                          {capability.headline}
+                        </h2>
                       </div>
 
-                      <p className="text-[15px] font-semibold text-[#1b1713]/50">
-                        {capability.title}
-                      </p>
-
-                      <h2 className="mt-3 max-w-2xl font-serif text-[2.15rem] font-light leading-[1.04] tracking-[-0.03em] sm:text-[2.7rem] md:text-[3rem]">
-                        {capability.headline}
-                      </h2>
-
-                      <p className="mt-5 max-w-2xl text-[14px] leading-7 text-[#1b1713]/55 sm:text-[15px]">
+                      <p className="max-w-xl text-[15px] leading-7 text-[#1b1713]/55 md:justify-self-end">
                         {capability.description}
                       </p>
+                    </div>
 
-                      {/* INDIVIDUAL SERVICES */}
-                      <div className="mt-8 space-y-2.5">
-                        {capability.services.map(
-                          ({ title, icon: ServiceIcon, description }) => {
-                            const isOpen = openService === title;
+                    {/* INDIVIDUAL SERVICES */}
 
-                            return (
-                              <div
-                                key={title}
-                                className={`overflow-hidden rounded-xl border transition-all duration-300 ${
-                                  isOpen
-                                    ? "border-[#1b1713]/20 bg-[#f1ece3]"
-                                    : "border-[#1b1713]/10 bg-[#f8f5ef]"
-                                }`}
+                    <div className="mt-8 grid items-start gap-3 md:grid-cols-2">
+                      {capability.services.map(
+                        ({
+                          title,
+                          icon: ServiceIcon,
+                          description,
+                        }) => {
+                          const serviceKey = `${capability.id}-${title}`;
+                          const isOpen = openService === serviceKey;
+
+                          return (
+                            <div
+                              key={serviceKey}
+                              className={`overflow-hidden rounded-[1.15rem] border transition-all duration-300 ${
+                                isOpen
+                                  ? "border-[#1b1713]/20 bg-[#f1ece3]"
+                                  : "border-[#1b1713]/10 bg-[#f8f5ef]"
+                              }`}
+                            >
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  toggleService(serviceKey)
+                                }
+                                aria-expanded={isOpen}
+                                className="flex w-full items-center gap-4 p-4 text-left sm:p-5"
                               >
-                                <button
-                                  type="button"
-                                  onClick={() => toggleService(title)}
-                                  aria-expanded={isOpen}
-                                  className="group flex w-full items-center gap-3 px-4 py-3.5 text-left sm:px-5"
+                                <div
+                                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
+                                    isOpen
+                                      ? "bg-[#1b1713] text-white"
+                                      : "bg-[#fffdf9] text-[#1b1713]/60"
+                                  }`}
                                 >
-                                  <div
-                                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors duration-300 ${
-                                      isOpen
-                                        ? "bg-[#1b1713] text-white"
-                                        : "bg-[#fffdf9] text-[#1b1713]/60"
-                                    }`}
-                                  >
-                                    <ServiceIcon
-                                      size={17}
-                                      strokeWidth={1.6}
-                                    />
-                                  </div>
-
-                                  <span className="min-w-0 flex-1 text-[14px] font-medium text-[#1b1713]/70">
-                                    {title}
-                                  </span>
-
-                                  <ChevronDown
-                                    size={17}
+                                  <ServiceIcon
+                                    size={18}
                                     strokeWidth={1.6}
-                                    className={`shrink-0 text-[#1b1713]/35 transition-transform duration-300 ${
-                                      isOpen ? "rotate-180" : ""
-                                    }`}
                                   />
-                                </button>
+                                </div>
 
-                                {isOpen && (
-                                  <div className="px-4 pb-5 pl-[4.25rem] sm:px-5 sm:pl-[4.75rem]">
+                                <span className="min-w-0 flex-1 font-serif text-[1.15rem] font-light leading-tight text-[#1b1713]/75 sm:text-[1.25rem]">
+                                  {title}
+                                </span>
+
+                                <ChevronDown
+                                  size={17}
+                                  strokeWidth={1.6}
+                                  className={`shrink-0 text-[#1b1713]/35 transition-transform duration-300 ${
+                                    isOpen ? "rotate-180" : ""
+                                  }`}
+                                />
+                              </button>
+
+                              {isOpen && (
+                                <div className="px-4 pb-5 sm:px-5 sm:pb-6">
+                                  <div className="border-t border-[#1b1713]/10 pt-4">
                                     <p className="max-w-xl text-[14px] leading-6 text-[#1b1713]/55">
                                       {description}
                                     </p>
 
                                     <Link
                                       href="/contact"
-                                      className="group mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-[#1b1713]/65 transition-colors hover:text-[#1b1713]"
+                                      className="group mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-[#1b1713]/65 transition-colors duration-300 hover:text-[#1b1713]"
                                     >
                                       Ask about this service
 
@@ -432,12 +444,12 @@ export default function ServicesPage() {
                                       />
                                     </Link>
                                   </div>
-                                )}
-                              </div>
-                            );
-                          }
-                        )}
-                      </div>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        }
+                      )}
                     </div>
                   </div>
                 </article>
@@ -448,8 +460,9 @@ export default function ServicesPage() {
       </section>
 
       {/* =========================================================
-          SIMPLE EXPLANATION
+          HOW IT WORKS
       ========================================================= */}
+
       <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 md:pb-24">
         <Reveal>
           <div className="rounded-[1.6rem] bg-[#f1ece3] p-6 sm:rounded-[2rem] sm:p-8 md:p-10">
@@ -486,16 +499,11 @@ export default function ServicesPage() {
       {/* =========================================================
           FINAL CTA
       ========================================================= */}
+
       <section className="mx-auto max-w-6xl px-5 pb-24 sm:px-6 md:pb-28">
         <Reveal>
-          <div
-            className="relative overflow-hidden rounded-[1.6rem] border border-[#1b1713]/10 bg-[#fffdf9] bg-cover bg-center px-6 py-12 sm:rounded-[2rem] sm:px-10 sm:py-14 md:px-12"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(248,245,239,0.84), rgba(248,245,239,0.92)), url('/images/services/lets-talk.jpg')",
-            }}
-          >
-            <div className="relative z-10 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+          <div className="overflow-hidden rounded-[1.6rem] border border-[#1b1713]/10 bg-[#fffdf9] px-6 py-12 sm:rounded-[2rem] sm:px-10 sm:py-14 md:px-12">
+            <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div>
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#1b1713] text-white">
                   <ArrowUpRight size={18} strokeWidth={1.6} />
