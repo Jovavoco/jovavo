@@ -12,19 +12,19 @@ export const metadata: Metadata = {
 const projects = [
   {
     title: "Apexx Biolabs",
-    category: "E-Commerce · Web Design · Development",
+    category: "E-Commerce · Web Design",
     description:
-      "A custom e-commerce platform designed around a growing research brand, combining a refined storefront with customer accounts, promotions, loyalty features, automated workflows, and custom business tools.",
+      "A custom e-commerce platform combining a refined storefront with customer accounts, promotions, automated workflows, and custom business tools.",
     href: "/work/apexx-biolabs",
     status: "Live",
     image: "/images/work/apexx-biolabs.png",
-    services: ["Web Design", "E-Commerce", "Custom Development"],
+    services: ["Web Design", "E-Commerce", "Development"],
   },
   {
     title: "Willow & Tallow",
-    category: "E-Commerce · Web Design · Brand Experience",
+    category: "E-Commerce · Brand Experience",
     description:
-      "A warm, refined e-commerce experience created for a natural skincare brand, with an emphasis on thoughtful storytelling, effortless shopping, and a cohesive visual identity.",
+      "A refined e-commerce experience focused on thoughtful storytelling, effortless shopping, and a cohesive visual identity.",
     href: "/work/willow-and-tallow",
     status: "In Development",
     image: "/images/work/willow-tallow.png",
@@ -35,15 +35,16 @@ const projects = [
 export default function WorkPage() {
   return (
     <main className="min-h-screen bg-[#f5f1e8] text-[#1b1713]">
+
       {/* HERO */}
-      <section className="mx-auto max-w-7xl px-4 pb-14 pt-32 sm:px-6 sm:pb-16 sm:pt-36 md:pb-20 md:pt-40">
+      <section className="mx-auto max-w-7xl px-4 pb-14 pt-32 sm:px-6 sm:pt-36 md:pb-16 md:pt-40">
         <Reveal>
-          <div className="mx-auto max-w-5xl text-center">
-            <p className="mb-5 text-[9px] uppercase tracking-[0.36em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.42em]">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="mb-4 text-[9px] uppercase tracking-[0.36em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.42em]">
               Selected Work
             </p>
 
-            <h1 className="font-serif text-[2.8rem] font-light leading-[1.02] tracking-[-0.02em] text-[#1b1713] sm:text-[3.5rem] md:text-[4.4rem] lg:text-[5rem]">
+            <h1 className="font-serif text-[2.6rem] font-light leading-[1.03] tracking-[-0.02em] text-[#1b1713] sm:text-[3.2rem] md:text-[4rem]">
               Websites built around
               <br />
               <span className="italic text-[#1b1713]/55">
@@ -51,85 +52,79 @@ export default function WorkPage() {
               </span>
             </h1>
 
-            <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-base">
-              A selection of websites and digital experiences thoughtfully
-              designed around each brand, its customers, and the way the
-              business works.
+            <p className="mx-auto mt-5 max-w-xl text-[14px] leading-6 text-[#1b1713]/55 sm:text-[15px] sm:leading-7">
+              A selection of digital experiences thoughtfully designed around
+              each brand, its customers, and the way the business works.
             </p>
           </div>
         </Reveal>
       </section>
 
       {/* PROJECTS */}
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24 md:pb-28">
-        <div className="space-y-10 md:space-y-12">
+      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24">
+        <div className="grid gap-5 md:grid-cols-2 md:gap-6">
           {projects.map((project, index) => (
-            <Reveal key={project.title} delay={index * 120}>
+            <Reveal key={project.title} delay={index * 100}>
               <Link
                 href={project.href}
-                className="group block overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] transition-all duration-500 hover:-translate-y-1 md:rounded-[2.5rem]"
+                className="group block h-full overflow-hidden rounded-[1.75rem] border border-[#1b1713]/10 bg-[#fbf8f2] transition-all duration-300 hover:-translate-y-1 hover:border-[#1b1713]/15 md:rounded-[2rem]"
               >
-                {/* PROJECT IMAGE */}
-                <div className="relative h-[300px] overflow-hidden border-b border-[#1b1713]/10 bg-[#eee8de] sm:h-[400px] md:h-[500px] lg:h-[560px]">
+                {/* IMAGE */}
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-[#1b1713]/10 bg-[#eee8de]">
                   <img
                     src={project.image}
                     alt={`${project.title} website project by Jovavo`}
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
-
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1b1713]/[0.04] via-transparent to-transparent" />
                 </div>
 
-                {/* PROJECT INFORMATION */}
-                <div className="px-6 py-8 sm:px-9 sm:py-10 md:px-12 md:py-12">
-                  <div className="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-end lg:gap-16">
-                    {/* LEFT */}
-                    <div>
-                      <div className="mb-5 flex flex-wrap items-center gap-3">
-                        <p className="text-[9px] uppercase tracking-[0.26em] text-[#1b1713]/40 sm:text-[10px]">
-                          {project.category}
-                        </p>
+                {/* CONTENT */}
+                <div className="p-6 sm:p-7 md:p-8">
 
-                        <span className="hidden h-1 w-1 rounded-full bg-[#1b1713]/20 sm:block" />
+                  {/* META */}
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <p className="text-[8px] uppercase tracking-[0.24em] text-[#1b1713]/40 sm:text-[9px]">
+                      {project.category}
+                    </p>
 
-                        <span className="text-[9px] uppercase tracking-[0.2em] text-[#1b1713]/35 sm:text-[10px]">
-                          {project.status}
-                        </span>
-                      </div>
+                    <span className="shrink-0 text-[8px] uppercase tracking-[0.18em] text-[#1b1713]/30 sm:text-[9px]">
+                      {project.status}
+                    </span>
+                  </div>
 
-                      <h2 className="font-serif text-[2.35rem] font-light leading-[1.02] tracking-[-0.02em] text-[#1b1713] sm:text-[2.8rem] md:text-[3.3rem]">
-                        {project.title}
-                      </h2>
+                  {/* TITLE */}
+                  <h2 className="font-serif text-[2rem] font-light leading-none tracking-[-0.02em] text-[#1b1713] sm:text-[2.3rem] md:text-[2.5rem]">
+                    {project.title}
+                  </h2>
 
-                      {/* SERVICES */}
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {project.services.map((service) => (
-                          <span
-                            key={service}
-                            className="rounded-full border border-[#1b1713]/10 bg-[#f5f1e8]/60 px-4 py-2 text-[9px] uppercase tracking-[0.17em] text-[#1b1713]/45 sm:text-[10px]"
-                          >
-                            {service}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                  {/* DESCRIPTION */}
+                  <p className="mt-4 max-w-xl text-[13px] leading-6 text-[#1b1713]/55 sm:text-[14px]">
+                    {project.description}
+                  </p>
 
-                    {/* RIGHT */}
-                    <div>
-                      <p className="max-w-xl text-[14px] leading-6 text-[#1b1713]/55 sm:text-[15px] sm:leading-7">
-                        {project.description}
-                      </p>
+                  {/* SERVICES */}
+                  <div className="mt-5 flex flex-wrap gap-1.5">
+                    {project.services.map((service) => (
+                      <span
+                        key={service}
+                        className="rounded-full border border-[#1b1713]/10 px-3 py-1.5 text-[8px] uppercase tracking-[0.15em] text-[#1b1713]/45 sm:text-[9px]"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
 
-                      <div className="mt-6 inline-flex items-center gap-2.5 text-[9px] uppercase tracking-[0.24em] text-[#1b1713]/50 transition-colors duration-300 group-hover:text-[#1b1713] sm:text-[10px]">
-                        View Case Study
+                  {/* LINK */}
+                  <div className="mt-6 flex items-center justify-between border-t border-[#1b1713]/10 pt-5">
+                    <span className="text-[9px] uppercase tracking-[0.22em] text-[#1b1713]/50 transition-colors duration-300 group-hover:text-[#1b1713]">
+                      View Case Study
+                    </span>
 
-                        <ArrowUpRight
-                          size={14}
-                          strokeWidth={1.5}
-                          className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                        />
-                      </div>
-                    </div>
+                    <ArrowUpRight
+                      size={15}
+                      strokeWidth={1.5}
+                      className="text-[#1b1713]/45 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#1b1713]"
+                    />
                   </div>
                 </div>
               </Link>
@@ -141,37 +136,35 @@ export default function WorkPage() {
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24 md:pb-28">
         <Reveal>
-          <div className="overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#fbf8f2] px-6 py-11 text-center sm:px-10 sm:py-14 md:rounded-[2.5rem] md:px-14 md:py-16">
-            <p className="mb-4 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.4em]">
+          <div className="rounded-[1.75rem] border border-[#1b1713]/10 bg-[#fbf8f2] px-6 py-10 text-center sm:px-10 sm:py-12 md:rounded-[2rem]">
+            <p className="mb-3 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40">
               Start a Project
             </p>
 
-            <h2 className="mx-auto max-w-3xl font-serif text-[2.3rem] font-light leading-[1.04] tracking-[-0.02em] text-[#1b1713] sm:text-[2.8rem] md:text-[3.4rem]">
+            <h2 className="font-serif text-[2.2rem] font-light leading-[1.04] tracking-[-0.02em] text-[#1b1713] sm:text-[2.6rem] md:text-[3rem]">
               Have something{" "}
               <span className="italic text-[#1b1713]/55">
                 in mind?
               </span>
             </h2>
 
-            <p className="mx-auto mt-5 max-w-xl text-[14px] leading-6 text-[#1b1713]/55 sm:text-[15px] sm:leading-7">
+            <p className="mx-auto mt-4 max-w-lg text-[14px] leading-6 text-[#1b1713]/55">
               Tell us about your business, what you&apos;re building, and where
               you&apos;d like to take it.
             </p>
 
-            <div className="mt-7">
-              <Link
-                href="/contact"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#1b1713] px-7 py-3.5 text-[9px] uppercase tracking-[0.22em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#302a24] sm:px-8 sm:py-4 sm:text-[10px]"
-              >
-                Start a Project
+            <Link
+              href="/contact"
+              className="group mt-6 inline-flex items-center gap-2.5 rounded-full bg-[#1b1713] px-6 py-3 text-[9px] uppercase tracking-[0.2em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#302a24]"
+            >
+              Start a Project
 
-                <ArrowUpRight
-                  size={14}
-                  strokeWidth={1.5}
-                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </Link>
-            </div>
+              <ArrowUpRight
+                size={13}
+                strokeWidth={1.5}
+                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </Link>
           </div>
         </Reveal>
       </section>
