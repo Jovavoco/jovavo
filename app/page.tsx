@@ -311,46 +311,47 @@ export default function HomePage() {
 {/* CTA */}
 <section className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24 md:pb-28">
   <Reveal>
-    <div className="overflow-hidden rounded-[2rem] border border-white/5 bg-[#1b1713] text-white md:rounded-[2.5rem]">
-      <div className="px-6 py-11 sm:px-10 sm:py-13 md:px-14 md:py-16">
-        <div className="grid gap-9 md:grid-cols-[1fr_auto] md:items-end md:gap-14">
+    <div className="overflow-hidden rounded-[2rem] border border-[#1b1713]/10 bg-[#f5f1e8] md:rounded-[2.5rem]">
+      <div className="px-6 py-12 text-center sm:px-10 sm:py-14 md:px-14 md:py-16">
 
-          {/* TEXT */}
-          <div>
-            <p className="mb-5 text-[9px] uppercase tracking-[0.34em] text-white/40 sm:text-[10px] sm:tracking-[0.4em]">
-              Start a Project
-            </p>
+        {/* EYEBROW */}
+        <p className="mb-5 text-[9px] uppercase tracking-[0.34em] text-[#1b1713]/40 sm:text-[10px] sm:tracking-[0.4em]">
+          Start a Project
+        </p>
 
-            <h2 className="max-w-3xl font-serif text-[2.4rem] font-light leading-[1.04] tracking-[-0.02em] text-white sm:text-[2.9rem] md:text-[3.5rem] lg:text-[3.8rem]">
-              Your website should
-              <br />
-              do more than{" "}
-              <span className="italic text-white/55">
-                look good.
-              </span>
-            </h2>
+        {/* HEADING */}
+        <h2 className="mx-auto max-w-4xl font-serif text-[2.4rem] font-light leading-[1.04] tracking-[-0.02em] text-[#1b1713] sm:text-[2.9rem] md:text-[3.5rem] lg:text-[3.8rem]">
+          Your website should do more
+          <br className="hidden sm:block" />
+          {" "}than{" "}
+          <span className="italic text-[#1b1713]/55">
+            look good.
+          </span>
+        </h2>
 
-            <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/55 sm:text-base">
-              From custom websites and e-commerce to digital advertising,
-              Jovavo builds thoughtful digital experiences designed to support
-              your business and its growth.
-            </p>
-          </div>
+        {/* DESCRIPTION */}
+        <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-base">
+          From custom websites and e-commerce to digital advertising,
+          Jovavo creates thoughtful digital experiences built around
+          your business and its growth.
+        </p>
 
-          {/* BUTTON */}
+        {/* CTA */}
+        <div className="mt-8">
           <Link
             href="/contact"
-            className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#f5f1e8] px-7 py-3.5 text-[9px] uppercase tracking-[0.22em] text-[#1b1713] transition-all duration-300 hover:bg-white sm:w-fit sm:px-8 sm:py-4 sm:text-[10px]"
+            className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#1b1713] px-7 py-3.5 text-[9px] uppercase tracking-[0.22em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#302a24] sm:px-8 sm:py-4 sm:text-[10px]"
           >
             Start a Project
+
             <ArrowUpRight
               size={15}
               strokeWidth={1.5}
               className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
           </Link>
-
         </div>
+
       </div>
     </div>
   </Reveal>
