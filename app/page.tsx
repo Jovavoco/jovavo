@@ -4,13 +4,16 @@ import {
   ArrowUpRight,
   BarChart3,
   Code2,
+  Compass,
   Gauge,
   Globe2,
+  Headphones,
+  LayoutTemplate,
   Megaphone,
   MonitorSmartphone,
   MousePointerClick,
+  Rocket,
   Search,
-  ShieldCheck,
   ShoppingBag,
   Sparkles,
   Zap,
@@ -92,6 +95,45 @@ const featurePanels = [
         label: "Analytics",
       },
     ],
+  },
+];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Discover",
+    icon: Compass,
+    description: "Understand your business, goals, and audience.",
+  },
+  {
+    number: "02",
+    title: "Structure",
+    icon: LayoutTemplate,
+    description: "Plan the pages, content, and customer journey.",
+  },
+  {
+    number: "03",
+    title: "Design",
+    icon: Sparkles,
+    description: "Shape the visual direction and user experience.",
+  },
+  {
+    number: "04",
+    title: "Develop",
+    icon: Code2,
+    description: "Build the responsive website and functionality.",
+  },
+  {
+    number: "05",
+    title: "Launch",
+    icon: Rocket,
+    description: "Test, optimize, connect, and go live.",
+  },
+  {
+    number: "06",
+    title: "Support",
+    icon: Headphones,
+    description: "Continue improving as your business grows.",
   },
 ];
 
@@ -248,6 +290,89 @@ export default function HomePage() {
           </Reveal>
 
           {/* =====================================================
+              HOW WE WORK / PROCESS
+          ===================================================== */}
+
+          <Reveal>
+            <div className="mt-16 border-t border-[#1b1713]/10 pt-14 sm:mt-20 sm:pt-16">
+              {/* HEADING */}
+
+              <div className="mx-auto max-w-4xl text-center">
+                <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f1ece3] text-[#1b1713]">
+                  <Compass size={20} strokeWidth={1.6} />
+                </div>
+
+                <p className="text-[15px] font-semibold text-[#1b1713]/50">
+                  How We Work
+                </p>
+
+                <h2 className="mt-3 font-serif text-[2.6rem] font-light leading-[1.02] tracking-[-0.035em] sm:text-[3.3rem] md:text-[4rem]">
+                  A clear process from
+                  <br />
+                  idea to{" "}
+                  <span className="italic text-[#1b1713]/50">
+                    launch.
+                  </span>
+                </h2>
+
+                <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-[16px]">
+                  Every project follows a thoughtful process designed to keep
+                  the work focused, organized, and moving in the right
+                  direction.
+                </p>
+              </div>
+
+              {/* PROCESS STEPS */}
+
+              <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {processSteps.map(
+                  ({ number, title, icon: Icon, description }) => (
+                    <div
+                      key={number}
+                      className="group rounded-[1.25rem] border border-[#1b1713]/10 bg-[#fffdf9] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1b1713]/20 sm:p-6"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f1ece3] text-[#1b1713]/65 transition-all duration-300 group-hover:bg-[#1b1713] group-hover:text-white">
+                          <Icon size={17} strokeWidth={1.6} />
+                        </div>
+
+                        <span className="font-serif text-[1.7rem] font-light leading-none text-[#1b1713]/15">
+                          {number}
+                        </span>
+                      </div>
+
+                      <h3 className="mt-5 font-serif text-[1.55rem] font-light tracking-[-0.02em] text-[#1b1713]">
+                        {title}
+                      </h3>
+
+                      <p className="mt-2 text-[13px] leading-6 text-[#1b1713]/50">
+                        {description}
+                      </p>
+                    </div>
+                  )
+                )}
+              </div>
+
+              {/* PROCESS BUTTON */}
+
+              <div className="mt-8 flex justify-center">
+                <Link
+                  href="/process"
+                  className="group inline-flex items-center justify-center gap-2.5 rounded-full border border-[#1b1713]/15 bg-[#fffdf9] px-6 py-3.5 text-[13px] font-semibold text-[#1b1713]/65 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1b1713] hover:text-[#1b1713]"
+                >
+                  View Our Process
+
+                  <ArrowUpRight
+                    size={15}
+                    strokeWidth={1.6}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* =====================================================
               WHAT WE DO
           ===================================================== */}
 
@@ -371,12 +496,14 @@ export default function HomePage() {
                 {
                   icon: Megaphone,
                   title: "Digital Advertising",
-                  description: "Google and Meta campaigns built for growth.",
+                  description:
+                    "Google and Meta campaigns built for growth.",
                 },
                 {
                   icon: BarChart3,
                   title: "Analytics",
-                  description: "Understand what visitors do and what works.",
+                  description:
+                    "Understand what visitors do and what works.",
                 },
               ].map(({ icon: Icon, title, description }) => (
                 <div
@@ -420,8 +547,7 @@ export default function HomePage() {
 
             <h2 className="mx-auto mt-3 max-w-4xl font-serif text-[2.4rem] font-light leading-[1.04] tracking-[-0.03em] text-[#1b1713] sm:text-[3rem] md:text-[3.6rem]">
               Your website should do more
-              <br className="hidden sm:block" />
-              {" "}than{" "}
+              <br className="hidden sm:block" /> than{" "}
               <span className="italic text-[#1b1713]/50">
                 look good.
               </span>
