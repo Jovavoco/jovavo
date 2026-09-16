@@ -26,11 +26,12 @@ export default function AdminLoginPage() {
         password,
       });
 
-    if (signInError) {
-      setError("Invalid email or password.");
-      setLoading(false);
-      return;
-    }
+if (signInError) {
+  console.error("Supabase login error:", signInError);
+  setError(signInError.message);
+  setLoading(false);
+  return;
+}
 
     const { data: isAdmin, error: adminError } =
       await supabase.rpc("is_admin");
