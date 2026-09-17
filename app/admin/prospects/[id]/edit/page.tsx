@@ -19,6 +19,7 @@ import {
   Save,
   Users,
 } from "lucide-react";
+
 import { createClient } from "@/utils/supabase/client";
 import DeleteProspectButton from "@/components/admin/DeleteProspectButton";
 
@@ -86,9 +87,12 @@ export default function EditProspectPage() {
   const router = useRouter();
   const params = useParams();
 
-  const prospectId = Array.isArray(params.id)
-    ? params.id[0]
-    : params.id;
+  // Always guarantee a string so TypeScript/Vercel
+  // does not treat prospectId as string | undefined.
+  const prospectId =
+    (Array.isArray(params.id)
+      ? params.id[0]
+      : params.id) ?? "";
 
   const [supabase] = useState(() => createClient());
 
@@ -96,19 +100,32 @@ export default function EditProspectPage() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
-  const [businessName, setBusinessName] = useState("");
-  const [industry, setIndustry] = useState("");
-  const [website, setWebsite] = useState("");
-  const [instagram, setInstagram] = useState("");
+  const [businessName, setBusinessName] =
+    useState("");
 
-  const [contactName, setContactName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [industry, setIndustry] =
+    useState("");
+
+  const [website, setWebsite] =
+    useState("");
+
+  const [instagram, setInstagram] =
+    useState("");
+
+  const [contactName, setContactName] =
+    useState("");
+
+  const [email, setEmail] =
+    useState("");
+
+  const [phone, setPhone] =
+    useState("");
 
   const [leadSource, setLeadSource] =
     useState("Cold Outreach");
 
-  const [opportunity, setOpportunity] = useState("");
+  const [opportunity, setOpportunity] =
+    useState("");
 
   const [status, setStatus] =
     useState("Not Contacted");
@@ -116,37 +133,55 @@ export default function EditProspectPage() {
   const [mockupStatus, setMockupStatus] =
     useState("Not Needed");
 
-  const [firstContactDate, setFirstContactDate] =
+  const [
+    firstContactDate,
+    setFirstContactDate,
+  ] = useState("");
+
+  const [
+    lastContactDate,
+    setLastContactDate,
+  ] = useState("");
+
+  const [
+    nextFollowUp,
+    setNextFollowUp,
+  ] = useState("");
+
+  const [
+    estimatedValue,
+    setEstimatedValue,
+  ] = useState("");
+
+  const [
+    quotedPrice,
+    setQuotedPrice,
+  ] = useState("");
+
+  const [
+    websiteNotes,
+    setWebsiteNotes,
+  ] = useState("");
+
+  const [notes, setNotes] =
     useState("");
 
-  const [lastContactDate, setLastContactDate] =
-    useState("");
-
-  const [nextFollowUp, setNextFollowUp] =
-    useState("");
-
-  const [estimatedValue, setEstimatedValue] =
-    useState("");
-
-  const [quotedPrice, setQuotedPrice] =
-    useState("");
-
-  const [websiteNotes, setWebsiteNotes] =
-    useState("");
-
-  const [notes, setNotes] = useState("");
-
-  // -------------------------------------------------------
+  // =====================================================
   // LOAD PROSPECT
-  // -------------------------------------------------------
+  // =====================================================
 
   useEffect(() => {
     async function loadProspect() {
-      if (!prospectId) return;
+      if (!prospectId) {
+        setError("Prospect ID is missing.");
+        setLoading(false);
+        return;
+      }
 
       setLoading(true);
       setError("");
 
+      // Check logged-in user.
       const {
         data: { user },
       } = await supabase.auth.getUser();
@@ -156,6 +191,7 @@ export default function EditProspectPage() {
         return;
       }
 
+      // Check admin access.
       const {
         data: isAdmin,
         error: adminError,
@@ -167,65 +203,93 @@ export default function EditProspectPage() {
         return;
       }
 
-      const { data, error: loadError } =
-        await supabase
-          .from("prospects")
-          .select(`
-            id,
-            business_name,
-            industry,
-            website,
-            instagram,
-            contact_name,
-            email,
-            phone,
-            lead_source,
-            opportunity,
-            status,
-            mockup_status,
-            first_contact_date,
-            last_contact_date,
-            next_follow_up,
-            estimated_value,
-            quoted_price,
-            website_notes,
-            notes
-          `)
-          .eq("id", prospectId)
-          .single();
+      // Load the prospect.
+      const {
+        data,
+        error: loadError,
+      } = await supabase
+        .from("prospects")
+        .select(`
+          id,
+          business_name,
+          industry,
+          website,
+          instagram,
+          contact_name,
+          email,
+          phone,
+          lead_source,
+          opportunity,
+          status,
+          mockup_status,
+          first_contact_date,
+          last_contact_date,
+          next_follow_up,
+          estimated_value,
+          quoted_price,
+          website_notes,
+          notes
+        `)
+        .eq("id", prospectId)
+        .single();
 
       if (loadError || !data) {
         setError(
           loadError?.message ||
             "Unable to load this prospect."
         );
+
         setLoading(false);
         return;
       }
 
       const prospect = data as Prospect;
 
-      setBusinessName(prospect.business_name || "");
-      setIndustry(prospect.industry || "");
-      setWebsite(prospect.website || "");
-      setInstagram(prospect.instagram || "");
-
-      setContactName(prospect.contact_name || "");
-      setEmail(prospect.email || "");
-      setPhone(prospect.phone || "");
-
-      setLeadSource(
-        prospect.lead_source || "Cold Outreach"
+      setBusinessName(
+        prospect.business_name || ""
       );
 
-      setOpportunity(prospect.opportunity || "");
+      setIndustry(
+        prospect.industry || ""
+      );
+
+      setWebsite(
+        prospect.website || ""
+      );
+
+      setInstagram(
+        prospect.instagram || ""
+      );
+
+      setContactName(
+        prospect.contact_name || ""
+      );
+
+      setEmail(
+        prospect.email || ""
+      );
+
+      setPhone(
+        prospect.phone || ""
+      );
+
+      setLeadSource(
+        prospect.lead_source ||
+          "Cold Outreach"
+      );
+
+      setOpportunity(
+        prospect.opportunity || ""
+      );
 
       setStatus(
-        prospect.status || "Not Contacted"
+        prospect.status ||
+          "Not Contacted"
       );
 
       setMockupStatus(
-        prospect.mockup_status || "Not Needed"
+        prospect.mockup_status ||
+          "Not Needed"
       );
 
       setFirstContactDate(
@@ -242,15 +306,21 @@ export default function EditProspectPage() {
 
       setEstimatedValue(
         prospect.estimated_value !== null &&
-          prospect.estimated_value !== undefined
-          ? String(prospect.estimated_value)
+          prospect.estimated_value !==
+            undefined
+          ? String(
+              prospect.estimated_value
+            )
           : ""
       );
 
       setQuotedPrice(
         prospect.quoted_price !== null &&
-          prospect.quoted_price !== undefined
-          ? String(prospect.quoted_price)
+          prospect.quoted_price !==
+            undefined
+          ? String(
+              prospect.quoted_price
+            )
           : ""
       );
 
@@ -258,69 +328,122 @@ export default function EditProspectPage() {
         prospect.website_notes || ""
       );
 
-      setNotes(prospect.notes || "");
+      setNotes(
+        prospect.notes || ""
+      );
 
       setLoading(false);
     }
 
     loadProspect();
-  }, [prospectId, router, supabase]);
+  }, [
+    prospectId,
+    router,
+    supabase,
+  ]);
 
-  // -------------------------------------------------------
+  // =====================================================
   // SAVE CHANGES
-  // -------------------------------------------------------
+  // =====================================================
 
   async function handleSubmit(
     event: FormEvent<HTMLFormElement>
   ) {
     event.preventDefault();
 
-    if (!prospectId) return;
+    if (!prospectId) {
+      setError(
+        "Prospect ID is missing."
+      );
+      return;
+    }
 
     if (!businessName.trim()) {
-      setError("Business name is required.");
+      setError(
+        "Business name is required."
+      );
       return;
     }
 
     setSaving(true);
     setError("");
 
-    const { error: updateError } =
-      await supabase
-        .from("prospects")
-        .update({
-          business_name: businessName.trim(),
-          industry: industry.trim() || null,
-          website: website.trim() || null,
-          instagram: instagram.trim() || null,
-          contact_name: contactName.trim() || null,
-          email: email.trim() || null,
-          phone: phone.trim() || null,
-          lead_source: leadSource,
-          opportunity: opportunity || null,
-          status,
-          mockup_status: mockupStatus,
-          first_contact_date:
-            firstContactDate || null,
-          last_contact_date:
-            lastContactDate || null,
-          next_follow_up: nextFollowUp || null,
-          estimated_value:
-            estimatedValue.trim() !== ""
-              ? Number(estimatedValue)
-              : null,
-          quoted_price:
-            quotedPrice.trim() !== ""
-              ? Number(quotedPrice)
-              : null,
-          website_notes:
-            websiteNotes.trim() || null,
-          notes: notes.trim() || null,
-        })
-        .eq("id", prospectId);
+    const {
+      error: updateError,
+    } = await supabase
+      .from("prospects")
+      .update({
+        business_name:
+          businessName.trim(),
+
+        industry:
+          industry.trim() || null,
+
+        website:
+          website.trim() || null,
+
+        instagram:
+          instagram.trim() || null,
+
+        contact_name:
+          contactName.trim() || null,
+
+        email:
+          email.trim() || null,
+
+        phone:
+          phone.trim() || null,
+
+        lead_source:
+          leadSource,
+
+        opportunity:
+          opportunity || null,
+
+        status,
+
+        mockup_status:
+          mockupStatus,
+
+        first_contact_date:
+          firstContactDate || null,
+
+        last_contact_date:
+          lastContactDate || null,
+
+        next_follow_up:
+          nextFollowUp || null,
+
+        estimated_value:
+          estimatedValue.trim() !== ""
+            ? Number(
+                estimatedValue
+              )
+            : null,
+
+        quoted_price:
+          quotedPrice.trim() !== ""
+            ? Number(
+                quotedPrice
+              )
+            : null,
+
+        website_notes:
+          websiteNotes.trim() || null,
+
+        notes:
+          notes.trim() || null,
+      })
+      .eq(
+        "id",
+        prospectId
+      );
 
     if (updateError) {
-      setError(updateError.message);
+      setError(
+        updateError.message
+      );
+
       setSaving(false);
       return;
     }
@@ -332,9 +455,9 @@ export default function EditProspectPage() {
     router.refresh();
   }
 
-  // -------------------------------------------------------
-  // LOADING
-  // -------------------------------------------------------
+  // =====================================================
+  // LOADING SCREEN
+  // =====================================================
 
   if (loading) {
     return (
@@ -344,11 +467,16 @@ export default function EditProspectPage() {
             size={18}
             className="animate-spin"
           />
+
           Loading prospect...
         </div>
       </main>
     );
   }
+
+  // =====================================================
+  // PAGE
+  // =====================================================
 
   return (
     <main className="min-h-screen bg-[#f8f5ef] text-[#1b1713]">
@@ -375,7 +503,10 @@ export default function EditProspectPage() {
             href={`/admin/prospects/${prospectId}`}
             className="flex items-center gap-2 text-xs font-medium text-[#655e56] transition hover:text-[#1b1713]"
           >
-            <ArrowLeft size={14} />
+            <ArrowLeft
+              size={14}
+            />
+
             Prospect
           </Link>
         </div>
@@ -388,9 +519,12 @@ export default function EditProspectPage() {
           <nav className="space-y-2">
             <Link
               href="/admin"
-              className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-[#655e56] transition hover:bg-[#f1ece3]"
+              className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-[#655e56] transition hover:bg-[#f1ece3] hover:text-[#1b1713]"
             >
-              <LayoutDashboard size={17} />
+              <LayoutDashboard
+                size={17}
+              />
+
               Dashboard
             </Link>
 
@@ -398,7 +532,10 @@ export default function EditProspectPage() {
               href="/admin/prospects"
               className="flex items-center gap-3 rounded-xl bg-[#1b1713] px-4 py-3 text-sm text-white"
             >
-              <Users size={17} />
+              <Users
+                size={17}
+              />
+
               Prospects
             </Link>
           </nav>
@@ -411,9 +548,14 @@ export default function EditProspectPage() {
             href={`/admin/prospects/${prospectId}`}
             className="inline-flex items-center gap-2 text-xs font-medium text-[#706960] transition hover:text-[#1b1713]"
           >
-            <ArrowLeft size={14} />
+            <ArrowLeft
+              size={14}
+            />
+
             Back to Prospect
           </Link>
+
+          {/* PAGE HEADING */}
 
           <div className="mt-6">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#817970]">
@@ -425,9 +567,12 @@ export default function EditProspectPage() {
             </h1>
 
             <p className="mt-3 text-sm text-[#706960]">
-              Update {businessName}.
+              Update{" "}
+              {businessName}.
             </p>
           </div>
+
+          {/* ERROR */}
 
           {error && (
             <div className="mt-6 rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">
@@ -435,14 +580,22 @@ export default function EditProspectPage() {
             </div>
           )}
 
+          {/* FORM */}
+
           <form
-            onSubmit={handleSubmit}
+            onSubmit={
+              handleSubmit
+            }
             className="mt-8 space-y-5"
           >
-            {/* BUSINESS */}
+            {/* BUSINESS INFORMATION */}
 
             <FormSection
-              icon={<Building2 size={17} />}
+              icon={
+                <Building2
+                  size={17}
+                />
+              }
               title="Business Information"
               description="Basic information about the prospect."
             >
@@ -452,25 +605,43 @@ export default function EditProspectPage() {
                   required
                 >
                   <input
-                    value={businessName}
-                    onChange={(e) =>
+                    value={
+                      businessName
+                    }
+                    onChange={(
+                      event
+                    ) =>
                       setBusinessName(
-                        e.target.value
+                        event
+                          .target
+                          .value
                       )
                     }
                     required
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   />
                 </Field>
 
                 <Field label="Industry">
                   <input
-                    value={industry}
-                    onChange={(e) =>
-                      setIndustry(e.target.value)
+                    value={
+                      industry
+                    }
+                    onChange={(
+                      event
+                    ) =>
+                      setIndustry(
+                        event
+                          .target
+                          .value
+                      )
                     }
                     placeholder="Med Spa"
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   />
                 </Field>
               </div>
@@ -479,74 +650,130 @@ export default function EditProspectPage() {
             {/* ONLINE PRESENCE */}
 
             <FormSection
-              icon={<Globe size={17} />}
+              icon={
+                <Globe
+                  size={17}
+                />
+              }
               title="Online Presence"
               description="Website and social presence."
             >
               <div className="grid gap-5 md:grid-cols-2">
                 <Field label="Website">
                   <input
-                    value={website}
-                    onChange={(e) =>
-                      setWebsite(e.target.value)
+                    value={
+                      website
+                    }
+                    onChange={(
+                      event
+                    ) =>
+                      setWebsite(
+                        event
+                          .target
+                          .value
+                      )
                     }
                     placeholder="https://..."
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   />
                 </Field>
 
                 <Field label="Instagram">
                   <input
-                    value={instagram}
-                    onChange={(e) =>
-                      setInstagram(e.target.value)
+                    value={
+                      instagram
+                    }
+                    onChange={(
+                      event
+                    ) =>
+                      setInstagram(
+                        event
+                          .target
+                          .value
+                      )
                     }
                     placeholder="https://instagram.com/..."
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   />
                 </Field>
               </div>
             </FormSection>
 
-            {/* CONTACT */}
+            {/* CONTACT INFORMATION */}
 
             <FormSection
-              icon={<Contact size={17} />}
+              icon={
+                <Contact
+                  size={17}
+                />
+              }
               title="Contact Information"
               description="Primary contact for this business."
             >
               <div className="grid gap-5 md:grid-cols-3">
                 <Field label="Contact Name">
                   <input
-                    value={contactName}
-                    onChange={(e) =>
+                    value={
+                      contactName
+                    }
+                    onChange={(
+                      event
+                    ) =>
                       setContactName(
-                        e.target.value
+                        event
+                          .target
+                          .value
                       )
                     }
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   />
                 </Field>
 
                 <Field label="Email">
                   <input
                     type="email"
-                    value={email}
-                    onChange={(e) =>
-                      setEmail(e.target.value)
+                    value={
+                      email
                     }
-                    className={inputClasses}
+                    onChange={(
+                      event
+                    ) =>
+                      setEmail(
+                        event
+                          .target
+                          .value
+                      )
+                    }
+                    className={
+                      inputClasses
+                    }
                   />
                 </Field>
 
                 <Field label="Phone">
                   <input
                     type="tel"
-                    value={phone}
-                    onChange={(e) =>
-                      setPhone(e.target.value)
+                    value={
+                      phone
                     }
-                    className={inputClasses}
+                    onChange={(
+                      event
+                    ) =>
+                      setPhone(
+                        event
+                          .target
+                          .value
+                      )
+                    }
+                    className={
+                      inputClasses
+                    }
                   />
                 </Field>
               </div>
@@ -555,28 +782,48 @@ export default function EditProspectPage() {
             {/* PIPELINE */}
 
             <FormSection
-              icon={<Users size={17} />}
+              icon={
+                <Users
+                  size={17}
+                />
+              }
               title="Pipeline"
               description="Track where this opportunity stands."
             >
               <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
                 <Field label="Lead Source">
                   <select
-                    value={leadSource}
-                    onChange={(e) =>
+                    value={
+                      leadSource
+                    }
+                    onChange={(
+                      event
+                    ) =>
                       setLeadSource(
-                        e.target.value
+                        event
+                          .target
+                          .value
                       )
                     }
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   >
                     {leadSources.map(
-                      (source) => (
+                      (
+                        source
+                      ) => (
                         <option
-                          key={source}
-                          value={source}
+                          key={
+                            source
+                          }
+                          value={
+                            source
+                          }
                         >
-                          {source}
+                          {
+                            source
+                          }
                         </option>
                       )
                     )}
@@ -585,25 +832,42 @@ export default function EditProspectPage() {
 
                 <Field label="Opportunity">
                   <select
-                    value={opportunity}
-                    onChange={(e) =>
+                    value={
+                      opportunity
+                    }
+                    onChange={(
+                      event
+                    ) =>
                       setOpportunity(
-                        e.target.value
+                        event
+                          .target
+                          .value
                       )
                     }
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   >
                     <option value="">
-                      Select opportunity
+                      Select
+                      opportunity
                     </option>
 
                     {opportunities.map(
-                      (item) => (
+                      (
+                        item
+                      ) => (
                         <option
-                          key={item}
-                          value={item}
+                          key={
+                            item
+                          }
+                          value={
+                            item
+                          }
                         >
-                          {item}
+                          {
+                            item
+                          }
                         </option>
                       )
                     )}
@@ -612,40 +876,76 @@ export default function EditProspectPage() {
 
                 <Field label="Status">
                   <select
-                    value={status}
-                    onChange={(e) =>
-                      setStatus(e.target.value)
+                    value={
+                      status
                     }
-                    className={inputClasses}
+                    onChange={(
+                      event
+                    ) =>
+                      setStatus(
+                        event
+                          .target
+                          .value
+                      )
+                    }
+                    className={
+                      inputClasses
+                    }
                   >
-                    {statuses.map((item) => (
-                      <option
-                        key={item}
-                        value={item}
-                      >
-                        {item}
-                      </option>
-                    ))}
+                    {statuses.map(
+                      (
+                        item
+                      ) => (
+                        <option
+                          key={
+                            item
+                          }
+                          value={
+                            item
+                          }
+                        >
+                          {
+                            item
+                          }
+                        </option>
+                      )
+                    )}
                   </select>
                 </Field>
 
                 <Field label="Mockup Status">
                   <select
-                    value={mockupStatus}
-                    onChange={(e) =>
+                    value={
+                      mockupStatus
+                    }
+                    onChange={(
+                      event
+                    ) =>
                       setMockupStatus(
-                        e.target.value
+                        event
+                          .target
+                          .value
                       )
                     }
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   >
                     {mockupStatuses.map(
-                      (item) => (
+                      (
+                        item
+                      ) => (
                         <option
-                          key={item}
-                          value={item}
+                          key={
+                            item
+                          }
+                          value={
+                            item
+                          }
                         >
-                          {item}
+                          {
+                            item
+                          }
                         </option>
                       )
                     )}
@@ -657,7 +957,11 @@ export default function EditProspectPage() {
             {/* FOLLOW-UP */}
 
             <FormSection
-              icon={<CalendarDays size={17} />}
+              icon={
+                <CalendarDays
+                  size={17}
+                />
+              }
               title="Contact & Follow-Up"
               description="Keep track of outreach and next steps."
             >
@@ -665,48 +969,76 @@ export default function EditProspectPage() {
                 <Field label="First Contact">
                   <input
                     type="date"
-                    value={firstContactDate}
-                    onChange={(e) =>
+                    value={
+                      firstContactDate
+                    }
+                    onChange={(
+                      event
+                    ) =>
                       setFirstContactDate(
-                        e.target.value
+                        event
+                          .target
+                          .value
                       )
                     }
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   />
                 </Field>
 
                 <Field label="Last Contact">
                   <input
                     type="date"
-                    value={lastContactDate}
-                    onChange={(e) =>
+                    value={
+                      lastContactDate
+                    }
+                    onChange={(
+                      event
+                    ) =>
                       setLastContactDate(
-                        e.target.value
+                        event
+                          .target
+                          .value
                       )
                     }
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   />
                 </Field>
 
                 <Field label="Next Follow-Up">
                   <input
                     type="date"
-                    value={nextFollowUp}
-                    onChange={(e) =>
+                    value={
+                      nextFollowUp
+                    }
+                    onChange={(
+                      event
+                    ) =>
                       setNextFollowUp(
-                        e.target.value
+                        event
+                          .target
+                          .value
                       )
                     }
-                    className={inputClasses}
+                    className={
+                      inputClasses
+                    }
                   />
                 </Field>
               </div>
             </FormSection>
 
-            {/* VALUE */}
+            {/* PROJECT VALUE */}
 
             <FormSection
-              icon={<CircleDollarSign size={17} />}
+              icon={
+                <CircleDollarSign
+                  size={17}
+                />
+              }
               title="Project Value"
               description="Track potential and quoted revenue."
             >
@@ -721,10 +1053,16 @@ export default function EditProspectPage() {
                       type="number"
                       min="0"
                       step="0.01"
-                      value={estimatedValue}
-                      onChange={(e) =>
+                      value={
+                        estimatedValue
+                      }
+                      onChange={(
+                        event
+                      ) =>
                         setEstimatedValue(
-                          e.target.value
+                          event
+                            .target
+                            .value
                         )
                       }
                       className={`${inputClasses} pl-8`}
@@ -742,10 +1080,16 @@ export default function EditProspectPage() {
                       type="number"
                       min="0"
                       step="0.01"
-                      value={quotedPrice}
-                      onChange={(e) =>
+                      value={
+                        quotedPrice
+                      }
+                      onChange={(
+                        event
+                      ) =>
                         setQuotedPrice(
-                          e.target.value
+                          event
+                            .target
+                            .value
                         )
                       }
                       className={`${inputClasses} pl-8`}
@@ -764,10 +1108,16 @@ export default function EditProspectPage() {
               <div className="grid gap-5 xl:grid-cols-2">
                 <Field label="Website / Opportunity Notes">
                   <textarea
-                    value={websiteNotes}
-                    onChange={(e) =>
+                    value={
+                      websiteNotes
+                    }
+                    onChange={(
+                      event
+                    ) =>
                       setWebsiteNotes(
-                        e.target.value
+                        event
+                          .target
+                          .value
                       )
                     }
                     rows={6}
@@ -778,9 +1128,17 @@ export default function EditProspectPage() {
 
                 <Field label="General Notes">
                   <textarea
-                    value={notes}
-                    onChange={(e) =>
-                      setNotes(e.target.value)
+                    value={
+                      notes
+                    }
+                    onChange={(
+                      event
+                    ) =>
+                      setNotes(
+                        event
+                          .target
+                          .value
+                      )
                     }
                     rows={6}
                     placeholder="Conversation notes, preferences, next steps..."
@@ -794,8 +1152,12 @@ export default function EditProspectPage() {
 
             <div className="flex flex-col gap-4 border-t border-[#ded7cd] pt-6 sm:flex-row sm:items-center sm:justify-between">
               <DeleteProspectButton
-                prospectId={prospectId}
-                businessName={businessName}
+                prospectId={
+                  prospectId
+                }
+                businessName={
+                  businessName
+                }
               />
 
               <div className="flex flex-col-reverse gap-3 sm:flex-row">
@@ -808,20 +1170,30 @@ export default function EditProspectPage() {
 
                 <button
                   type="submit"
-                  disabled={saving}
+                  disabled={
+                    saving
+                  }
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#1b1713] px-7 text-sm font-medium text-white transition hover:bg-[#302923] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {saving ? (
                     <>
                       <Loader2
-                        size={16}
+                        size={
+                          16
+                        }
                         className="animate-spin"
                       />
+
                       Saving...
                     </>
                   ) : (
                     <>
-                      <Save size={16} />
+                      <Save
+                        size={
+                          16
+                        }
+                      />
+
                       Save Changes
                     </>
                   )}
@@ -835,9 +1207,9 @@ export default function EditProspectPage() {
   );
 }
 
-// -------------------------------------------------------
+// =======================================================
 // REUSABLE COMPONENTS
-// -------------------------------------------------------
+// =======================================================
 
 const inputClasses =
   "w-full rounded-xl border border-[#dcd5cb] bg-white px-4 py-3 text-sm text-[#1b1713] outline-none transition placeholder:text-[#aaa298] focus:border-[#1b1713] focus:ring-1 focus:ring-[#1b1713]";
@@ -899,7 +1271,9 @@ function FormSection({
         </div>
       </div>
 
-      <div className="mt-6">{children}</div>
+      <div className="mt-6">
+        {children}
+      </div>
     </section>
   );
 }
