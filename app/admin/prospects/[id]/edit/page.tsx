@@ -20,6 +20,7 @@ import {
   Users,
 } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
+import DeleteProspectButton from "@/components/admin/DeleteProspectButton";
 
 const leadSources = [
   "Warm Lead",
@@ -107,8 +108,7 @@ export default function EditProspectPage() {
   const [leadSource, setLeadSource] =
     useState("Cold Outreach");
 
-  const [opportunity, setOpportunity] =
-    useState("");
+  const [opportunity, setOpportunity] = useState("");
 
   const [status, setStatus] =
     useState("Not Contacted");
@@ -137,7 +137,7 @@ export default function EditProspectPage() {
   const [notes, setNotes] = useState("");
 
   // -------------------------------------------------------
-  // LOAD EXISTING PROSPECT
+  // LOAD PROSPECT
   // -------------------------------------------------------
 
   useEffect(() => {
@@ -290,58 +290,32 @@ export default function EditProspectPage() {
         .from("prospects")
         .update({
           business_name: businessName.trim(),
-
-          industry:
-            industry.trim() || null,
-
-          website:
-            website.trim() || null,
-
-          instagram:
-            instagram.trim() || null,
-
-          contact_name:
-            contactName.trim() || null,
-
-          email:
-            email.trim() || null,
-
-          phone:
-            phone.trim() || null,
-
+          industry: industry.trim() || null,
+          website: website.trim() || null,
+          instagram: instagram.trim() || null,
+          contact_name: contactName.trim() || null,
+          email: email.trim() || null,
+          phone: phone.trim() || null,
           lead_source: leadSource,
-
-          opportunity:
-            opportunity || null,
-
+          opportunity: opportunity || null,
           status,
-
           mockup_status: mockupStatus,
-
           first_contact_date:
             firstContactDate || null,
-
           last_contact_date:
             lastContactDate || null,
-
-          next_follow_up:
-            nextFollowUp || null,
-
+          next_follow_up: nextFollowUp || null,
           estimated_value:
             estimatedValue.trim() !== ""
               ? Number(estimatedValue)
               : null,
-
           quoted_price:
             quotedPrice.trim() !== ""
               ? Number(quotedPrice)
               : null,
-
           website_notes:
             websiteNotes.trim() || null,
-
-          notes:
-            notes.trim() || null,
+          notes: notes.trim() || null,
         })
         .eq("id", prospectId);
 
@@ -357,6 +331,10 @@ export default function EditProspectPage() {
 
     router.refresh();
   }
+
+  // -------------------------------------------------------
+  // LOADING
+  // -------------------------------------------------------
 
   if (loading) {
     return (
@@ -461,7 +439,7 @@ export default function EditProspectPage() {
             onSubmit={handleSubmit}
             className="mt-8 space-y-5"
           >
-            {/* BUSINESS INFORMATION */}
+            {/* BUSINESS */}
 
             <FormSection
               icon={<Building2 size={17} />}
@@ -469,7 +447,10 @@ export default function EditProspectPage() {
               description="Basic information about the prospect."
             >
               <div className="grid gap-5 md:grid-cols-2">
-                <Field label="Business Name" required>
+                <Field
+                  label="Business Name"
+                  required
+                >
                   <input
                     value={businessName}
                     onChange={(e) =>
@@ -673,7 +654,7 @@ export default function EditProspectPage() {
               </div>
             </FormSection>
 
-            {/* DATES */}
+            {/* FOLLOW-UP */}
 
             <FormSection
               icon={<CalendarDays size={17} />}
@@ -811,34 +792,41 @@ export default function EditProspectPage() {
 
             {/* ACTIONS */}
 
-            <div className="flex flex-col-reverse gap-3 border-t border-[#ded7cd] pt-6 sm:flex-row sm:items-center sm:justify-end">
-              <Link
-                href={`/admin/prospects/${prospectId}`}
-                className="inline-flex h-12 items-center justify-center rounded-full border border-[#d8d0c5] bg-[#fffdf9] px-6 text-sm font-medium transition hover:bg-[#f1ece3]"
-              >
-                Cancel
-              </Link>
+            <div className="flex flex-col gap-4 border-t border-[#ded7cd] pt-6 sm:flex-row sm:items-center sm:justify-between">
+              <DeleteProspectButton
+                prospectId={prospectId}
+                businessName={businessName}
+              />
 
-              <button
-                type="submit"
-                disabled={saving}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#1b1713] px-7 text-sm font-medium text-white transition hover:bg-[#302923] disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                {saving ? (
-                  <>
-                    <Loader2
-                      size={16}
-                      className="animate-spin"
-                    />
-                    Saving...
-                  </>
-                ) : (
-                  <>
-                    <Save size={16} />
-                    Save Changes
-                  </>
-                )}
-              </button>
+              <div className="flex flex-col-reverse gap-3 sm:flex-row">
+                <Link
+                  href={`/admin/prospects/${prospectId}`}
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-[#d8d0c5] bg-[#fffdf9] px-6 text-sm font-medium transition hover:bg-[#f1ece3]"
+                >
+                  Cancel
+                </Link>
+
+                <button
+                  type="submit"
+                  disabled={saving}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#1b1713] px-7 text-sm font-medium text-white transition hover:bg-[#302923] disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {saving ? (
+                    <>
+                      <Loader2
+                        size={16}
+                        className="animate-spin"
+                      />
+                      Saving...
+                    </>
+                  ) : (
+                    <>
+                      <Save size={16} />
+                      Save Changes
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </form>
         </section>
@@ -848,7 +836,7 @@ export default function EditProspectPage() {
 }
 
 // -------------------------------------------------------
-// REUSABLE FORM COMPONENTS
+// REUSABLE COMPONENTS
 // -------------------------------------------------------
 
 const inputClasses =
@@ -867,6 +855,7 @@ function Field({
     <label className="block">
       <span className="mb-2 block text-[11px] font-medium uppercase tracking-[0.12em] text-[#706960]">
         {label}
+
         {required && (
           <span className="ml-1 text-red-600">
             *
