@@ -4,7 +4,6 @@ import { useState } from "react";
 import {
   ArrowRight,
   ChevronDown,
-  Instagram,
   MapPin,
   Menu,
   Phone,
@@ -134,7 +133,6 @@ export default function HouseOfLaser() {
         id="home"
         className="relative overflow-hidden px-5 py-12 md:px-8 md:py-16 lg:px-12 lg:py-20"
       >
-        {/* DECORATIVE BACKGROUND */}
         <div className="pointer-events-none absolute -left-40 top-10 h-[420px] w-[420px] rounded-full bg-[#A94E17]/[0.045] blur-3xl" />
 
         <div className="relative mx-auto grid max-w-[1450px] items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
@@ -205,21 +203,18 @@ export default function HouseOfLaser() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#30231E]/30 via-transparent to-transparent" />
 
-                <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-                  <div>
-                    <p className="text-[8px] uppercase tracking-[0.25em] text-white/70">
-                      Welcome In
-                    </p>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/70">
+                    Welcome In
+                  </p>
 
-                    <p className="mt-1.5 font-serif text-2xl italic text-white">
-                      House of Laser & Spa
-                    </p>
-                  </div>
+                  <p className="mt-1.5 font-serif text-2xl italic text-white">
+                    House of Laser & Spa
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* FLOATING DETAIL */}
             <div className="absolute -bottom-6 left-5 rounded-[18px] border border-[#B89A68]/25 bg-[#FBF8F3] px-5 py-4 shadow-[0_12px_40px_rgba(48,35,30,0.12)] sm:left-10">
               <div className="flex items-center gap-3">
                 <Sparkles
@@ -395,8 +390,8 @@ export default function HouseOfLaser() {
         id="experience"
         className="relative overflow-hidden bg-[#304A3D] px-5 py-20 text-white md:px-8 md:py-28 lg:px-12"
       >
-        {/* DECORATION */}
         <div className="pointer-events-none absolute -right-24 -top-24 h-[330px] w-[330px] rounded-full border border-[#D5B88F]/15" />
+
         <div className="pointer-events-none absolute -right-10 -top-10 h-[210px] w-[210px] rounded-full border border-[#D5B88F]/15" />
 
         <div className="relative mx-auto grid max-w-[1300px] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
@@ -447,7 +442,7 @@ export default function HouseOfLaser() {
             </a>
           </div>
 
-          {/* USE THE WAITING AREA AGAIN, BUT DIFFERENT CROP */}
+          {/* WAITING AREA */}
           <div className="relative">
             <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-2.5">
               <div className="relative h-[430px] overflow-hidden rounded-[21px] sm:h-[520px]">
@@ -561,7 +556,8 @@ export default function HouseOfLaser() {
       </section>
 
       {/* ======================================================
-          SKINCARE — NO EXTRA PHOTO NEEDED
+          SKINCARE
+          NO EXTRA PHOTO NEEDED
       ====================================================== */}
       <section className="bg-[#F1E9DE] px-5 py-20 md:px-8 md:py-24 lg:px-12">
         <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
@@ -596,9 +592,10 @@ export default function HouseOfLaser() {
             </a>
           </div>
 
-          {/* GRAPHIC PANEL INSTEAD OF FAKE PHOTO */}
+          {/* GRAPHIC PANEL */}
           <div className="relative overflow-hidden rounded-[30px] bg-[#A94E17] px-8 py-14 text-white md:px-14 md:py-16">
             <div className="absolute -right-20 -top-20 h-[280px] w-[280px] rounded-full border border-white/15" />
+
             <div className="absolute -right-8 -top-8 h-[180px] w-[180px] rounded-full border border-white/15" />
 
             <Sparkles
@@ -608,9 +605,10 @@ export default function HouseOfLaser() {
             />
 
             <p className="relative mt-8 max-w-xl font-serif text-3xl leading-[1.15] md:text-[42px]">
-              “Your beauty routine should feel like
+              Your beauty routine should feel like
               <span className="italic text-[#F2D7C0]">
-                {" "}time for yourself.”
+                {" "}
+                time for yourself.
               </span>
             </p>
 
@@ -636,7 +634,7 @@ export default function HouseOfLaser() {
       </section>
 
       {/* ======================================================
-          BRAND / LOGO FEATURE
+          LOGO / BRAND FEATURE
       ====================================================== */}
       <section className="px-5 py-20 md:px-8 md:py-24 lg:px-12">
         <div className="mx-auto grid max-w-[1100px] items-center gap-10 lg:grid-cols-2">
@@ -791,9 +789,8 @@ export default function HouseOfLaser() {
                   href="https://www.instagram.com/houseoflaserspa/"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white"
+                  className="text-sm text-white/55 transition-colors hover:text-white"
                 >
-                  <Instagram size={15} strokeWidth={1.6} />
                   @houseoflaserspa
                 </a>
 
