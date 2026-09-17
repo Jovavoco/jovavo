@@ -29,7 +29,6 @@ function Reveal({
 
   useEffect(() => {
     const element = ref.current;
-
     if (!element) return;
 
     const observer = new IntersectionObserver(
@@ -53,16 +52,14 @@ function Reveal({
   return (
     <div
       ref={ref}
-      style={{
-        transitionDelay: `${delay}ms`,
-      }}
+      style={{ transitionDelay: `${delay}ms` }}
       className={`
-        transition-all duration-[900ms]
+        transition-all duration-[1000ms]
         ease-[cubic-bezier(0.22,1,0.36,1)]
         ${
           visible
             ? "translate-y-0 opacity-100"
-            : "translate-y-7 opacity-0"
+            : "translate-y-8 opacity-0"
         }
         ${className}
       `}
@@ -119,9 +116,7 @@ export default function HouseOfLaser() {
       passive: true,
     });
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -137,18 +132,18 @@ export default function HouseOfLaser() {
 
         @keyframes hlsHeroZoom {
           from {
-            transform: scale(1.02);
+            transform: scale(1.03);
           }
 
           to {
-            transform: scale(1.07);
+            transform: scale(1.09);
           }
         }
 
         @keyframes hlsFadeUp {
           from {
             opacity: 0;
-            transform: translateY(24px);
+            transform: translateY(28px);
           }
 
           to {
@@ -173,31 +168,31 @@ export default function HouseOfLaser() {
 
         .hls-hero-1 {
           opacity: 0;
-          animation: hlsFadeUp 0.9s 0.12s
+          animation: hlsFadeUp 0.9s 0.15s
             cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
         .hls-hero-2 {
           opacity: 0;
-          animation: hlsFadeUp 1s 0.24s
+          animation: hlsFadeUp 1s 0.28s
             cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
         .hls-hero-3 {
           opacity: 0;
-          animation: hlsFadeUp 1s 0.36s
+          animation: hlsFadeUp 1s 0.42s
             cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
         .hls-hero-4 {
           opacity: 0;
-          animation: hlsFadeUp 1s 0.48s
+          animation: hlsFadeUp 1s 0.56s
             cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
         .hls-line {
           transform-origin: left center;
-          animation: hlsLine 1s 0.1s
+          animation: hlsLine 1.1s 0.1s
             cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
@@ -245,7 +240,7 @@ export default function HouseOfLaser() {
             scrolled ? "h-[76px]" : "h-[92px]"
           }`}
         >
-          {/* CROPPED LOGO */}
+          {/* LOGO — CROPPED TIGHTER */}
 
           <a
             href="#home"
@@ -255,14 +250,14 @@ export default function HouseOfLaser() {
             <div
               className={`relative overflow-hidden transition-all duration-500 ${
                 scrolled
-                  ? "h-[50px] w-[135px]"
-                  : "h-[62px] w-[155px]"
+                  ? "h-[52px] w-[145px]"
+                  : "h-[64px] w-[165px]"
               }`}
             >
               <img
                 src="/previews/house-of-laser/logo.jpg"
                 alt="House of Laser & Spa"
-                className="absolute left-1/2 top-1/2 h-[128%] w-[128%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
+                className="absolute left-1/2 top-1/2 h-[135%] w-[135%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
               />
             </div>
           </a>
@@ -300,7 +295,7 @@ export default function HouseOfLaser() {
             </a>
           </nav>
 
-          {/* MOBILE */}
+          {/* MOBILE BUTTON */}
 
           <button
             type="button"
@@ -336,10 +331,7 @@ export default function HouseOfLaser() {
               >
                 {label}
 
-                <ArrowRight
-                  size={14}
-                  className="text-[#A64C1B]"
-                />
+                <ArrowRight size={14} className="text-[#A64C1B]" />
               </a>
             ))}
 
@@ -360,10 +352,10 @@ export default function HouseOfLaser() {
       ===================================================== */}
 
       <section id="home">
-        <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[0.88fr_1.12fr]">
+        <div className="mx-auto grid max-w-[1600px] lg:min-h-[760px] lg:grid-cols-[0.88fr_1.12fr]">
           {/* HERO COPY */}
 
-          <div className="relative flex items-center px-6 py-20 md:px-12 md:py-24 lg:min-h-[760px] lg:px-16 xl:px-24">
+          <div className="relative flex items-center px-6 py-20 md:px-12 md:py-24 lg:px-16 xl:px-24">
             <div className="relative z-10 max-w-[590px]">
               <div className="hls-hero-1 mb-7 flex items-center gap-4">
                 <span className="hls-line h-px w-10 bg-[#B6956C]" />
@@ -373,18 +365,18 @@ export default function HouseOfLaser() {
                 </p>
               </div>
 
-              <h1 className="hls-hero-2 font-serif text-[clamp(3.8rem,6vw,6.8rem)] leading-[0.9] tracking-[-0.05em]">
-                Welcome to
+              <h1 className="hls-hero-2 font-serif text-[clamp(4rem,6.1vw,7rem)] leading-[0.88] tracking-[-0.05em]">
+                Your beauty.
                 <br />
 
                 <span className="italic text-[#A64C1B]">
-                  House of Laser.
+                  Your ritual.
                 </span>
               </h1>
 
-              <p className="hls-hero-3 mt-8 max-w-[455px] text-[14px] leading-[1.9] text-[#71635B] md:text-[15px]">
-                Laser hair removal, skincare, and beauty treatments in a space
-                made to feel warm, personal, and completely your own.
+              <p className="hls-hero-3 mt-8 max-w-[440px] text-[14px] leading-[1.9] text-[#71635B] md:text-[15px]">
+                Laser hair removal, skincare, and beauty treatments in a warm,
+                distinctive Brooklyn setting.
               </p>
 
               <div className="hls-hero-4 mt-9 flex flex-wrap gap-3">
@@ -392,7 +384,7 @@ export default function HouseOfLaser() {
                   href="#book"
                   className="group flex items-center gap-4 bg-[#A64C1B] px-7 py-[17px] text-[9px] uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#843B14]"
                 >
-                  Book Your Visit
+                  Book an Appointment
 
                   <ArrowRight
                     size={13}
@@ -402,7 +394,7 @@ export default function HouseOfLaser() {
 
                 <a
                   href="#services"
-                  className="flex items-center gap-4 border border-[#28211D]/20 px-7 py-[17px] text-[9px] uppercase tracking-[0.2em] transition-all duration-500 hover:border-[#A64C1B] hover:text-[#A64C1B]"
+                  className="group flex items-center gap-4 border border-[#28211D]/20 px-7 py-[17px] text-[9px] uppercase tracking-[0.2em] transition-all duration-500 hover:border-[#A64C1B] hover:text-[#A64C1B]"
                 >
                   Explore Services
                 </a>
@@ -412,65 +404,63 @@ export default function HouseOfLaser() {
                 href="#services"
                 className="hls-hero-4 mt-14 inline-flex items-center gap-3 text-[8px] uppercase tracking-[0.24em] text-[#8A7A70]"
               >
-                Discover More
+                Scroll to discover
                 <ArrowDown size={12} />
               </a>
             </div>
+
+            <span className="pointer-events-none absolute bottom-8 right-8 hidden font-serif text-[150px] italic leading-none text-[#A64C1B]/[0.035] xl:block">
+              H
+            </span>
           </div>
 
           {/* =================================================
-              HERO PHOTO
-              FIXED OVERLAP
+              HERO IMAGE — OVERLAP FIXED
           ================================================= */}
 
-          <div className="flex items-center px-5 pb-12 pt-4 md:px-8 md:pb-14 lg:min-h-[760px] lg:px-8 lg:py-12">
-            <div className="relative mx-auto w-full max-w-[800px] pb-12">
-              <div className="relative overflow-hidden rounded-[28px] bg-[#E7DED3] p-2.5 shadow-[0_25px_80px_rgba(48,35,30,0.10)] md:p-3">
-                <div className="relative h-[500px] overflow-hidden rounded-[21px] sm:h-[590px] lg:h-[650px]">
-                  <img
-                    src="/previews/house-of-laser/waiting-area.jpg"
-                    alt="House of Laser & Spa waiting area"
-                    className="hls-hero-image absolute inset-0 h-full w-full object-cover object-center"
-                  />
+          <div className="relative min-h-[570px] pb-12 lg:min-h-[760px]">
+            <div className="relative h-full min-h-[570px] overflow-hidden lg:min-h-[760px]">
+              <img
+                src="/previews/house-of-laser/waiting-area.jpg"
+                alt="House of Laser & Spa waiting area"
+                className="hls-hero-image absolute inset-0 h-full w-full object-cover object-center"
+              />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#211915]/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#201814]/40 via-transparent to-transparent" />
 
-                  <div className="pointer-events-none absolute inset-5 rounded-[14px] border border-white/25 md:inset-6" />
+              <div className="pointer-events-none absolute inset-5 border border-white/30 md:inset-8" />
 
-                  {/* IMAGE TEXT MOVED HIGHER */}
+              {/* TEXT MOVED HIGHER */}
 
-                  <div className="absolute bottom-12 left-7 right-7 sm:bottom-14 sm:left-10">
-                    <p className="text-[8px] uppercase tracking-[0.28em] text-white/65">
-                      Welcome In
-                    </p>
+              <div className="absolute bottom-28 left-9 right-9 text-white md:bottom-32 md:left-12 md:right-12">
+                <p className="text-[8px] uppercase tracking-[0.3em] text-white/65">
+                  Welcome In
+                </p>
 
-                    <p className="mt-2 font-serif text-[25px] italic leading-tight text-white sm:text-[30px]">
-                      House of Laser & Spa
-                    </p>
-                  </div>
-                </div>
+                <p className="mt-2 font-serif text-[27px] italic">
+                  House of Laser & Spa
+                </p>
               </div>
+            </div>
 
-              {/* FLOATING CARD
-                  NOW HAS RESERVED SPACE BELOW IMAGE */}
+            {/* FLOATING CARD */}
 
-              <div className="absolute bottom-0 left-6 z-20 sm:left-10">
-                <div className="flex items-center gap-4 rounded-[16px] border border-[#B6956C]/20 bg-[#FAF8F4] px-5 py-4 shadow-[0_15px_45px_rgba(40,33,29,0.12)]">
-                  <Sparkles
-                    size={14}
-                    strokeWidth={1.3}
-                    className="shrink-0 text-[#A64C1B]"
-                  />
+            <div className="absolute bottom-0 left-7 z-20 md:left-12">
+              <div className="flex items-center gap-4 rounded-[16px] border border-[#B6956C]/20 bg-[#FAF8F4] px-5 py-4 shadow-[0_15px_45px_rgba(40,33,29,0.12)]">
+                <Sparkles
+                  size={14}
+                  strokeWidth={1.3}
+                  className="shrink-0 text-[#A64C1B]"
+                />
 
-                  <div>
-                    <p className="font-serif text-[19px] italic leading-tight text-[#A64C1B]">
-                      Your beauty ritual.
-                    </p>
+                <div>
+                  <p className="font-serif text-[19px] italic leading-tight text-[#A64C1B]">
+                    Your beauty ritual.
+                  </p>
 
-                    <p className="mt-1.5 text-[7px] uppercase tracking-[0.23em] text-[#8B7A70]">
-                      Brooklyn, New York
-                    </p>
-                  </div>
+                  <p className="mt-1.5 text-[7px] uppercase tracking-[0.23em] text-[#8B7A70]">
+                    Brooklyn, New York
+                  </p>
                 </div>
               </div>
             </div>
@@ -479,30 +469,23 @@ export default function HouseOfLaser() {
       </section>
 
       {/* =====================================================
-          QUICK SERVICES BAR
+          EDITORIAL INTRO
       ===================================================== */}
 
-      <section className="px-6 pb-20 pt-6 md:px-10 md:pb-24">
+      <section className="border-b border-[#28211D]/10 bg-[#EFE8DF] px-6 py-16 md:px-10 md:py-20">
         <Reveal>
-          <div className="mx-auto grid max-w-[1250px] border-y border-[#28211D]/12 sm:grid-cols-3">
-            {[
-              "Laser Hair Removal",
-              "Facials & Skincare",
-              "Beauty & Self-Care",
-            ].map((item, index) => (
-              <div
-                key={item}
-                className={`flex items-center justify-center px-5 py-6 ${
-                  index !== 2
-                    ? "border-b border-[#28211D]/12 sm:border-b-0 sm:border-r"
-                    : ""
-                }`}
-              >
-                <p className="text-center text-[8px] uppercase tracking-[0.24em] text-[#77685F]">
-                  {item}
-                </p>
-              </div>
-            ))}
+          <div className="mx-auto grid max-w-[1250px] items-end gap-10 md:grid-cols-[1.25fr_0.75fr]">
+            <p className="max-w-[800px] font-serif text-[32px] leading-[1.15] tracking-[-0.025em] md:text-[45px]">
+              Beauty and self-care in a space that feels{" "}
+              <span className="italic text-[#A64C1B]">
+                unmistakably yours.
+              </span>
+            </p>
+
+            <p className="max-w-[330px] text-[12px] leading-6 text-[#76685F] md:ml-auto">
+              A warm, polished setting for laser, skincare, and beauty in
+              Brooklyn.
+            </p>
           </div>
         </Reveal>
       </section>
@@ -513,41 +496,35 @@ export default function HouseOfLaser() {
 
       <section
         id="services"
-        className="bg-[#EFE8DF] px-6 py-24 md:px-10 md:py-32 lg:px-14"
+        className="px-6 py-24 md:px-10 md:py-32 lg:px-14"
       >
         <div className="mx-auto max-w-[1320px]">
           <div className="grid gap-14 lg:grid-cols-[0.62fr_1.38fr] lg:gap-24">
             <Reveal>
               <div className="lg:sticky lg:top-32">
                 <p className="text-[9px] uppercase tracking-[0.32em] text-[#A64C1B]">
-                  Our Services
+                  Treatments
                 </p>
 
                 <h2 className="mt-6 font-serif text-[46px] leading-[0.98] tracking-[-0.04em] md:text-[58px]">
-                  Your routine,
+                  Made for
                   <br />
-
-                  <span className="italic text-[#A64C1B]">
-                    elevated.
-                  </span>
+                  <span className="italic">your routine.</span>
                 </h2>
 
                 <p className="mt-6 max-w-[350px] text-[13px] leading-7 text-[#75675E]">
-                  Beauty and self-care services in a space that feels polished,
-                  personal, and welcoming.
+                  Thoughtful beauty services in a warm and personal
+                  environment.
                 </p>
               </div>
             </Reveal>
 
             <div className="border-t border-[#28211D]/15">
               {services.map((service, index) => (
-                <Reveal
-                  key={service.number}
-                  delay={index * 100}
-                >
+                <Reveal key={service.number} delay={index * 100}>
                   <a
                     href={service.href}
-                    className="group grid gap-5 border-b border-[#28211D]/15 py-9 md:grid-cols-[65px_1fr_0.8fr_50px] md:items-center md:gap-7"
+                    className="group grid gap-5 border-b border-[#28211D]/15 py-9 transition-colors duration-500 md:grid-cols-[65px_1fr_0.8fr_50px] md:items-center md:gap-7"
                   >
                     <span className="font-serif text-[16px] italic text-[#A64C1B]">
                       {service.number}
@@ -576,7 +553,7 @@ export default function HouseOfLaser() {
       </section>
 
       {/* =====================================================
-          SPA EXPERIENCE
+          EXPERIENCE
       ===================================================== */}
 
       <section
@@ -584,17 +561,21 @@ export default function HouseOfLaser() {
         className="relative overflow-hidden bg-[#2D473C] text-white"
       >
         <div className="mx-auto grid max-w-[1600px] lg:grid-cols-2">
-          <div className="group relative min-h-[540px] overflow-hidden lg:min-h-[720px]">
+          {/* IMAGE */}
+
+          <div className="group relative min-h-[570px] overflow-hidden lg:min-h-[760px]">
             <img
               src="/previews/house-of-laser/waiting-area.jpg"
-              alt="Inside House of Laser & Spa"
-              className="absolute inset-0 h-full w-full scale-[1.1] object-cover object-center transition-transform duration-[1800ms] ease-out group-hover:scale-[1.14]"
+              alt="House of Laser & Spa interior"
+              className="absolute inset-0 h-full w-full scale-[1.08] object-cover object-center transition-transform duration-[1800ms] ease-out group-hover:scale-[1.12]"
             />
 
             <div className="absolute inset-0 bg-[#1F352C]/10" />
 
             <div className="pointer-events-none absolute inset-6 border border-white/25 md:inset-8" />
           </div>
+
+          {/* COPY */}
 
           <div className="relative flex items-center px-6 py-24 md:px-12 md:py-28 lg:px-20 xl:px-24">
             <Reveal className="relative z-10 max-w-[580px]">
@@ -620,10 +601,7 @@ export default function HouseOfLaser() {
 
               <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/15 pt-7">
                 {["Warm", "Personal", "Elevated"].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3"
-                  >
+                  <div key={item} className="flex items-center gap-3">
                     <span className="text-[7px] text-[#D7BB95]">
                       ✦
                     </span>
@@ -656,7 +634,7 @@ export default function HouseOfLaser() {
       </section>
 
       {/* =====================================================
-          LASER
+          LASER FEATURE
       ===================================================== */}
 
       <section
@@ -664,9 +642,11 @@ export default function HouseOfLaser() {
         className="px-6 py-24 md:px-10 md:py-32 lg:px-14 lg:py-36"
       >
         <div className="mx-auto grid max-w-[1320px] items-center gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-28">
+          {/* PHOTO */}
+
           <Reveal>
             <div className="group relative pb-7 pr-5 md:pb-9 md:pr-8">
-              <div className="relative h-[540px] overflow-hidden md:h-[680px]">
+              <div className="relative h-[550px] overflow-hidden md:h-[690px]">
                 <img
                   src="/previews/house-of-laser/laser.jpg"
                   alt="Laser hair removal treatment at House of Laser & Spa"
@@ -679,6 +659,8 @@ export default function HouseOfLaser() {
               <div className="absolute bottom-0 right-0 -z-10 h-[72%] w-[58%] bg-[#A64C1B]" />
             </div>
           </Reveal>
+
+          {/* COPY */}
 
           <Reveal delay={150}>
             <div className="max-w-[500px]">
@@ -742,7 +724,7 @@ export default function HouseOfLaser() {
       </section>
 
       {/* =====================================================
-          BEAUTY / SKINCARE
+          BEAUTY SECTION
       ===================================================== */}
 
       <section className="bg-[#EEE6DC] px-6 py-24 md:px-10 md:py-32 lg:px-14">
@@ -792,10 +774,7 @@ export default function HouseOfLaser() {
                   "A space that makes your appointment feel like time away.",
               },
             ].map((item, index) => (
-              <Reveal
-                key={item.title}
-                delay={index * 120}
-              >
+              <Reveal key={item.title} delay={index * 120}>
                 <div
                   className={`group min-h-[270px] py-10 md:px-9 ${
                     index !== 2
@@ -822,27 +801,23 @@ export default function HouseOfLaser() {
       </section>
 
       {/* =====================================================
-          LOGO / BRAND
-          WHITE BOX REMOVED
+          BRAND / LOGO
+          SAME SECTION, TIGHTER LOGO CROP
       ===================================================== */}
 
-      <section className="overflow-hidden px-6 py-24 md:px-10 md:py-32 lg:px-14 lg:py-36">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+      <section className="px-6 py-24 md:px-10 md:py-32 lg:px-14 lg:py-36">
+        <div className="mx-auto grid max-w-[1200px] items-center gap-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-28">
           <Reveal>
-            <div className="relative flex min-h-[400px] items-center justify-center">
-              {/* subtle decorative lines */}
+            <div className="group relative flex min-h-[470px] items-center justify-center overflow-hidden bg-[#F5F0E9] px-8 py-12">
+              <div className="pointer-events-none absolute inset-6 border border-[#28211D]/10 transition-all duration-700 group-hover:inset-8" />
 
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#B6956C]/15" />
+              {/* TIGHTER CROPPED LOGO */}
 
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[290px] w-[290px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#B6956C]/10" />
-
-              {/* CROPPED LOGO */}
-
-              <div className="relative z-10 h-[285px] w-full max-w-[440px] overflow-hidden">
+              <div className="relative z-10 h-[320px] w-full max-w-[440px] overflow-hidden">
                 <img
                   src="/previews/house-of-laser/logo.jpg"
                   alt="House of Laser & Spa logo"
-                  className="absolute left-1/2 top-1/2 h-[128%] w-[128%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
+                  className="absolute left-1/2 top-1/2 h-[135%] w-[135%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.025]"
                 />
               </div>
             </div>
@@ -890,10 +865,7 @@ export default function HouseOfLaser() {
           FINAL CTA
       ===================================================== */}
 
-      <section
-        id="book"
-        className="overflow-hidden bg-[#A64C1B] text-white"
-      >
+      <section id="book" className="overflow-hidden bg-[#A64C1B] text-white">
         <div className="relative mx-auto max-w-[1500px] px-6 py-24 md:px-12 md:py-28 lg:px-20">
           <Reveal>
             <div className="relative z-10 grid items-end gap-12 lg:grid-cols-[1.25fr_0.75fr]">
@@ -949,16 +921,16 @@ export default function HouseOfLaser() {
       >
         <div className="mx-auto max-w-[1320px]">
           <div className="grid gap-12 border-b border-white/10 pb-14 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr]">
-            {/* FOOTER BRAND */}
+            {/* BRAND */}
 
             <div>
-              {/* CROPPED LOGO — NO EXTRA WHITE BOX */}
+              {/* TIGHT CROPPED LOGO */}
 
-              <div className="relative h-[82px] w-[175px] overflow-hidden">
+              <div className="relative h-[82px] w-[180px] overflow-hidden">
                 <img
                   src="/previews/house-of-laser/logo.jpg"
                   alt="House of Laser & Spa"
-                  className="absolute left-1/2 top-1/2 h-[130%] w-[130%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
+                  className="absolute left-1/2 top-1/2 h-[138%] w-[138%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
                 />
               </div>
 
@@ -1012,10 +984,7 @@ export default function HouseOfLaser() {
                   href="tel:+19298339197"
                   className="inline-flex w-fit items-center gap-3 text-[12px] text-white/50 transition-colors duration-300 hover:text-white"
                 >
-                  <Phone
-                    size={14}
-                    strokeWidth={1.4}
-                  />
+                  <Phone size={14} strokeWidth={1.4} />
 
                   (929) 833-9197
                 </a>
