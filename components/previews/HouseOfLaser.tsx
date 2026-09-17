@@ -240,7 +240,9 @@ export default function HouseOfLaser() {
             scrolled ? "h-[76px]" : "h-[92px]"
           }`}
         >
-          {/* LOGO — CROPPED TIGHTER */}
+          {/* =================================================
+              HEADER LOGO — FULL LOGO, NO CROPPING
+          ================================================= */}
 
           <a
             href="#home"
@@ -248,16 +250,16 @@ export default function HouseOfLaser() {
             aria-label="House of Laser & Spa home"
           >
             <div
-              className={`relative overflow-hidden transition-all duration-500 ${
+              className={`relative flex items-center justify-center transition-all duration-500 ${
                 scrolled
-                  ? "h-[52px] w-[145px]"
-                  : "h-[64px] w-[165px]"
+                  ? "h-[58px] w-[175px]"
+                  : "h-[72px] w-[195px]"
               }`}
             >
               <img
                 src="/previews/house-of-laser/logo.jpg"
                 alt="House of Laser & Spa"
-                className="absolute left-1/2 top-1/2 h-[135%] w-[135%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
+                className="h-full w-full object-contain"
               />
             </div>
           </a>
@@ -430,8 +432,6 @@ export default function HouseOfLaser() {
 
               <div className="pointer-events-none absolute inset-5 border border-white/30 md:inset-8" />
 
-              {/* TEXT MOVED HIGHER */}
-
               <div className="absolute bottom-28 left-9 right-9 text-white md:bottom-32 md:left-12 md:right-12">
                 <p className="text-[8px] uppercase tracking-[0.3em] text-white/65">
                   Welcome In
@@ -561,8 +561,6 @@ export default function HouseOfLaser() {
         className="relative overflow-hidden bg-[#2D473C] text-white"
       >
         <div className="mx-auto grid max-w-[1600px] lg:grid-cols-2">
-          {/* IMAGE */}
-
           <div className="group relative min-h-[570px] overflow-hidden lg:min-h-[760px]">
             <img
               src="/previews/house-of-laser/waiting-area.jpg"
@@ -574,8 +572,6 @@ export default function HouseOfLaser() {
 
             <div className="pointer-events-none absolute inset-6 border border-white/25 md:inset-8" />
           </div>
-
-          {/* COPY */}
 
           <div className="relative flex items-center px-6 py-24 md:px-12 md:py-28 lg:px-20 xl:px-24">
             <Reveal className="relative z-10 max-w-[580px]">
@@ -602,9 +598,7 @@ export default function HouseOfLaser() {
               <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/15 pt-7">
                 {["Warm", "Personal", "Elevated"].map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <span className="text-[7px] text-[#D7BB95]">
-                      ✦
-                    </span>
+                    <span className="text-[7px] text-[#D7BB95]">✦</span>
 
                     <span className="text-[8px] uppercase tracking-[0.24em] text-white/55">
                       {item}
@@ -642,8 +636,6 @@ export default function HouseOfLaser() {
         className="px-6 py-24 md:px-10 md:py-32 lg:px-14 lg:py-36"
       >
         <div className="mx-auto grid max-w-[1320px] items-center gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-28">
-          {/* PHOTO */}
-
           <Reveal>
             <div className="group relative pb-7 pr-5 md:pb-9 md:pr-8">
               <div className="relative h-[550px] overflow-hidden md:h-[690px]">
@@ -659,8 +651,6 @@ export default function HouseOfLaser() {
               <div className="absolute bottom-0 right-0 -z-10 h-[72%] w-[58%] bg-[#A64C1B]" />
             </div>
           </Reveal>
-
-          {/* COPY */}
 
           <Reveal delay={150}>
             <div className="max-w-[500px]">
@@ -700,9 +690,7 @@ export default function HouseOfLaser() {
                       {item}
                     </p>
 
-                    <span className="text-[8px] text-[#A64C1B]">
-                      ✦
-                    </span>
+                    <span className="text-[8px] text-[#A64C1B]">✦</span>
                   </div>
                 ))}
               </div>
@@ -802,7 +790,6 @@ export default function HouseOfLaser() {
 
       {/* =====================================================
           BRAND / LOGO
-          SAME SECTION, TIGHTER LOGO CROP
       ===================================================== */}
 
       <section className="px-6 py-24 md:px-10 md:py-32 lg:px-14 lg:py-36">
@@ -811,13 +798,11 @@ export default function HouseOfLaser() {
             <div className="group relative flex min-h-[470px] items-center justify-center overflow-hidden bg-[#F5F0E9] px-8 py-12">
               <div className="pointer-events-none absolute inset-6 border border-[#28211D]/10 transition-all duration-700 group-hover:inset-8" />
 
-              {/* TIGHTER CROPPED LOGO */}
-
-              <div className="relative z-10 h-[320px] w-full max-w-[440px] overflow-hidden">
+              <div className="relative z-10 h-[330px] w-full max-w-[460px] overflow-hidden">
                 <img
                   src="/previews/house-of-laser/logo.jpg"
                   alt="House of Laser & Spa logo"
-                  className="absolute left-1/2 top-1/2 h-[135%] w-[135%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.025]"
+                  className="absolute left-1/2 top-1/2 h-[112%] w-[112%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.015]"
                 />
               </div>
             </div>
@@ -924,13 +909,15 @@ export default function HouseOfLaser() {
             {/* BRAND */}
 
             <div>
-              {/* TIGHT CROPPED LOGO */}
+              {/* =================================================
+                  FOOTER LOGO — FULL LOGO, NO CROPPING
+              ================================================= */}
 
-              <div className="relative h-[82px] w-[180px] overflow-hidden">
+              <div className="flex h-[105px] w-[220px] items-center justify-start">
                 <img
                   src="/previews/house-of-laser/logo.jpg"
                   alt="House of Laser & Spa"
-                  className="absolute left-1/2 top-1/2 h-[138%] w-[138%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
+                  className="h-full w-full object-contain object-left"
                 />
               </div>
 
