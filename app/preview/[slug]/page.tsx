@@ -1,8 +1,5 @@
 import { notFound } from "next/navigation";
-
-const previews = {};
-
-type PreviewSlug = keyof typeof previews;
+import HouseOfLaser from "@/components/previews/HouseOfLaser";
 
 export default async function PreviewPage({
   params,
@@ -11,12 +8,9 @@ export default async function PreviewPage({
 }) {
   const { slug } = await params;
 
-  const Preview =
-    previews[slug as PreviewSlug];
-
-  if (!Preview) {
+  if (slug !== "house-of-laser") {
     notFound();
   }
 
-  return <Preview />;
+  return <HouseOfLaser />;
 }
