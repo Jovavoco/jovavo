@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
+  ArrowDown,
   ArrowRight,
-  ChevronDown,
   MapPin,
   Menu,
   Phone,
@@ -11,226 +11,466 @@ import {
   X,
 } from "lucide-react";
 
-export default function HouseOfLaser() {
-  const [menuOpen, setMenuOpen] = useState(false);
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const element = ref.current;
+
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(element);
+        }
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#FBF8F3] text-[#30231E]">
-      {/* ======================================================
+    <div
+      ref={ref}
+      style={{
+        transitionDelay: `${delay}ms`,
+      }}
+      className={`
+        transition-all duration-[900ms]
+        ease-[cubic-bezier(0.22,1,0.36,1)]
+        ${
+          visible
+            ? "translate-y-0 opacity-100"
+            : "translate-y-7 opacity-0"
+        }
+        ${className}
+      `}
+    >
+      {children}
+    </div>
+  );
+}
+
+/* =========================================================
+   DATA
+========================================================= */
+
+const services = [
+  {
+    number: "01",
+    title: "Laser Hair Removal",
+    description:
+      "Professional laser hair removal in a comfortable, elevated setting.",
+    href: "#laser",
+  },
+  {
+    number: "02",
+    title: "Facials & Skincare",
+    description:
+      "Thoughtful skincare treatments designed around time for you.",
+    href: "#book",
+  },
+  {
+    number: "03",
+    title: "Beauty & Self-Care",
+    description:
+      "Beauty services brought together in one warm Brooklyn destination.",
+    href: "#book",
+  },
+];
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+export default function HouseOfLaser() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <main className="min-h-screen overflow-x-hidden bg-[#FAF8F4] text-[#28211D] selection:bg-[#A64C1B] selection:text-white">
+      {/* =====================================================
+          ANIMATIONS
+      ===================================================== */}
+
+      <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
+
+        @keyframes hlsHeroZoom {
+          from {
+            transform: scale(1.02);
+          }
+
+          to {
+            transform: scale(1.07);
+          }
+        }
+
+        @keyframes hlsFadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes hlsLine {
+          from {
+            transform: scaleX(0);
+          }
+
+          to {
+            transform: scaleX(1);
+          }
+        }
+
+        .hls-hero-image {
+          animation: hlsHeroZoom 16s ease-out forwards;
+        }
+
+        .hls-hero-1 {
+          opacity: 0;
+          animation: hlsFadeUp 0.9s 0.12s
+            cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .hls-hero-2 {
+          opacity: 0;
+          animation: hlsFadeUp 1s 0.24s
+            cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .hls-hero-3 {
+          opacity: 0;
+          animation: hlsFadeUp 1s 0.36s
+            cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .hls-hero-4 {
+          opacity: 0;
+          animation: hlsFadeUp 1s 0.48s
+            cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .hls-line {
+          transform-origin: left center;
+          animation: hlsLine 1s 0.1s
+            cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
+
+          .hls-hero-image,
+          .hls-hero-1,
+          .hls-hero-2,
+          .hls-hero-3,
+          .hls-hero-4,
+          .hls-line {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+          }
+        }
+      `}</style>
+
+      {/* =====================================================
           TOP BAR
-      ====================================================== */}
-      <div className="bg-[#A94E17] px-5 py-2.5 text-center">
-        <p className="text-[8px] uppercase tracking-[0.28em] text-white/90 sm:text-[9px]">
+      ===================================================== */}
+
+      <div className="relative z-[70] bg-[#A64C1B] px-5 py-[9px] text-center">
+        <p className="text-[8px] uppercase tracking-[0.3em] text-white/85 sm:text-[9px]">
           House of Laser & Spa · Brooklyn, New York
         </p>
       </div>
 
-      {/* ======================================================
+      {/* =====================================================
           NAVIGATION
-      ====================================================== */}
-      <header className="relative z-50 border-b border-[#30231E]/10 bg-[#FBF8F3]/95 backdrop-blur-md">
-        <div className="mx-auto flex h-[92px] max-w-[1450px] items-center justify-between px-5 md:px-8 lg:px-12">
-          {/* LOGO */}
-          <a href="#home" className="flex items-center">
-            <img
-              src="/previews/house-of-laser/logo.jpg"
-              alt="House of Laser & Spa"
-              className="h-[62px] w-auto max-w-[155px] object-contain"
-            />
+      ===================================================== */}
+
+      <header
+        className={`sticky top-0 z-[60] transition-all duration-500 ${
+          scrolled
+            ? "border-b border-[#28211D]/10 bg-[#FAF8F4]/90 shadow-[0_10px_35px_rgba(40,33,29,0.035)] backdrop-blur-xl"
+            : "border-b border-[#28211D]/10 bg-[#FAF8F4]"
+        }`}
+      >
+        <div
+          className={`mx-auto flex max-w-[1500px] items-center justify-between px-5 transition-all duration-500 md:px-9 lg:px-14 ${
+            scrolled ? "h-[76px]" : "h-[92px]"
+          }`}
+        >
+          {/* CROPPED LOGO */}
+
+          <a
+            href="#home"
+            className="flex items-center"
+            aria-label="House of Laser & Spa home"
+          >
+            <div
+              className={`relative overflow-hidden transition-all duration-500 ${
+                scrolled
+                  ? "h-[50px] w-[135px]"
+                  : "h-[62px] w-[155px]"
+              }`}
+            >
+              <img
+                src="/previews/house-of-laser/logo.jpg"
+                alt="House of Laser & Spa"
+                className="absolute left-1/2 top-1/2 h-[128%] w-[128%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
+              />
+            </div>
           </a>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden items-center gap-8 lg:flex">
-            <a
-              href="#services"
-              className="text-[9px] uppercase tracking-[0.18em] transition-colors hover:text-[#A94E17]"
-            >
-              Services
-            </a>
 
-            <a
-              href="#laser"
-              className="text-[9px] uppercase tracking-[0.18em] transition-colors hover:text-[#A94E17]"
-            >
-              Laser
-            </a>
+          <nav className="hidden items-center gap-9 lg:flex">
+            {[
+              ["Services", "#services"],
+              ["Laser", "#laser"],
+              ["The Spa", "#experience"],
+              ["Contact", "#contact"],
+            ].map(([label, href]) => (
+              <a
+                key={label}
+                href={href}
+                className="group relative py-3 text-[9px] uppercase tracking-[0.2em] text-[#655951]"
+              >
+                {label}
 
-            <a
-              href="#experience"
-              className="text-[9px] uppercase tracking-[0.18em] transition-colors hover:text-[#A94E17]"
-            >
-              Our Spa
-            </a>
-
-            <a
-              href="#contact"
-              className="text-[9px] uppercase tracking-[0.18em] transition-colors hover:text-[#A94E17]"
-            >
-              Contact
-            </a>
+                <span className="absolute bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-[#A64C1B] transition-transform duration-500 group-hover:scale-x-100" />
+              </a>
+            ))}
 
             <a
               href="#book"
-              className="group inline-flex items-center gap-3 rounded-full bg-[#A94E17] px-6 py-3.5 text-[9px] uppercase tracking-[0.18em] text-white transition-colors hover:bg-[#853B12]"
+              className="group flex items-center gap-4 bg-[#28211D] px-6 py-[15px] text-[9px] uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#A64C1B]"
             >
-              Book Now
+              Book a Visit
 
               <ArrowRight
-                size={12}
-                className="transition-transform group-hover:translate-x-0.5"
+                size={13}
+                className="transition-transform duration-500 group-hover:translate-x-1"
               />
             </a>
           </nav>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* MOBILE */}
+
           <button
             type="button"
             aria-label="Toggle navigation"
             onClick={() => setMenuOpen((current) => !current)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#30231E]/15 lg:hidden"
+            className="flex h-11 w-11 items-center justify-center border border-[#28211D]/15 transition-colors hover:border-[#A64C1B] lg:hidden"
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
 
         {/* MOBILE MENU */}
-        {menuOpen && (
-          <div className="absolute left-0 top-full w-full border-t border-[#30231E]/10 bg-[#FBF8F3] px-6 pb-8 shadow-xl lg:hidden">
-            <nav className="mx-auto flex max-w-xl flex-col">
-              {[
-                ["Services", "#services"],
-                ["Laser Hair Removal", "#laser"],
-                ["Our Spa", "#experience"],
-                ["Contact", "#contact"],
-              ].map(([label, href]) => (
-                <a
-                  key={label}
-                  href={href}
-                  onClick={() => setMenuOpen(false)}
-                  className="border-b border-[#30231E]/10 py-5 font-serif text-[23px]"
-                >
-                  {label}
-                </a>
-              ))}
 
+        <div
+          className={`absolute left-0 top-full w-full overflow-hidden bg-[#FAF8F4] shadow-xl transition-all duration-500 lg:hidden ${
+            menuOpen
+              ? "max-h-[520px] border-t border-[#28211D]/10 opacity-100"
+              : "pointer-events-none max-h-0 opacity-0"
+          }`}
+        >
+          <nav className="px-6 pb-8">
+            {[
+              ["Services", "#services"],
+              ["Laser Hair Removal", "#laser"],
+              ["The Spa", "#experience"],
+              ["Contact", "#contact"],
+            ].map(([label, href]) => (
               <a
-                href="#book"
+                key={label}
+                href={href}
                 onClick={() => setMenuOpen(false)}
-                className="mt-6 flex items-center justify-center gap-3 rounded-full bg-[#A94E17] px-6 py-4 text-[9px] uppercase tracking-[0.2em] text-white"
+                className="flex items-center justify-between border-b border-[#28211D]/10 py-5 font-serif text-[24px]"
               >
-                Book an Appointment
-                <ArrowRight size={13} />
-              </a>
-            </nav>
-          </div>
-        )}
-      </header>
-
-      {/* ======================================================
-          HERO
-      ====================================================== */}
-      <section
-        id="home"
-        className="relative overflow-hidden px-5 py-12 md:px-8 md:py-16 lg:px-12 lg:py-20"
-      >
-        <div className="pointer-events-none absolute -left-40 top-10 h-[420px] w-[420px] rounded-full bg-[#A94E17]/[0.045] blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-[1450px] items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
-          {/* HERO TEXT */}
-          <div className="mx-auto max-w-[580px] text-center lg:mx-0 lg:text-left">
-            <div className="mb-6 flex items-center justify-center gap-3 lg:justify-start">
-              <span className="h-px w-7 bg-[#B89A68]" />
-
-              <p className="text-[8px] uppercase tracking-[0.3em] text-[#8A7466]">
-                Laser · Skin · Beauty
-              </p>
-
-              <span className="h-px w-7 bg-[#B89A68] lg:hidden" />
-            </div>
-
-            <h1 className="font-serif text-[clamp(3.5rem,5.5vw,6.2rem)] leading-[0.96] tracking-[-0.04em]">
-              Welcome to
-              <br />
-              <span className="italic text-[#A94E17]">
-                House of Laser.
-              </span>
-            </h1>
-
-            <p className="mx-auto mt-7 max-w-[470px] text-[14px] leading-7 text-[#75665D] md:text-[15px] lg:mx-0">
-              Laser hair removal, skincare, and beauty treatments in a space
-              made to feel warm, personal, and completely your own.
-            </p>
-
-            <div className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start">
-              <a
-                href="#book"
-                className="group inline-flex items-center gap-4 rounded-full bg-[#A94E17] px-7 py-4 text-[9px] uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#853B12]"
-              >
-                Book Your Visit
+                {label}
 
                 <ArrowRight
-                  size={13}
-                  className="transition-transform group-hover:translate-x-1"
+                  size={14}
+                  className="text-[#A64C1B]"
                 />
               </a>
+            ))}
+
+            <a
+              href="#book"
+              onClick={() => setMenuOpen(false)}
+              className="mt-6 flex items-center justify-center gap-3 bg-[#A64C1B] px-6 py-4 text-[9px] uppercase tracking-[0.2em] text-white"
+            >
+              Book a Visit
+              <ArrowRight size={13} />
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
+      <section id="home">
+        <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[0.88fr_1.12fr]">
+          {/* HERO COPY */}
+
+          <div className="relative flex items-center px-6 py-20 md:px-12 md:py-24 lg:min-h-[760px] lg:px-16 xl:px-24">
+            <div className="relative z-10 max-w-[590px]">
+              <div className="hls-hero-1 mb-7 flex items-center gap-4">
+                <span className="hls-line h-px w-10 bg-[#B6956C]" />
+
+                <p className="text-[9px] uppercase tracking-[0.32em] text-[#8B786C]">
+                  Laser · Skin · Beauty
+                </p>
+              </div>
+
+              <h1 className="hls-hero-2 font-serif text-[clamp(3.8rem,6vw,6.8rem)] leading-[0.9] tracking-[-0.05em]">
+                Welcome to
+                <br />
+
+                <span className="italic text-[#A64C1B]">
+                  House of Laser.
+                </span>
+              </h1>
+
+              <p className="hls-hero-3 mt-8 max-w-[455px] text-[14px] leading-[1.9] text-[#71635B] md:text-[15px]">
+                Laser hair removal, skincare, and beauty treatments in a space
+                made to feel warm, personal, and completely your own.
+              </p>
+
+              <div className="hls-hero-4 mt-9 flex flex-wrap gap-3">
+                <a
+                  href="#book"
+                  className="group flex items-center gap-4 bg-[#A64C1B] px-7 py-[17px] text-[9px] uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#843B14]"
+                >
+                  Book Your Visit
+
+                  <ArrowRight
+                    size={13}
+                    className="transition-transform duration-500 group-hover:translate-x-1.5"
+                  />
+                </a>
+
+                <a
+                  href="#services"
+                  className="flex items-center gap-4 border border-[#28211D]/20 px-7 py-[17px] text-[9px] uppercase tracking-[0.2em] transition-all duration-500 hover:border-[#A64C1B] hover:text-[#A64C1B]"
+                >
+                  Explore Services
+                </a>
+              </div>
 
               <a
                 href="#services"
-                className="inline-flex items-center gap-3 rounded-full border border-[#30231E]/20 px-7 py-4 text-[9px] uppercase tracking-[0.2em] transition-colors hover:border-[#A94E17] hover:text-[#A94E17]"
+                className="hls-hero-4 mt-14 inline-flex items-center gap-3 text-[8px] uppercase tracking-[0.24em] text-[#8A7A70]"
               >
-                Explore Services
+                Discover More
+                <ArrowDown size={12} />
               </a>
             </div>
-
-            <a
-              href="#services"
-              className="mt-10 hidden items-center gap-2 text-[8px] uppercase tracking-[0.23em] text-[#8A7B72] lg:inline-flex"
-            >
-              Discover More
-              <ChevronDown size={12} />
-            </a>
           </div>
 
-          {/* HERO PHOTO */}
-          <div className="relative mx-auto w-full max-w-[780px]">
-            <div className="relative overflow-hidden rounded-[30px] bg-[#E7DED3] p-2.5 shadow-[0_25px_80px_rgba(48,35,30,0.11)] md:p-3">
-              <div className="relative h-[480px] overflow-hidden rounded-[23px] sm:h-[580px] lg:h-[670px]">
-                <img
-                  src="/previews/house-of-laser/waiting-area.jpg"
-                  alt="House of Laser & Spa waiting area"
-                  className="h-full w-full object-cover"
-                />
+          {/* =================================================
+              HERO PHOTO
+              FIXED OVERLAP
+          ================================================= */}
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#30231E]/30 via-transparent to-transparent" />
+          <div className="flex items-center px-5 pb-12 pt-4 md:px-8 md:pb-14 lg:min-h-[760px] lg:px-8 lg:py-12">
+            <div className="relative mx-auto w-full max-w-[800px] pb-12">
+              <div className="relative overflow-hidden rounded-[28px] bg-[#E7DED3] p-2.5 shadow-[0_25px_80px_rgba(48,35,30,0.10)] md:p-3">
+                <div className="relative h-[500px] overflow-hidden rounded-[21px] sm:h-[590px] lg:h-[650px]">
+                  <img
+                    src="/previews/house-of-laser/waiting-area.jpg"
+                    alt="House of Laser & Spa waiting area"
+                    className="hls-hero-image absolute inset-0 h-full w-full object-cover object-center"
+                  />
 
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-[8px] uppercase tracking-[0.25em] text-white/70">
-                    Welcome In
-                  </p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#211915]/40 via-transparent to-transparent" />
 
-                  <p className="mt-1.5 font-serif text-2xl italic text-white">
-                    House of Laser & Spa
-                  </p>
+                  <div className="pointer-events-none absolute inset-5 rounded-[14px] border border-white/25 md:inset-6" />
+
+                  {/* IMAGE TEXT MOVED HIGHER */}
+
+                  <div className="absolute bottom-12 left-7 right-7 sm:bottom-14 sm:left-10">
+                    <p className="text-[8px] uppercase tracking-[0.28em] text-white/65">
+                      Welcome In
+                    </p>
+
+                    <p className="mt-2 font-serif text-[25px] italic leading-tight text-white sm:text-[30px]">
+                      House of Laser & Spa
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="absolute -bottom-6 left-5 rounded-[18px] border border-[#B89A68]/25 bg-[#FBF8F3] px-5 py-4 shadow-[0_12px_40px_rgba(48,35,30,0.12)] sm:left-10">
-              <div className="flex items-center gap-3">
-                <Sparkles
-                  size={14}
-                  strokeWidth={1.4}
-                  className="text-[#A94E17]"
-                />
+              {/* FLOATING CARD
+                  NOW HAS RESERVED SPACE BELOW IMAGE */}
 
-                <div>
-                  <p className="font-serif text-[18px] italic text-[#A94E17]">
-                    Your beauty ritual.
-                  </p>
+              <div className="absolute bottom-0 left-6 z-20 sm:left-10">
+                <div className="flex items-center gap-4 rounded-[16px] border border-[#B6956C]/20 bg-[#FAF8F4] px-5 py-4 shadow-[0_15px_45px_rgba(40,33,29,0.12)]">
+                  <Sparkles
+                    size={14}
+                    strokeWidth={1.3}
+                    className="shrink-0 text-[#A64C1B]"
+                  />
 
-                  <p className="mt-1 text-[7px] uppercase tracking-[0.22em] text-[#8A7A70]">
-                    Brooklyn, New York
-                  </p>
+                  <div>
+                    <p className="font-serif text-[19px] italic leading-tight text-[#A64C1B]">
+                      Your beauty ritual.
+                    </p>
+
+                    <p className="mt-1.5 text-[7px] uppercase tracking-[0.23em] text-[#8B7A70]">
+                      Brooklyn, New York
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -238,537 +478,510 @@ export default function HouseOfLaser() {
         </div>
       </section>
 
-      {/* ======================================================
-          INTRO STRIP
-      ====================================================== */}
-      <section className="px-5 pb-20 pt-8 md:px-8 md:pb-24 lg:px-12">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-1 overflow-hidden rounded-[22px] border border-[#30231E]/10 bg-white/35 sm:grid-cols-3">
-          {[
-            "Laser Hair Removal",
-            "Facials & Skincare",
-            "Beauty & Self-Care",
-          ].map((item, index) => (
-            <div
-              key={item}
-              className={`flex items-center justify-center px-5 py-5 ${
-                index !== 2
-                  ? "border-b border-[#30231E]/10 sm:border-b-0 sm:border-r"
-                  : ""
-              }`}
-            >
-              <p className="text-center text-[8px] uppercase tracking-[0.23em] text-[#77685F]">
-                {item}
-              </p>
-            </div>
-          ))}
-        </div>
+      {/* =====================================================
+          QUICK SERVICES BAR
+      ===================================================== */}
+
+      <section className="px-6 pb-20 pt-6 md:px-10 md:pb-24">
+        <Reveal>
+          <div className="mx-auto grid max-w-[1250px] border-y border-[#28211D]/12 sm:grid-cols-3">
+            {[
+              "Laser Hair Removal",
+              "Facials & Skincare",
+              "Beauty & Self-Care",
+            ].map((item, index) => (
+              <div
+                key={item}
+                className={`flex items-center justify-center px-5 py-6 ${
+                  index !== 2
+                    ? "border-b border-[#28211D]/12 sm:border-b-0 sm:border-r"
+                    : ""
+                }`}
+              >
+                <p className="text-center text-[8px] uppercase tracking-[0.24em] text-[#77685F]">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
-      {/* ======================================================
+      {/* =====================================================
           SERVICES
-      ====================================================== */}
+      ===================================================== */}
+
       <section
         id="services"
-        className="bg-[#F1E9DE] px-5 py-20 md:px-8 md:py-28 lg:px-12"
+        className="bg-[#EFE8DF] px-6 py-24 md:px-10 md:py-32 lg:px-14"
       >
-        <div className="mx-auto max-w-[1300px]">
-          <div className="mx-auto max-w-[700px] text-center">
-            <p className="text-[8px] uppercase tracking-[0.3em] text-[#A94E17]">
-              Our Services
-            </p>
+        <div className="mx-auto max-w-[1320px]">
+          <div className="grid gap-14 lg:grid-cols-[0.62fr_1.38fr] lg:gap-24">
+            <Reveal>
+              <div className="lg:sticky lg:top-32">
+                <p className="text-[9px] uppercase tracking-[0.32em] text-[#A64C1B]">
+                  Our Services
+                </p>
 
-            <h2 className="mt-5 font-serif text-4xl leading-[1.05] tracking-[-0.03em] md:text-[54px]">
-              Everything you need to
-              <br className="hidden sm:block" />
-              <span className="italic text-[#A94E17]">
-                {" "}
-                feel your best.
-              </span>
-            </h2>
+                <h2 className="mt-6 font-serif text-[46px] leading-[0.98] tracking-[-0.04em] md:text-[58px]">
+                  Your routine,
+                  <br />
 
-            <p className="mx-auto mt-5 max-w-[520px] text-sm leading-7 text-[#77685F]">
-              Beauty and self-care treatments personalized around you, all in
-              the House of Laser setting.
-            </p>
-          </div>
-
-          <div className="mt-14 grid gap-4 md:grid-cols-3">
-            {/* LASER */}
-            <a
-              href="#laser"
-              className="group rounded-[24px] border border-[#30231E]/10 bg-[#FBF8F3] p-7 transition-all hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(48,35,30,0.08)]"
-            >
-              <div className="flex items-start justify-between">
-                <span className="font-serif text-[42px] italic text-[#A94E17]/25">
-                  01
-                </span>
-
-                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#30231E]/15 transition-colors group-hover:border-[#A94E17] group-hover:bg-[#A94E17] group-hover:text-white">
-                  <ArrowRight size={13} />
-                </div>
-              </div>
-
-              <h3 className="mt-10 font-serif text-[29px] tracking-[-0.025em]">
-                Laser Hair Removal
-              </h3>
-
-              <p className="mt-4 text-sm leading-6 text-[#786A61]">
-                Personalized laser treatments designed to fit comfortably into
-                your beauty routine.
-              </p>
-
-              <p className="mt-8 text-[8px] uppercase tracking-[0.2em] text-[#A94E17]">
-                Discover Laser
-              </p>
-            </a>
-
-            {/* SKINCARE */}
-            <a
-              href="#book"
-              className="group rounded-[24px] border border-[#30231E]/10 bg-[#FBF8F3] p-7 transition-all hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(48,35,30,0.08)]"
-            >
-              <div className="flex items-start justify-between">
-                <span className="font-serif text-[42px] italic text-[#A94E17]/25">
-                  02
-                </span>
-
-                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#30231E]/15 transition-colors group-hover:border-[#A94E17] group-hover:bg-[#A94E17] group-hover:text-white">
-                  <ArrowRight size={13} />
-                </div>
-              </div>
-
-              <h3 className="mt-10 font-serif text-[29px] tracking-[-0.025em]">
-                Facials & Skincare
-              </h3>
-
-              <p className="mt-4 text-sm leading-6 text-[#786A61]">
-                Take a little time for your skin with treatments in a calm,
-                welcoming environment.
-              </p>
-
-              <p className="mt-8 text-[8px] uppercase tracking-[0.2em] text-[#A94E17]">
-                Explore Skincare
-              </p>
-            </a>
-
-            {/* BEAUTY */}
-            <a
-              href="#book"
-              className="group rounded-[24px] border border-[#30231E]/10 bg-[#FBF8F3] p-7 transition-all hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(48,35,30,0.08)]"
-            >
-              <div className="flex items-start justify-between">
-                <span className="font-serif text-[42px] italic text-[#A94E17]/25">
-                  03
-                </span>
-
-                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#30231E]/15 transition-colors group-hover:border-[#A94E17] group-hover:bg-[#A94E17] group-hover:text-white">
-                  <ArrowRight size={13} />
-                </div>
-              </div>
-
-              <h3 className="mt-10 font-serif text-[29px] tracking-[-0.025em]">
-                Beauty & Self-Care
-              </h3>
-
-              <p className="mt-4 text-sm leading-6 text-[#786A61]">
-                Beauty services brought together in one warm, personal
-                destination.
-              </p>
-
-              <p className="mt-8 text-[8px] uppercase tracking-[0.2em] text-[#A94E17]">
-                View Services
-              </p>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ======================================================
-          SPA EXPERIENCE
-      ====================================================== */}
-      <section
-        id="experience"
-        className="relative overflow-hidden bg-[#304A3D] px-5 py-20 text-white md:px-8 md:py-28 lg:px-12"
-      >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-[330px] w-[330px] rounded-full border border-[#D5B88F]/15" />
-
-        <div className="pointer-events-none absolute -right-10 -top-10 h-[210px] w-[210px] rounded-full border border-[#D5B88F]/15" />
-
-        <div className="relative mx-auto grid max-w-[1300px] items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          {/* TEXT */}
-          <div className="max-w-[520px]">
-            <p className="text-[8px] uppercase tracking-[0.3em] text-[#D5B88F]">
-              The House of Laser Experience
-            </p>
-
-            <h2 className="mt-5 font-serif text-4xl leading-[1.04] tracking-[-0.03em] md:text-[55px]">
-              Beauty should feel
-              <br />
-              <span className="italic text-[#D5B88F]">
-                like an experience.
-              </span>
-            </h2>
-
-            <p className="mt-6 text-sm leading-7 text-white/65">
-              House of Laser brings together beauty, self-care, and a warm,
-              distinctive atmosphere designed to make every visit feel like
-              time set aside for you.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              {["Warm", "Personal", "Welcoming"].map((item, index) => (
-                <div key={item} className="flex items-center gap-4">
-                  {index !== 0 && (
-                    <span className="text-[8px] text-[#D5B88F]">✦</span>
-                  )}
-
-                  <span className="text-[8px] uppercase tracking-[0.22em] text-white/60">
-                    {item}
+                  <span className="italic text-[#A64C1B]">
+                    elevated.
                   </span>
-                </div>
+                </h2>
+
+                <p className="mt-6 max-w-[350px] text-[13px] leading-7 text-[#75675E]">
+                  Beauty and self-care services in a space that feels polished,
+                  personal, and welcoming.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="border-t border-[#28211D]/15">
+              {services.map((service, index) => (
+                <Reveal
+                  key={service.number}
+                  delay={index * 100}
+                >
+                  <a
+                    href={service.href}
+                    className="group grid gap-5 border-b border-[#28211D]/15 py-9 md:grid-cols-[65px_1fr_0.8fr_50px] md:items-center md:gap-7"
+                  >
+                    <span className="font-serif text-[16px] italic text-[#A64C1B]">
+                      {service.number}
+                    </span>
+
+                    <h3 className="font-serif text-[29px] tracking-[-0.025em] transition-transform duration-500 group-hover:translate-x-1 md:text-[34px]">
+                      {service.title}
+                    </h3>
+
+                    <p className="max-w-[290px] text-[12px] leading-6 text-[#786A61]">
+                      {service.description}
+                    </p>
+
+                    <span className="flex h-11 w-11 items-center justify-center border border-[#28211D]/15 transition-all duration-500 group-hover:border-[#A64C1B] group-hover:bg-[#A64C1B] group-hover:text-white">
+                      <ArrowRight
+                        size={14}
+                        className="transition-transform duration-500 group-hover:translate-x-1"
+                      />
+                    </span>
+                  </a>
+                </Reveal>
               ))}
             </div>
-
-            <a
-              href="#book"
-              className="group mt-9 inline-flex items-center gap-4 rounded-full border border-[#D5B88F]/50 px-6 py-3.5 text-[8px] uppercase tracking-[0.2em] text-[#E8D4B7] transition-colors hover:bg-[#D5B88F] hover:text-[#304A3D]"
-            >
-              Plan Your Visit
-
-              <ArrowRight
-                size={12}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </a>
-          </div>
-
-          {/* WAITING AREA */}
-          <div className="relative">
-            <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-2.5">
-              <div className="relative h-[430px] overflow-hidden rounded-[21px] sm:h-[520px]">
-                <img
-                  src="/previews/house-of-laser/waiting-area.jpg"
-                  alt="Inside House of Laser & Spa"
-                  className="h-full w-full object-cover object-center"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173127]/40 via-transparent to-transparent" />
-              </div>
-            </div>
-
-            <div className="absolute -bottom-5 right-5 rounded-[17px] bg-[#FBF8F3] px-5 py-4 text-[#30231E] shadow-xl sm:right-8">
-              <p className="text-[7px] uppercase tracking-[0.22em] text-[#8C796C]">
-                Inside the Spa
-              </p>
-
-              <p className="mt-1 font-serif text-xl italic text-[#A94E17]">
-                Make yourself at home.
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* ======================================================
-          LASER FEATURE
-      ====================================================== */}
+      {/* =====================================================
+          SPA EXPERIENCE
+      ===================================================== */}
+
+      <section
+        id="experience"
+        className="relative overflow-hidden bg-[#2D473C] text-white"
+      >
+        <div className="mx-auto grid max-w-[1600px] lg:grid-cols-2">
+          <div className="group relative min-h-[540px] overflow-hidden lg:min-h-[720px]">
+            <img
+              src="/previews/house-of-laser/waiting-area.jpg"
+              alt="Inside House of Laser & Spa"
+              className="absolute inset-0 h-full w-full scale-[1.1] object-cover object-center transition-transform duration-[1800ms] ease-out group-hover:scale-[1.14]"
+            />
+
+            <div className="absolute inset-0 bg-[#1F352C]/10" />
+
+            <div className="pointer-events-none absolute inset-6 border border-white/25 md:inset-8" />
+          </div>
+
+          <div className="relative flex items-center px-6 py-24 md:px-12 md:py-28 lg:px-20 xl:px-24">
+            <Reveal className="relative z-10 max-w-[580px]">
+              <p className="text-[9px] uppercase tracking-[0.32em] text-[#D7BB95]">
+                The Experience
+              </p>
+
+              <h2 className="mt-6 font-serif text-[48px] leading-[0.96] tracking-[-0.04em] md:text-[66px]">
+                Come in.
+                <br />
+                Slow down.
+                <br />
+
+                <span className="italic text-[#D7BB95]">
+                  Feel beautiful.
+                </span>
+              </h2>
+
+              <p className="mt-8 max-w-[460px] text-[14px] leading-7 text-white/65">
+                Rich green, warm wood, gold details, and a welcoming atmosphere
+                give House of Laser a character all its own.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/15 pt-7">
+                {["Warm", "Personal", "Elevated"].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3"
+                  >
+                    <span className="text-[7px] text-[#D7BB95]">
+                      ✦
+                    </span>
+
+                    <span className="text-[8px] uppercase tracking-[0.24em] text-white/55">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="#book"
+                className="group mt-10 inline-flex items-center gap-4 border-b border-[#D7BB95]/60 pb-2 text-[9px] uppercase tracking-[0.2em] text-[#E4CEB0]"
+              >
+                Plan Your Visit
+
+                <ArrowRight
+                  size={13}
+                  className="transition-transform duration-500 group-hover:translate-x-1.5"
+                />
+              </a>
+            </Reveal>
+
+            <div className="pointer-events-none absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full border border-[#D7BB95]/10" />
+
+            <div className="pointer-events-none absolute -bottom-20 -right-20 h-[300px] w-[300px] rounded-full border border-[#D7BB95]/10" />
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          LASER
+      ===================================================== */}
+
       <section
         id="laser"
-        className="px-5 py-20 md:px-8 md:py-28 lg:px-12"
+        className="px-6 py-24 md:px-10 md:py-32 lg:px-14 lg:py-36"
       >
-        <div className="mx-auto grid max-w-[1300px] items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-          {/* LASER PHOTO */}
-          <div className="relative mx-auto w-full max-w-[650px]">
-            <div className="overflow-hidden rounded-[30px] bg-[#EFE7DC] p-2.5">
-              <div className="h-[500px] overflow-hidden rounded-[22px] sm:h-[610px]">
+        <div className="mx-auto grid max-w-[1320px] items-center gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-28">
+          <Reveal>
+            <div className="group relative pb-7 pr-5 md:pb-9 md:pr-8">
+              <div className="relative h-[540px] overflow-hidden md:h-[680px]">
                 <img
                   src="/previews/house-of-laser/laser.jpg"
                   alt="Laser hair removal treatment at House of Laser & Spa"
-                  className="h-full w-full object-cover object-center"
+                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1600ms] ease-out group-hover:scale-[1.035]"
+                />
+
+                <div className="pointer-events-none absolute inset-5 border border-white/40 md:inset-7" />
+              </div>
+
+              <div className="absolute bottom-0 right-0 -z-10 h-[72%] w-[58%] bg-[#A64C1B]" />
+            </div>
+          </Reveal>
+
+          <Reveal delay={150}>
+            <div className="max-w-[500px]">
+              <div className="flex items-center gap-4">
+                <span className="h-px w-9 bg-[#B6956C]" />
+
+                <p className="text-[9px] uppercase tracking-[0.32em] text-[#A64C1B]">
+                  Laser Hair Removal
+                </p>
+              </div>
+
+              <h2 className="mt-7 font-serif text-[50px] leading-[0.94] tracking-[-0.045em] md:text-[67px]">
+                Smooth,
+                <br />
+
+                <span className="italic text-[#A64C1B]">
+                  simplified.
+                </span>
+              </h2>
+
+              <p className="mt-8 max-w-[450px] text-[14px] leading-7 text-[#74665D]">
+                Professional laser hair removal in a comfortable environment,
+                designed to fit naturally into your beauty routine.
+              </p>
+
+              <div className="mt-10 border-t border-[#28211D]/15">
+                {[
+                  "Personalized experience",
+                  "Comfortable treatment setting",
+                  "Brooklyn location",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="group flex items-center justify-between border-b border-[#28211D]/15 py-5"
+                  >
+                    <p className="text-[9px] uppercase tracking-[0.18em] text-[#62564F] transition-transform duration-500 group-hover:translate-x-1">
+                      {item}
+                    </p>
+
+                    <span className="text-[8px] text-[#A64C1B]">
+                      ✦
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="#book"
+                className="group mt-10 inline-flex items-center gap-4 bg-[#28211D] px-7 py-[17px] text-[9px] uppercase tracking-[0.2em] text-white transition-all duration-500 hover:bg-[#A64C1B]"
+              >
+                Book Laser
+
+                <ArrowRight
+                  size={13}
+                  className="transition-transform duration-500 group-hover:translate-x-1.5"
+                />
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* =====================================================
+          BEAUTY / SKINCARE
+      ===================================================== */}
+
+      <section className="bg-[#EEE6DC] px-6 py-24 md:px-10 md:py-32 lg:px-14">
+        <div className="mx-auto max-w-[1250px]">
+          <Reveal>
+            <div className="grid items-end gap-10 md:grid-cols-[1.2fr_0.8fr]">
+              <div>
+                <p className="text-[9px] uppercase tracking-[0.32em] text-[#A64C1B]">
+                  More Than Laser
+                </p>
+
+                <h2 className="mt-6 max-w-[700px] font-serif text-[48px] leading-[0.98] tracking-[-0.04em] md:text-[65px]">
+                  Your beauty ritual,
+                  <br />
+
+                  <span className="italic text-[#A64C1B]">
+                    all in one place.
+                  </span>
+                </h2>
+              </div>
+
+              <p className="max-w-[390px] text-[13px] leading-7 text-[#73655D] md:ml-auto">
+                From skincare to beauty and self-care, make a little more room
+                in your routine for yourself.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-16 grid border-y border-[#28211D]/15 md:grid-cols-3">
+            {[
+              {
+                number: "01",
+                title: "Skin",
+                description:
+                  "Facials and skincare in a calm, polished setting.",
+              },
+              {
+                number: "02",
+                title: "Beauty",
+                description:
+                  "Beauty services with a personal, considered approach.",
+              },
+              {
+                number: "03",
+                title: "Self-Care",
+                description:
+                  "A space that makes your appointment feel like time away.",
+              },
+            ].map((item, index) => (
+              <Reveal
+                key={item.title}
+                delay={index * 120}
+              >
+                <div
+                  className={`group min-h-[270px] py-10 md:px-9 ${
+                    index !== 2
+                      ? "border-b border-[#28211D]/15 md:border-b-0 md:border-r"
+                      : ""
+                  }`}
+                >
+                  <span className="font-serif text-[15px] italic text-[#A64C1B]">
+                    {item.number}
+                  </span>
+
+                  <h3 className="mt-10 font-serif text-[32px] transition-transform duration-500 group-hover:translate-x-1">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-4 max-w-[270px] text-[12px] leading-6 text-[#74665D]">
+                    {item.description}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          LOGO / BRAND
+          WHITE BOX REMOVED
+      ===================================================== */}
+
+      <section className="overflow-hidden px-6 py-24 md:px-10 md:py-32 lg:px-14 lg:py-36">
+        <div className="mx-auto grid max-w-[1200px] items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+          <Reveal>
+            <div className="relative flex min-h-[400px] items-center justify-center">
+              {/* subtle decorative lines */}
+
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#B6956C]/15" />
+
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[290px] w-[290px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#B6956C]/10" />
+
+              {/* CROPPED LOGO */}
+
+              <div className="relative z-10 h-[285px] w-full max-w-[440px] overflow-hidden">
+                <img
+                  src="/previews/house-of-laser/logo.jpg"
+                  alt="House of Laser & Spa logo"
+                  className="absolute left-1/2 top-1/2 h-[128%] w-[128%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
                 />
               </div>
             </div>
+          </Reveal>
 
-            <div className="absolute -bottom-5 left-5 rounded-[18px] border border-[#B89A68]/25 bg-[#FBF8F3] px-5 py-4 shadow-lg sm:left-8">
-              <p className="text-[7px] uppercase tracking-[0.22em] text-[#89766B]">
-                House of Laser
+          <Reveal delay={150}>
+            <div className="max-w-[530px]">
+              <Sparkles
+                size={17}
+                strokeWidth={1.2}
+                className="text-[#A64C1B]"
+              />
+
+              <h2 className="mt-8 font-serif text-[49px] leading-[0.98] tracking-[-0.04em] md:text-[64px]">
+                A little luxury,
+                <br />
+
+                <span className="italic text-[#A64C1B]">
+                  made personal.
+                </span>
+              </h2>
+
+              <p className="mt-8 max-w-[450px] text-[14px] leading-7 text-[#73655D]">
+                House of Laser & Spa brings together laser, skincare, beauty,
+                and a distinctive atmosphere in Brooklyn.
               </p>
 
-              <p className="mt-1 font-serif text-xl italic text-[#A94E17]">
-                Laser Hair Removal
-              </p>
+              <a
+                href="#book"
+                className="group mt-10 inline-flex items-center gap-4 border-b border-[#A64C1B] pb-2 text-[9px] uppercase tracking-[0.2em] text-[#A64C1B]"
+              >
+                Plan Your Visit
+
+                <ArrowRight
+                  size={13}
+                  className="transition-transform duration-500 group-hover:translate-x-1.5"
+                />
+              </a>
             </div>
-          </div>
-
-          {/* TEXT */}
-          <div className="mx-auto max-w-[500px] lg:mx-0">
-            <p className="text-[8px] uppercase tracking-[0.3em] text-[#A94E17]">
-              Laser Hair Removal
-            </p>
-
-            <h2 className="mt-5 font-serif text-4xl leading-[1.04] tracking-[-0.03em] md:text-[55px]">
-              Make smooth part of
-              <br />
-              <span className="italic text-[#A94E17]">
-                your routine.
-              </span>
-            </h2>
-
-            <p className="mt-6 text-sm leading-7 text-[#76675E]">
-              Professional laser hair removal in a comfortable environment,
-              with an experience centered around you and your beauty routine.
-            </p>
-
-            <div className="mt-8 border-y border-[#30231E]/10">
-              {[
-                "Personalized experience",
-                "Comfortable treatment setting",
-                "Convenient Brooklyn location",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 border-b border-[#30231E]/10 py-4 last:border-b-0"
-                >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#F0E8DD] text-[8px] text-[#A94E17]">
-                    ✦
-                  </span>
-
-                  <p className="text-[9px] uppercase tracking-[0.14em] text-[#62554E]">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <a
-              href="#book"
-              className="group mt-8 inline-flex items-center gap-4 rounded-full bg-[#A94E17] px-7 py-4 text-[9px] uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#853B12]"
-            >
-              Book Laser
-
-              <ArrowRight
-                size={13}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </a>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* ======================================================
-          SKINCARE
-          NO EXTRA PHOTO NEEDED
-      ====================================================== */}
-      <section className="bg-[#F1E9DE] px-5 py-20 md:px-8 md:py-24 lg:px-12">
-        <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <div>
-            <p className="text-[8px] uppercase tracking-[0.3em] text-[#A94E17]">
-              Facials & Skincare
-            </p>
+      {/* =====================================================
+          FINAL CTA
+      ===================================================== */}
 
-            <h2 className="mt-5 font-serif text-4xl leading-[1.05] tracking-[-0.03em] md:text-[52px]">
-              A little time
-              <br />
-              <span className="italic text-[#A94E17]">
-                for your skin.
-              </span>
-            </h2>
-
-            <p className="mt-6 max-w-[450px] text-sm leading-7 text-[#77685F]">
-              Step away from your routine and give your skin a little extra
-              attention with facial and skincare treatments.
-            </p>
-
-            <a
-              href="#book"
-              className="group mt-8 inline-flex items-center gap-4 text-[8px] uppercase tracking-[0.2em] text-[#A94E17]"
-            >
-              Explore Skincare
-
-              <ArrowRight
-                size={12}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </a>
-          </div>
-
-          {/* GRAPHIC PANEL */}
-          <div className="relative overflow-hidden rounded-[30px] bg-[#A94E17] px-8 py-14 text-white md:px-14 md:py-16">
-            <div className="absolute -right-20 -top-20 h-[280px] w-[280px] rounded-full border border-white/15" />
-
-            <div className="absolute -right-8 -top-8 h-[180px] w-[180px] rounded-full border border-white/15" />
-
-            <Sparkles
-              size={18}
-              strokeWidth={1.3}
-              className="text-[#F0D6BF]"
-            />
-
-            <p className="relative mt-8 max-w-xl font-serif text-3xl leading-[1.15] md:text-[42px]">
-              Your beauty routine should feel like
-              <span className="italic text-[#F2D7C0]">
-                {" "}
-                time for yourself.
-              </span>
-            </p>
-
-            <div className="relative mt-10 h-px w-full bg-white/20" />
-
-            <div className="relative mt-6 flex items-center justify-between gap-5">
-              <div>
-                <p className="text-[8px] uppercase tracking-[0.23em] text-white/60">
-                  House of Laser & Spa
-                </p>
-
-                <p className="mt-2 font-serif text-xl italic">
-                  Skin · Beauty · Self-Care
-                </p>
-              </div>
-
-              <span className="font-serif text-4xl italic text-white/20">
-                HLS
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ======================================================
-          LOGO / BRAND FEATURE
-      ====================================================== */}
-      <section className="px-5 py-20 md:px-8 md:py-24 lg:px-12">
-        <div className="mx-auto grid max-w-[1100px] items-center gap-10 lg:grid-cols-2">
-          {/* ACTUAL LOGO */}
-          <div className="flex min-h-[340px] items-center justify-center rounded-[28px] border border-[#30231E]/10 bg-white px-8 py-10">
-            <img
-              src="/previews/house-of-laser/logo.jpg"
-              alt="House of Laser & Spa logo"
-              className="max-h-[260px] w-auto max-w-full object-contain"
-            />
-          </div>
-
-          <div className="max-w-[470px] lg:pl-8">
-            <p className="text-[8px] uppercase tracking-[0.3em] text-[#A94E17]">
-              House of Laser & Spa
-            </p>
-
-            <h2 className="mt-5 font-serif text-4xl leading-[1.06] tracking-[-0.03em] md:text-[50px]">
-              Beauty with a
-              <br />
-              <span className="italic text-[#A94E17]">
-                little personality.
-              </span>
-            </h2>
-
-            <p className="mt-6 text-sm leading-7 text-[#77685F]">
-              A warm Brooklyn beauty destination bringing laser, skincare, and
-              self-care together under one roof.
-            </p>
-
-            <a
-              href="#contact"
-              className="group mt-8 inline-flex items-center gap-4 border-b border-[#A94E17]/40 pb-2 text-[8px] uppercase tracking-[0.2em] text-[#A94E17]"
-            >
-              Visit House of Laser
-
-              <ArrowRight
-                size={12}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ======================================================
-          BOOKING CTA
-      ====================================================== */}
       <section
         id="book"
-        className="px-5 pb-20 md:px-8 md:pb-28 lg:px-12"
+        className="overflow-hidden bg-[#A64C1B] text-white"
       >
-        <div className="relative mx-auto max-w-[1300px] overflow-hidden rounded-[32px] bg-[#A94E17] px-6 py-16 text-center text-white md:px-12 md:py-20">
-          <div className="pointer-events-none absolute -left-20 -top-20 h-[280px] w-[280px] rounded-full border border-white/10" />
+        <div className="relative mx-auto max-w-[1500px] px-6 py-24 md:px-12 md:py-28 lg:px-20">
+          <Reveal>
+            <div className="relative z-10 grid items-end gap-12 lg:grid-cols-[1.25fr_0.75fr]">
+              <div>
+                <p className="text-[9px] uppercase tracking-[0.32em] text-white/60">
+                  Your Next Appointment
+                </p>
 
-          <div className="pointer-events-none absolute -bottom-28 -right-20 h-[340px] w-[340px] rounded-full border border-white/10" />
+                <h2 className="mt-6 max-w-[820px] font-serif text-[52px] leading-[0.94] tracking-[-0.045em] md:text-[74px]">
+                  Make a little time
+                  <br />
 
-          <div className="relative">
-            <Sparkles
-              size={17}
-              strokeWidth={1.3}
-              className="mx-auto text-[#F2D7C0]"
-            />
+                  <span className="italic text-[#F0D4BC]">
+                    for yourself.
+                  </span>
+                </h2>
+              </div>
 
-            <p className="mt-5 text-[8px] uppercase tracking-[0.28em] text-white/65">
-              Your Next Appointment
-            </p>
+              <div>
+                <p className="max-w-[380px] text-[13px] leading-7 text-white/65">
+                  Explore treatments and plan your next visit to House of Laser
+                  & Spa.
+                </p>
 
-            <h2 className="mx-auto mt-5 max-w-[760px] font-serif text-4xl leading-[1.04] tracking-[-0.03em] md:text-[58px]">
-              Make a little time
-              <br />
-              <span className="italic text-[#F2D7C0]">
-                for yourself.
-              </span>
-            </h2>
+                <a
+                  href="#contact"
+                  className="group mt-8 inline-flex items-center gap-4 bg-[#FAF8F4] px-7 py-[17px] text-[9px] uppercase tracking-[0.2em] text-[#A64C1B] transition-transform duration-500 hover:-translate-y-1"
+                >
+                  Book an Appointment
 
-            <p className="mx-auto mt-6 max-w-[470px] text-sm leading-7 text-white/70">
-              Find the treatment that fits your routine and plan your next
-              visit to House of Laser & Spa.
-            </p>
+                  <ArrowRight
+                    size={13}
+                    className="transition-transform duration-500 group-hover:translate-x-1.5"
+                  />
+                </a>
+              </div>
+            </div>
+          </Reveal>
 
-            <a
-              href="#contact"
-              className="group mt-8 inline-flex items-center gap-4 rounded-full bg-[#FBF8F3] px-7 py-4 text-[9px] uppercase tracking-[0.2em] text-[#A94E17]"
-            >
-              Book an Appointment
-
-              <ArrowRight
-                size={13}
-                className="transition-transform group-hover:translate-x-1"
-              />
-            </a>
-          </div>
+          <span className="pointer-events-none absolute -bottom-20 right-4 font-serif text-[300px] italic leading-none text-white/[0.035] md:right-14 md:text-[420px]">
+            H
+          </span>
         </div>
       </section>
 
-      {/* ======================================================
+      {/* =====================================================
           FOOTER
-      ====================================================== */}
+      ===================================================== */}
+
       <footer
         id="contact"
-        className="bg-[#30231E] px-5 pb-8 pt-16 text-[#FBF8F3] md:px-8 lg:px-12"
+        className="bg-[#28211D] px-6 pb-8 pt-16 text-white md:px-10 lg:px-14"
       >
-        <div className="mx-auto max-w-[1350px]">
+        <div className="mx-auto max-w-[1320px]">
           <div className="grid gap-12 border-b border-white/10 pb-14 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr]">
-            {/* BRAND */}
+            {/* FOOTER BRAND */}
+
             <div>
-              <div className="inline-block rounded-[14px] bg-[#FBF8F3] p-3">
+              {/* CROPPED LOGO — NO EXTRA WHITE BOX */}
+
+              <div className="relative h-[82px] w-[175px] overflow-hidden">
                 <img
                   src="/previews/house-of-laser/logo.jpg"
                   alt="House of Laser & Spa"
-                  className="h-[62px] w-auto max-w-[160px] object-contain"
+                  className="absolute left-1/2 top-1/2 h-[130%] w-[130%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
                 />
               </div>
 
-              <p className="mt-5 max-w-[350px] text-sm leading-7 text-white/50">
+              <p className="mt-6 max-w-[340px] text-[12px] leading-6 text-white/45">
                 Laser, skincare, beauty, and self-care in Brooklyn, New York.
               </p>
             </div>
 
-            {/* LOCATION */}
+            {/* VISIT */}
+
             <div>
-              <p className="text-[8px] uppercase tracking-[0.25em] text-[#D7B894]">
+              <p className="text-[8px] uppercase tracking-[0.27em] text-[#D5B58D]">
                 Visit
               </p>
 
-              <div className="mt-5 flex items-start gap-3">
+              <div className="mt-6 flex items-start gap-3">
                 <MapPin
                   size={15}
-                  strokeWidth={1.5}
-                  className="mt-1 shrink-0 text-[#D7B894]"
+                  strokeWidth={1.4}
+                  className="mt-1 shrink-0 text-[#D5B58D]"
                 />
 
-                <p className="text-sm leading-6 text-white/55">
+                <p className="text-[12px] leading-6 text-white/50">
                   1690 E 14th St
                   <br />
                   Unit 2
@@ -779,34 +992,40 @@ export default function HouseOfLaser() {
             </div>
 
             {/* CONNECT */}
+
             <div>
-              <p className="text-[8px] uppercase tracking-[0.25em] text-[#D7B894]">
+              <p className="text-[8px] uppercase tracking-[0.27em] text-[#D5B58D]">
                 Connect
               </p>
 
-              <div className="mt-5 flex flex-col gap-4">
+              <div className="mt-6 flex flex-col gap-4">
                 <a
                   href="https://www.instagram.com/houseoflaserspa/"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm text-white/55 transition-colors hover:text-white"
+                  className="w-fit text-[12px] text-white/50 transition-colors duration-300 hover:text-white"
                 >
                   @houseoflaserspa
                 </a>
 
                 <a
                   href="tel:+19298339197"
-                  className="inline-flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white"
+                  className="inline-flex w-fit items-center gap-3 text-[12px] text-white/50 transition-colors duration-300 hover:text-white"
                 >
-                  <Phone size={14} strokeWidth={1.6} />
+                  <Phone
+                    size={14}
+                    strokeWidth={1.4}
+                  />
+
                   (929) 833-9197
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 pt-7 text-[7px] uppercase tracking-[0.2em] text-white/25 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-3 pt-7 text-[7px] uppercase tracking-[0.22em] text-white/25 sm:flex-row sm:items-center sm:justify-between">
             <p>House of Laser & Spa</p>
+
             <p>Brooklyn, New York</p>
           </div>
         </div>
