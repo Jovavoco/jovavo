@@ -5,7 +5,6 @@ import {
   CalendarDays,
   CircleDollarSign,
   ExternalLink,
-  Instagram,
   LayoutDashboard,
   Plus,
   Search,
@@ -31,19 +30,33 @@ type Prospect = {
   first_contact_date: string | null;
   last_contact_date: string | null;
   next_follow_up: string | null;
-  estimated_value: number | null;
-  quoted_price: number | null;
+  estimated_value: number | string | null;
+  quoted_price: number | string | null;
   created_at: string;
 };
 
-function formatMoney(value: number | null) {
-  if (value === null) return "—";
+function formatMoney(
+  value: number | string | null | undefined
+) {
+  if (
+    value === null ||
+    value === undefined ||
+    value === ""
+  ) {
+    return "—";
+  }
+
+  const numericValue = Number(value);
+
+  if (Number.isNaN(numericValue)) {
+    return "—";
+  }
 
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 0,
-  }).format(value);
+  }).format(numericValue);
 }
 
 function formatDate(value: string | null) {
@@ -87,7 +100,7 @@ export default async function ProspectsPage() {
   const supabase = await createClient();
 
   // -------------------------------------------------------
-  // AUTH
+  // AUTHENTICATION
   // -------------------------------------------------------
 
   const {
@@ -106,7 +119,7 @@ export default async function ProspectsPage() {
   }
 
   // -------------------------------------------------------
-  // PROSPECTS
+  // LOAD PROSPECTS
   // -------------------------------------------------------
 
   const { data, error } = await supabase
@@ -139,6 +152,10 @@ export default async function ProspectsPage() {
 
   const prospects = (data ?? []) as Prospect[];
 
+  // -------------------------------------------------------
+  // STATS
+  // -------------------------------------------------------
+
   const warmLeads = prospects.filter(
     (prospect) => prospect.lead_source === "Warm Lead"
   ).length;
@@ -157,14 +174,12 @@ export default async function ProspectsPage() {
         prospect.status !== "Lost"
     )
     .reduce((total, prospect) => {
-      return (
-        total +
-        Number(
-          prospect.quoted_price ??
-            prospect.estimated_value ??
-            0
-        )
-      );
+      const value =
+        prospect.quoted_price ??
+        prospect.estimated_value ??
+        0;
+
+      return total + Number(value);
     }, 0);
 
   return (
@@ -219,11 +234,23 @@ export default async function ProspectsPage() {
               Prospects
             </Link>
           </nav>
+
+          <div className="mt-10 border-t border-[#ded7cd] pt-6">
+            <p className="px-4 text-[10px] uppercase tracking-[0.18em] text-[#9a9289]">
+              Jovavo CRM
+            </p>
+
+            <p className="mt-2 px-4 text-xs leading-5 text-[#817970]">
+              Manage leads, follow-ups and client opportunities.
+            </p>
+          </div>
         </aside>
 
         {/* CONTENT */}
 
         <section className="min-w-0 px-5 py-8 sm:px-8 lg:px-10 lg:py-10">
+          {/* PAGE HEADING */}
+
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#817970]">
@@ -235,8 +262,8 @@ export default async function ProspectsPage() {
               </h1>
 
               <p className="mt-3 max-w-xl text-sm leading-6 text-[#706960]">
-                Manage outreach, follow-ups, opportunities and potential
-                Jovavo projects.
+                Manage outreach, follow-ups, opportunities and
+                potential Jovavo projects.
               </p>
             </div>
 
@@ -337,12 +364,13 @@ export default async function ProspectsPage() {
 
               <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[#706960]">
                 Add businesses you want to contact and track every
-                opportunity from first outreach through becoming a client.
+                opportunity from first outreach through becoming a
+                client.
               </p>
 
               <Link
                 href="/admin/prospects/new"
-                className="mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#1b1713] px-5 text-sm font-medium text-white"
+                className="mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#1b1713] px-5 text-sm font-medium text-white transition hover:bg-[#302923]"
               >
                 <Plus size={16} />
                 Add First Prospect
@@ -393,6 +421,8 @@ export default async function ProspectsPage() {
                           key={prospect.id}
                           className="transition hover:bg-[#faf7f2]"
                         >
+                          {/* BUSINESS */}
+
                           <td className="px-5 py-5">
                             <Link
                               href={`/admin/prospects/${prospect.id}`}
@@ -403,7 +433,8 @@ export default async function ProspectsPage() {
                               </p>
 
                               <p className="mt-1 text-xs text-[#817970]">
-                                {prospect.industry || "No industry"}
+                                {prospect.industry ||
+                                  "No industry"}
                               </p>
                             </Link>
 
@@ -415,10 +446,10 @@ export default async function ProspectsPage() {
                                     href={prospect.website}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="text-[#817970] transition hover:text-[#1b1713]"
-                                    aria-label="Open website"
+                                    className="inline-flex items-center gap-1 text-[11px] font-medium text-[#817970] transition hover:text-[#1b1713]"
                                   >
-                                    <ExternalLink size={13} />
+                                    <ExternalLink size={12} />
+                                    Website
                                   </a>
                                 )}
 
@@ -427,23 +458,28 @@ export default async function ProspectsPage() {
                                     href={prospect.instagram}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="text-[#817970] transition hover:text-[#1b1713]"
-                                    aria-label="Open Instagram"
+                                    className="text-[11px] font-medium text-[#817970] transition hover:text-[#1b1713]"
                                   >
-                                    <Instagram size={13} />
+                                    Instagram
                                   </a>
                                 )}
                               </div>
                             )}
                           </td>
 
+                          {/* LEAD */}
+
                           <td className="px-5 py-5 text-xs text-[#655e56]">
                             {prospect.lead_source}
                           </td>
 
+                          {/* OPPORTUNITY */}
+
                           <td className="px-5 py-5 text-xs text-[#655e56]">
                             {prospect.opportunity || "—"}
                           </td>
+
+                          {/* STATUS */}
 
                           <td className="px-5 py-5">
                             <span
@@ -455,13 +491,21 @@ export default async function ProspectsPage() {
                             </span>
                           </td>
 
+                          {/* MOCKUP */}
+
                           <td className="px-5 py-5 text-xs text-[#655e56]">
                             {prospect.mockup_status}
                           </td>
 
+                          {/* FOLLOW UP */}
+
                           <td className="px-5 py-5 text-xs text-[#655e56]">
-                            {formatDate(prospect.next_follow_up)}
+                            {formatDate(
+                              prospect.next_follow_up
+                            )}
                           </td>
+
+                          {/* VALUE */}
 
                           <td className="px-5 py-5 text-xs font-medium">
                             {formatMoney(
@@ -483,7 +527,7 @@ export default async function ProspectsPage() {
                   <Link
                     key={prospect.id}
                     href={`/admin/prospects/${prospect.id}`}
-                    className="block rounded-[22px] border border-[#e2dbd1] bg-[#fffdf9] p-5"
+                    className="block rounded-[22px] border border-[#e2dbd1] bg-[#fffdf9] p-5 transition hover:bg-[#faf7f2]"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="min-w-0">
@@ -492,7 +536,8 @@ export default async function ProspectsPage() {
                         </p>
 
                         <p className="mt-1 text-xs text-[#817970]">
-                          {prospect.industry || "No industry"}
+                          {prospect.industry ||
+                            "No industry"}
                         </p>
                       </div>
 
@@ -532,7 +577,9 @@ export default async function ProspectsPage() {
                         </p>
 
                         <p className="mt-1 text-xs">
-                          {formatDate(prospect.next_follow_up)}
+                          {formatDate(
+                            prospect.next_follow_up
+                          )}
                         </p>
                       </div>
 
@@ -546,6 +593,26 @@ export default async function ProspectsPage() {
                             prospect.quoted_price ??
                               prospect.estimated_value
                           )}
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="text-[9px] uppercase tracking-[0.12em] text-[#9a9289]">
+                          Mockup
+                        </p>
+
+                        <p className="mt-1 text-xs">
+                          {prospect.mockup_status}
+                        </p>
+                      </div>
+
+                      <div>
+                        <p className="text-[9px] uppercase tracking-[0.12em] text-[#9a9289]">
+                          Contact
+                        </p>
+
+                        <p className="mt-1 text-xs">
+                          {prospect.contact_name || "—"}
                         </p>
                       </div>
                     </div>
