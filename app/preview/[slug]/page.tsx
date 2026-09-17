@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
+
 import HouseOfLaser from "@/components/previews/HouseOfLaser";
+import ClassiqueSalon from "@/components/previews/ClassiqueSalon";
 
 export default async function PreviewPage({
   params,
@@ -8,9 +10,13 @@ export default async function PreviewPage({
 }) {
   const { slug } = await params;
 
-  if (slug !== "house-of-laser") {
-    notFound();
+  if (slug === "house-of-laser") {
+    return <HouseOfLaser />;
   }
 
-  return <HouseOfLaser />;
+  if (slug === "classique-salon") {
+    return <ClassiqueSalon />;
+  }
+
+  notFound();
 }
