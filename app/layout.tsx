@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+} from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+
 import Schema from "./schema";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import SiteChrome from "@/components/SiteChrome";
 import MetaPixel from "@/components/MetaPixel";
 
 import "./globals.css";
@@ -20,16 +23,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jovavo.com"),
+  metadataBase: new URL(
+    "https://jovavo.com"
+  ),
 
   verification: {
     other: {
-      "facebook-domain-verification": "rbc0rb1i4glgz2gbivc74ek7g3hjut",
+      "facebook-domain-verification":
+        "rbc0rb1i4glgz2gbivc74ek7g3hjut",
     },
   },
 
   title: {
-    default: "Jovavo | Custom Websites & Digital Experiences",
+    default:
+      "Jovavo | Custom Websites & Digital Experiences",
     template: "%s | Jovavo",
   },
 
@@ -47,13 +54,20 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "Jovavo | Custom Websites & Digital Experiences",
+    title:
+      "Jovavo | Custom Websites & Digital Experiences",
+
     description:
       "Premium websites designed and developed for ambitious businesses.",
+
     url: "https://jovavo.com",
+
     siteName: "Jovavo",
+
     locale: "en_US",
+
     type: "website",
+
     images: [
       {
         url: "/og-image.png",
@@ -66,10 +80,16 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Jovavo | Custom Websites & Digital Experiences",
+
+    title:
+      "Jovavo | Custom Websites & Digital Experiences",
+
     description:
       "Premium websites designed and developed for ambitious businesses.",
-    images: ["/og-image.png"],
+
+    images: [
+      "/og-image.png",
+    ],
   },
 
   icons: {
@@ -90,18 +110,20 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <Schema />
 
-        <Navbar />
-
-        <main className="flex-1">{children}</main>
-
-        <Footer />
+        <SiteChrome>
+          {children}
+        </SiteChrome>
 
         <MetaPixel />
       </body>
 
-      {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
+      {process.env
+        .NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
         <GoogleAnalytics
-          gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+          gaId={
+            process.env
+              .NEXT_PUBLIC_GA_MEASUREMENT_ID
+          }
         />
       ) : null}
     </html>
