@@ -263,16 +263,16 @@ export default function HouseOfLaser() {
 
           <div className="absolute inset-0 z-20 flex items-center justify-center px-5 text-center">
             <div className="hls-hero-text flex w-full max-w-[1050px] flex-col items-center justify-center">
-              <h1 className="text-center font-serif font-extralight text-[#F7F2ED]">
-                <span className="block text-[64px] font-extralight leading-[0.92] tracking-[-0.045em] sm:text-[78px] md:text-[92px] lg:text-[104px] xl:text-[116px]">
-                  Beauty
-                </span>
+<h1 className="text-center font-serif text-[#F7F2ED]">
+  <span className="block text-[60px] font-thin leading-[0.9] tracking-[-0.025em] sm:text-[74px] md:text-[88px] lg:text-[98px] xl:text-[108px]">
+    Beauty
+  </span>
 
-                <span className="mt-1 block whitespace-nowrap text-[52px] font-extralight leading-[0.92] tracking-[-0.045em] sm:text-[68px] md:text-[82px] lg:text-[94px] xl:text-[106px]">
-                  <span className="italic font-extralight">without</span>{" "}
-                  <span className="font-extralight not-italic">limits.</span>
-                </span>
-              </h1>
+  <span className="mt-2 block whitespace-nowrap text-[50px] font-thin leading-[0.9] tracking-[-0.025em] sm:text-[64px] md:text-[76px] lg:text-[86px] xl:text-[94px]">
+    <span className="italic font-thin">without</span>{" "}
+    <span className="font-thin not-italic">limits.</span>
+  </span>
+</h1>
 
               <div className="mt-9 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:mt-10 sm:gap-x-7">
                 <span className="text-[8px] font-light uppercase tracking-[0.42em] text-white/85 sm:text-[9px]">
