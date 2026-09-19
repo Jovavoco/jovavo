@@ -9,7 +9,6 @@ import {
 
 import {
   ArrowRight,
-  Instagram,
   MapPin,
   Menu,
   Phone,
@@ -193,7 +192,7 @@ export default function HouseOfLaser() {
       `}</style>
 
       {/* =====================================================
-          TOP NOTE
+          TOP BAR
       ===================================================== */}
 
       <div className="border-b border-[#292521]/[0.07] bg-[#283229] px-5 py-2.5 text-center">
@@ -309,6 +308,7 @@ export default function HouseOfLaser() {
                 className="mt-6 flex items-center justify-between bg-[#283229] px-6 py-4 text-[9px] uppercase tracking-[0.2em] text-white"
               >
                 Book Appointment
+
                 <ArrowRight size={13} />
               </a>
             </div>
@@ -325,8 +325,9 @@ export default function HouseOfLaser() {
           id="home"
           className="px-5 pb-16 pt-7 md:px-8 md:pb-24 lg:px-12"
         >
-          <div className="mx-auto grid max-w-[1380px] items-stretch lg:grid-cols-[0.78fr_1.22fr]">
+          <div className="mx-auto grid max-w-[1380px] items-stretch overflow-hidden lg:grid-cols-[0.78fr_1.22fr]">
             {/* COPY */}
+
             <div className="flex items-center bg-[#EEE8DF] px-7 py-20 sm:px-10 md:px-14 lg:min-h-[730px] lg:px-16 xl:px-20">
               <div className="max-w-[540px] spa-hero-copy">
                 <div className="mb-8 flex items-center gap-4">
@@ -340,6 +341,7 @@ export default function HouseOfLaser() {
                 <h1 className="font-serif text-[56px] font-light leading-[0.95] tracking-[-0.045em] sm:text-[70px] md:text-[82px] lg:text-[76px] xl:text-[90px]">
                   Beauty,
                   <br />
+
                   <span className="italic text-[#5F6758]">
                     elevated.
                   </span>
@@ -387,6 +389,7 @@ export default function HouseOfLaser() {
             </div>
 
             {/* IMAGE */}
+
             <div className="group relative min-h-[520px] overflow-hidden lg:min-h-[730px]">
               <img
                 src="/previews/house-of-laser/waiting-area.jpg"
@@ -405,6 +408,7 @@ export default function HouseOfLaser() {
                   <p className="mt-3 font-serif text-[24px] font-light leading-tight text-[#292521]">
                     A little time
                     <br />
+
                     <span className="italic text-[#5F6758]">
                       just for you.
                     </span>
@@ -433,6 +437,7 @@ export default function HouseOfLaser() {
                   <h2 className="max-w-[900px] font-serif text-[42px] font-light leading-[1.06] tracking-[-0.035em] sm:text-5xl md:text-[64px]">
                     Treatments designed
                     <br className="hidden sm:block" /> around{" "}
+
                     <span className="italic text-[#687060]">
                       you.
                     </span>
@@ -466,7 +471,7 @@ export default function HouseOfLaser() {
           className="px-5 py-16 md:px-8 md:py-24 lg:px-12"
         >
           <Reveal>
-            <div className="mx-auto grid max-w-[1380px] bg-[#283229] text-white lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="mx-auto grid max-w-[1380px] overflow-hidden bg-[#283229] text-white lg:grid-cols-[1.1fr_0.9fr]">
               <div className="group relative min-h-[500px] overflow-hidden md:min-h-[650px]">
                 <img
                   src="/previews/house-of-laser/treatment-room.jpg"
@@ -537,6 +542,7 @@ export default function HouseOfLaser() {
                   <h2 className="mt-5 font-serif text-[46px] font-light leading-[1] tracking-[-0.04em] sm:text-6xl md:text-[72px]">
                     Care that feels
                     <br />
+
                     <span className="italic text-[#687060]">
                       personal.
                     </span>
@@ -720,7 +726,7 @@ export default function HouseOfLaser() {
         </section>
 
         {/* =====================================================
-            DETAILS STRIP
+            DETAILS
         ===================================================== */}
 
         <section className="border-y border-[#292521]/[0.08]">
@@ -758,6 +764,7 @@ export default function HouseOfLaser() {
                   <h2 className="mt-6 font-serif text-[48px] font-light leading-[1] tracking-[-0.04em] md:text-[68px]">
                     Your next ritual
                     <br />
+
                     <span className="italic text-[#687060]">
                       starts here.
                     </span>
@@ -833,7 +840,7 @@ export default function HouseOfLaser() {
           className="px-5 pb-10 md:px-8 lg:px-12"
         >
           <Reveal>
-            <div className="mx-auto max-w-[1380px] bg-[#283229] px-7 py-20 text-center text-white sm:px-10 md:py-28">
+            <div className="mx-auto max-w-[1380px] overflow-hidden bg-[#283229] px-7 py-20 text-center text-white sm:px-10 md:py-28">
               <div className="mx-auto max-w-[780px]">
                 <Sparkles
                   size={18}
@@ -848,6 +855,7 @@ export default function HouseOfLaser() {
                 <h2 className="mt-6 font-serif text-[48px] font-light leading-[1] tracking-[-0.04em] sm:text-6xl md:text-[76px]">
                   Make a little time
                   <br />
+
                   <span className="italic text-[#CFC1B1]">
                     for yourself.
                   </span>
@@ -933,13 +941,8 @@ export default function HouseOfLaser() {
                   href="https://www.instagram.com/houseoflaserspa/"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-fit items-center gap-3 text-[12px] text-[#777068] transition-colors duration-300 hover:text-[#687060]"
+                  className="w-fit text-[12px] text-[#777068] transition-colors duration-300 hover:text-[#687060]"
                 >
-                  <Instagram
-                    size={14}
-                    strokeWidth={1.3}
-                  />
-
                   @houseoflaserspa
                 </a>
 
@@ -960,6 +963,7 @@ export default function HouseOfLaser() {
 
           <div className="mt-12 flex flex-col gap-3 border-t border-[#292521]/[0.07] pt-7 text-[8px] uppercase tracking-[0.22em] text-[#9B948C] sm:flex-row sm:items-center sm:justify-between">
             <p>House of Laser &amp; Spa</p>
+
             <p>Brooklyn, New York</p>
           </div>
         </div>
