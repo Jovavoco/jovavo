@@ -536,63 +536,6 @@ export default function HouseOfLaser() {
 </section>
 
         {/* =====================================================
-            EXPERIENCE
-        ===================================================== */}
-
-        <section id="experience" className="bg-[#1E1D19] text-white">
-          <div className="grid lg:grid-cols-2">
-            <div className="group relative min-h-[520px] overflow-hidden md:min-h-[700px] lg:min-h-[760px]">
-              <img
-                src="/previews/house-of-laser/treatment-room.jpg"
-                alt="House of Laser & Spa treatment room"
-                className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]"
-              />
-
-              <div className="absolute inset-0 bg-black/10" />
-            </div>
-
-            <div className="flex min-h-[600px] items-center px-8 py-20 sm:px-10 md:px-16 lg:px-20 xl:px-24">
-              <div className="max-w-[520px]">
-                <p className="text-[8px] uppercase tracking-[0.35em] text-[#C7B29F]">
-                  Inside The Spa
-                </p>
-
-                <h2
-                  className={`${bodoni.className} hls-bodoni mt-8 text-[52px] font-normal leading-[0.94] tracking-[-0.045em] sm:text-[66px] md:text-[76px]`}
-                >
-                  Come in.
-                  <br />
-                  Slow down.
-                  <br />
-                  <span className="italic text-[#C7B29F]">
-                    Stay awhile.
-                  </span>
-                </h2>
-
-                <p className="mt-8 max-w-[440px] text-[14px] leading-7 text-white/55">
-                  Warm lighting, thoughtful details, and an intimate
-                  treatment space make every appointment feel like time
-                  genuinely set aside for you.
-                </p>
-
-                <a
-                  href="#services"
-                  className="group mt-10 inline-flex items-center gap-4 border-b border-white/25 pb-2 text-[8px] uppercase tracking-[0.26em] text-white"
-                >
-                  Explore Treatments
-
-                  <ArrowRight
-                    size={13}
-                    strokeWidth={1.3}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =====================================================
             SERVICES
         ===================================================== */}
 
