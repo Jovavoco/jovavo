@@ -1,4 +1,4 @@
-
+"use client";
 
 import { useState } from "react";
 import { Bodoni_Moda } from "next/font/google";
