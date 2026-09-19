@@ -383,73 +383,157 @@ export default function HouseOfLaser() {
             ABOUT
         ===================================================== */}
 
-        <section
-          id="about"
-          className="relative overflow-hidden bg-[#F3EEE8] px-6 py-24 sm:px-8 md:px-12 md:py-32 lg:px-16 lg:py-40"
+{/* =====================================================
+    ABOUT — THE HOUSE
+===================================================== */}
+
+<section
+  id="about"
+  className="relative overflow-hidden bg-[#F6F2EC]"
+>
+  {/* LARGE DECORATIVE ARC */}
+  <div className="pointer-events-none absolute -right-[230px] -top-[260px] hidden h-[1050px] w-[1050px] rounded-full border border-[#8E8177]/25 xl:block" />
+
+  <div className="relative mx-auto grid min-h-[820px] max-w-[1500px] lg:grid-cols-[1.08fr_0.92fr]">
+
+    {/* =====================================================
+        LEFT SIDE
+    ===================================================== */}
+
+    <div className="flex items-center px-6 py-20 sm:px-10 md:px-14 lg:px-16 lg:py-24 xl:px-20">
+      <div className="w-full max-w-[650px]">
+
+        {/* EYEBROW */}
+
+        <div className="flex items-center gap-5">
+          <span className="h-px w-16 bg-[#8E8177]/55" />
+
+          <p className="text-[8px] font-normal uppercase tracking-[0.48em] text-[#4D4742] sm:text-[9px]">
+            The House
+          </p>
+        </div>
+
+        {/* TITLE */}
+
+        <h2
+          className={`${bodoni.className} hls-bodoni mt-14 font-normal tracking-[-0.045em] text-[#211C18]`}
         >
-          <div className="pointer-events-none absolute right-[-10%] top-[-10%] h-[480px] w-[480px] rounded-full bg-[#D8CBC0]/20 blur-[120px]" />
+          <span className="block text-[50px] leading-[0.92] sm:text-[62px] md:text-[72px] lg:text-[68px] xl:text-[78px]">
+            Beauty should feel
+          </span>
 
-          <div className="relative mx-auto max-w-[1280px]">
-            <div className="flex items-center gap-4">
-              <span className="h-px w-8 bg-[#9A897B]/60" />
+          <span className="mt-1 block text-[58px] italic leading-[0.9] text-[#917C6D] sm:text-[70px] md:text-[82px] lg:text-[78px] xl:text-[88px]">
+            personal.
+          </span>
+        </h2>
 
-              <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#8A796C]">
-                The House
-              </p>
-            </div>
+        {/* COPY */}
 
-            <div className="mt-10 max-w-[1050px] md:mt-14">
-              <h2
-                className={`${bodoni.className} hls-bodoni text-[52px] font-normal leading-[0.94] tracking-[-0.045em] text-[#2D2925] sm:text-[66px] md:text-[82px] lg:text-[94px]`}
-              >
-                Beauty should feel
-                <br />
-                <span className="italic text-[#8B7565]">personal.</span>
-              </h2>
-            </div>
+        <div className="mt-12 max-w-[570px] space-y-6">
+          <p className="text-[12px] font-light leading-[1.9] tracking-[0.09em] text-[#514B46] sm:text-[13px]">
+            House of Laser &amp; Spa brings together laser hair removal,
+            skincare, beauty, and self-care in an intimate Brooklyn setting.
+          </p>
 
-            <div className="mt-14 grid gap-10 border-t border-[#2D2925]/10 pt-9 md:mt-20 md:grid-cols-[0.75fr_1fr_1fr] md:gap-12 md:pt-11 lg:gap-16">
-              <div>
-                <p className="max-w-[190px] text-[9px] uppercase leading-[2] tracking-[0.25em] text-[#9A897B]">
-                  Laser
-                  <br />
-                  Skincare
-                  <br />
-                  Self-Care
-                </p>
-              </div>
+          <p className="text-[12px] font-light leading-[1.9] tracking-[0.09em] text-[#514B46] sm:text-[13px]">
+            Every treatment is approached with intention — creating an
+            experience that feels comfortable, considered, and entirely
+            your own.
+          </p>
+        </div>
 
-              <div>
-                <p className="max-w-[390px] text-[14px] font-light leading-[1.9] text-[#655E58]">
-                  House of Laser &amp; Spa brings together laser hair
-                  removal, skincare, beauty, and self-care in an intimate
-                  Brooklyn setting.
-                </p>
-              </div>
+        {/* DIVIDER */}
 
-              <div>
-                <p className="max-w-[390px] text-[14px] font-light leading-[1.9] text-[#655E58]">
-                  Every treatment is approached with intention — creating
-                  an experience that feels comfortable, considered, and
-                  entirely your own.
-                </p>
+        <div className="mt-12 h-px w-full bg-[#6F655D]/25" />
 
-                <a
-                  href="#services"
-                  className="group mt-8 inline-flex items-center gap-4 text-[8px] font-medium uppercase tracking-[0.28em] text-[#4E4741]"
-                >
-                  Discover Our Treatments
+        {/* CATEGORIES */}
 
-                  <ArrowRight
-                    size={13}
-                    strokeWidth={1.2}
-                    className="transition-transform duration-500 group-hover:translate-x-1"
-                  />
-                </a>
-              </div>
-            </div>
+        <div className="grid grid-cols-3 py-8">
+          <div className="flex items-center">
+            <p className="text-[8px] font-normal uppercase tracking-[0.4em] text-[#39332E]">
+              Laser
+            </p>
           </div>
-        </section>
+
+          <div className="flex items-center border-l border-[#6F655D]/25 pl-8 sm:pl-10">
+            <p className="text-[8px] font-normal uppercase tracking-[0.4em] text-[#39332E]">
+              Skincare
+            </p>
+          </div>
+
+          <div className="flex items-center border-l border-[#6F655D]/25 pl-8 sm:pl-10">
+            <p className="text-[8px] font-normal uppercase tracking-[0.4em] text-[#39332E]">
+              Self-Care
+            </p>
+          </div>
+        </div>
+
+        {/* BUTTON */}
+
+        <a
+          href="#services"
+          className="group mt-7 inline-flex min-w-[310px] items-center justify-between border border-[#4E4741]/65 px-7 py-[18px] text-[8px] font-normal uppercase tracking-[0.36em] text-[#312C28] transition-all duration-500 hover:bg-[#2A2521] hover:text-[#F6F2EC] sm:min-w-[360px]"
+        >
+          <span>Discover Our Treatments</span>
+
+          <ArrowRight
+            size={15}
+            strokeWidth={1}
+            className="ml-8 transition-transform duration-500 group-hover:translate-x-1"
+          />
+        </a>
+
+        {/* SMALL BOTTOM TEXT */}
+
+        <p className="mt-16 text-[7px] font-normal uppercase tracking-[0.52em] text-[#9B8374]">
+          Beauty Lives Here
+        </p>
+      </div>
+    </div>
+
+    {/* =====================================================
+        RIGHT IMAGE
+    ===================================================== */}
+
+    <div className="relative px-6 pb-8 sm:px-10 lg:px-0 lg:py-[58px] lg:pr-[58px]">
+      <div className="group relative h-[570px] overflow-hidden sm:h-[680px] lg:h-full lg:min-h-[700px]">
+
+        <img
+          src="/previews/house-of-laser/about-woman.png"
+          alt="House of Laser & Spa beauty and self-care"
+          className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
+        />
+
+        {/* VERY SUBTLE IMAGE TONE */}
+        <div className="absolute inset-0 bg-[#392C23]/[0.03]" />
+
+        {/* IMAGE WORDS */}
+
+        <div className="absolute left-[15%] top-[20%] hidden text-white lg:block">
+          <div className="space-y-3">
+            <p className="text-[7px] font-light uppercase tracking-[0.48em] text-white/85">
+              Confidence
+            </p>
+
+            <p className="text-[7px] font-light uppercase tracking-[0.48em] text-white/85">
+              Care
+            </p>
+
+            <p className="text-[7px] font-light uppercase tracking-[0.48em] text-white/85">
+              Beauty
+            </p>
+
+            <p className="text-[7px] font-light uppercase tracking-[0.48em] text-white/85">
+              You
+            </p>
+          </div>
+
+          <div className="ml-1 mt-5 h-16 w-px bg-white/65" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* =====================================================
             EXPERIENCE
