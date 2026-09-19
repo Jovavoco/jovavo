@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Cormorant_Garamond } from "next/font/google";
 import {
   ArrowRight,
   MapPin,
@@ -9,6 +10,13 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
 
 const services = [
   {
@@ -120,16 +128,13 @@ export default function HouseOfLaser() {
         >
           <img
             src="/previews/house-of-laser/spa-hero.png"
-            alt="House of Laser & Spa"
+            alt="House of Laser & Spa treatment room"
             className="hls-hero-image absolute inset-0 h-full w-full object-cover object-[58%_center] sm:object-center"
           />
 
           <div className="absolute inset-0 bg-black/20" />
-
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/[0.06] to-black/20" />
-
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/30" />
-
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.22)_100%)]" />
 
           {/* DESKTOP NAV */}
@@ -262,25 +267,21 @@ export default function HouseOfLaser() {
           {/* HERO CENTER */}
 
           <div className="absolute inset-0 z-20 flex items-center justify-center px-5 text-center">
-            <div className="hls-hero-text flex w-full max-w-[1050px] flex-col items-center justify-center">
-<h1
-  className="text-center font-serif text-[#F7F2ED]"
-  style={{
-    fontWeight: 100,
-    WebkitTextStroke: "0.15px rgba(247, 242, 237, 0.75)",
-  }}
->
-  <span className="block text-[60px] font-thin leading-[0.91] tracking-[-0.02em] sm:text-[74px] md:text-[88px] lg:text-[100px] xl:text-[110px]">
-    Beauty
-  </span>
+            <div className="hls-hero-text flex w-full max-w-[1100px] flex-col items-center justify-center">
+              <h1
+                className={`${cormorant.className} text-center font-light text-[#F8F3ED]`}
+              >
+                <span className="block text-[64px] font-light leading-[0.82] tracking-[-0.025em] sm:text-[82px] md:text-[100px] lg:text-[116px] xl:text-[126px]">
+                  Beauty
+                </span>
 
-  <span className="mt-2 block whitespace-nowrap text-[48px] font-thin leading-[0.91] tracking-[-0.02em] sm:text-[62px] md:text-[75px] lg:text-[87px] xl:text-[96px]">
-    <span className="italic font-thin">without</span>{" "}
-    <span className="font-thin not-italic">limits.</span>
-  </span>
-</h1>
+                <span className="mt-3 block whitespace-nowrap text-[52px] font-light leading-[0.86] tracking-[-0.025em] sm:text-[69px] md:text-[84px] lg:text-[98px] xl:text-[108px]">
+                  <span className="italic font-light">without</span>
+                  <span className="font-light not-italic"> limits.</span>
+                </span>
+              </h1>
 
-              <div className="mt-9 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:mt-10 sm:gap-x-7">
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:mt-11 sm:gap-x-7">
                 <span className="text-[8px] font-light uppercase tracking-[0.42em] text-white/85 sm:text-[9px]">
                   Laser
                 </span>
@@ -342,11 +343,13 @@ export default function HouseOfLaser() {
             </div>
 
             <div className="mt-10 max-w-[1050px] md:mt-14">
-              <h2 className="font-serif text-[48px] font-extralight leading-[0.98] tracking-[-0.045em] text-[#2D2925] sm:text-[60px] md:text-[76px] lg:text-[88px]">
+              <h2
+                className={`${cormorant.className} text-[52px] font-light leading-[0.92] tracking-[-0.025em] text-[#2D2925] sm:text-[66px] md:text-[82px] lg:text-[94px]`}
+              >
                 Beauty should feel
                 <br />
 
-                <span className="italic font-extralight text-[#8B7565]">
+                <span className="italic font-light text-[#8B7565]">
                   personal.
                 </span>
               </h2>
@@ -427,7 +430,9 @@ export default function HouseOfLaser() {
                   Inside The Spa
                 </p>
 
-                <h2 className="mt-8 font-serif text-[50px] font-light leading-[0.97] tracking-[-0.04em] sm:text-[62px] md:text-[72px]">
+                <h2
+                  className={`${cormorant.className} mt-8 text-[54px] font-light leading-[0.92] tracking-[-0.025em] sm:text-[66px] md:text-[76px]`}
+                >
                   Come in.
                   <br />
                   Slow down.
@@ -476,7 +481,9 @@ export default function HouseOfLaser() {
                   Services
                 </p>
 
-                <h2 className="mt-6 font-serif text-[50px] font-light leading-[0.98] tracking-[-0.04em] sm:text-[62px] md:text-[76px]">
+                <h2
+                  className={`${cormorant.className} mt-6 text-[54px] font-light leading-[0.92] tracking-[-0.025em] sm:text-[68px] md:text-[82px]`}
+                >
                   Treatments,
                   <br />
 
@@ -503,7 +510,9 @@ export default function HouseOfLaser() {
                     {service.number}
                   </p>
 
-                  <h3 className="font-serif text-[30px] font-light tracking-[-0.025em] sm:text-[36px]">
+                  <h3
+                    className={`${cormorant.className} text-[34px] font-light tracking-[-0.02em] sm:text-[40px]`}
+                  >
                     {service.title}
                   </h3>
 
@@ -535,7 +544,9 @@ export default function HouseOfLaser() {
                   Laser Hair Removal
                 </p>
 
-                <h2 className="mt-7 font-serif text-[50px] font-light leading-[0.97] tracking-[-0.04em] sm:text-[62px] md:text-[72px]">
+                <h2
+                  className={`${cormorant.className} mt-7 text-[54px] font-light leading-[0.92] tracking-[-0.025em] sm:text-[68px] md:text-[78px]`}
+                >
                   Smooth,
                   <br />
 
@@ -555,7 +566,11 @@ export default function HouseOfLaser() {
                 >
                   Book Laser
 
-                  <ArrowRight size={13} strokeWidth={1.3} />
+                  <ArrowRight
+                    size={13}
+                    strokeWidth={1.3}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
                 </a>
               </div>
             </div>
@@ -597,7 +612,9 @@ export default function HouseOfLaser() {
                   Facials &amp; Skincare
                 </p>
 
-                <h2 className="mt-7 font-serif text-[50px] font-light leading-[0.97] tracking-[-0.04em] sm:text-[62px] md:text-[72px]">
+                <h2
+                  className={`${cormorant.className} mt-7 text-[54px] font-light leading-[0.92] tracking-[-0.025em] sm:text-[68px] md:text-[78px]`}
+                >
                   Skin deserves
                   <br />
 
@@ -618,7 +635,11 @@ export default function HouseOfLaser() {
                 >
                   Book a Facial
 
-                  <ArrowRight size={13} strokeWidth={1.3} />
+                  <ArrowRight
+                    size={13}
+                    strokeWidth={1.3}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
                 </a>
               </div>
             </div>
@@ -641,7 +662,9 @@ export default function HouseOfLaser() {
               House of Laser &amp; Spa
             </p>
 
-            <h2 className="mt-7 font-serif text-[44px] font-light leading-[1.03] tracking-[-0.04em] sm:text-[56px] md:text-[72px]">
+            <h2
+              className={`${cormorant.className} mt-7 text-[50px] font-light leading-[0.94] tracking-[-0.025em] sm:text-[64px] md:text-[78px]`}
+            >
               A little time
               <br className="hidden sm:block" />{" "}
               <span className="italic font-light text-[#8B7565]">
@@ -670,7 +693,9 @@ export default function HouseOfLaser() {
                 Visit The House
               </p>
 
-              <h2 className="mt-6 font-serif text-[48px] font-light leading-[1] tracking-[-0.04em] md:text-[64px]">
+              <h2
+                className={`${cormorant.className} mt-6 text-[52px] font-light leading-[0.92] tracking-[-0.025em] md:text-[70px]`}
+              >
                 Come see us
                 <br />
 
@@ -697,7 +722,9 @@ export default function HouseOfLaser() {
                   Visit
                 </p>
 
-                <p className="mt-4 font-serif text-[21px] font-light leading-8">
+                <p
+                  className={`${cormorant.className} mt-4 text-[24px] font-light leading-8`}
+                >
                   1690 E 14th St
                   <br />
                   Unit 2
@@ -719,7 +746,7 @@ export default function HouseOfLaser() {
 
                 <a
                   href="tel:+19298339197"
-                  className="mt-4 block font-serif text-[21px] font-light transition-colors hover:text-[#8B7565]"
+                  className={`${cormorant.className} mt-4 block text-[24px] font-light transition-colors hover:text-[#8B7565]`}
                 >
                   (929) 833-9197
                 </a>
@@ -752,7 +779,9 @@ export default function HouseOfLaser() {
               Your Next Appointment
             </p>
 
-            <h2 className="mt-7 font-serif text-[48px] font-light leading-[0.98] tracking-[-0.04em] sm:text-[60px] md:text-[78px]">
+            <h2
+              className={`${cormorant.className} mt-7 text-[52px] font-light leading-[0.92] tracking-[-0.025em] sm:text-[66px] md:text-[84px]`}
+            >
               Make a little time
               <br />
 
@@ -793,7 +822,9 @@ export default function HouseOfLaser() {
         <div className="mx-auto max-w-[1250px] border-t border-white/10 pt-12">
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr]">
             <div>
-              <p className="font-serif text-[26px] font-light">
+              <p
+                className={`${cormorant.className} text-[30px] font-light`}
+              >
                 House of Laser
               </p>
 
@@ -848,7 +879,6 @@ export default function HouseOfLaser() {
 
           <div className="mt-12 flex flex-col gap-3 border-t border-white/[0.07] pt-7 text-[7px] uppercase tracking-[0.24em] text-white/25 sm:flex-row sm:items-center sm:justify-between">
             <p>House of Laser &amp; Spa</p>
-
             <p>Brooklyn, New York</p>
           </div>
         </div>
