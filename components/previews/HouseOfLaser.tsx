@@ -263,12 +263,18 @@ export default function HouseOfLaser() {
 
           <div className="absolute inset-0 z-20 flex items-center justify-center px-5 text-center">
             <div className="hls-hero-text flex w-full max-w-[1050px] flex-col items-center justify-center">
-<h1 className="text-center font-serif text-[#F7F2ED]">
-  <span className="block text-[60px] font-thin leading-[0.9] tracking-[-0.025em] sm:text-[74px] md:text-[88px] lg:text-[98px] xl:text-[108px]">
+<h1
+  className="text-center font-serif text-[#F7F2ED]"
+  style={{
+    fontWeight: 100,
+    WebkitTextStroke: "0.15px rgba(247, 242, 237, 0.75)",
+  }}
+>
+  <span className="block text-[60px] font-thin leading-[0.91] tracking-[-0.02em] sm:text-[74px] md:text-[88px] lg:text-[100px] xl:text-[110px]">
     Beauty
   </span>
 
-  <span className="mt-2 block whitespace-nowrap text-[50px] font-thin leading-[0.9] tracking-[-0.025em] sm:text-[64px] md:text-[76px] lg:text-[86px] xl:text-[94px]">
+  <span className="mt-2 block whitespace-nowrap text-[48px] font-thin leading-[0.91] tracking-[-0.02em] sm:text-[62px] md:text-[75px] lg:text-[87px] xl:text-[96px]">
     <span className="italic font-thin">without</span>{" "}
     <span className="font-thin not-italic">limits.</span>
   </span>
