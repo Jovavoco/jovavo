@@ -139,10 +139,10 @@ export default function HouseOfLaser() {
           />
 
           {/* IMAGE OVERLAYS */}
-          <div className="absolute inset-0 bg-black/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/[0.04] to-black/18" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/30" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.20)_100%)]" />
+<div className="absolute inset-0 bg-black/[0.06]" />
+<div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/[0.06]" />
+<div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-black/[0.08]" />
+<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(0,0,0,0.08)_100%)]" />
 
           {/* =====================================================
               DESKTOP NAV
