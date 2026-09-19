@@ -75,7 +75,7 @@ export default function HouseOfLaser() {
         @keyframes hlsHeroText {
           from {
             opacity: 0;
-            transform: translateY(16px);
+            transform: translateY(14px);
           }
 
           to {
@@ -100,12 +100,12 @@ export default function HouseOfLaser() {
         }
 
         .hls-hero-text {
-          animation: hlsHeroText 1.1s
-            cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+          animation: hlsHeroText 1.15s
+            cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
         }
 
         .hls-hero-nav {
-          animation: hlsFade 1.2s ease 0.15s both;
+          animation: hlsFade 1.2s ease 0.1s both;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -130,7 +130,7 @@ export default function HouseOfLaser() {
           id="home"
           className="relative min-h-[100svh] overflow-hidden bg-[#17130F]"
         >
-          {/* BACKGROUND IMAGE */}
+          {/* BACKGROUND */}
 
           <img
             src="/previews/house-of-laser/spa-hero.png"
@@ -138,25 +138,25 @@ export default function HouseOfLaser() {
             className="hls-hero-image absolute inset-0 h-full w-full object-cover object-[58%_center] sm:object-center"
           />
 
-          {/* DARK IMAGE OVERLAYS */}
+          {/* CINEMATIC OVERLAYS */}
 
           <div className="absolute inset-0 bg-black/20" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/5 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-black/[0.06] to-black/20" />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/30" />
 
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(0,0,0,0.18)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_32%,rgba(0,0,0,0.20)_100%)]" />
 
           {/* =================================================
-              DESKTOP NAVIGATION
+              DESKTOP NAV
           ================================================= */}
 
           <div className="hls-hero-nav absolute left-0 right-0 top-0 z-30 hidden px-10 pt-12 lg:block xl:px-16 xl:pt-16">
             <div className="relative mx-auto flex max-w-[1500px] items-start justify-between">
               {/* LOCATION */}
 
-              <p className="text-[9px] uppercase tracking-[0.36em] text-white/90">
+              <p className="text-[9px] font-light uppercase tracking-[0.36em] text-white/85">
                 Brooklyn, NY
               </p>
 
@@ -166,33 +166,33 @@ export default function HouseOfLaser() {
                 href="#home"
                 className="absolute left-1/2 -translate-x-1/2 text-center"
               >
-                <p className="whitespace-nowrap font-serif text-[15px] uppercase tracking-[0.42em] text-[#F5EFE9]">
+                <p className="whitespace-nowrap font-serif text-[15px] font-light uppercase tracking-[0.42em] text-[#F5EFE9]">
                   House of Laser &amp; Spa
                 </p>
 
-                <div className="mx-auto mt-7 h-px w-16 bg-white/55" />
+                <div className="mx-auto mt-7 h-px w-16 bg-white/50" />
               </a>
 
-              {/* RIGHT NAVIGATION */}
+              {/* RIGHT NAV */}
 
               <nav className="flex items-center gap-10">
                 <a
                   href="#services"
-                  className="text-[9px] uppercase tracking-[0.32em] text-white/85 transition-opacity duration-300 hover:opacity-50"
+                  className="text-[9px] font-light uppercase tracking-[0.32em] text-white/80 transition-opacity duration-300 hover:opacity-50"
                 >
                   Services
                 </a>
 
                 <a
                   href="#about"
-                  className="text-[9px] uppercase tracking-[0.32em] text-white/85 transition-opacity duration-300 hover:opacity-50"
+                  className="text-[9px] font-light uppercase tracking-[0.32em] text-white/80 transition-opacity duration-300 hover:opacity-50"
                 >
                   About
                 </a>
 
                 <a
                   href="#contact"
-                  className="text-[9px] uppercase tracking-[0.32em] text-white/85 transition-opacity duration-300 hover:opacity-50"
+                  className="text-[9px] font-light uppercase tracking-[0.32em] text-white/80 transition-opacity duration-300 hover:opacity-50"
                 >
                   Contact
                 </a>
@@ -201,12 +201,12 @@ export default function HouseOfLaser() {
           </div>
 
           {/* =================================================
-              MOBILE NAVIGATION
+              MOBILE NAV
           ================================================= */}
 
           <div className="absolute left-0 right-0 top-0 z-40 flex items-center justify-between px-5 pt-6 lg:hidden">
             <a href="#home">
-              <p className="font-serif text-[14px] uppercase tracking-[0.2em] text-white">
+              <p className="font-serif text-[14px] font-light uppercase tracking-[0.2em] text-white">
                 House of Laser
               </p>
 
@@ -219,19 +219,17 @@ export default function HouseOfLaser() {
               type="button"
               aria-label="Toggle navigation"
               onClick={() => setMenuOpen((current) => !current)}
-              className="flex h-11 w-11 items-center justify-center border border-white/35 text-white backdrop-blur-sm"
+              className="flex h-11 w-11 items-center justify-center border border-white/30 text-white backdrop-blur-sm"
             >
               {menuOpen ? (
-                <X size={18} strokeWidth={1.3} />
+                <X size={18} strokeWidth={1.2} />
               ) : (
-                <Menu size={18} strokeWidth={1.3} />
+                <Menu size={18} strokeWidth={1.2} />
               )}
             </button>
           </div>
 
-          {/* =================================================
-              MOBILE MENU
-          ================================================= */}
+          {/* MOBILE MENU */}
 
           {menuOpen && (
             <div className="absolute left-0 right-0 top-0 z-30 bg-[#17130F]/95 px-6 pb-10 pt-24 text-white backdrop-blur-xl lg:hidden">
@@ -256,7 +254,7 @@ export default function HouseOfLaser() {
                 <a
                   href="#book"
                   onClick={() => setMenuOpen(false)}
-                  className="mt-7 flex items-center justify-center border border-white/40 px-6 py-4 text-[8px] uppercase tracking-[0.28em]"
+                  className="mt-7 flex items-center justify-center border border-white/40 px-6 py-4 text-[8px] font-light uppercase tracking-[0.28em]"
                 >
                   Book an Appointment
                 </a>
@@ -265,52 +263,105 @@ export default function HouseOfLaser() {
           )}
 
           {/* =================================================
-              CENTERED HERO CONTENT
+              CENTER HERO CONTENT
           ================================================= */}
 
           <div className="absolute inset-0 z-20 flex items-center justify-center px-5 text-center">
-            <div className="hls-hero-text flex w-full max-w-[1050px] flex-col items-center justify-center">
-              {/* HEADLINE */}
+            <div className="hls-hero-text flex w-full max-w-[1000px] flex-col items-center justify-center">
+              {/* MAIN TITLE */}
 
-              <h1 className="font-serif text-[58px] font-light leading-[0.9] tracking-[-0.045em] text-[#F7F1EA] sm:text-[76px] md:text-[92px] lg:text-[104px] xl:text-[116px]">
-                Beauty{" "}
-                <span className="italic font-light">
-                  without
-                </span>{" "}
-                <span className="font-normal">
-                  limits.
+              <h1 className="font-serif font-extralight text-[#F7F1EA]">
+                <span
+                  className="
+                    block
+                    text-[64px]
+                    font-extralight
+                    leading-[0.92]
+                    tracking-[-0.035em]
+                    sm:text-[80px]
+                    md:text-[96px]
+                    lg:text-[108px]
+                    xl:text-[116px]
+                  "
+                >
+                  Beauty
+                </span>
+
+                <span
+                  className="
+                    mt-1
+                    block
+                    whitespace-nowrap
+                    text-[54px]
+                    font-extralight
+                    leading-[0.92]
+                    tracking-[-0.04em]
+                    sm:text-[70px]
+                    md:text-[86px]
+                    lg:text-[98px]
+                    xl:text-[106px]
+                  "
+                >
+                  <span className="italic font-extralight">
+                    without
+                  </span>
+
+                  <span className="font-extralight not-italic">
+                    {" "}limits.
+                  </span>
                 </span>
               </h1>
 
-              {/* LASER • SKINCARE • SELF-CARE */}
+              {/* SERVICE LINE */}
 
-              <div className="mt-9 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-x-7">
-                <span className="text-[8px] uppercase tracking-[0.4em] text-white/90 sm:text-[10px]">
+              <div className="mt-9 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:mt-10 sm:gap-x-7">
+                <span className="text-[8px] font-light uppercase tracking-[0.42em] text-white/85 sm:text-[9px]">
                   Laser
                 </span>
 
-                <span className="text-[9px] text-white/55">
+                <span className="text-[7px] text-white/45">
                   •
                 </span>
 
-                <span className="text-[8px] uppercase tracking-[0.4em] text-white/90 sm:text-[10px]">
+                <span className="text-[8px] font-light uppercase tracking-[0.42em] text-white/85 sm:text-[9px]">
                   Skincare
                 </span>
 
-                <span className="text-[9px] text-white/55">
+                <span className="text-[7px] text-white/45">
                   •
                 </span>
 
-                <span className="text-[8px] uppercase tracking-[0.4em] text-white/90 sm:text-[10px]">
+                <span className="text-[8px] font-light uppercase tracking-[0.42em] text-white/85 sm:text-[9px]">
                   Self-Care
                 </span>
               </div>
 
-              {/* BOOK APPOINTMENT */}
+              {/* BOOK BUTTON */}
 
               <a
                 href="#book"
-                className="mt-10 inline-flex min-w-[280px] items-center justify-center border border-white/70 bg-black/5 px-10 py-[18px] text-[8px] uppercase tracking-[0.34em] text-white backdrop-blur-[2px] transition-all duration-500 hover:bg-white hover:text-[#28231F] sm:min-w-[350px]"
+                className="
+                  mt-9
+                  inline-flex
+                  min-w-[280px]
+                  items-center
+                  justify-center
+                  border
+                  border-white/60
+                  bg-transparent
+                  px-10
+                  py-[17px]
+                  text-[8px]
+                  font-light
+                  uppercase
+                  tracking-[0.34em]
+                  text-white
+                  transition-all
+                  duration-500
+                  hover:bg-white
+                  hover:text-[#28231F]
+                  sm:min-w-[350px]
+                "
               >
                 Book an Appointment
               </a>
@@ -318,13 +369,13 @@ export default function HouseOfLaser() {
           </div>
 
           {/* =================================================
-              BOTTOM RIGHT TAGLINE
+              BOTTOM RIGHT
           ================================================= */}
 
           <div className="absolute bottom-10 right-10 z-20 hidden items-center gap-5 lg:flex xl:bottom-14 xl:right-16">
-            <div className="h-px w-7 bg-white/55" />
+            <div className="h-px w-7 bg-white/50" />
 
-            <p className="text-[8px] uppercase tracking-[0.35em] text-white/80">
+            <p className="text-[8px] font-light uppercase tracking-[0.35em] text-white/75">
               A calmer, brighter you
             </p>
           </div>
@@ -332,7 +383,7 @@ export default function HouseOfLaser() {
           {/* MOBILE LOCATION */}
 
           <div className="absolute bottom-7 left-6 z-20 lg:hidden">
-            <p className="text-[7px] uppercase tracking-[0.32em] text-white/60">
+            <p className="text-[7px] font-light uppercase tracking-[0.32em] text-white/60">
               Brooklyn, New York
             </p>
           </div>
@@ -358,7 +409,7 @@ export default function HouseOfLaser() {
                 <h2 className="max-w-[950px] font-serif text-[44px] font-light leading-[1.03] tracking-[-0.04em] sm:text-[56px] md:text-[68px] lg:text-[76px]">
                   Beauty should feel
                   <br className="hidden sm:block" />{" "}
-                  <span className="italic text-[#8B7565]">
+                  <span className="italic font-light text-[#8B7565]">
                     personal.
                   </span>
                 </h2>
@@ -412,7 +463,7 @@ export default function HouseOfLaser() {
                   Slow down.
                   <br />
 
-                  <span className="italic text-[#C7B29F]">
+                  <span className="italic font-light text-[#C7B29F]">
                     Stay awhile.
                   </span>
                 </h2>
@@ -459,7 +510,7 @@ export default function HouseOfLaser() {
                   Treatments,
                   <br />
 
-                  <span className="italic text-[#8B7565]">
+                  <span className="italic font-light text-[#8B7565]">
                     your way.
                   </span>
                 </h2>
@@ -522,7 +573,7 @@ export default function HouseOfLaser() {
                   Smooth,
                   <br />
 
-                  <span className="italic text-[#8B7565]">
+                  <span className="italic font-light text-[#8B7565]">
                     simplified.
                   </span>
                 </h2>
@@ -589,7 +640,7 @@ export default function HouseOfLaser() {
                   Skin deserves
                   <br />
 
-                  <span className="italic text-[#C7B29F]">
+                  <span className="italic font-light text-[#C7B29F]">
                     attention.
                   </span>
                 </h2>
@@ -636,7 +687,7 @@ export default function HouseOfLaser() {
             <h2 className="mt-7 font-serif text-[44px] font-light leading-[1.03] tracking-[-0.04em] sm:text-[56px] md:text-[72px]">
               A little time
               <br className="hidden sm:block" />{" "}
-              <span className="italic text-[#8B7565]">
+              <span className="italic font-light text-[#8B7565]">
                 just for you.
               </span>
             </h2>
@@ -666,7 +717,7 @@ export default function HouseOfLaser() {
                 Come see us
                 <br />
 
-                <span className="italic text-[#8B7565]">
+                <span className="italic font-light text-[#8B7565]">
                   in Brooklyn.
                 </span>
               </h2>
@@ -748,7 +799,7 @@ export default function HouseOfLaser() {
               Make a little time
               <br />
 
-              <span className="italic text-[#C7B29F]">
+              <span className="italic font-light text-[#C7B29F]">
                 for yourself.
               </span>
             </h2>
@@ -761,7 +812,7 @@ export default function HouseOfLaser() {
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href="tel:+19298339197"
-                className="inline-flex min-w-[225px] items-center justify-center border border-white/60 px-8 py-4 text-[8px] uppercase tracking-[0.25em] text-white transition-all duration-500 hover:bg-white hover:text-[#28231F]"
+                className="inline-flex min-w-[225px] items-center justify-center border border-white/60 px-8 py-4 text-[8px] font-light uppercase tracking-[0.25em] text-white transition-all duration-500 hover:bg-white hover:text-[#28231F]"
               >
                 Book an Appointment
               </a>
