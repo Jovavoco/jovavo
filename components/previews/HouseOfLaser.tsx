@@ -1,4 +1,4 @@
-"use client";
+
 
 import { useState } from "react";
 import { Bodoni_Moda } from "next/font/google";
@@ -1136,7 +1136,6 @@ export default function HouseOfLaser() {
 
   <div className="relative z-10">
     <div className="relative flex min-h-[700px] items-center justify-center px-6 py-24 sm:px-8 md:px-12">
-
       {/* LEFT DECORATIVE LINE */}
       <div className="absolute left-[6%] top-[14%] hidden h-[100px] w-px bg-[#8F7C6E]/30 lg:block" />
 
@@ -1195,10 +1194,8 @@ export default function HouseOfLaser() {
       className="border-t border-[#7D6D62]/15 bg-[#E5DDD5]/85 backdrop-blur-[2px]"
     >
       <div className="mx-auto grid max-w-[1450px] lg:grid-cols-[1.25fr_0.55fr_0.6fr]">
-
         {/* COME SEE US */}
         <div className="relative px-8 py-16 sm:px-12 md:px-16 lg:min-h-[340px] lg:border-r lg:border-[#7D6D62]/15 lg:px-20 lg:py-16">
-
           <p className="text-[7px] font-light uppercase tracking-[0.46em] text-[#8B796C]">
             Visit The House
           </p>
@@ -1316,11 +1313,9 @@ export default function HouseOfLaser() {
 
       {/* TOP DECORATIVE DETAILS */}
       <div className="absolute left-[6%] top-[12%] hidden h-[70px] w-px bg-white/15 lg:block" />
-
       <div className="absolute right-[6%] top-[12%] hidden h-[70px] w-px bg-[#C7B29F]/25 lg:block" />
 
       <div className="relative z-10 mx-auto flex max-w-[1000px] flex-col items-center text-center">
-
         <p className="text-[7px] font-light uppercase tracking-[0.5em] text-[#C7B29F] sm:text-[8px]">
           Your Next Appointment
         </p>
