@@ -889,51 +889,132 @@ export default function HouseOfLaser() {
             LASER
         ===================================================== */}
 
-        <section
-          id="laser"
-          className="bg-[#D9CEC3] px-5 py-5 md:px-8 md:py-8"
+{/* =====================================================
+    LASER HAIR REMOVAL
+===================================================== */}
+
+<section
+  id="laser"
+  className="relative overflow-hidden bg-[#F2ECE5]"
+>
+  <div className="mx-auto grid min-h-[760px] max-w-[1600px] lg:grid-cols-[41%_59%]">
+
+    {/* =====================================================
+        LEFT — CONTENT
+    ===================================================== */}
+
+    <div className="relative flex min-h-[680px] items-center px-7 py-20 sm:px-10 md:px-14 lg:min-h-[760px] lg:px-16 xl:min-h-[850px] xl:px-[100px]">
+
+      {/* TOP DECORATIVE LINE */}
+      <div className="absolute left-7 top-[11%] h-[90px] w-px bg-[#9A8576]/40 sm:left-10 md:left-14 lg:left-16 xl:left-[78px]" />
+
+      <div className="w-full max-w-[500px]">
+
+        {/* EYEBROW */}
+        <p className="text-[8px] font-light uppercase tracking-[0.48em] text-[#927C6D] sm:text-[9px]">
+          Laser Hair Removal
+        </p>
+
+        {/* TITLE */}
+        <h2
+          className={`${bodoni.className} hls-bodoni mt-14 font-normal tracking-[-0.045em] text-[#211C18]`}
         >
-          <div className="mx-auto grid max-w-[1450px] bg-[#E6DDD4] lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="flex items-center px-8 py-20 sm:px-10 md:px-14 lg:px-16 xl:px-20">
-              <div className="max-w-[500px]">
-                <p className="text-[8px] uppercase tracking-[0.35em] text-[#826E60]">
-                  Laser Hair Removal
-                </p>
+          <span className="block text-[58px] leading-[0.88] sm:text-[70px] md:text-[78px] lg:text-[72px] xl:text-[84px]">
+            Smooth,
+          </span>
 
-                <h2
-                  className={`${bodoni.className} hls-bodoni mt-7 text-[54px] font-normal leading-[0.94] tracking-[-0.045em] sm:text-[68px] md:text-[78px]`}
-                >
-                  Smooth,
-                  <br />
-                  <span className="italic text-[#8B7565]">
-                    simplified.
-                  </span>
-                </h2>
+          <span className="mt-1 block text-[61px] italic leading-[0.88] text-[#9A8373] sm:text-[73px] md:text-[82px] lg:text-[76px] xl:text-[88px]">
+            simplified.
+          </span>
+        </h2>
 
-                <p className="mt-8 max-w-[430px] text-[14px] leading-7 text-[#6E6660]">
-                  Professional laser hair removal in a comfortable setting
-                  with care tailored around you and your routine.
-                </p>
+        {/* DESCRIPTION */}
+        <p className="mt-11 max-w-[430px] text-[13px] font-light leading-[1.85] tracking-[0.025em] text-[#6D6660] sm:text-[14px]">
+          Professional laser hair removal in a comfortable setting with
+          care tailored around you and your routine.
+        </p>
 
-                <a
-                  href="#book"
-                  className="group mt-9 inline-flex items-center gap-3 border border-[#28231F] px-7 py-4 text-[8px] uppercase tracking-[0.25em] text-[#28231F] transition-all duration-500 hover:bg-[#28231F] hover:text-white"
-                >
-                  Book Laser
-                  <ArrowRight size={13} strokeWidth={1.3} />
-                </a>
-              </div>
-            </div>
+        {/* CTA */}
+        <a
+          href="#book"
+          className="group mt-12 inline-flex min-w-[270px] items-center justify-between border border-[#39322D]/80 px-8 py-[19px] text-[8px] font-normal uppercase tracking-[0.36em] text-[#302A26] transition-all duration-500 hover:bg-[#2A2521] hover:text-[#F4EFE9]"
+        >
+          <span>Book Laser</span>
 
-            <div className="group relative min-h-[540px] overflow-hidden md:min-h-[700px]">
-              <img
-                src="/previews/house-of-laser/laser-client.jpg"
-                alt="Laser hair removal treatment"
-                className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]"
-              />
-            </div>
-          </div>
-        </section>
+          <ArrowRight
+            size={14}
+            strokeWidth={1}
+            className="ml-10 transition-transform duration-500 group-hover:translate-x-1"
+          />
+        </a>
+      </div>
+
+      {/* =====================================================
+          BOTTOM MICRO COPY
+      ===================================================== */}
+
+      <div className="absolute bottom-[8%] left-7 hidden sm:block sm:left-10 md:left-14 lg:left-16 xl:left-[100px]">
+        <div className="space-y-[8px]">
+          <p className="text-[7px] font-light uppercase tracking-[0.43em] text-[#80736A]">
+            Confidence
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.43em] text-[#80736A]">
+            Care
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.43em] text-[#80736A]">
+            Beauty
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.43em] text-[#80736A]">
+            You
+          </p>
+        </div>
+
+        <div className="mt-6 h-14 w-px bg-[#9A8576]/45" />
+      </div>
+    </div>
+
+    {/* =====================================================
+        RIGHT — IMAGE
+    ===================================================== */}
+
+    <div className="group relative min-h-[520px] overflow-hidden sm:min-h-[620px] lg:min-h-[760px] xl:min-h-[850px]">
+      <img
+        src="/previews/house-of-laser/laser-client.jpg"
+        alt="Laser hair removal treatment"
+        className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
+      />
+
+      {/* SUBTLE WARM TONE */}
+      <div className="absolute inset-0 bg-[#4A372A]/[0.04]" />
+
+      {/* IMAGE DETAIL */}
+      <div className="absolute right-[9%] top-[9%] hidden lg:block">
+        <div className="space-y-[11px]">
+          <p className="text-[7px] font-light uppercase tracking-[0.42em] text-[#695B52]/60">
+            Smoother
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.42em] text-[#695B52]/60">
+            Brighter
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.42em] text-[#695B52]/60">
+            Confident
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.42em] text-[#695B52]/60">
+            You
+          </p>
+        </div>
+
+        <div className="mt-5 h-px w-10 bg-[#695B52]/30" />
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* =====================================================
             FACIALS
