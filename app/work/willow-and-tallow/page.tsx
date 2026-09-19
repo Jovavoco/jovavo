@@ -89,6 +89,21 @@ export default function WillowAndTallowCaseStudy() {
                 Tallow that brings its visual identity, products, and story
                 together in one simple shopping experience.
               </p>
+
+              <a
+                href="https://willowandtallow.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#59624a] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#687357] sm:w-auto"
+              >
+                Visit Live Website
+
+                <ArrowUpRight
+                  size={16}
+                  strokeWidth={1.7}
+                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
             </div>
           </div>
         </Reveal>
@@ -249,11 +264,28 @@ export default function WillowAndTallowCaseStudy() {
                 </h2>
               </div>
 
-              <p className="text-[15px] leading-7 text-[#59624a]/70">
-                Willow &amp; Tallow now has a cohesive e-commerce experience
-                that brings its products, visual identity, and brand story
-                together while keeping the customer journey simple.
-              </p>
+              <div>
+                <p className="text-[15px] leading-7 text-[#59624a]/70">
+                  Willow &amp; Tallow now has a cohesive e-commerce experience
+                  that brings its products, visual identity, and brand story
+                  together while keeping the customer journey simple.
+                </p>
+
+                <a
+                  href="https://willowandtallow.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#59624a] transition-opacity duration-300 hover:opacity-60"
+                >
+                  Explore Willow &amp; Tallow
+
+                  <ArrowUpRight
+                    size={16}
+                    strokeWidth={1.7}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </Reveal>
