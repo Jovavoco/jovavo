@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Cormorant_Garamond } from "next/font/google";
+import { Bodoni_Moda } from "next/font/google";
 import {
   ArrowRight,
   MapPin,
@@ -11,9 +11,9 @@ import {
   X,
 } from "lucide-react";
 
-const cormorant = Cormorant_Garamond({
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
-  weight: ["300", "400"],
+  weight: ["400", "500"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -149,7 +149,7 @@ export default function HouseOfLaser() {
                 href="#home"
                 className="absolute left-1/2 -translate-x-1/2 text-center"
               >
-                <p className="whitespace-nowrap font-serif text-[15px] font-light uppercase tracking-[0.42em] text-[#F5EFE9]">
+                <p className="whitespace-nowrap text-[15px] font-light uppercase tracking-[0.42em] text-[#F5EFE9]">
                   House of Laser &amp; Spa
                 </p>
 
@@ -185,7 +185,7 @@ export default function HouseOfLaser() {
 
           <div className="absolute left-0 right-0 top-0 z-40 flex items-center justify-between px-5 pt-6 lg:hidden">
             <a href="#home">
-              <p className="font-serif text-[14px] font-light uppercase tracking-[0.2em] text-white">
+              <p className="text-[14px] font-light uppercase tracking-[0.2em] text-white">
                 House of Laser
               </p>
 
@@ -216,7 +216,7 @@ export default function HouseOfLaser() {
                 <a
                   href="#services"
                   onClick={() => setMenuOpen(false)}
-                  className="border-b border-white/10 py-4 font-serif text-[25px] font-light"
+                  className={`${bodoni.className} border-b border-white/10 py-4 text-[27px] font-normal`}
                 >
                   Services
                 </a>
@@ -224,7 +224,7 @@ export default function HouseOfLaser() {
                 <a
                   href="#about"
                   onClick={() => setMenuOpen(false)}
-                  className="border-b border-white/10 py-4 font-serif text-[25px] font-light"
+                  className={`${bodoni.className} border-b border-white/10 py-4 text-[27px] font-normal`}
                 >
                   About
                 </a>
@@ -232,7 +232,7 @@ export default function HouseOfLaser() {
                 <a
                   href="#laser"
                   onClick={() => setMenuOpen(false)}
-                  className="border-b border-white/10 py-4 font-serif text-[25px] font-light"
+                  className={`${bodoni.className} border-b border-white/10 py-4 text-[27px] font-normal`}
                 >
                   Laser Hair Removal
                 </a>
@@ -240,7 +240,7 @@ export default function HouseOfLaser() {
                 <a
                   href="#facials"
                   onClick={() => setMenuOpen(false)}
-                  className="border-b border-white/10 py-4 font-serif text-[25px] font-light"
+                  className={`${bodoni.className} border-b border-white/10 py-4 text-[27px] font-normal`}
                 >
                   Facials &amp; Skincare
                 </a>
@@ -248,7 +248,7 @@ export default function HouseOfLaser() {
                 <a
                   href="#contact"
                   onClick={() => setMenuOpen(false)}
-                  className="border-b border-white/10 py-4 font-serif text-[25px] font-light"
+                  className={`${bodoni.className} border-b border-white/10 py-4 text-[27px] font-normal`}
                 >
                   Contact
                 </a>
@@ -264,20 +264,22 @@ export default function HouseOfLaser() {
             </div>
           )}
 
-          {/* HERO CENTER */}
+          {/* =====================================================
+              HERO CENTER
+          ===================================================== */}
 
-          <div className="absolute inset-0 z-20 flex items-center justify-center px-5 text-center">
+          <div className="absolute inset-0 z-20 flex items-center justify-center px-4 text-center sm:px-6">
             <div className="hls-hero-text flex w-full max-w-[1100px] flex-col items-center justify-center">
               <h1
-                className={`${cormorant.className} text-center font-light text-[#F8F3ED]`}
+                className={`${bodoni.className} text-center font-normal text-[#F8F3ED]`}
               >
-                <span className="block text-[64px] font-light leading-[0.82] tracking-[-0.025em] sm:text-[82px] md:text-[100px] lg:text-[116px] xl:text-[126px]">
+                <span className="block text-[64px] leading-[0.9] tracking-[-0.045em] sm:text-[82px] md:text-[100px] lg:text-[112px] xl:text-[120px]">
                   Beauty
                 </span>
 
-                <span className="mt-3 block whitespace-nowrap text-[52px] font-light leading-[0.86] tracking-[-0.025em] sm:text-[69px] md:text-[84px] lg:text-[98px] xl:text-[108px]">
-                  <span className="italic font-light">without</span>
-                  <span className="font-light not-italic"> limits.</span>
+                <span className="mt-1 block whitespace-nowrap text-[49px] leading-[0.94] tracking-[-0.045em] sm:text-[66px] md:text-[82px] lg:text-[94px] xl:text-[102px]">
+                  <span className="italic font-normal">without</span>
+                  <span className="not-italic font-normal"> limits.</span>
                 </span>
               </h1>
 
@@ -344,12 +346,12 @@ export default function HouseOfLaser() {
 
             <div className="mt-10 max-w-[1050px] md:mt-14">
               <h2
-                className={`${cormorant.className} text-[52px] font-light leading-[0.92] tracking-[-0.025em] text-[#2D2925] sm:text-[66px] md:text-[82px] lg:text-[94px]`}
+                className={`${bodoni.className} text-[52px] font-normal leading-[0.95] tracking-[-0.04em] text-[#2D2925] sm:text-[66px] md:text-[82px] lg:text-[94px]`}
               >
                 Beauty should feel
                 <br />
 
-                <span className="italic font-light text-[#8B7565]">
+                <span className="italic text-[#8B7565]">
                   personal.
                 </span>
               </h2>
@@ -431,14 +433,14 @@ export default function HouseOfLaser() {
                 </p>
 
                 <h2
-                  className={`${cormorant.className} mt-8 text-[54px] font-light leading-[0.92] tracking-[-0.025em] sm:text-[66px] md:text-[76px]`}
+                  className={`${bodoni.className} mt-8 text-[54px] font-normal leading-[0.94] tracking-[-0.04em] sm:text-[66px] md:text-[76px]`}
                 >
                   Come in.
                   <br />
                   Slow down.
                   <br />
 
-                  <span className="italic font-light text-[#C7B29F]">
+                  <span className="italic text-[#C7B29F]">
                     Stay awhile.
                   </span>
                 </h2>
@@ -482,12 +484,12 @@ export default function HouseOfLaser() {
                 </p>
 
                 <h2
-                  className={`${cormorant.className} mt-6 text-[54px] font-light leading-[0.92] tracking-[-0.025em] sm:text-[68px] md:text-[82px]`}
+                  className={`${bodoni.className} mt-6 text-[54px] font-normal leading-[0.94] tracking-[-0.04em] sm:text-[68px] md:text-[82px]`}
                 >
                   Treatments,
                   <br />
 
-                  <span className="italic font-light text-[#8B7565]">
+                  <span className="italic text-[#8B7565]">
                     your way.
                   </span>
                 </h2>
@@ -511,7 +513,7 @@ export default function HouseOfLaser() {
                   </p>
 
                   <h3
-                    className={`${cormorant.className} text-[34px] font-light tracking-[-0.02em] sm:text-[40px]`}
+                    className={`${bodoni.className} text-[34px] font-normal tracking-[-0.03em] sm:text-[40px]`}
                   >
                     {service.title}
                   </h3>
@@ -521,7 +523,11 @@ export default function HouseOfLaser() {
                   </p>
 
                   <div className="mt-6 flex h-11 w-11 items-center justify-center border border-black/15 transition-all duration-500 group-hover:border-[#28231F] group-hover:bg-[#28231F] group-hover:text-white md:mt-0">
-                    <ArrowRight size={14} strokeWidth={1.3} />
+                    <ArrowRight
+                      size={14}
+                      strokeWidth={1.3}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5"
+                    />
                   </div>
                 </a>
               ))}
@@ -545,12 +551,12 @@ export default function HouseOfLaser() {
                 </p>
 
                 <h2
-                  className={`${cormorant.className} mt-7 text-[54px] font-light leading-[0.92] tracking-[-0.025em] sm:text-[68px] md:text-[78px]`}
+                  className={`${bodoni.className} mt-7 text-[54px] font-normal leading-[0.94] tracking-[-0.04em] sm:text-[68px] md:text-[78px]`}
                 >
                   Smooth,
                   <br />
 
-                  <span className="italic font-light text-[#8B7565]">
+                  <span className="italic text-[#8B7565]">
                     simplified.
                   </span>
                 </h2>
@@ -613,12 +619,12 @@ export default function HouseOfLaser() {
                 </p>
 
                 <h2
-                  className={`${cormorant.className} mt-7 text-[54px] font-light leading-[0.92] tracking-[-0.025em] sm:text-[68px] md:text-[78px]`}
+                  className={`${bodoni.className} mt-7 text-[54px] font-normal leading-[0.94] tracking-[-0.04em] sm:text-[68px] md:text-[78px]`}
                 >
                   Skin deserves
                   <br />
 
-                  <span className="italic font-light text-[#C7B29F]">
+                  <span className="italic text-[#C7B29F]">
                     attention.
                   </span>
                 </h2>
@@ -663,11 +669,11 @@ export default function HouseOfLaser() {
             </p>
 
             <h2
-              className={`${cormorant.className} mt-7 text-[50px] font-light leading-[0.94] tracking-[-0.025em] sm:text-[64px] md:text-[78px]`}
+              className={`${bodoni.className} mt-7 text-[50px] font-normal leading-[0.95] tracking-[-0.04em] sm:text-[64px] md:text-[78px]`}
             >
               A little time
               <br className="hidden sm:block" />{" "}
-              <span className="italic font-light text-[#8B7565]">
+              <span className="italic text-[#8B7565]">
                 just for you.
               </span>
             </h2>
@@ -694,12 +700,12 @@ export default function HouseOfLaser() {
               </p>
 
               <h2
-                className={`${cormorant.className} mt-6 text-[52px] font-light leading-[0.92] tracking-[-0.025em] md:text-[70px]`}
+                className={`${bodoni.className} mt-6 text-[52px] font-normal leading-[0.94] tracking-[-0.04em] md:text-[70px]`}
               >
                 Come see us
                 <br />
 
-                <span className="italic font-light text-[#8B7565]">
+                <span className="italic text-[#8B7565]">
                   in Brooklyn.
                 </span>
               </h2>
@@ -723,7 +729,7 @@ export default function HouseOfLaser() {
                 </p>
 
                 <p
-                  className={`${cormorant.className} mt-4 text-[24px] font-light leading-8`}
+                  className={`${bodoni.className} mt-4 text-[24px] font-normal leading-8`}
                 >
                   1690 E 14th St
                   <br />
@@ -746,7 +752,7 @@ export default function HouseOfLaser() {
 
                 <a
                   href="tel:+19298339197"
-                  className={`${cormorant.className} mt-4 block text-[24px] font-light transition-colors hover:text-[#8B7565]`}
+                  className={`${bodoni.className} mt-4 block text-[24px] font-normal transition-colors hover:text-[#8B7565]`}
                 >
                   (929) 833-9197
                 </a>
@@ -765,7 +771,7 @@ export default function HouseOfLaser() {
         </section>
 
         {/* =====================================================
-            BOOKING CTA
+            BOOKING
         ===================================================== */}
 
         <section
@@ -780,12 +786,12 @@ export default function HouseOfLaser() {
             </p>
 
             <h2
-              className={`${cormorant.className} mt-7 text-[52px] font-light leading-[0.92] tracking-[-0.025em] sm:text-[66px] md:text-[84px]`}
+              className={`${bodoni.className} mt-7 text-[52px] font-normal leading-[0.94] tracking-[-0.04em] sm:text-[66px] md:text-[84px]`}
             >
               Make a little time
               <br />
 
-              <span className="italic font-light text-[#C7B29F]">
+              <span className="italic text-[#C7B29F]">
                 for yourself.
               </span>
             </h2>
@@ -823,7 +829,7 @@ export default function HouseOfLaser() {
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr]">
             <div>
               <p
-                className={`${cormorant.className} text-[30px] font-light`}
+                className={`${bodoni.className} text-[32px] font-normal tracking-[-0.03em]`}
               >
                 House of Laser
               </p>
