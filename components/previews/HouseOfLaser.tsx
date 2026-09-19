@@ -393,44 +393,96 @@ export default function HouseOfLaser() {
             ABOUT
         ===================================================== */}
 
-        <section
-          id="about"
-          className="px-6 py-24 md:px-10 md:py-32 lg:px-14 lg:py-40"
+{/* =====================================================
+    ABOUT — EDITORIAL / LUXURY
+===================================================== */}
+
+<section
+  id="about"
+  className="relative overflow-hidden bg-[#F3EEE8] px-6 py-24 sm:px-8 md:px-12 md:py-32 lg:px-16 lg:py-40"
+>
+  {/* SUBTLE BACKGROUND DETAIL */}
+  <div className="pointer-events-none absolute right-[-8%] top-[-10%] h-[420px] w-[420px] rounded-full bg-[#D8CBC0]/20 blur-[120px]" />
+
+  <div className="relative mx-auto max-w-[1280px]">
+    {/* TOP LABEL */}
+    <div className="flex items-center gap-4">
+      <span className="h-px w-8 bg-[#9A897B]/60" />
+
+      <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#8A796C]">
+        The House
+      </p>
+    </div>
+
+    {/* MAIN EDITORIAL HEADING */}
+    <div className="mt-10 max-w-[1050px] md:mt-14">
+      <h2 className="font-serif text-[48px] font-extralight leading-[0.98] tracking-[-0.045em] text-[#2D2925] sm:text-[60px] md:text-[76px] lg:text-[88px]">
+        Beauty should feel
+        <br />
+
+        <span className="italic font-extralight text-[#8B7565]">
+          personal.
+        </span>
+      </h2>
+    </div>
+
+    {/* LOWER CONTENT */}
+    <div className="mt-14 grid gap-10 border-t border-[#2D2925]/10 pt-9 md:mt-20 md:grid-cols-[0.9fr_1fr_1fr] md:gap-12 md:pt-11 lg:gap-16">
+      {/* SMALL STATEMENT */}
+      <div>
+        <p className="max-w-[190px] text-[9px] uppercase leading-[1.9] tracking-[0.25em] text-[#9A897B]">
+          Laser
+          <br />
+          Skincare
+          <br />
+          Self-Care
+        </p>
+      </div>
+
+      {/* COPY ONE */}
+      <div>
+        <p className="max-w-[390px] text-[14px] font-light leading-[1.9] text-[#655E58]">
+          House of Laser &amp; Spa brings together laser hair removal,
+          skincare, beauty, and self-care in an intimate Brooklyn
+          setting.
+        </p>
+      </div>
+
+      {/* COPY TWO */}
+      <div>
+        <p className="max-w-[390px] text-[14px] font-light leading-[1.9] text-[#655E58]">
+          Every treatment is approached with intention — creating an
+          experience that feels comfortable, considered, and entirely
+          your own.
+        </p>
+
+        <a
+          href="#services"
+          className="group mt-7 inline-flex items-center gap-4 text-[8px] font-medium uppercase tracking-[0.28em] text-[#4E4741]"
         >
-          <div className="mx-auto max-w-[1250px]">
-            <div className="grid gap-12 lg:grid-cols-[0.36fr_1.64fr] lg:gap-24">
-              <div>
-                <p className="text-[8px] uppercase tracking-[0.35em] text-[#897A6E]">
-                  The House
-                </p>
-              </div>
+          Discover Our Treatments
 
-              <div>
-                <h2 className="max-w-[950px] font-serif text-[44px] font-light leading-[1.03] tracking-[-0.04em] sm:text-[56px] md:text-[68px] lg:text-[76px]">
-                  Beauty should feel
-                  <br className="hidden sm:block" />{" "}
-                  <span className="italic font-light text-[#8B7565]">
-                    personal.
-                  </span>
-                </h2>
+          <span className="relative flex h-7 w-7 items-center justify-center">
+            <span className="absolute h-px w-7 bg-[#8B7565]/40 transition-all duration-500 group-hover:w-9" />
 
-                <div className="mt-11 grid gap-8 border-t border-black/10 pt-9 md:grid-cols-2 md:gap-14">
-                  <p className="text-[14px] leading-7 text-[#6E6660]">
-                    House of Laser &amp; Spa brings laser hair removal,
-                    skincare, beauty, and self-care together in one
-                    intimate Brooklyn destination.
-                  </p>
+            <span className="absolute right-0 h-[5px] w-[5px] rotate-45 border-r border-t border-[#8B7565]" />
+          </span>
+        </a>
+      </div>
+    </div>
 
-                  <p className="text-[14px] leading-7 text-[#6E6660]">
-                    Every visit is centered around thoughtful care, a
-                    comfortable atmosphere, and treatments designed
-                    around you.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+    {/* BOTTOM MICRO DETAIL */}
+    <div className="mt-16 flex items-center justify-between border-t border-[#2D2925]/[0.06] pt-6 md:mt-20">
+      <p className="text-[7px] uppercase tracking-[0.3em] text-[#9A897B]/70">
+        Brooklyn, New York
+      </p>
+
+      <p className="hidden text-[7px] uppercase tracking-[0.3em] text-[#9A897B]/70 sm:block">
+        House of Laser &amp; Spa
+      </p>
+    </div>
+  </div>
+</section>
 
         {/* =====================================================
             EXPERIENCE
