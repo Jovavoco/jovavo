@@ -1020,54 +1020,144 @@ export default function HouseOfLaser() {
             FACIALS
         ===================================================== */}
 
-        <section
-          id="facials"
-          className="bg-[#F3EEE8] px-5 py-5 md:px-8 md:py-8"
+{/* =====================================================
+    FACIALS & SKINCARE
+===================================================== */}
+
+<section
+  id="facials"
+  className="relative overflow-hidden bg-[#1D1C19]"
+>
+  <div className="mx-auto grid min-h-[760px] max-w-[1600px] lg:grid-cols-[58%_42%]">
+
+    {/* =====================================================
+        LEFT — IMAGE
+    ===================================================== */}
+
+    <div className="group relative min-h-[560px] overflow-hidden sm:min-h-[650px] lg:min-h-[800px] xl:min-h-[860px]">
+      <img
+        src="/previews/house-of-laser/facial-machine.jpg"
+        alt="Facial and skincare treatment space"
+        className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.012]"
+      />
+
+      {/* VERY SUBTLE WARM OVERLAY */}
+      <div className="absolute inset-0 bg-[#211A15]/[0.04]" />
+
+      {/* LEFT IMAGE WORDS */}
+      <div className="absolute bottom-[7%] left-[6%] z-10 hidden lg:flex lg:items-end lg:gap-5">
+        <div className="h-[58px] w-px bg-white/65" />
+
+        <div className="space-y-[8px] pb-[1px]">
+          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/80">
+            Restore
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/80">
+            Refresh
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/80">
+            Reveal
+          </p>
+        </div>
+      </div>
+
+      {/* OPTIONAL TOP-LEFT DETAIL */}
+      <div className="absolute left-[7%] top-[7%] hidden lg:block">
+        <div className="space-y-[9px]">
+          <p className="text-[7px] font-light uppercase tracking-[0.4em] text-[#44372F]/50">
+            Healthy
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.4em] text-[#44372F]/50">
+            Skin
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.4em] text-[#44372F]/50">
+            Happier
+          </p>
+
+          <p className="text-[7px] font-light uppercase tracking-[0.4em] text-[#44372F]/50">
+            You
+          </p>
+        </div>
+
+        <div className="mt-5 h-px w-9 bg-[#44372F]/25" />
+      </div>
+    </div>
+
+    {/* =====================================================
+        RIGHT — EDITORIAL CONTENT
+    ===================================================== */}
+
+    <div className="relative flex min-h-[680px] items-center bg-[#1D1C19] px-8 py-20 sm:px-10 md:px-14 lg:min-h-[800px] lg:px-16 xl:min-h-[860px] xl:px-[78px]">
+
+      {/* TOP RIGHT DECORATIVE LINE */}
+      <div className="absolute right-[8%] top-[7%] hidden h-[92px] w-px bg-[#D3C0B1]/45 lg:block" />
+
+      <div className="w-full max-w-[520px]">
+
+        {/* EYEBROW */}
+        <p className="text-[8px] font-light uppercase tracking-[0.48em] text-[#C3AA96] sm:text-[9px]">
+          Facials &amp; Skincare
+        </p>
+
+        {/* =====================================================
+            HEADING
+        ===================================================== */}
+
+        <h2
+          className={`${bodoni.className} hls-bodoni mt-12 font-normal tracking-[-0.045em]`}
         >
-          <div className="mx-auto grid max-w-[1450px] bg-[#201F1B] text-white lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="group relative min-h-[540px] overflow-hidden md:min-h-[700px]">
-              <img
-                src="/previews/house-of-laser/facial-machine.jpg"
-                alt="Facial and skincare treatment"
-                className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]"
-              />
+          <span className="block text-[60px] leading-[0.88] text-[#F5F1EC] sm:text-[72px] md:text-[80px] lg:text-[74px] xl:text-[86px]">
+            Skin
+          </span>
 
-              <div className="absolute inset-0 bg-black/10" />
-            </div>
+          <span className="block text-[60px] leading-[0.88] text-[#F5F1EC] sm:text-[72px] md:text-[80px] lg:text-[74px] xl:text-[86px]">
+            deserves
+          </span>
 
-            <div className="flex items-center px-8 py-20 sm:px-10 md:px-14 lg:px-16 xl:px-20">
-              <div className="max-w-[500px]">
-                <p className="text-[8px] uppercase tracking-[0.35em] text-[#C7B29F]">
-                  Facials &amp; Skincare
-                </p>
+          <span className="mt-2 block text-[62px] italic leading-[0.88] text-[#C9AD98] sm:text-[74px] md:text-[82px] lg:text-[76px] xl:text-[88px]">
+            attention.
+          </span>
+        </h2>
 
-                <h2
-                  className={`${bodoni.className} hls-bodoni mt-7 text-[54px] font-normal leading-[0.94] tracking-[-0.045em] sm:text-[68px] md:text-[78px]`}
-                >
-                  Skin deserves
-                  <br />
-                  <span className="italic text-[#C7B29F]">
-                    attention.
-                  </span>
-                </h2>
+        {/* DESCRIPTION */}
+        <p className="mt-11 max-w-[470px] text-[13px] font-light leading-[1.9] tracking-[0.015em] text-[#B1AAA4] sm:text-[14px]">
+          Thoughtful facial and skincare treatments in an intimate space
+          designed for slowing down and taking care of yourself.
+        </p>
 
-                <p className="mt-8 max-w-[430px] text-[14px] leading-7 text-white/55">
-                  Thoughtful facial and skincare treatments in an intimate
-                  space designed for slowing down and taking care of
-                  yourself.
-                </p>
+        {/* BUTTON */}
+        <a
+          href="#book"
+          className="group mt-12 inline-flex min-w-[275px] items-center justify-between border border-[#EEE4DB]/65 px-8 py-[19px] text-[8px] font-light uppercase tracking-[0.37em] text-[#F4EEE8] transition-all duration-500 hover:bg-[#F4EEE8] hover:text-[#201D1A]"
+        >
+          <span>Book a Facial</span>
 
-                <a
-                  href="#book"
-                  className="group mt-9 inline-flex items-center gap-3 border border-white/45 px-7 py-4 text-[8px] uppercase tracking-[0.25em] text-white transition-all duration-500 hover:bg-white hover:text-[#28231F]"
-                >
-                  Book a Facial
-                  <ArrowRight size={13} strokeWidth={1.3} />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+          <ArrowRight
+            size={14}
+            strokeWidth={1}
+            className="ml-10 transition-transform duration-500 group-hover:translate-x-1"
+          />
+        </a>
+      </div>
+
+      {/* =====================================================
+          BOTTOM RIGHT DETAIL
+      ===================================================== */}
+
+      <div className="absolute bottom-[7%] right-[7%] hidden items-center gap-6 lg:flex">
+        <div className="h-px w-[92px] bg-[#C5AD99]/55" />
+
+        <p className="whitespace-nowrap text-[7px] font-light uppercase tracking-[0.44em] text-[#C5AD99]">
+          Your Skin. Your Ritual.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* =====================================================
             STATEMENT
