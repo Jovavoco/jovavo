@@ -536,111 +536,116 @@ export default function HouseOfLaser() {
 </section>
 
 {/* =====================================================
-    SERVICES — REFERENCE MATCH
+    SERVICES — EDITORIAL LAYOUT
 ===================================================== */}
 
 <section
   id="services"
   className="relative overflow-hidden bg-[#F4EFE9]"
 >
-  {/* =====================================================
-      DESKTOP / LARGE SCREEN
-  ===================================================== */}
+  {/* LARGE DECORATIVE ARC */}
+  <div className="pointer-events-none absolute -left-[345px] -top-[540px] z-20 hidden h-[980px] w-[980px] rounded-full border border-[#776A60]/35 xl:block" />
 
-  <div className="relative mx-auto hidden min-h-[1020px] max-w-[1600px] lg:block">
-    {/* LARGE LEFT IMAGE */}
-    <div className="absolute bottom-0 left-0 top-[130px] w-[32%] overflow-hidden">
+  <div className="mx-auto grid max-w-[1700px] lg:grid-cols-[34%_66%]">
+    {/* =====================================================
+        LEFT — LARGE SPA IMAGE
+    ===================================================== */}
+
+    <div className="relative min-h-[620px] overflow-hidden lg:min-h-[1050px]">
       <img
         src="/previews/house-of-laser/services-main.png"
         alt="House of Laser and Spa treatment space"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
 
-      <div className="absolute inset-0 bg-[#4C392C]/[0.04]" />
+      {/* WARM IMAGE TONE */}
+      <div className="absolute inset-0 bg-[#49382D]/[0.06]" />
 
-      {/* IMAGE COPY */}
-      <div className="absolute bottom-[8%] left-[9%] z-10">
-        <div className="space-y-[9px]">
-          <p className="text-[7px] font-light uppercase tracking-[0.42em] text-white/80">
+      {/* IMAGE WORDS */}
+      <div className="absolute bottom-[9%] left-[9%] z-10 hidden lg:block">
+        <div className="space-y-[10px]">
+          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/80">
             Confidence
           </p>
 
-          <p className="text-[7px] font-light uppercase tracking-[0.42em] text-white/80">
+          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/80">
             Care
           </p>
 
-          <p className="text-[7px] font-light uppercase tracking-[0.42em] text-white/80">
+          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/80">
             Beauty
           </p>
 
-          <p className="text-[7px] font-light uppercase tracking-[0.42em] text-white/80">
+          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/80">
             You
           </p>
         </div>
 
-        <div className="ml-1 mt-5 h-12 w-px bg-white/55" />
+        <div className="ml-1 mt-6 h-12 w-px bg-white/55" />
       </div>
     </div>
 
-    {/* LARGE DECORATIVE ARC */}
-    <div className="pointer-events-none absolute -left-[510px] -top-[545px] z-20 h-[990px] w-[990px] rounded-full border border-[#665A51]/50" />
-
     {/* =====================================================
-        INTRO — CENTER LEFT
+        RIGHT SIDE
     ===================================================== */}
 
-    <div className="absolute left-[24%] top-[115px] w-[25%]">
-      {/* SERVICES LABEL */}
-      <div className="flex items-center gap-6">
-        <p className="text-[8px] font-normal uppercase tracking-[0.46em] text-[#51463F]">
-          Services
-        </p>
+    <div className="relative px-6 py-16 sm:px-10 md:px-12 md:py-20 lg:px-12 lg:py-16 xl:px-16 xl:py-20 2xl:px-20">
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
 
-        <div className="h-px w-[130px] bg-[#51463F]/45" />
+      <div className="grid gap-10 border-b border-[#493E36]/20 pb-12 md:grid-cols-[0.68fr_0.32fr] md:items-end md:gap-10 lg:pb-14">
+        {/* TITLE */}
+
+        <div>
+          <div className="flex items-center gap-6">
+            <p className="text-[8px] font-normal uppercase tracking-[0.45em] text-[#51463F]">
+              Services
+            </p>
+
+            <div className="h-px w-24 bg-[#51463F]/40" />
+          </div>
+
+          <h2
+            className={`${bodoni.className} hls-bodoni mt-8 font-normal tracking-[-0.05em] text-[#211B18]`}
+          >
+            <span className="block text-[56px] leading-[0.88] sm:text-[68px] md:text-[76px] lg:text-[70px] xl:text-[82px] 2xl:text-[88px]">
+              Treatments,
+            </span>
+
+            <span className="mt-2 block text-[60px] italic leading-[0.88] text-[#907D70] sm:text-[72px] md:text-[80px] lg:text-[74px] xl:text-[86px] 2xl:text-[92px]">
+              your way.
+            </span>
+          </h2>
+        </div>
+
+        {/* INTRO COPY */}
+
+        <div className="flex md:justify-end">
+          <p className="max-w-[270px] text-[12px] font-light leading-[1.95] tracking-[0.11em] text-[#554E48]">
+            Laser, skincare, and beauty treatments thoughtfully brought
+            together under one roof.
+          </p>
+        </div>
       </div>
 
-      {/* TITLE */}
-      <h2
-        className={`${bodoni.className} hls-bodoni mt-12 font-normal tracking-[-0.055em]`}
-      >
-        <span className="block whitespace-nowrap text-[70px] leading-[0.87] text-[#211B18] xl:text-[78px] 2xl:text-[84px]">
-          Treatments,
-        </span>
+      {/* =====================================================
+          SERVICE 01
+      ===================================================== */}
 
-        <span className="mt-3 block whitespace-nowrap text-[72px] italic leading-[0.87] text-[#8F7B6D] xl:text-[82px] 2xl:text-[88px]">
-          your way.
-        </span>
-      </h2>
-
-      {/* DESCRIPTION */}
-      <p className="ml-[14%] mt-12 max-w-[260px] text-[12px] font-light leading-[1.95] tracking-[0.13em] text-[#554E48]">
-        Laser, skincare, and beauty
-        <br />
-        treatments thoughtfully
-        <br />
-        brought together under
-        <br />
-        one roof.
-      </p>
-    </div>
-
-    {/* =====================================================
-        SERVICE LIST — RIGHT
-    ===================================================== */}
-
-    <div className="absolute bottom-[48px] right-[4%] top-[78px] w-[49%]">
-      {/* SERVICE 01 */}
       <a
         href="#laser"
-        className="group grid h-[29.5%] grid-cols-[38px_180px_1fr_48px] items-center gap-5 border-b border-[#493E36]/25 transition-opacity duration-500 hover:opacity-75 xl:grid-cols-[40px_190px_1fr_50px]"
+        className="group grid gap-6 border-b border-[#493E36]/20 py-7 transition-opacity duration-500 hover:opacity-75 md:grid-cols-[34px_175px_1fr_50px] md:items-center lg:grid-cols-[32px_155px_1fr_48px] xl:grid-cols-[34px_180px_1fr_50px] 2xl:grid-cols-[36px_195px_1fr_52px]"
       >
         {/* NUMBER */}
-        <p className="self-start pt-[55px] text-[8px] font-light tracking-[0.28em] text-[#796A60]">
+
+        <p className="self-start pt-2 text-[8px] font-light tracking-[0.28em] text-[#796A60] md:self-center md:pt-0">
           01
         </p>
 
         {/* IMAGE */}
-        <div className="relative h-[240px] w-[178px] self-center overflow-hidden rounded-t-[90px] xl:h-[245px] xl:w-[184px] xl:rounded-t-[94px]">
+
+        <div className="relative h-[245px] w-[180px] overflow-hidden rounded-t-[90px] md:h-[210px] md:w-[155px] md:rounded-t-[78px] lg:h-[205px] lg:w-[150px] lg:rounded-t-[75px] xl:h-[225px] xl:w-[170px] xl:rounded-t-[85px] 2xl:h-[240px] 2xl:w-[185px] 2xl:rounded-t-[93px]">
           <img
             src="/previews/house-of-laser/services-laser.png"
             alt="Laser hair removal"
@@ -649,20 +654,18 @@ export default function HouseOfLaser() {
         </div>
 
         {/* COPY */}
-        <div className="pl-4 xl:pl-7">
+
+        <div className="md:px-4 lg:px-5 xl:px-6">
           <h3
-            className={`${bodoni.className} hls-bodoni text-[40px] font-normal leading-[0.9] tracking-[-0.04em] text-[#241E1A] xl:text-[44px]`}
+            className={`${bodoni.className} hls-bodoni text-[39px] font-normal leading-[0.92] tracking-[-0.04em] text-[#241E1A] md:text-[38px] lg:text-[39px] xl:text-[44px] 2xl:text-[48px]`}
           >
             Laser Hair
             <br />
             Removal
           </h3>
 
-          <p className="mt-4 max-w-[280px] text-[11px] font-light leading-[1.75] tracking-[0.08em] text-[#655C55] xl:text-[12px]">
-            Smooth, long-lasting results
-            <br />
-            with advanced laser technology
-            <br />
+          <p className="mt-4 max-w-[330px] text-[11px] font-light leading-[1.8] tracking-[0.08em] text-[#655C55] xl:text-[12px]">
+            Smooth, long-lasting results with advanced laser technology
             in a comfortable, private setting.
           </p>
 
@@ -671,11 +674,12 @@ export default function HouseOfLaser() {
               Explore
             </span>
 
-            <span className="h-px w-[74px] bg-[#907D70]/50" />
+            <span className="h-px w-14 bg-[#907D70]/50" />
           </div>
         </div>
 
         {/* ARROW */}
+
         <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#493E36]/55 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9]">
           <ArrowRight
             size={14}
@@ -685,293 +689,137 @@ export default function HouseOfLaser() {
         </div>
       </a>
 
-      {/* SERVICE 02 */}
+      {/* =====================================================
+          SERVICE 02
+      ===================================================== */}
+
       <a
         href="#facials"
-        className="group grid h-[29.5%] grid-cols-[38px_180px_1fr_48px] items-center gap-5 border-b border-[#493E36]/25 transition-opacity duration-500 hover:opacity-75 xl:grid-cols-[40px_190px_1fr_50px]"
+        className="group grid gap-6 border-b border-[#493E36]/20 py-7 transition-opacity duration-500 hover:opacity-75 md:grid-cols-[34px_175px_1fr_50px] md:items-center lg:grid-cols-[32px_155px_1fr_48px] xl:grid-cols-[34px_180px_1fr_50px] 2xl:grid-cols-[36px_195px_1fr_52px]"
       >
         {/* NUMBER */}
-        <p className="self-start pt-[55px] text-[8px] font-light tracking-[0.28em] text-[#796A60]">
+
+        <p className="self-start pt-2 text-[8px] font-light tracking-[0.28em] text-[#796A60] md:self-center md:pt-0">
           02
         </p>
 
         {/* IMAGE */}
-        <div className="relative h-[240px] w-[178px] self-center overflow-hidden rounded-t-[90px] xl:h-[245px] xl:w-[184px] xl:rounded-t-[94px]">
+
+        <div className="relative h-[245px] w-[180px] overflow-hidden rounded-t-[90px] md:h-[210px] md:w-[155px] md:rounded-t-[78px] lg:h-[205px] lg:w-[150px] lg:rounded-t-[75px] xl:h-[225px] xl:w-[170px] xl:rounded-t-[85px] 2xl:h-[240px] 2xl:w-[185px] 2xl:rounded-t-[93px]">
           <img
             src="/previews/house-of-laser/services-facial.png"
-            alt="Facials and skincare"
+            alt="Facials and skincare treatment"
             className="h-full w-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
           />
         </div>
 
         {/* COPY */}
-        <div className="pl-4 xl:pl-7">
+
+        <div className="md:px-4 lg:px-5 xl:px-6">
           <h3
-            className={`${bodoni.className} hls-bodoni text-[40px] font-normal leading-[0.9] tracking-[-0.04em] text-[#241E1A] xl:text-[44px]`}
+            className={`${bodoni.className} hls-bodoni text-[39px] font-normal leading-[0.92] tracking-[-0.04em] text-[#241E1A] md:text-[38px] lg:text-[39px] xl:text-[44px] 2xl:text-[48px]`}
           >
             Facials &amp;
             <br />
             Skincare
           </h3>
 
-          <p className="mt-4 max-w-[280px] text-[11px] font-light leading-[1.75] tracking-[0.08em] text-[#655C55] xl:text-[12px]">
-            Customized treatments to
-            <br />
-            cleanse, restore, and reveal
-            <br />
-            your healthiest skin.
-          </p>
-
-          <div className="mt-5 flex items-center gap-5">
-            <span className="text-[7px] uppercase tracking-[0.38em] text-[#907D70]">
-              Explore
-            </span>
-
-            <span className="h-px w-[74px] bg-[#907D70]/50" />
-          </div>
-        </div>
-
-        {/* ARROW */}
-        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#493E36]/55 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9]">
-          <ArrowRight
-            size={14}
-            strokeWidth={1.1}
-            className="transition-transform duration-500 group-hover:translate-x-[2px]"
-          />
-        </div>
-      </a>
-
-      {/* SERVICE 03 */}
-      <a
-        href="#experience"
-        className="group grid h-[29.5%] grid-cols-[38px_180px_1fr_48px] items-center gap-5 border-b border-[#493E36]/25 transition-opacity duration-500 hover:opacity-75 xl:grid-cols-[40px_190px_1fr_50px]"
-      >
-        {/* NUMBER */}
-        <p className="self-start pt-[55px] text-[8px] font-light tracking-[0.28em] text-[#796A60]">
-          03
-        </p>
-
-        {/* IMAGE */}
-        <div className="relative h-[240px] w-[178px] self-center overflow-hidden rounded-t-[90px] xl:h-[245px] xl:w-[184px] xl:rounded-t-[94px]">
-          <img
-            src="/previews/house-of-laser/services-beauty.png"
-            alt="Beauty and self-care"
-            className="h-full w-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
-          />
-        </div>
-
-        {/* COPY */}
-        <div className="pl-4 xl:pl-7">
-          <h3
-            className={`${bodoni.className} hls-bodoni text-[40px] font-normal leading-[0.9] tracking-[-0.04em] text-[#241E1A] xl:text-[44px]`}
-          >
-            Beauty &amp;
-            <br />
-            Self-Care
-          </h3>
-
-          <p className="mt-4 max-w-[280px] text-[11px] font-light leading-[1.75] tracking-[0.08em] text-[#655C55] xl:text-[12px]">
-            Thoughtful treatments and
-            <br />
-            enhancements designed to help
-            <br />
-            you look and feel your best.
-          </p>
-
-          <div className="mt-5 flex items-center gap-5">
-            <span className="text-[7px] uppercase tracking-[0.38em] text-[#907D70]">
-              Explore
-            </span>
-
-            <span className="h-px w-[74px] bg-[#907D70]/50" />
-          </div>
-        </div>
-
-        {/* ARROW */}
-        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#493E36]/55 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9]">
-          <ArrowRight
-            size={14}
-            strokeWidth={1.1}
-            className="transition-transform duration-500 group-hover:translate-x-[2px]"
-          />
-        </div>
-      </a>
-
-      {/* BOTTOM DETAIL */}
-      <div className="flex h-[11.5%] items-end justify-end gap-7 pb-1">
-        <div className="h-px w-[185px] bg-[#75685E]/40" />
-
-        <p className="whitespace-nowrap text-[7px] uppercase tracking-[0.42em] text-[#796A60]">
-          Real Results. A More You.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  {/* =====================================================
-      MOBILE / TABLET
-  ===================================================== */}
-
-  <div className="lg:hidden">
-    {/* MAIN IMAGE */}
-    <div className="relative h-[520px] overflow-hidden sm:h-[620px]">
-      <img
-        src="/previews/house-of-laser/services-main.png"
-        alt="House of Laser and Spa treatment space"
-        className="h-full w-full object-cover object-center"
-      />
-
-      <div className="absolute inset-0 bg-[#49382D]/[0.04]" />
-    </div>
-
-    {/* CONTENT */}
-    <div className="px-6 py-16 sm:px-10 sm:py-20">
-      <div className="flex items-center gap-5">
-        <p className="text-[8px] uppercase tracking-[0.45em] text-[#51463F]">
-          Services
-        </p>
-
-        <div className="h-px w-20 bg-[#51463F]/40" />
-      </div>
-
-      <h2
-        className={`${bodoni.className} hls-bodoni mt-8 font-normal tracking-[-0.05em]`}
-      >
-        <span className="block text-[56px] leading-[0.9] text-[#211B18] sm:text-[68px]">
-          Treatments,
-        </span>
-
-        <span className="block text-[60px] italic leading-[0.9] text-[#8F7B6D] sm:text-[72px]">
-          your way.
-        </span>
-      </h2>
-
-      <p className="mt-8 max-w-[360px] text-[12px] font-light leading-[1.9] tracking-[0.1em] text-[#554E48]">
-        Laser, skincare, and beauty treatments thoughtfully brought
-        together under one roof.
-      </p>
-
-      {/* MOBILE SERVICE 01 */}
-      <a
-        href="#laser"
-        className="group mt-14 grid grid-cols-[30px_120px_1fr] gap-4 border-t border-[#493E36]/20 py-8"
-      >
-        <p className="pt-2 text-[8px] tracking-[0.25em] text-[#796A60]">
-          01
-        </p>
-
-        <div className="h-[165px] w-[115px] overflow-hidden rounded-t-[58px]">
-          <img
-            src="/previews/house-of-laser/services-laser.png"
-            alt="Laser hair removal"
-            className="h-full w-full object-cover"
-          />
-        </div>
-
-        <div>
-          <h3
-            className={`${bodoni.className} hls-bodoni text-[31px] leading-[0.95] tracking-[-0.035em]`}
-          >
-            Laser Hair
-            <br />
-            Removal
-          </h3>
-
-          <p className="mt-3 text-[11px] leading-[1.7] text-[#655C55]">
-            Smooth, long-lasting results with advanced laser technology.
-          </p>
-
-          <div className="mt-4 flex items-center gap-3">
-            <span className="text-[7px] uppercase tracking-[0.3em] text-[#907D70]">
-              Explore
-            </span>
-
-            <ArrowRight size={12} strokeWidth={1} />
-          </div>
-        </div>
-      </a>
-
-      {/* MOBILE SERVICE 02 */}
-      <a
-        href="#facials"
-        className="group grid grid-cols-[30px_120px_1fr] gap-4 border-t border-[#493E36]/20 py-8"
-      >
-        <p className="pt-2 text-[8px] tracking-[0.25em] text-[#796A60]">
-          02
-        </p>
-
-        <div className="h-[165px] w-[115px] overflow-hidden rounded-t-[58px]">
-          <img
-            src="/previews/house-of-laser/services-facial.png"
-            alt="Facials and skincare"
-            className="h-full w-full object-cover"
-          />
-        </div>
-
-        <div>
-          <h3
-            className={`${bodoni.className} hls-bodoni text-[31px] leading-[0.95] tracking-[-0.035em]`}
-          >
-            Facials &amp;
-            <br />
-            Skincare
-          </h3>
-
-          <p className="mt-3 text-[11px] leading-[1.7] text-[#655C55]">
+          <p className="mt-4 max-w-[330px] text-[11px] font-light leading-[1.8] tracking-[0.08em] text-[#655C55] xl:text-[12px]">
             Customized treatments to cleanse, restore, and reveal your
             healthiest skin.
           </p>
 
-          <div className="mt-4 flex items-center gap-3">
-            <span className="text-[7px] uppercase tracking-[0.3em] text-[#907D70]">
+          <div className="mt-5 flex items-center gap-5">
+            <span className="text-[7px] uppercase tracking-[0.38em] text-[#907D70]">
               Explore
             </span>
 
-            <ArrowRight size={12} strokeWidth={1} />
+            <span className="h-px w-14 bg-[#907D70]/50" />
           </div>
+        </div>
+
+        {/* ARROW */}
+
+        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#493E36]/55 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9]">
+          <ArrowRight
+            size={14}
+            strokeWidth={1.1}
+            className="transition-transform duration-500 group-hover:translate-x-[2px]"
+          />
         </div>
       </a>
 
-      {/* MOBILE SERVICE 03 */}
+      {/* =====================================================
+          SERVICE 03
+      ===================================================== */}
+
       <a
         href="#experience"
-        className="group grid grid-cols-[30px_120px_1fr] gap-4 border-y border-[#493E36]/20 py-8"
+        className="group grid gap-6 border-b border-[#493E36]/20 py-7 transition-opacity duration-500 hover:opacity-75 md:grid-cols-[34px_175px_1fr_50px] md:items-center lg:grid-cols-[32px_155px_1fr_48px] xl:grid-cols-[34px_180px_1fr_50px] 2xl:grid-cols-[36px_195px_1fr_52px]"
       >
-        <p className="pt-2 text-[8px] tracking-[0.25em] text-[#796A60]">
+        {/* NUMBER */}
+
+        <p className="self-start pt-2 text-[8px] font-light tracking-[0.28em] text-[#796A60] md:self-center md:pt-0">
           03
         </p>
 
-        <div className="h-[165px] w-[115px] overflow-hidden rounded-t-[58px]">
+        {/* IMAGE */}
+
+        <div className="relative h-[245px] w-[180px] overflow-hidden rounded-t-[90px] md:h-[210px] md:w-[155px] md:rounded-t-[78px] lg:h-[205px] lg:w-[150px] lg:rounded-t-[75px] xl:h-[225px] xl:w-[170px] xl:rounded-t-[85px] 2xl:h-[240px] 2xl:w-[185px] 2xl:rounded-t-[93px]">
           <img
             src="/previews/house-of-laser/services-beauty.png"
             alt="Beauty and self-care"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
           />
         </div>
 
-        <div>
+        {/* COPY */}
+
+        <div className="md:px-4 lg:px-5 xl:px-6">
           <h3
-            className={`${bodoni.className} hls-bodoni text-[31px] leading-[0.95] tracking-[-0.035em]`}
+            className={`${bodoni.className} hls-bodoni text-[39px] font-normal leading-[0.92] tracking-[-0.04em] text-[#241E1A] md:text-[38px] lg:text-[39px] xl:text-[44px] 2xl:text-[48px]`}
           >
             Beauty &amp;
             <br />
             Self-Care
           </h3>
 
-          <p className="mt-3 text-[11px] leading-[1.7] text-[#655C55]">
-            Thoughtful treatments designed to help you look and feel
-            your best.
+          <p className="mt-4 max-w-[330px] text-[11px] font-light leading-[1.8] tracking-[0.08em] text-[#655C55] xl:text-[12px]">
+            Thoughtful treatments and enhancements designed to help you
+            look and feel your best.
           </p>
 
-          <div className="mt-4 flex items-center gap-3">
-            <span className="text-[7px] uppercase tracking-[0.3em] text-[#907D70]">
+          <div className="mt-5 flex items-center gap-5">
+            <span className="text-[7px] uppercase tracking-[0.38em] text-[#907D70]">
               Explore
             </span>
 
-            <ArrowRight size={12} strokeWidth={1} />
+            <span className="h-px w-14 bg-[#907D70]/50" />
           </div>
         </div>
+
+        {/* ARROW */}
+
+        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#493E36]/55 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9]">
+          <ArrowRight
+            size={14}
+            strokeWidth={1.1}
+            className="transition-transform duration-500 group-hover:translate-x-[2px]"
+          />
+        </div>
       </a>
+
+      {/* =====================================================
+          BOTTOM DETAIL
+      ===================================================== */}
+
+      <div className="mt-7 flex items-center justify-end gap-7">
+        <div className="hidden h-px w-28 bg-[#75685E]/35 sm:block" />
+
+        <p className="text-[7px] uppercase tracking-[0.42em] text-[#796A60]">
+          Real Results. A More You.
+        </p>
+      </div>
     </div>
   </div>
 </section>
