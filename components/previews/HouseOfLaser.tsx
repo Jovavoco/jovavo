@@ -179,9 +179,9 @@ export default function HouseOfLaser() {
                 href="#home"
                 className="absolute left-1/2 -translate-x-1/2 text-center"
               >
-                <p className="whitespace-nowrap text-[15px] font-light uppercase tracking-[0.42em] text-[#F8F4EF]">
-                  House of Laser &amp; Spa
-                </p>
+<p className="whitespace-nowrap text-[11px] font-light uppercase tracking-[0.38em] text-[#F8F4EF]">
+  House of Laser &amp; Spa
+</p>
 
                 <div className="mx-auto mt-7 h-px w-16 bg-white/55" />
               </a>
@@ -306,21 +306,20 @@ export default function HouseOfLaser() {
             <div className="hls-hero-text flex w-full max-w-[1200px] flex-col items-center justify-center">
               {/* THIN BODONI HERO TITLE */}
 
-              <h1
-                className={`${bodoni.className} hls-bodoni text-center font-normal text-[#F9F5F0]`}
-              >
-                <span className="hls-hero-thin">
-                  <span className="block text-[68px] leading-[0.84] tracking-[-0.035em] sm:text-[88px] md:text-[106px] lg:text-[120px] xl:text-[130px]">
-                    Beauty
-                  </span>
+<h1
+  className={`${bodoni.className} hls-bodoni text-center font-normal text-[#F9F5F0]`}
+>
+  <span className="hls-hero-thin">
+    <span className="block text-[54px] leading-[0.88] tracking-[-0.035em] sm:text-[68px] md:text-[82px] lg:text-[92px] xl:text-[100px]">
+      Beauty
+    </span>
 
-                  <span className="mt-4 block whitespace-nowrap text-[50px] leading-[0.86] tracking-[-0.035em] sm:text-[67px] md:text-[83px] lg:text-[95px] xl:text-[103px]">
-                    <span className="italic">without</span>
-
-                    <span className="not-italic"> limits.</span>
-                  </span>
-                </span>
-              </h1>
+    <span className="mt-3 block whitespace-nowrap text-[40px] leading-[0.9] tracking-[-0.035em] sm:text-[52px] md:text-[64px] lg:text-[72px] xl:text-[78px]">
+      <span className="italic">without</span>
+      <span className="not-italic"> limits.</span>
+    </span>
+  </span>
+</h1>
 
               {/* CATEGORY LINE */}
 
