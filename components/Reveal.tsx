@@ -18,7 +18,7 @@ export default function Reveal({
         if (entry.isIntersecting) setVisible(true);
       },
       { threshold: 0.15 }
-    );
+     );
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
