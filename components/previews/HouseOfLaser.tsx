@@ -1454,6 +1454,7 @@ export default function HouseOfLaser() {
           </div>
         </div>
       </footer>
+      </main>
     </div>
   );
 }
