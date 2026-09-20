@@ -395,13 +395,7 @@ export default function VerraContactPage() {
                     SEND INQUIRY
                   </span>
 
-                  <span className="flex items-center">
-                    <span className="h-px w-7 bg-current transition-all duration-500 group-hover:w-10" />
-
-                    <span className="-ml-[2px] text-[10px]">
-                      ↗
-                    </span>
-                  </span>
+                  <SleekArrow />
                 </button>
 
                 <p className="mt-4 text-[7px] leading-[1.7] tracking-[0.15em] text-[#91887F]">
@@ -551,9 +545,7 @@ export default function VerraContactPage() {
 
             <span className="h-px w-9 bg-white/35 transition-all duration-500 group-hover:w-14" />
 
-            <span className="text-[11px] text-white/60">
-              ↑
-            </span>
+            <SleekUpArrow />
           </button>
         </div>
       </section>
@@ -672,6 +664,35 @@ export default function VerraContactPage() {
         </div>
       </footer>
     </main>
+  );
+}
+
+
+/* =====================================================
+    SLEEK CSS ARROWS
+===================================================== */
+
+function SleekArrow() {
+  return (
+    <span
+      aria-hidden="true"
+      className="relative flex h-4 w-8 shrink-0 items-center text-current"
+    >
+      <span className="h-px w-7 bg-current transition-all duration-500 group-hover:w-8" />
+      <span className="absolute right-0 h-[7px] w-[7px] rotate-45 border-r border-t border-current" />
+    </span>
+  );
+}
+
+function SleekUpArrow() {
+  return (
+    <span
+      aria-hidden="true"
+      className="relative flex h-8 w-4 shrink-0 justify-center text-current"
+    >
+      <span className="h-7 w-px bg-current transition-all duration-500 group-hover:h-8" />
+      <span className="absolute top-0 h-[7px] w-[7px] rotate-[-45deg] border-r border-t border-current" />
+    </span>
   );
 }
 
