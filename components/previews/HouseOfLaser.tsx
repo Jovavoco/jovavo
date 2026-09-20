@@ -924,42 +924,40 @@ export default function HouseOfLaser() {
     </div>
 
     {/* =====================================================
-        RIGHT — EDITORIAL IMAGE COMPOSITION
+        RIGHT — ROUNDED EDITORIAL IMAGE
     ===================================================== */}
 
-    <div className="relative min-h-[570px] overflow-hidden bg-[#DED4CB] sm:min-h-[620px] lg:min-h-[700px] xl:min-h-[730px]">
+    <div className="relative flex min-h-[570px] items-center justify-center overflow-hidden px-5 py-8 sm:min-h-[620px] sm:px-8 sm:py-10 lg:min-h-[700px] lg:justify-start lg:px-0 lg:py-10 xl:min-h-[730px]">
 
-      {/* ABSTRACT BACKGROUND SHAPE */}
-      <div className="pointer-events-none absolute -left-[18%] -top-[20%] h-[78%] w-[78%] rounded-full border border-[#76665B]/20" />
+      {/* BACKGROUND CIRCLE */}
+      <div className="pointer-events-none absolute -right-[18%] top-[4%] h-[520px] w-[520px] rounded-full bg-[#DED4CB]/45 lg:h-[620px] lg:w-[620px]" />
 
-      <div className="pointer-events-none absolute -left-[5%] top-[3%] h-[52%] w-[52%] rounded-full bg-[#C9B9AA]/25" />
+      {/* LARGE THIN DECORATIVE ARC */}
+      <div className="pointer-events-none absolute -right-[10%] -top-[18%] hidden h-[760px] w-[760px] rounded-full border border-[#8D796B]/20 lg:block" />
 
       {/* =====================================================
-          MAIN IMAGE FRAME
+          ROUNDED IMAGE FRAME
       ===================================================== */}
 
-      <div className="group absolute bottom-0 right-0 top-0 w-[92%] overflow-hidden sm:w-[88%] lg:w-[86%]">
+      <div className="group relative z-10 h-[500px] w-full max-w-[680px] overflow-hidden rounded-[180px_180px_70px_180px] sm:h-[550px] sm:rounded-[220px_220px_90px_220px] lg:h-[620px] lg:w-[92%] lg:max-w-none lg:rounded-[300px_90px_90px_300px] xl:h-[650px] xl:w-[94%]">
 
         <img
           src="/previews/house-of-laser/laser-client.jpg"
           alt="Laser hair removal treatment"
-          className="absolute inset-0 h-full w-full object-cover object-[52%_center] transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
+          className="absolute inset-0 h-full w-full object-cover object-[52%_center] transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.018]"
         />
 
-        {/* SOFT WARM IMAGE TONE */}
-        <div className="pointer-events-none absolute inset-0 bg-[#6C5545]/[0.035]" />
+        {/* VERY LIGHT WARM TONE */}
+        <div className="pointer-events-none absolute inset-0 bg-[#6C5545]/[0.025]" />
 
-        {/* SOFT EDGE GRADIENT */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-[20%] bg-gradient-to-r from-[#DED4CB]/25 to-transparent" />
+        {/* SUBTLE LEFT FADE */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-[22%] bg-gradient-to-r from-[#E1D7CE]/15 to-transparent" />
 
-        {/* LARGE ABSTRACT ARCH */}
-        <div className="pointer-events-none absolute -left-[38%] -top-[19%] h-[92%] w-[78%] rounded-full border border-white/45" />
-
-        {/* SECOND THIN ARC */}
-        <div className="pointer-events-none absolute -bottom-[38%] -right-[24%] h-[78%] w-[70%] rounded-full border border-[#7C685B]/25" />
+        {/* INNER CURVE */}
+        <div className="pointer-events-none absolute -left-[27%] -top-[13%] h-[90%] w-[72%] rounded-full border border-white/45" />
 
         {/* IMAGE WORDS */}
-        <div className="absolute right-[6%] top-[7%] hidden lg:block">
+        <div className="absolute right-[7%] top-[9%] hidden lg:block">
           <div className="space-y-[8px]">
             {["Smoother", "Brighter", "Confident", "You"].map((word) => (
               <p
@@ -974,8 +972,8 @@ export default function HouseOfLaser() {
           <div className="mt-5 h-px w-9 bg-[#695B52]/35" />
         </div>
 
-        {/* BOTTOM RIGHT DETAIL */}
-        <div className="absolute bottom-[7%] right-[6%] hidden lg:block">
+        {/* BOTTOM DETAIL */}
+        <div className="absolute bottom-[8%] right-[7%] hidden lg:block">
           <p className="text-right text-[6px] font-light uppercase leading-[2] tracking-[0.42em] text-[#5F5148]/65">
             Feel Good
             <br />
@@ -987,15 +985,17 @@ export default function HouseOfLaser() {
       </div>
 
       {/* =====================================================
-          LEFT VERTICAL DETAIL
+          FLOATING SMALL CIRCLE
       ===================================================== */}
 
-      <div className="absolute bottom-[8%] left-[4%] z-20 hidden lg:block">
-        <div className="h-12 w-px bg-[#7E6D62]/35" />
-
-        <p className="mt-4 [writing-mode:vertical-rl] rotate-180 text-[6px] uppercase tracking-[0.42em] text-[#75665C]/65">
-          House of Laser
-        </p>
+      <div className="pointer-events-none absolute bottom-[7%] left-[2%] z-20 hidden h-24 w-24 rounded-full border border-[#8D796B]/25 lg:block xl:h-28 xl:w-28">
+        <div className="flex h-full w-full items-center justify-center">
+          <p className="text-center text-[5px] uppercase leading-[2.1] tracking-[0.35em] text-[#7C6A5F]/65">
+            Smooth
+            <br />
+            Skin
+          </p>
+        </div>
       </div>
     </div>
   </div>
