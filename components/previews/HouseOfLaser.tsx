@@ -1001,11 +1001,7 @@ export default function HouseOfLaser() {
   </div>
 </section>
 
-        {/* =====================================================
-            FACIALS
-        ===================================================== */}
-
-{/* =====================================================
+ {/* =====================================================
     FACIALS & SKINCARE
 ===================================================== */}
 
@@ -1013,62 +1009,112 @@ export default function HouseOfLaser() {
   id="facials"
   className="relative overflow-hidden bg-[#1D1C19]"
 >
-  <div className="mx-auto grid min-h-[760px] max-w-[1600px] lg:grid-cols-[58%_42%]">
+  <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[58%_42%]">
 
     {/* =====================================================
-        LEFT — IMAGE
+        LEFT — ROUNDED EDITORIAL IMAGE
     ===================================================== */}
 
-    <div className="group relative min-h-[560px] overflow-hidden sm:min-h-[650px] lg:min-h-[800px] xl:min-h-[860px]">
-      <img
-        src="/previews/house-of-laser/facial-machine.jpg"
-        alt="Facial and skincare treatment space"
-        className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.012]"
-      />
+    <div className="relative flex min-h-[570px] items-center justify-center overflow-hidden px-5 py-8 sm:min-h-[620px] sm:px-8 sm:py-10 lg:min-h-[700px] lg:justify-end lg:px-0 lg:py-10 xl:min-h-[730px]">
 
-      {/* VERY SUBTLE WARM OVERLAY */}
-      <div className="absolute inset-0 bg-[#211A15]/[0.04]" />
+      {/* SOFT BACKGROUND SHAPE */}
+      <div className="pointer-events-none absolute -left-[18%] top-[4%] h-[520px] w-[520px] rounded-full bg-[#3A332E]/70 lg:h-[620px] lg:w-[620px]" />
 
-      {/* LEFT IMAGE WORDS */}
-      <div className="absolute bottom-[7%] left-[6%] z-10 hidden lg:flex lg:items-end lg:gap-5">
-        <div className="h-[58px] w-px bg-white/65" />
+      {/* LARGE OUTER ARC */}
+      <div className="pointer-events-none absolute -left-[10%] -top-[18%] hidden h-[760px] w-[760px] rounded-full border border-[#C9AD98]/15 lg:block" />
 
-        <div className="space-y-[8px] pb-[1px]">
-          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/80">
-            Restore
+      {/* SECOND ABSTRACT CIRCLE */}
+      <div className="pointer-events-none absolute -bottom-[28%] left-[16%] hidden h-[420px] w-[420px] rounded-full border border-[#C9AD98]/10 lg:block" />
+
+      {/* =====================================================
+          ORGANIC IMAGE FRAME
+      ===================================================== */}
+
+      <div className="group relative z-10 h-[500px] w-full max-w-[680px] overflow-hidden rounded-[180px_180px_180px_70px] sm:h-[550px] sm:rounded-[220px_220px_220px_90px] lg:h-[620px] lg:w-[94%] lg:max-w-none lg:rounded-[90px_300px_300px_90px] xl:h-[650px]">
+
+        <img
+          src="/previews/house-of-laser/facial-machine.jpg"
+          alt="Facial and skincare treatment space"
+          className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.018]"
+        />
+
+        {/* VERY SUBTLE WARM TONE */}
+        <div className="pointer-events-none absolute inset-0 bg-[#211A15]/[0.035]" />
+
+        {/* SOFT RIGHT EDGE */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-[20%] bg-gradient-to-l from-[#1D1C19]/10 to-transparent" />
+
+        {/* LARGE INNER CURVE */}
+        <div className="pointer-events-none absolute -right-[28%] -top-[14%] h-[92%] w-[72%] rounded-full border border-white/35" />
+
+        {/* SECOND INNER CURVE */}
+        <div className="pointer-events-none absolute -bottom-[42%] -left-[18%] h-[70%] w-[65%] rounded-full border border-[#F2E7DE]/25" />
+
+        {/* =====================================================
+            TOP IMAGE DETAIL
+        ===================================================== */}
+
+        <div className="absolute left-[7%] top-[8%] hidden lg:block">
+          <div className="space-y-[8px]">
+            {["Healthy", "Skin", "Happier", "You"].map((word) => (
+              <p
+                key={word}
+                className="text-[6px] font-light uppercase tracking-[0.44em] text-white/60"
+              >
+                {word}
+              </p>
+            ))}
+          </div>
+
+          <div className="mt-5 h-px w-9 bg-white/35" />
+        </div>
+
+        {/* =====================================================
+            BOTTOM IMAGE DETAIL
+        ===================================================== */}
+
+        <div className="absolute bottom-[8%] left-[7%] hidden items-end gap-5 lg:flex">
+          <div className="h-12 w-px bg-white/55" />
+
+          <div className="space-y-[7px] pb-[1px]">
+            <p className="text-[6px] font-light uppercase tracking-[0.44em] text-white/75">
+              Restore
+            </p>
+
+            <p className="text-[6px] font-light uppercase tracking-[0.44em] text-white/75">
+              Refresh
+            </p>
+
+            <p className="text-[6px] font-light uppercase tracking-[0.44em] text-white/75">
+              Reveal
+            </p>
+          </div>
+        </div>
+
+        {/* SMALL RIGHT DETAIL */}
+        <div className="absolute bottom-[8%] right-[8%] hidden lg:block">
+          <p className="text-right text-[6px] font-light uppercase leading-[2] tracking-[0.4em] text-white/55">
+            Your Skin
+            <br />
+            Your Ritual
           </p>
 
-          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/80">
-            Refresh
-          </p>
-
-          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/80">
-            Reveal
-          </p>
+          <div className="ml-auto mt-4 h-px w-9 bg-white/30" />
         </div>
       </div>
 
-      {/* OPTIONAL TOP-LEFT DETAIL */}
-      <div className="absolute left-[7%] top-[7%] hidden lg:block">
-        <div className="space-y-[9px]">
-          <p className="text-[7px] font-light uppercase tracking-[0.4em] text-[#44372F]/50">
-            Healthy
-          </p>
+      {/* =====================================================
+          FLOATING DETAIL
+      ===================================================== */}
 
-          <p className="text-[7px] font-light uppercase tracking-[0.4em] text-[#44372F]/50">
-            Skin
-          </p>
-
-          <p className="text-[7px] font-light uppercase tracking-[0.4em] text-[#44372F]/50">
-            Happier
-          </p>
-
-          <p className="text-[7px] font-light uppercase tracking-[0.4em] text-[#44372F]/50">
-            You
+      <div className="pointer-events-none absolute bottom-[6%] right-[2%] z-20 hidden h-24 w-24 rounded-full border border-[#C9AD98]/25 lg:block xl:h-28 xl:w-28">
+        <div className="flex h-full w-full items-center justify-center">
+          <p className="text-center text-[5px] uppercase leading-[2.1] tracking-[0.35em] text-[#C9AD98]/70">
+            Glow
+            <br />
+            Naturally
           </p>
         </div>
-
-        <div className="mt-5 h-px w-9 bg-[#44372F]/25" />
       </div>
     </div>
 
@@ -1076,69 +1122,100 @@ export default function HouseOfLaser() {
         RIGHT — EDITORIAL CONTENT
     ===================================================== */}
 
-    <div className="relative flex min-h-[680px] items-center bg-[#1D1C19] px-8 py-20 sm:px-10 md:px-14 lg:min-h-[800px] lg:px-16 xl:min-h-[860px] xl:px-[78px]">
+    <div className="relative flex min-h-[620px] flex-col bg-[#1D1C19] px-7 py-12 sm:min-h-[650px] sm:px-10 sm:py-14 md:px-14 lg:min-h-[700px] lg:px-14 lg:py-14 xl:min-h-[730px] xl:px-20 xl:py-16">
 
-      {/* TOP RIGHT DECORATIVE LINE */}
-      <div className="absolute right-[8%] top-[7%] hidden h-[92px] w-px bg-[#D3C0B1]/45 lg:block" />
+      {/* TOP DECORATIVE LINE */}
+      <div className="absolute right-10 top-0 hidden h-16 w-px bg-[#D3C0B1]/30 lg:block xl:right-14" />
 
-      <div className="w-full max-w-[520px]">
+      {/* =====================================================
+          TOP LABEL
+      ===================================================== */}
 
-        {/* EYEBROW */}
-        <p className="text-[8px] font-light uppercase tracking-[0.48em] text-[#C3AA96] sm:text-[9px]">
-          Facials &amp; Skincare
-        </p>
+      <div className="lg:pt-7">
+        <div className="flex items-center gap-5">
+          <p className="text-[8px] font-light uppercase tracking-[0.48em] text-[#C3AA96]">
+            Facials &amp; Skincare
+          </p>
 
-        {/* =====================================================
-            HEADING
-        ===================================================== */}
-
-        <h2
-          className={`${bodoni.className} hls-bodoni mt-12 font-normal tracking-[-0.045em]`}
-        >
-          <span className="block text-[60px] leading-[0.88] text-[#F5F1EC] sm:text-[72px] md:text-[80px] lg:text-[74px] xl:text-[86px]">
-            Skin
-          </span>
-
-          <span className="block text-[60px] leading-[0.88] text-[#F5F1EC] sm:text-[72px] md:text-[80px] lg:text-[74px] xl:text-[86px]">
-            deserves
-          </span>
-
-          <span className="mt-2 block text-[62px] italic leading-[0.88] text-[#C9AD98] sm:text-[74px] md:text-[82px] lg:text-[76px] xl:text-[88px]">
-            attention.
-          </span>
-        </h2>
-
-        {/* DESCRIPTION */}
-        <p className="mt-11 max-w-[470px] text-[13px] font-light leading-[1.9] tracking-[0.015em] text-[#B1AAA4] sm:text-[14px]">
-          Thoughtful facial and skincare treatments in an intimate space
-          designed for slowing down and taking care of yourself.
-        </p>
-
-        {/* BUTTON */}
-        <a
-          href="#book"
-          className="group mt-12 inline-flex min-w-[275px] items-center justify-between border border-[#EEE4DB]/65 px-8 py-[19px] text-[8px] font-light uppercase tracking-[0.37em] text-[#F4EEE8] transition-all duration-500 hover:bg-[#F4EEE8] hover:text-[#201D1A]"
-        >
-          <span>Book a Facial</span>
-
-          <ArrowRight
-            size={14}
-            strokeWidth={1}
-            className="ml-10 transition-transform duration-500 group-hover:translate-x-1"
-          />
-        </a>
+          <div className="h-px w-14 bg-[#C3AA96]/35" />
+        </div>
       </div>
 
       {/* =====================================================
-          BOTTOM RIGHT DETAIL
+          MAIN CONTENT
       ===================================================== */}
 
-      <div className="absolute bottom-[7%] right-[7%] hidden items-center gap-6 lg:flex">
-        <div className="h-px w-[92px] bg-[#C5AD99]/55" />
+      <div className="flex flex-1 items-center py-12 sm:py-14 lg:py-10">
+        <div className="w-full max-w-[470px]">
 
-        <p className="whitespace-nowrap text-[7px] font-light uppercase tracking-[0.44em] text-[#C5AD99]">
-          Your Skin. Your Ritual.
-        </p>
+          {/* HEADING */}
+          <h2
+            className={`${bodoni.className} hls-bodoni font-normal tracking-[-0.05em]`}
+          >
+            <span className="block text-[52px] leading-[0.9] text-[#F5F1EC] sm:text-[60px] md:text-[66px] lg:text-[60px] xl:text-[68px]">
+              Skin
+            </span>
+
+            <span className="block text-[52px] leading-[0.9] text-[#F5F1EC] sm:text-[60px] md:text-[66px] lg:text-[60px] xl:text-[68px]">
+              deserves
+            </span>
+
+            <span className="mt-1 block text-[54px] italic leading-[0.9] text-[#C9AD98] sm:text-[62px] md:text-[68px] lg:text-[62px] xl:text-[70px]">
+              attention.
+            </span>
+          </h2>
+
+          {/* DESCRIPTION */}
+          <p className="mt-8 max-w-[390px] text-[12px] font-light leading-[1.9] tracking-[0.02em] text-[#B1AAA4] sm:text-[13px]">
+            Thoughtful facial and skincare treatments in an intimate space
+            designed for slowing down and taking care of yourself.
+          </p>
+
+          {/* CTA */}
+          <a
+            href="#book"
+            className="group mt-9 inline-flex min-w-[235px] items-center justify-between border border-[#EEE4DB]/55 px-7 py-4 text-[8px] font-light uppercase tracking-[0.34em] text-[#F4EEE8] transition-all duration-500 hover:bg-[#F4EEE8] hover:text-[#201D1A]"
+          >
+            <span>Book a Facial</span>
+
+            <ArrowRight
+              size={13}
+              strokeWidth={1}
+              className="ml-10 transition-transform duration-500 group-hover:translate-x-1"
+            />
+          </a>
+        </div>
+      </div>
+
+      {/* =====================================================
+          BOTTOM DETAIL
+      ===================================================== */}
+
+      <div className="flex items-end justify-between">
+        <div>
+          <div className="space-y-[6px]">
+            {["Restore", "Refresh", "Reveal", "Glow"].map((word) => (
+              <p
+                key={word}
+                className="text-[6px] font-light uppercase tracking-[0.43em] text-[#C5AD99]/75"
+              >
+                {word}
+              </p>
+            ))}
+          </div>
+
+          <div className="mt-4 h-8 w-px bg-[#C5AD99]/35" />
+        </div>
+
+        <div className="hidden items-center gap-5 sm:flex">
+          <div className="h-px w-14 bg-[#C5AD99]/35" />
+
+          <p className="text-right text-[6px] uppercase leading-[1.9] tracking-[0.38em] text-[#C5AD99]/75">
+            Your Skin
+            <br />
+            Your Ritual
+          </p>
+        </div>
       </div>
     </div>
   </div>
