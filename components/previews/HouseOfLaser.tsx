@@ -841,39 +841,31 @@ export default function HouseOfLaser() {
   id="laser"
   className="relative overflow-hidden bg-[#F3EEE8]"
 >
-  <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[43%_57%]">
+  <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[42%_58%]">
 
     {/* =====================================================
         LEFT — EDITORIAL CONTENT
     ===================================================== */}
 
-    <div className="relative flex min-h-[620px] flex-col bg-[#F3EEE8] px-7 py-12 sm:min-h-[650px] sm:px-10 sm:py-14 md:px-14 lg:min-h-[700px] lg:px-14 lg:py-14 xl:min-h-[740px] xl:px-20 xl:py-16">
+    <div className="relative flex min-h-[620px] flex-col px-7 py-12 sm:min-h-[650px] sm:px-10 sm:py-14 md:px-14 lg:min-h-[700px] lg:px-14 lg:py-14 xl:min-h-[730px] xl:px-20 xl:py-16">
 
       {/* TOP DECORATIVE LINE */}
       <div className="absolute left-10 top-0 hidden h-16 w-px bg-[#9A8576]/35 lg:block xl:left-14" />
 
-      {/* =====================================================
-          TOP LABEL
-      ===================================================== */}
-
+      {/* TOP LABEL */}
       <div className="lg:pt-7">
         <div className="flex items-center gap-5">
           <p className="text-[8px] font-light uppercase tracking-[0.48em] text-[#927C6D]">
             Laser Hair Removal
           </p>
 
-          <div className="h-px w-14 bg-[#927C6D]/30" />
+          <div className="h-px w-14 bg-[#927C6D]/35" />
         </div>
       </div>
 
-      {/* =====================================================
-          MAIN CONTENT
-      ===================================================== */}
-
+      {/* MAIN CONTENT */}
       <div className="flex flex-1 items-center py-12 sm:py-14 lg:py-10">
         <div className="w-full">
-
-          {/* TITLE */}
           <h2
             className={`${bodoni.className} hls-bodoni font-normal tracking-[-0.05em] text-[#211C18]`}
           >
@@ -886,16 +878,14 @@ export default function HouseOfLaser() {
             </span>
           </h2>
 
-          {/* DESCRIPTION */}
-          <p className="mt-8 max-w-[390px] text-[12px] font-light leading-[1.9] tracking-[0.02em] text-[#6D6660] sm:text-[13px]">
+          <p className="mt-8 max-w-[375px] text-[12px] font-light leading-[1.9] tracking-[0.02em] text-[#6D6660] sm:text-[13px]">
             Professional laser hair removal in a comfortable setting,
             with care tailored around you and your routine.
           </p>
 
-          {/* CTA */}
           <a
             href="#book"
-            className="group mt-9 inline-flex min-w-[235px] items-center justify-between border border-[#39322D]/60 px-7 py-[16px] text-[8px] font-normal uppercase tracking-[0.34em] text-[#302A26] transition-all duration-500 hover:bg-[#2A2521] hover:text-[#F4EFE9]"
+            className="group mt-9 inline-flex min-w-[235px] items-center justify-between border border-[#39322D]/60 px-7 py-4 text-[8px] font-normal uppercase tracking-[0.34em] text-[#302A26] transition-all duration-500 hover:bg-[#2A2521] hover:text-[#F4EFE9]"
           >
             <span>Book Laser</span>
 
@@ -908,28 +898,18 @@ export default function HouseOfLaser() {
         </div>
       </div>
 
-      {/* =====================================================
-          BOTTOM EDITORIAL DETAIL
-      ===================================================== */}
-
+      {/* BOTTOM DETAIL */}
       <div className="flex items-end justify-between">
         <div>
           <div className="space-y-[6px]">
-            <p className="text-[6px] font-light uppercase tracking-[0.43em] text-[#82756B]">
-              Confidence
-            </p>
-
-            <p className="text-[6px] font-light uppercase tracking-[0.43em] text-[#82756B]">
-              Care
-            </p>
-
-            <p className="text-[6px] font-light uppercase tracking-[0.43em] text-[#82756B]">
-              Beauty
-            </p>
-
-            <p className="text-[6px] font-light uppercase tracking-[0.43em] text-[#82756B]">
-              You
-            </p>
+            {["Confidence", "Care", "Beauty", "You"].map((word) => (
+              <p
+                key={word}
+                className="text-[6px] font-light uppercase tracking-[0.43em] text-[#82756B]"
+              >
+                {word}
+              </p>
+            ))}
           </div>
 
           <div className="mt-4 h-8 w-px bg-[#9A8576]/40" />
@@ -944,40 +924,78 @@ export default function HouseOfLaser() {
     </div>
 
     {/* =====================================================
-        RIGHT — LASER IMAGE
+        RIGHT — EDITORIAL IMAGE COMPOSITION
     ===================================================== */}
 
-    <div className="group relative h-[520px] overflow-hidden sm:h-[600px] lg:h-auto lg:min-h-[700px] xl:min-h-[740px]">
-      <img
-        src="/previews/house-of-laser/laser-client.jpg"
-        alt="Laser hair removal treatment"
-        className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1600ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.012]"
-      />
+    <div className="relative min-h-[570px] overflow-hidden bg-[#DED4CB] sm:min-h-[620px] lg:min-h-[700px] xl:min-h-[730px]">
 
-      {/* SUBTLE WARM TONE */}
-      <div className="pointer-events-none absolute inset-0 bg-[#4A372A]/[0.025]" />
+      {/* ABSTRACT BACKGROUND SHAPE */}
+      <div className="pointer-events-none absolute -left-[18%] -top-[20%] h-[78%] w-[78%] rounded-full border border-[#76665B]/20" />
 
-      {/* IMAGE DETAIL */}
-      <div className="absolute right-[6%] top-[7%] hidden lg:block">
-        <div className="space-y-[7px]">
-          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#695B52]/55">
-            Smoother
-          </p>
+      <div className="pointer-events-none absolute -left-[5%] top-[3%] h-[52%] w-[52%] rounded-full bg-[#C9B9AA]/25" />
 
-          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#695B52]/55">
-            Brighter
-          </p>
+      {/* =====================================================
+          MAIN IMAGE FRAME
+      ===================================================== */}
 
-          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#695B52]/55">
-            Confident
-          </p>
+      <div className="group absolute bottom-0 right-0 top-0 w-[92%] overflow-hidden sm:w-[88%] lg:w-[86%]">
 
-          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#695B52]/55">
-            You
-          </p>
+        <img
+          src="/previews/house-of-laser/laser-client.jpg"
+          alt="Laser hair removal treatment"
+          className="absolute inset-0 h-full w-full object-cover object-[52%_center] transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
+        />
+
+        {/* SOFT WARM IMAGE TONE */}
+        <div className="pointer-events-none absolute inset-0 bg-[#6C5545]/[0.035]" />
+
+        {/* SOFT EDGE GRADIENT */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-[20%] bg-gradient-to-r from-[#DED4CB]/25 to-transparent" />
+
+        {/* LARGE ABSTRACT ARCH */}
+        <div className="pointer-events-none absolute -left-[38%] -top-[19%] h-[92%] w-[78%] rounded-full border border-white/45" />
+
+        {/* SECOND THIN ARC */}
+        <div className="pointer-events-none absolute -bottom-[38%] -right-[24%] h-[78%] w-[70%] rounded-full border border-[#7C685B]/25" />
+
+        {/* IMAGE WORDS */}
+        <div className="absolute right-[6%] top-[7%] hidden lg:block">
+          <div className="space-y-[8px]">
+            {["Smoother", "Brighter", "Confident", "You"].map((word) => (
+              <p
+                key={word}
+                className="text-[6px] font-light uppercase tracking-[0.44em] text-[#5F5148]/65"
+              >
+                {word}
+              </p>
+            ))}
+          </div>
+
+          <div className="mt-5 h-px w-9 bg-[#695B52]/35" />
         </div>
 
-        <div className="mt-4 h-px w-8 bg-[#695B52]/30" />
+        {/* BOTTOM RIGHT DETAIL */}
+        <div className="absolute bottom-[7%] right-[6%] hidden lg:block">
+          <p className="text-right text-[6px] font-light uppercase leading-[2] tracking-[0.42em] text-[#5F5148]/65">
+            Feel Good
+            <br />
+            In Your Skin
+          </p>
+
+          <div className="ml-auto mt-4 h-px w-9 bg-[#695B52]/35" />
+        </div>
+      </div>
+
+      {/* =====================================================
+          LEFT VERTICAL DETAIL
+      ===================================================== */}
+
+      <div className="absolute bottom-[8%] left-[4%] z-20 hidden lg:block">
+        <div className="h-12 w-px bg-[#7E6D62]/35" />
+
+        <p className="mt-4 [writing-mode:vertical-rl] rotate-180 text-[6px] uppercase tracking-[0.42em] text-[#75665C]/65">
+          House of Laser
+        </p>
       </div>
     </div>
   </div>
