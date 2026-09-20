@@ -730,17 +730,20 @@ export default function HouseOfLaser() {
   className="relative overflow-hidden bg-[#F4EFE9]"
 >
   <div className="mx-auto max-w-[1700px]">
+
     {/* =====================================================
         TOP / EDITORIAL INTRO
     ===================================================== */}
 
     <div className="grid lg:grid-cols-[42%_58%]">
+
       {/* =====================================================
           LEFT — FEATURE IMAGE
       ===================================================== */}
 
       <div className="relative bg-[#DDD3CA]">
         <div className="relative h-[520px] overflow-hidden sm:h-[620px] md:h-[700px] lg:h-full lg:min-h-[760px]">
+
           <img
             src="/previews/house-of-laser/services-main.png"
             alt="House of Laser and Spa treatment space"
@@ -748,17 +751,22 @@ export default function HouseOfLaser() {
           />
 
           {/* VERY LIGHT IMAGE TONE */}
-          <div className="absolute inset-0 bg-[#34271F]/[0.04]" />
+          <div className="pointer-events-none absolute inset-0 bg-[#34271F]/[0.04]" />
 
-          {/* LARGE EDITORIAL CURVE */}
+          {/* =====================================================
+              LARGE CREAM EDITORIAL CURVE
+              Outline removed so no line crosses the image words
+          ===================================================== */}
+
           <div className="pointer-events-none absolute -right-[72%] -top-[58%] hidden h-[105%] w-[125%] rounded-full bg-[#F4EFE9] lg:block" />
 
-          {/* THIN CURVE LINE */}
-          <div className="pointer-events-none absolute -right-[75%] -top-[61%] hidden h-[109%] w-[130%] rounded-full border border-[#75685E]/30 lg:block" />
+          {/* =====================================================
+              IMAGE WORDS
+          ===================================================== */}
 
-          {/* IMAGE WORDS */}
           <div className="absolute bottom-10 left-8 z-20 sm:bottom-12 sm:left-10 lg:bottom-14 lg:left-12">
             <div className="space-y-2">
+
               <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/85">
                 Confidence
               </p>
@@ -776,6 +784,7 @@ export default function HouseOfLaser() {
               </p>
             </div>
 
+            {/* SMALL VERTICAL DETAIL */}
             <div className="ml-[2px] mt-5 h-12 w-px bg-white/55" />
           </div>
         </div>
@@ -786,7 +795,10 @@ export default function HouseOfLaser() {
       ===================================================== */}
 
       <div className="relative flex items-center px-7 py-16 sm:px-10 sm:py-20 md:px-14 lg:px-12 lg:py-20 xl:px-16 2xl:px-20">
+
         <div className="w-full">
+
+          {/* LABEL */}
           <div className="flex items-center gap-5">
             <p className="text-[8px] font-normal uppercase tracking-[0.46em] text-[#665950]">
               Services
@@ -794,6 +806,10 @@ export default function HouseOfLaser() {
 
             <div className="h-px w-20 bg-[#665950]/35" />
           </div>
+
+          {/* =====================================================
+              TITLE
+          ===================================================== */}
 
           <h2
             className={`${bodoni.className} hls-bodoni mt-9 font-normal tracking-[-0.055em]`}
@@ -807,16 +823,39 @@ export default function HouseOfLaser() {
             </span>
           </h2>
 
+          {/* =====================================================
+              DESCRIPTION
+          ===================================================== */}
+
           <div className="mt-10 grid gap-8 border-t border-[#5E5148]/20 pt-8 sm:grid-cols-[1fr_auto] sm:items-start">
+
             <p className="max-w-[420px] text-[12px] font-light leading-[1.95] tracking-[0.045em] text-[#625951] sm:text-[13px]">
               Laser, skincare, and beauty treatments thoughtfully brought
               together in one warm, personal Brooklyn space.
             </p>
 
-            <p className="hidden text-right text-[7px] font-light uppercase leading-[2] tracking-[0.4em] text-[#8A786C] sm:block">
-              Real Results
-              <br />
-              A More You
+            <div className="hidden sm:block">
+              <p className="text-right text-[7px] font-light uppercase leading-[2] tracking-[0.4em] text-[#8A786C]">
+                Real Results
+                <br />
+                A More You
+              </p>
+
+              <div className="ml-auto mt-4 h-px w-8 bg-[#8A786C]/30" />
+            </div>
+          </div>
+
+          {/* =====================================================
+              SMALL BOTTOM DETAIL
+          ===================================================== */}
+
+          <div className="mt-10 flex items-center gap-4">
+            <span className="h-[3px] w-[3px] rounded-full bg-[#927C6D]/45" />
+
+            <span className="h-px w-12 bg-[#927C6D]/25" />
+
+            <p className="text-[6px] font-light uppercase tracking-[0.4em] text-[#8A786C]/65">
+              House of Laser &amp; Spa
             </p>
           </div>
         </div>
