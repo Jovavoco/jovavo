@@ -253,9 +253,7 @@ export default function Verra() {
 
       <span className="h-px w-9 bg-white/50 transition-all duration-500 group-hover:w-14 group-hover:bg-white" />
 
-      <span className="text-[10px] font-light text-white/65 transition-colors duration-500 group-hover:text-white">
-        ↗
-      </span>
+      <SleekArrow />
     </button>
   </div>
 </div>
@@ -796,9 +794,7 @@ export default function Verra() {
                       EXPLORE
                     </span>
 
-                    <span className="text-[10px] text-[#81786F]">
-                      ↗
-                    </span>
+                    <SleekArrow />
                   </div>
                 </div>
               </div>
@@ -826,9 +822,7 @@ export default function Verra() {
 
         <span className="h-px w-8 bg-[#7C746C] transition-all duration-500 group-hover:w-12" />
 
-        <span className="text-[11px] text-[#625C56]">
-          ↗
-        </span>
+        <SleekArrow />
       </button>
     </div>
   </div>
@@ -968,9 +962,7 @@ export default function Verra() {
 
           <span className="h-px w-8 bg-[#746B63] transition-all duration-500 group-hover:w-12" />
 
-          <span className="text-[11px] text-[#625C56]">
-            ↗
-          </span>
+          <SleekArrow />
         </button>
 
         {/* SMALL SIGNATURE */}
@@ -1277,9 +1269,7 @@ export default function Verra() {
 
         <span className="h-px w-8 bg-[#7C746C] transition-all duration-500 group-hover:w-12" />
 
-        <span className="text-[11px] text-[#625C56]">
-          ↗
-        </span>
+        <SleekArrow />
       </button>
     </div>
   </div>
@@ -1472,7 +1462,7 @@ export default function Verra() {
                 <span className="h-px w-6 bg-current transition-all duration-500 group-hover:w-9" />
 
                 <span className="-ml-[3px] text-[11px]">
-                  ↗
+                  
                 </span>
               </span>
             </button>
@@ -1611,9 +1601,7 @@ export default function Verra() {
 
             <span className="h-px w-5 bg-white/35 transition-all duration-300 group-hover:w-8 group-hover:bg-white/70" />
 
-            <span className="text-[10px] text-white/45 transition-colors duration-300 group-hover:text-white">
-              ↗
-            </span>
+            <SleekArrow />
           </button>
         </div>
       </div>
@@ -1742,6 +1730,19 @@ export default function Verra() {
 /* =========================================================
    SMALL COMPONENTS
 ========================================================= */
+
+
+function SleekArrow() {
+  return (
+    <span
+      aria-hidden="true"
+      className="relative flex h-4 w-8 shrink-0 items-center text-current"
+    >
+      <span className="h-px w-7 bg-current transition-all duration-500 group-hover:w-8" />
+      <span className="absolute right-0 h-[7px] w-[7px] rotate-45 border-r border-t border-current" />
+    </span>
+  );
+}
 
 function Arrow({ dark = false }: { dark?: boolean }) {
   return (
