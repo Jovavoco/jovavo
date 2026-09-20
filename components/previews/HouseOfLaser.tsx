@@ -644,27 +644,6 @@ export default function HouseOfLaser() {
         {/* INNER CURVED LINE */}
         <div className="pointer-events-none absolute -left-[45%] top-[11%] hidden h-[78%] w-[82%] rounded-[50%] border border-white/30 lg:block" />
 
-        {/* IMAGE TEXT */}
-        <div className="absolute left-[14%] top-[18%] hidden text-white lg:block">
-          <p className="text-[6px] font-light uppercase tracking-[0.5em] text-white/85">
-            Confidence
-          </p>
-
-          <p className="mt-3 text-[6px] font-light uppercase tracking-[0.5em] text-white/85">
-            Care
-          </p>
-
-          <p className="mt-3 text-[6px] font-light uppercase tracking-[0.5em] text-white/85">
-            Beauty
-          </p>
-
-          <p className="mt-3 text-[6px] font-light uppercase tracking-[0.5em] text-white/85">
-            You
-          </p>
-
-          <div className="ml-[2px] mt-5 h-14 w-px bg-white/50" />
-        </div>
-
         {/* BOTTOM IMAGE DETAIL */}
         <div className="absolute bottom-[8%] right-[9%] hidden items-center gap-3 lg:flex">
           <span className="h-px w-8 bg-white/45" />
