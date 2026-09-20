@@ -547,279 +547,288 @@ export default function HouseOfLaser() {
   id="services"
   className="relative overflow-hidden bg-[#F4EFE9]"
 >
-  {/* DECORATIVE ARC */}
-  <div className="pointer-events-none absolute -left-[390px] -top-[590px] z-20 hidden h-[1050px] w-[1050px] rounded-full border border-[#776A60]/30 xl:block" />
-
-  <div className="mx-auto max-w-[1700px] lg:grid lg:grid-cols-[36%_64%]">
-
+  <div className="mx-auto max-w-[1700px]">
     {/* =====================================================
-        LEFT — MAIN IMAGE
+        TOP / EDITORIAL INTRO
     ===================================================== */}
 
-    <div className="relative bg-[#E8E0D8] lg:min-h-full">
-      <div className="relative h-[560px] w-full overflow-hidden sm:h-[680px] lg:sticky lg:top-0 lg:h-screen lg:min-h-[780px] lg:max-h-[1050px]">
+    <div className="grid lg:grid-cols-[42%_58%]">
+      {/* =====================================================
+          LEFT — FEATURE IMAGE
+      ===================================================== */}
 
-        <img
-          src="/previews/house-of-laser/services-main.png"
-          alt="House of Laser and Spa treatment space"
-          className="absolute inset-0 h-full w-full object-contain object-center"
-        />
+      <div className="relative bg-[#DDD3CA]">
+        <div className="relative h-[520px] overflow-hidden sm:h-[620px] md:h-[700px] lg:h-full lg:min-h-[760px]">
+          <img
+            src="/previews/house-of-laser/services-main.png"
+            alt="House of Laser and Spa treatment space"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
 
-        {/* subtle tone only */}
-        <div className="pointer-events-none absolute inset-0 bg-[#49382D]/[0.025]" />
+          {/* VERY LIGHT IMAGE TONE */}
+          <div className="absolute inset-0 bg-[#34271F]/[0.04]" />
 
-        {/* LEFT IMAGE DETAIL */}
-        <div className="absolute bottom-[7%] left-[8%] z-10 hidden lg:block">
-          <div className="space-y-[9px]">
-            <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/85">
-              Confidence
+          {/* LARGE EDITORIAL CURVE */}
+          <div className="pointer-events-none absolute -right-[72%] -top-[58%] hidden h-[105%] w-[125%] rounded-full bg-[#F4EFE9] lg:block" />
+
+          {/* THIN CURVE LINE */}
+          <div className="pointer-events-none absolute -right-[75%] -top-[61%] hidden h-[109%] w-[130%] rounded-full border border-[#75685E]/30 lg:block" />
+
+          {/* IMAGE WORDS */}
+          <div className="absolute bottom-10 left-8 z-20 sm:bottom-12 sm:left-10 lg:bottom-14 lg:left-12">
+            <div className="space-y-2">
+              <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/85">
+                Confidence
+              </p>
+
+              <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/85">
+                Care
+              </p>
+
+              <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/85">
+                Beauty
+              </p>
+
+              <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/85">
+                You
+              </p>
+            </div>
+
+            <div className="ml-[2px] mt-5 h-12 w-px bg-white/55" />
+          </div>
+        </div>
+      </div>
+
+      {/* =====================================================
+          RIGHT — INTRO
+      ===================================================== */}
+
+      <div className="relative flex items-center px-7 py-16 sm:px-10 sm:py-20 md:px-14 lg:px-12 lg:py-20 xl:px-16 2xl:px-20">
+        <div className="w-full">
+          <div className="flex items-center gap-5">
+            <p className="text-[8px] font-normal uppercase tracking-[0.46em] text-[#665950]">
+              Services
             </p>
 
-            <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/85">
-              Care
-            </p>
-
-            <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/85">
-              Beauty
-            </p>
-
-            <p className="text-[7px] font-light uppercase tracking-[0.44em] text-white/85">
-              You
-            </p>
+            <div className="h-px w-20 bg-[#665950]/35" />
           </div>
 
-          <div className="ml-1 mt-5 h-12 w-px bg-white/55" />
+          <h2
+            className={`${bodoni.className} hls-bodoni mt-9 font-normal tracking-[-0.055em]`}
+          >
+            <span className="block text-[58px] leading-[0.88] text-[#211C19] sm:text-[70px] md:text-[82px] lg:text-[72px] xl:text-[86px] 2xl:text-[96px]">
+              Treatments,
+            </span>
+
+            <span className="mt-2 block text-[61px] italic leading-[0.88] text-[#927C6D] sm:text-[73px] md:text-[85px] lg:text-[75px] xl:text-[89px] 2xl:text-[99px]">
+              your way.
+            </span>
+          </h2>
+
+          <div className="mt-10 grid gap-8 border-t border-[#5E5148]/20 pt-8 sm:grid-cols-[1fr_auto] sm:items-start">
+            <p className="max-w-[420px] text-[12px] font-light leading-[1.95] tracking-[0.045em] text-[#625951] sm:text-[13px]">
+              Laser, skincare, and beauty treatments thoughtfully brought
+              together in one warm, personal Brooklyn space.
+            </p>
+
+            <p className="hidden text-right text-[7px] font-light uppercase leading-[2] tracking-[0.4em] text-[#8A786C] sm:block">
+              Real Results
+              <br />
+              A More You
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
     {/* =====================================================
-        RIGHT
+        SERVICE MENU
     ===================================================== */}
 
-    <div className="relative min-w-0 px-6 py-16 sm:px-9 md:px-12 lg:px-10 lg:py-16 xl:px-14 xl:py-20 2xl:px-16">
+    <div className="border-t border-[#493E36]/20">
+      <div className="grid lg:grid-cols-3">
+        {/* =====================================================
+            01 — LASER
+        ===================================================== */}
 
-      {/* =====================================================
-          INTRO
-      ===================================================== */}
+        <a
+          href="#laser"
+          className="group relative border-b border-[#493E36]/20 px-6 py-10 transition-colors duration-500 hover:bg-[#EFE8E1] sm:px-9 sm:py-12 lg:border-b-0 lg:border-r lg:px-8 xl:px-10"
+        >
+          <div className="flex items-start justify-between">
+            <p className="text-[8px] font-light tracking-[0.3em] text-[#796A60]">
+              01
+            </p>
 
-      <div className="border-b border-[#493E36]/20 pb-14">
-        <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_260px] xl:items-end xl:gap-12">
-
-          {/* TITLE */}
-          <div className="min-w-0">
-            <div className="flex items-center gap-5">
-              <p className="shrink-0 text-[8px] font-normal uppercase tracking-[0.45em] text-[#51463F]">
-                Services
-              </p>
-
-              <div className="h-px w-20 bg-[#51463F]/40 sm:w-24" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#493E36]/45 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9]">
+              <ArrowRight
+                size={13}
+                strokeWidth={1.1}
+                className="transition-transform duration-500 group-hover:translate-x-[2px]"
+              />
             </div>
+          </div>
 
-            <h2
-              className={`${bodoni.className} hls-bodoni mt-9 font-normal tracking-[-0.05em]`}
+          {/* IMAGE */}
+          <div className="mx-auto mt-8 w-full max-w-[270px]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px]">
+              <img
+                src="/previews/house-of-laser/services-laser.png"
+                alt="Laser hair removal"
+                className="h-full w-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
+              />
+            </div>
+          </div>
+
+          {/* COPY */}
+          <div className="mt-8">
+            <h3
+              className={`${bodoni.className} hls-bodoni text-[40px] font-normal leading-[0.94] tracking-[-0.045em] text-[#241E1A] sm:text-[44px] lg:text-[38px] xl:text-[44px] 2xl:text-[48px]`}
             >
-              <span className="block text-[54px] leading-[0.9] text-[#211B18] sm:text-[64px] md:text-[72px] lg:text-[66px] xl:text-[76px] 2xl:text-[84px]">
-                Treatments,
-              </span>
-
-              <span className="mt-1 block text-[57px] italic leading-[0.9] text-[#907D70] sm:text-[67px] md:text-[75px] lg:text-[69px] xl:text-[79px] 2xl:text-[87px]">
-                your way.
-              </span>
-            </h2>
-          </div>
-
-          {/* INTRO COPY */}
-          <p className="max-w-[290px] text-[11px] font-light leading-[1.95] tracking-[0.1em] text-[#554E48] xl:pb-1 xl:text-[12px]">
-            Laser, skincare, and beauty treatments thoughtfully brought
-            together under one roof.
-          </p>
-        </div>
-      </div>
-
-      {/* =====================================================
-          SERVICE 01
-      ===================================================== */}
-
-      <a
-        href="#laser"
-        className="group grid grid-cols-[26px_105px_minmax(0,1fr)] gap-x-4 gap-y-5 border-b border-[#493E36]/20 py-9 transition-opacity duration-500 hover:opacity-75 sm:grid-cols-[28px_125px_minmax(0,1fr)_42px] sm:gap-x-5 lg:grid-cols-[28px_125px_minmax(0,1fr)_42px] xl:grid-cols-[30px_145px_minmax(0,1fr)_44px] xl:gap-x-7 2xl:grid-cols-[30px_160px_minmax(0,1fr)_46px]"
-      >
-        {/* NUMBER */}
-        <p className="pt-2 text-[8px] font-light tracking-[0.28em] text-[#796A60]">
-          01
-        </p>
-
-        {/* IMAGE */}
-        <div className="relative h-[160px] w-[105px] overflow-hidden rounded-t-[55px] sm:h-[185px] sm:w-[125px] sm:rounded-t-[64px] xl:h-[205px] xl:w-[145px] xl:rounded-t-[74px] 2xl:h-[220px] 2xl:w-[160px] 2xl:rounded-t-[82px]">
-          <img
-            src="/previews/house-of-laser/services-laser.png"
-            alt="Laser hair removal"
-            className="h-full w-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
-          />
-        </div>
-
-        {/* COPY */}
-        <div className="min-w-0 self-center">
-          <h3
-            className={`${bodoni.className} hls-bodoni font-normal tracking-[-0.04em] text-[#241E1A]`}
-          >
-            <span className="block text-[31px] leading-[0.93] sm:text-[36px] lg:text-[37px] xl:text-[42px] 2xl:text-[46px]">
               Laser Hair
-            </span>
-
-            <span className="block text-[31px] leading-[0.93] sm:text-[36px] lg:text-[37px] xl:text-[42px] 2xl:text-[46px]">
+              <br />
               Removal
-            </span>
-          </h3>
+            </h3>
 
-          <p className="mt-4 max-w-[340px] text-[10px] font-light leading-[1.8] tracking-[0.07em] text-[#655C55] sm:text-[11px] xl:text-[12px]">
-            Smooth, long-lasting results with advanced laser technology
-            in a comfortable, private setting.
-          </p>
+            <p className="mt-5 max-w-[330px] text-[11px] font-light leading-[1.85] tracking-[0.05em] text-[#655C55] xl:text-[12px]">
+              Smooth, long-lasting results with advanced laser technology
+              in a comfortable, private setting.
+            </p>
 
-          <div className="mt-5 flex items-center gap-4">
-            <span className="text-[7px] uppercase tracking-[0.36em] text-[#907D70]">
-              Explore
-            </span>
+            <div className="mt-7 flex items-center gap-5">
+              <span className="text-[7px] uppercase tracking-[0.38em] text-[#907D70]">
+                Explore
+              </span>
 
-            <span className="h-px w-12 bg-[#907D70]/50 xl:w-14" />
+              <span className="h-px w-14 bg-[#907D70]/45 transition-all duration-500 group-hover:w-20" />
+            </div>
           </div>
-        </div>
+        </a>
 
-        {/* ARROW */}
-        <div className="hidden h-10 w-10 self-center items-center justify-center rounded-full border border-[#493E36]/50 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9] sm:flex xl:h-11 xl:w-11">
-          <ArrowRight
-            size={14}
-            strokeWidth={1.1}
-            className="transition-transform duration-500 group-hover:translate-x-[2px]"
-          />
-        </div>
-      </a>
+        {/* =====================================================
+            02 — FACIALS
+        ===================================================== */}
 
-      {/* =====================================================
-          SERVICE 02
-      ===================================================== */}
+        <a
+          href="#facials"
+          className="group relative border-b border-[#493E36]/20 px-6 py-10 transition-colors duration-500 hover:bg-[#EFE8E1] sm:px-9 sm:py-12 lg:border-b-0 lg:border-r lg:px-8 xl:px-10"
+        >
+          <div className="flex items-start justify-between">
+            <p className="text-[8px] font-light tracking-[0.3em] text-[#796A60]">
+              02
+            </p>
 
-      <a
-        href="#facials"
-        className="group grid grid-cols-[26px_105px_minmax(0,1fr)] gap-x-4 gap-y-5 border-b border-[#493E36]/20 py-9 transition-opacity duration-500 hover:opacity-75 sm:grid-cols-[28px_125px_minmax(0,1fr)_42px] sm:gap-x-5 lg:grid-cols-[28px_125px_minmax(0,1fr)_42px] xl:grid-cols-[30px_145px_minmax(0,1fr)_44px] xl:gap-x-7 2xl:grid-cols-[30px_160px_minmax(0,1fr)_46px]"
-      >
-        <p className="pt-2 text-[8px] font-light tracking-[0.28em] text-[#796A60]">
-          02
-        </p>
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#493E36]/45 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9]">
+              <ArrowRight
+                size={13}
+                strokeWidth={1.1}
+                className="transition-transform duration-500 group-hover:translate-x-[2px]"
+              />
+            </div>
+          </div>
 
-        <div className="relative h-[160px] w-[105px] overflow-hidden rounded-t-[55px] sm:h-[185px] sm:w-[125px] sm:rounded-t-[64px] xl:h-[205px] xl:w-[145px] xl:rounded-t-[74px] 2xl:h-[220px] 2xl:w-[160px] 2xl:rounded-t-[82px]">
-          <img
-            src="/previews/house-of-laser/services-facial.png"
-            alt="Facials and skincare treatment"
-            className="h-full w-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
-          />
-        </div>
+          <div className="mx-auto mt-8 w-full max-w-[270px]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px]">
+              <img
+                src="/previews/house-of-laser/services-facial.png"
+                alt="Facials and skincare"
+                className="h-full w-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
+              />
+            </div>
+          </div>
 
-        <div className="min-w-0 self-center">
-          <h3
-            className={`${bodoni.className} hls-bodoni font-normal tracking-[-0.04em] text-[#241E1A]`}
-          >
-            <span className="block text-[31px] leading-[0.93] sm:text-[36px] lg:text-[37px] xl:text-[42px] 2xl:text-[46px]">
+          <div className="mt-8">
+            <h3
+              className={`${bodoni.className} hls-bodoni text-[40px] font-normal leading-[0.94] tracking-[-0.045em] text-[#241E1A] sm:text-[44px] lg:text-[38px] xl:text-[44px] 2xl:text-[48px]`}
+            >
               Facials &amp;
-            </span>
-
-            <span className="block text-[31px] leading-[0.93] sm:text-[36px] lg:text-[37px] xl:text-[42px] 2xl:text-[46px]">
+              <br />
               Skincare
-            </span>
-          </h3>
+            </h3>
 
-          <p className="mt-4 max-w-[340px] text-[10px] font-light leading-[1.8] tracking-[0.07em] text-[#655C55] sm:text-[11px] xl:text-[12px]">
-            Customized treatments to cleanse, restore, and reveal your
-            healthiest skin.
-          </p>
+            <p className="mt-5 max-w-[330px] text-[11px] font-light leading-[1.85] tracking-[0.05em] text-[#655C55] xl:text-[12px]">
+              Customized treatments to cleanse, restore, and reveal your
+              healthiest skin.
+            </p>
 
-          <div className="mt-5 flex items-center gap-4">
-            <span className="text-[7px] uppercase tracking-[0.36em] text-[#907D70]">
-              Explore
-            </span>
+            <div className="mt-7 flex items-center gap-5">
+              <span className="text-[7px] uppercase tracking-[0.38em] text-[#907D70]">
+                Explore
+              </span>
 
-            <span className="h-px w-12 bg-[#907D70]/50 xl:w-14" />
+              <span className="h-px w-14 bg-[#907D70]/45 transition-all duration-500 group-hover:w-20" />
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div className="hidden h-10 w-10 self-center items-center justify-center rounded-full border border-[#493E36]/50 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9] sm:flex xl:h-11 xl:w-11">
-          <ArrowRight
-            size={14}
-            strokeWidth={1.1}
-            className="transition-transform duration-500 group-hover:translate-x-[2px]"
-          />
-        </div>
-      </a>
+        {/* =====================================================
+            03 — BEAUTY
+        ===================================================== */}
 
-      {/* =====================================================
-          SERVICE 03
-      ===================================================== */}
+        <a
+          href="#experience"
+          className="group relative px-6 py-10 transition-colors duration-500 hover:bg-[#EFE8E1] sm:px-9 sm:py-12 lg:px-8 xl:px-10"
+        >
+          <div className="flex items-start justify-between">
+            <p className="text-[8px] font-light tracking-[0.3em] text-[#796A60]">
+              03
+            </p>
 
-      <a
-        href="#experience"
-        className="group grid grid-cols-[26px_105px_minmax(0,1fr)] gap-x-4 gap-y-5 border-b border-[#493E36]/20 py-9 transition-opacity duration-500 hover:opacity-75 sm:grid-cols-[28px_125px_minmax(0,1fr)_42px] sm:gap-x-5 lg:grid-cols-[28px_125px_minmax(0,1fr)_42px] xl:grid-cols-[30px_145px_minmax(0,1fr)_44px] xl:gap-x-7 2xl:grid-cols-[30px_160px_minmax(0,1fr)_46px]"
-      >
-        <p className="pt-2 text-[8px] font-light tracking-[0.28em] text-[#796A60]">
-          03
-        </p>
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#493E36]/45 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9]">
+              <ArrowRight
+                size={13}
+                strokeWidth={1.1}
+                className="transition-transform duration-500 group-hover:translate-x-[2px]"
+              />
+            </div>
+          </div>
 
-        <div className="relative h-[160px] w-[105px] overflow-hidden rounded-t-[55px] sm:h-[185px] sm:w-[125px] sm:rounded-t-[64px] xl:h-[205px] xl:w-[145px] xl:rounded-t-[74px] 2xl:h-[220px] 2xl:w-[160px] 2xl:rounded-t-[82px]">
-          <img
-            src="/previews/house-of-laser/services-beauty.png"
-            alt="Beauty and self-care"
-            className="h-full w-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
-          />
-        </div>
+          <div className="mx-auto mt-8 w-full max-w-[270px]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px]">
+              <img
+                src="/previews/house-of-laser/services-beauty.png"
+                alt="Beauty and self-care"
+                className="h-full w-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025]"
+              />
+            </div>
+          </div>
 
-        <div className="min-w-0 self-center">
-          <h3
-            className={`${bodoni.className} hls-bodoni font-normal tracking-[-0.04em] text-[#241E1A]`}
-          >
-            <span className="block text-[31px] leading-[0.93] sm:text-[36px] lg:text-[37px] xl:text-[42px] 2xl:text-[46px]">
+          <div className="mt-8">
+            <h3
+              className={`${bodoni.className} hls-bodoni text-[40px] font-normal leading-[0.94] tracking-[-0.045em] text-[#241E1A] sm:text-[44px] lg:text-[38px] xl:text-[44px] 2xl:text-[48px]`}
+            >
               Beauty &amp;
-            </span>
-
-            <span className="block text-[31px] leading-[0.93] sm:text-[36px] lg:text-[37px] xl:text-[42px] 2xl:text-[46px]">
+              <br />
               Self-Care
-            </span>
-          </h3>
+            </h3>
 
-          <p className="mt-4 max-w-[340px] text-[10px] font-light leading-[1.8] tracking-[0.07em] text-[#655C55] sm:text-[11px] xl:text-[12px]">
-            Thoughtful treatments and enhancements designed to help you
-            look and feel your best.
-          </p>
+            <p className="mt-5 max-w-[330px] text-[11px] font-light leading-[1.85] tracking-[0.05em] text-[#655C55] xl:text-[12px]">
+              Thoughtful treatments and enhancements designed to help you
+              look and feel your best.
+            </p>
 
-          <div className="mt-5 flex items-center gap-4">
-            <span className="text-[7px] uppercase tracking-[0.36em] text-[#907D70]">
-              Explore
-            </span>
+            <div className="mt-7 flex items-center gap-5">
+              <span className="text-[7px] uppercase tracking-[0.38em] text-[#907D70]">
+                Explore
+              </span>
 
-            <span className="h-px w-12 bg-[#907D70]/50 xl:w-14" />
+              <span className="h-px w-14 bg-[#907D70]/45 transition-all duration-500 group-hover:w-20" />
+            </div>
           </div>
-        </div>
-
-        <div className="hidden h-10 w-10 self-center items-center justify-center rounded-full border border-[#493E36]/50 text-[#342B26] transition-all duration-500 group-hover:bg-[#2C2521] group-hover:text-[#F4EFE9] sm:flex xl:h-11 xl:w-11">
-          <ArrowRight
-            size={14}
-            strokeWidth={1.1}
-            className="transition-transform duration-500 group-hover:translate-x-[2px]"
-          />
-        </div>
-      </a>
-
-      {/* =====================================================
-          BOTTOM DETAIL
-      ===================================================== */}
-
-      <div className="mt-8 flex items-center justify-end gap-6">
-        <div className="hidden h-px w-24 bg-[#75685E]/35 sm:block xl:w-28" />
-
-        <p className="text-right text-[7px] uppercase tracking-[0.4em] text-[#796A60]">
-          Real Results. A More You.
-        </p>
+        </a>
       </div>
+    </div>
+
+    {/* =====================================================
+        BOTTOM EDITORIAL DETAIL
+    ===================================================== */}
+
+    <div className="flex items-center justify-end gap-6 border-t border-[#493E36]/20 px-6 py-8 sm:px-10">
+      <div className="h-px w-20 bg-[#75685E]/30 sm:w-28" />
+
+      <p className="text-right text-[7px] uppercase tracking-[0.42em] text-[#796A60]">
+        Real Results. A More You.
+      </p>
     </div>
   </div>
 </section>
