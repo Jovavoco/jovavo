@@ -841,91 +841,105 @@ export default function HouseOfLaser() {
   id="laser"
   className="relative overflow-hidden bg-[#F3EEE8]"
 >
-  <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[41%_59%]">
+  <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[43%_57%]">
 
     {/* =====================================================
         LEFT — EDITORIAL CONTENT
     ===================================================== */}
 
-    <div className="relative flex min-h-[760px] flex-col bg-[#F3EEE8] px-8 py-16 sm:px-12 sm:py-20 md:px-16 lg:min-h-[900px] lg:px-[72px] lg:py-[72px] xl:min-h-[960px] xl:px-[105px] xl:py-[82px]">
+    <div className="relative flex min-h-[620px] flex-col bg-[#F3EEE8] px-7 py-12 sm:min-h-[650px] sm:px-10 sm:py-14 md:px-14 lg:min-h-[700px] lg:px-14 lg:py-14 xl:min-h-[740px] xl:px-20 xl:py-16">
 
       {/* TOP DECORATIVE LINE */}
-      <div className="absolute left-[52px] top-0 hidden h-[95px] w-px bg-[#9A8576]/35 lg:block xl:left-[82px]" />
+      <div className="absolute left-10 top-0 hidden h-16 w-px bg-[#9A8576]/35 lg:block xl:left-14" />
 
       {/* =====================================================
           TOP LABEL
       ===================================================== */}
 
-      <div className="pt-4 lg:pt-[62px]">
-        <p className="text-[8px] font-light uppercase tracking-[0.5em] text-[#927C6D] sm:text-[9px]">
-          Laser Hair Removal
-        </p>
+      <div className="lg:pt-7">
+        <div className="flex items-center gap-5">
+          <p className="text-[8px] font-light uppercase tracking-[0.48em] text-[#927C6D]">
+            Laser Hair Removal
+          </p>
+
+          <div className="h-px w-14 bg-[#927C6D]/30" />
+        </div>
       </div>
 
       {/* =====================================================
           MAIN CONTENT
       ===================================================== */}
 
-      <div className="my-auto py-16 sm:py-20 lg:py-24">
+      <div className="flex flex-1 items-center py-12 sm:py-14 lg:py-10">
+        <div className="w-full">
 
-        {/* TITLE */}
-        <h2
-          className={`${bodoni.className} hls-bodoni font-normal tracking-[-0.045em] text-[#211C18]`}
-        >
-          <span className="block text-[58px] leading-[0.9] sm:text-[70px] md:text-[78px] lg:text-[74px] xl:text-[84px]">
-            Smooth,
-          </span>
+          {/* TITLE */}
+          <h2
+            className={`${bodoni.className} hls-bodoni font-normal tracking-[-0.05em] text-[#211C18]`}
+          >
+            <span className="block text-[52px] leading-[0.9] sm:text-[60px] md:text-[66px] lg:text-[62px] xl:text-[70px]">
+              Smooth,
+            </span>
 
-          <span className="mt-2 block text-[60px] italic leading-[0.9] text-[#9A8373] sm:text-[72px] md:text-[80px] lg:text-[76px] xl:text-[86px]">
-            simplified.
-          </span>
-        </h2>
+            <span className="mt-1 block text-[54px] italic leading-[0.9] text-[#9A8373] sm:text-[62px] md:text-[68px] lg:text-[64px] xl:text-[72px]">
+              simplified.
+            </span>
+          </h2>
 
-        {/* DESCRIPTION */}
-        <p className="mt-12 max-w-[430px] text-[13px] font-light leading-[2] tracking-[0.015em] text-[#6D6660] sm:text-[14px]">
-          Professional laser hair removal in a comfortable setting with
-          care tailored around you and your routine.
-        </p>
+          {/* DESCRIPTION */}
+          <p className="mt-8 max-w-[390px] text-[12px] font-light leading-[1.9] tracking-[0.02em] text-[#6D6660] sm:text-[13px]">
+            Professional laser hair removal in a comfortable setting,
+            with care tailored around you and your routine.
+          </p>
 
-        {/* CTA */}
-        <a
-          href="#book"
-          className="group mt-12 inline-flex min-w-[285px] items-center justify-between border border-[#39322D]/70 px-9 py-[20px] text-[8px] font-normal uppercase tracking-[0.38em] text-[#302A26] transition-all duration-500 hover:bg-[#2A2521] hover:text-[#F4EFE9]"
-        >
-          <span>Book Laser</span>
+          {/* CTA */}
+          <a
+            href="#book"
+            className="group mt-9 inline-flex min-w-[235px] items-center justify-between border border-[#39322D]/60 px-7 py-[16px] text-[8px] font-normal uppercase tracking-[0.34em] text-[#302A26] transition-all duration-500 hover:bg-[#2A2521] hover:text-[#F4EFE9]"
+          >
+            <span>Book Laser</span>
 
-          <ArrowRight
-            size={14}
-            strokeWidth={1}
-            className="ml-12 transition-transform duration-500 group-hover:translate-x-1"
-          />
-        </a>
+            <ArrowRight
+              size={13}
+              strokeWidth={1}
+              className="ml-10 transition-transform duration-500 group-hover:translate-x-1"
+            />
+          </a>
+        </div>
       </div>
 
       {/* =====================================================
           BOTTOM EDITORIAL DETAIL
       ===================================================== */}
 
-      <div className="mt-auto pb-3">
-        <div className="space-y-[9px]">
-          <p className="text-[7px] font-light uppercase tracking-[0.46em] text-[#82756B]">
-            Confidence
-          </p>
+      <div className="flex items-end justify-between">
+        <div>
+          <div className="space-y-[6px]">
+            <p className="text-[6px] font-light uppercase tracking-[0.43em] text-[#82756B]">
+              Confidence
+            </p>
 
-          <p className="text-[7px] font-light uppercase tracking-[0.46em] text-[#82756B]">
-            Care
-          </p>
+            <p className="text-[6px] font-light uppercase tracking-[0.43em] text-[#82756B]">
+              Care
+            </p>
 
-          <p className="text-[7px] font-light uppercase tracking-[0.46em] text-[#82756B]">
-            Beauty
-          </p>
+            <p className="text-[6px] font-light uppercase tracking-[0.43em] text-[#82756B]">
+              Beauty
+            </p>
 
-          <p className="text-[7px] font-light uppercase tracking-[0.46em] text-[#82756B]">
-            You
-          </p>
+            <p className="text-[6px] font-light uppercase tracking-[0.43em] text-[#82756B]">
+              You
+            </p>
+          </div>
+
+          <div className="mt-4 h-8 w-px bg-[#9A8576]/40" />
         </div>
 
-        <div className="mt-7 h-[58px] w-px bg-[#9A8576]/40" />
+        <p className="hidden text-right text-[6px] uppercase leading-[1.9] tracking-[0.38em] text-[#9A8373]/70 sm:block">
+          Thoughtful Care
+          <br />
+          Lasting Results
+        </p>
       </div>
     </div>
 
@@ -933,40 +947,37 @@ export default function HouseOfLaser() {
         RIGHT — LASER IMAGE
     ===================================================== */}
 
-    <div className="group relative min-h-[600px] overflow-hidden sm:min-h-[700px] lg:min-h-[900px] xl:min-h-[960px]">
+    <div className="group relative h-[520px] overflow-hidden sm:h-[600px] lg:h-auto lg:min-h-[700px] xl:min-h-[740px]">
       <img
         src="/previews/house-of-laser/laser-client.jpg"
         alt="Laser hair removal treatment"
-        className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.012]"
+        className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1600ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.012]"
       />
 
-      {/* VERY SUBTLE WARM OVERLAY */}
-      <div className="absolute inset-0 bg-[#4A372A]/[0.035]" />
+      {/* SUBTLE WARM TONE */}
+      <div className="pointer-events-none absolute inset-0 bg-[#4A372A]/[0.025]" />
 
-      {/* =====================================================
-          IMAGE DETAIL
-      ===================================================== */}
-
-      <div className="absolute right-[7%] top-[7%] hidden lg:block">
-        <div className="space-y-[10px]">
-          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-[#695B52]/55">
+      {/* IMAGE DETAIL */}
+      <div className="absolute right-[6%] top-[7%] hidden lg:block">
+        <div className="space-y-[7px]">
+          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#695B52]/55">
             Smoother
           </p>
 
-          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-[#695B52]/55">
+          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#695B52]/55">
             Brighter
           </p>
 
-          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-[#695B52]/55">
+          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#695B52]/55">
             Confident
           </p>
 
-          <p className="text-[7px] font-light uppercase tracking-[0.44em] text-[#695B52]/55">
+          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#695B52]/55">
             You
           </p>
         </div>
 
-        <div className="mt-6 h-px w-10 bg-[#695B52]/30" />
+        <div className="mt-4 h-px w-8 bg-[#695B52]/30" />
       </div>
     </div>
   </div>
