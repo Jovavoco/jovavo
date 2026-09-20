@@ -295,9 +295,7 @@ export default function VerraProjectsPage() {
 
                   <span className="h-px w-7 bg-[#7D746B] transition-all duration-500 group-hover/link:w-11" />
 
-                  <span className="text-[10px] text-[#625C56]">
-                    ↗
-                  </span>
+                  <SleekArrow />
                 </button>
               </div>
             </div>
@@ -375,9 +373,7 @@ export default function VerraProjectsPage() {
 
               <span className="h-px w-8 bg-[#7D746B] transition-all duration-500 group-hover:w-12" />
 
-              <span className="text-[10px] text-[#625C56]">
-                ↗
-              </span>
+              <SleekArrow />
             </button>
           </div>
 
@@ -460,9 +456,7 @@ export default function VerraProjectsPage() {
 
                 <span className="h-px w-8 bg-[#7D746B] transition-all duration-500 group-hover:w-12" />
 
-                <span className="text-[10px] text-[#625C56]">
-                  ↗
-                </span>
+                <SleekArrow />
               </button>
             </div>
           </div>
@@ -504,9 +498,7 @@ export default function VerraProjectsPage() {
 
             <span className="h-px w-9 bg-white/40 transition-all duration-500 group-hover:w-14 group-hover:bg-white/70" />
 
-            <span className="text-[11px] text-white/65 transition-colors group-hover:text-white">
-              ↗
-            </span>
+            <SleekArrow />
           </button>
         </div>
       </section>
@@ -655,9 +647,7 @@ export default function VerraProjectsPage() {
 
                   <span className="h-px w-5 bg-white/35 transition-all duration-300 group-hover:w-8 group-hover:bg-white/70" />
 
-                  <span className="text-[10px] text-white/45 transition-colors duration-300 group-hover:text-white">
-                    ↗
-                  </span>
+                  <SleekArrow />
                 </button>
               </div>
             </div>
@@ -692,3 +682,21 @@ export default function VerraProjectsPage() {
     </main>
   );
 }
+
+
+/* =====================================================
+    SLEEK CSS ARROW
+===================================================== */
+
+function SleekArrow() {
+  return (
+    <span
+      aria-hidden="true"
+      className="relative flex h-4 w-8 shrink-0 items-center text-current"
+    >
+      <span className="h-px w-7 bg-current transition-all duration-500 group-hover:w-8" />
+      <span className="absolute right-0 h-[7px] w-[7px] rotate-45 border-r border-t border-current" />
+    </span>
+  );
+}
+
