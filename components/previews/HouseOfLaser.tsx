@@ -1230,29 +1230,58 @@ export default function HouseOfLaser() {
   className="relative overflow-hidden bg-[#F3EEE8]"
 >
   {/* =====================================================
-      BACKGROUND
-  ===================================================== */}
-
-  <img
-    src="/previews/house-of-laser/experience-background.png"
-    alt=""
-    className="absolute inset-x-0 top-0 h-[720px] w-full object-cover object-center"
-  />
-
-  <div className="absolute inset-x-0 top-0 h-[720px] bg-[#F3EEE8]/20" />
-
-  {/* =====================================================
       EXPERIENCE INTRO
   ===================================================== */}
 
-  <div className="relative z-10">
-    <div className="relative flex min-h-[700px] items-center justify-center px-6 py-24 sm:px-8 md:px-12">
-      {/* LEFT DECORATIVE LINE */}
-      <div className="absolute left-[6%] top-[14%] hidden h-[100px] w-px bg-[#8F7C6E]/30 lg:block" />
+  <div className="relative mx-auto max-w-[1600px] px-5 py-12 sm:px-8 sm:py-14 lg:px-12 lg:py-16 xl:px-16">
+    <div className="relative min-h-[610px] overflow-hidden rounded-[80px_80px_28px_28px] sm:min-h-[650px] sm:rounded-[120px_120px_36px_36px] lg:min-h-[680px] lg:rounded-[220px_220px_48px_48px]">
 
-      {/* RIGHT DETAIL */}
-      <div className="absolute right-[7%] top-[14%] hidden lg:block">
-        <p className="text-[7px] font-light uppercase leading-[2.15] tracking-[0.44em] text-[#8B796C]/60">
+      {/* =====================================================
+          BACKGROUND IMAGE
+      ===================================================== */}
+
+      <img
+        src="/previews/house-of-laser/experience-background.png"
+        alt="House of Laser and Spa experience"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+
+      {/* SOFT CREAM WASH */}
+      <div className="absolute inset-0 bg-[#F3EEE8]/55" />
+
+      {/* SOFT CENTER GLOW */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(243,238,232,0.72)_0%,rgba(243,238,232,0.48)_38%,rgba(243,238,232,0.18)_72%,rgba(243,238,232,0.08)_100%)]" />
+
+      {/* =====================================================
+          ABSTRACT CURVES
+      ===================================================== */}
+
+      <div className="pointer-events-none absolute -left-[16%] -top-[45%] hidden h-[760px] w-[760px] rounded-full border border-[#8F7C6E]/25 lg:block" />
+
+      <div className="pointer-events-none absolute -right-[20%] -bottom-[55%] hidden h-[720px] w-[720px] rounded-full border border-[#8F7C6E]/20 lg:block" />
+
+      <div className="pointer-events-none absolute -right-[8%] -top-[18%] hidden h-[350px] w-[350px] rounded-full bg-[#D8C8BC]/20 lg:block" />
+
+      {/* =====================================================
+          LEFT DETAIL
+      ===================================================== */}
+
+      <div className="absolute left-[6%] top-[12%] z-10 hidden lg:block">
+        <div className="h-14 w-px bg-[#8F7C6E]/35" />
+
+        <p className="mt-5 text-[6px] font-light uppercase leading-[2.1] tracking-[0.44em] text-[#79695F]/70">
+          Brooklyn
+          <br />
+          New York
+        </p>
+      </div>
+
+      {/* =====================================================
+          RIGHT DETAIL
+      ===================================================== */}
+
+      <div className="absolute right-[6%] top-[12%] z-10 hidden lg:block">
+        <p className="text-right text-[6px] font-light uppercase leading-[2.15] tracking-[0.44em] text-[#79695F]/70">
           Beauty
           <br />
           Care
@@ -1260,39 +1289,246 @@ export default function HouseOfLaser() {
           You
         </p>
 
-        <div className="mt-5 h-px w-9 bg-[#8B796C]/25" />
+        <div className="ml-auto mt-5 h-px w-9 bg-[#8B796C]/30" />
       </div>
 
-      {/* CENTER CONTENT */}
-      <div className="mx-auto flex w-full max-w-[950px] flex-col items-center text-center">
-        <Sparkles
-          size={14}
+      {/* =====================================================
+          CENTER CONTENT
+      ===================================================== */}
+
+      <div className="relative z-10 flex min-h-[610px] items-center justify-center px-7 py-20 text-center sm:min-h-[650px] sm:px-10 lg:min-h-[680px] lg:px-16">
+        <div className="mx-auto flex w-full max-w-[800px] flex-col items-center">
+
+          {/* ICON */}
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#9A8576]/30 bg-[#F3EEE8]/25 backdrop-blur-[2px]">
+            <Sparkles
+              size={13}
+              strokeWidth={1}
+              className="text-[#927E70]"
+            />
+          </div>
+
+          {/* EYEBROW */}
+          <div className="mt-7 flex items-center gap-4">
+            <div className="h-px w-8 bg-[#927E70]/35" />
+
+            <p className="text-[7px] font-light uppercase tracking-[0.5em] text-[#806E62] sm:text-[8px]">
+              House of Laser &amp; Spa
+            </p>
+
+            <div className="h-px w-8 bg-[#927E70]/35" />
+          </div>
+
+          {/* TITLE */}
+          <h2
+            className={`${bodoni.className} hls-bodoni mt-8 font-normal tracking-[-0.05em]`}
+          >
+            <span className="block text-[50px] leading-[0.9] text-[#29231F] sm:text-[60px] md:text-[68px] lg:text-[74px] xl:text-[80px]">
+              A little time
+            </span>
+
+            <span className="mt-1 block text-[52px] italic leading-[0.9] text-[#967E6D] sm:text-[62px] md:text-[70px] lg:text-[76px] xl:text-[82px]">
+              just for you.
+            </span>
+          </h2>
+
+          {/* SMALL DIVIDER */}
+          <div className="mt-8 h-px w-10 bg-[#8E7A6C]/40" />
+
+          {/* DESCRIPTION */}
+          <p className="mt-7 max-w-[540px] text-[12px] font-light leading-[1.9] tracking-[0.015em] text-[#625A55] sm:text-[13px]">
+            Laser, skincare, beauty, and self-care in a warm Brooklyn
+            space designed to feel personal rather than clinical.
+          </p>
+
+          {/* SMALL CTA */}
+          <a
+            href="#book"
+            className="group mt-9 inline-flex items-center gap-8 border-b border-[#5E5149]/45 pb-2 text-[7px] font-light uppercase tracking-[0.4em] text-[#554A43]"
+          >
+            <span>Plan Your Visit</span>
+
+            <ArrowRight
+              size={12}
+              strokeWidth={1}
+              className="transition-transform duration-500 group-hover:translate-x-1"
+            />
+          </a>
+        </div>
+      </div>
+
+      {/* =====================================================
+          BOTTOM DETAILS
+      ===================================================== */}
+
+      <div className="absolute bottom-[7%] left-[6%] z-10 hidden items-end gap-5 lg:flex">
+        <div className="h-10 w-px bg-[#8F7C6E]/35" />
+
+        <div className="space-y-[6px]">
+          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#79695F]/65">
+            Relax
+          </p>
+
+          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#79695F]/65">
+            Restore
+          </p>
+
+          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#79695F]/65">
+            Renew
+          </p>
+        </div>
+      </div>
+
+      <div className="absolute bottom-[7%] right-[6%] z-10 hidden lg:block">
+        <p className="text-right text-[6px] font-light uppercase leading-[2] tracking-[0.4em] text-[#79695F]/65">
+          A Moment
+          <br />
+          For Yourself
+        </p>
+
+        <div className="ml-auto mt-4 h-px w-9 bg-[#8F7C6E]/30" />
+      </div>
+    </div>
+  </div>
+
+  {/* =====================================================
+      CONTACT
+  ===================================================== */}
+
+  <div
+    id="contact"
+    className="relative border-t border-[#7B6B60]/15 bg-[#F3EEE8]"
+  >
+    <div className="mx-auto grid max-w-[1450px] gap-10 px-7 py-14 sm:px-10 md:px-14 lg:grid-cols-[1.15fr_0.9fr_0.9fr] lg:gap-14 lg:px-16 lg:py-16">
+
+      {/* INTRO */}
+      <div>
+        <p className="text-[7px] font-light uppercase tracking-[0.48em] text-[#927E70]">
+          Visit Us
+        </p>
+
+        <h3
+          className={`${bodoni.className} hls-bodoni mt-5 max-w-[350px] text-[42px] font-normal leading-[0.95] tracking-[-0.04em] text-[#29231F] sm:text-[48px]`}
+        >
+          Come see us
+          <span className="block italic text-[#967E6D]">
+            in Brooklyn.
+          </span>
+        </h3>
+      </div>
+
+      {/* ADDRESS */}
+      <div className="border-t border-[#75675E]/20 pt-6 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+        <MapPin
+          size={15}
           strokeWidth={1}
-          className="text-[#A38D7D]"
+          className="text-[#927E70]"
         />
 
-        <p className="mt-7 text-[7px] font-light uppercase tracking-[0.5em] text-[#927E70] sm:text-[8px]">
-          House of Laser &amp; Spa
+        <p className="mt-5 text-[7px] font-light uppercase tracking-[0.42em] text-[#927E70]">
+          Location
         </p>
 
-        <h2
-          className={`${bodoni.className} hls-bodoni mt-9 font-normal tracking-[-0.045em]`}
+        <p className="mt-4 max-w-[240px] text-[12px] font-light leading-[1.9] text-[#5F5751]">
+          1690 E 14th St, Unit 2
+          <br />
+          Brooklyn, NY 11229
+        </p>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=1690+E+14th+St+Unit+2+Brooklyn+NY+11229"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-5 inline-flex items-center gap-4 text-[7px] uppercase tracking-[0.36em] text-[#806F64]"
         >
-          <span className="block text-[52px] leading-[0.9] text-[#29231F] sm:text-[66px] md:text-[76px] lg:text-[84px]">
-            A little time
-          </span>
+          Directions
+          <ArrowRight size={11} strokeWidth={1} />
+        </a>
+      </div>
 
-          <span className="mt-2 block text-[54px] italic leading-[0.9] text-[#967E6D] sm:text-[68px] md:text-[78px] lg:text-[86px]">
-            just for you.
-          </span>
-        </h2>
+      {/* CONTACT */}
+      <div className="border-t border-[#75675E]/20 pt-6 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+        <Phone
+          size={15}
+          strokeWidth={1}
+          className="text-[#927E70]"
+        />
 
-        <div className="mt-9 h-px w-10 bg-[#8E7A6C]/40" />
-
-        <p className="mt-8 max-w-[590px] text-[13px] font-light leading-[2] text-[#68615C] sm:text-[14px]">
-          Laser, skincare, beauty, and self-care in a warm Brooklyn
-          space designed to feel personal rather than clinical.
+        <p className="mt-5 text-[7px] font-light uppercase tracking-[0.42em] text-[#927E70]">
+          Get in Touch
         </p>
+
+        <a
+          href="tel:+19298339197"
+          className="mt-4 block text-[12px] font-light tracking-[0.05em] text-[#5F5751] transition-opacity duration-300 hover:opacity-60"
+        >
+          (929) 833-9197
+        </a>
+
+        <a
+          href="https://www.instagram.com/houseoflaserspa/"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-3 block text-[11px] font-light tracking-[0.04em] text-[#5F5751] transition-opacity duration-300 hover:opacity-60"
+        >
+          @houseoflaserspa
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {/* =====================================================
+      BOOKING CTA
+  ===================================================== */}
+
+  <div
+    id="book"
+    className="relative overflow-hidden bg-[#1D1C19]"
+  >
+    {/* ABSTRACT CIRCLES */}
+    <div className="pointer-events-none absolute -left-[180px] -top-[250px] h-[520px] w-[520px] rounded-full border border-[#C9AD98]/10" />
+
+    <div className="pointer-events-none absolute -bottom-[300px] -right-[180px] h-[560px] w-[560px] rounded-full border border-[#C9AD98]/10" />
+
+    <div className="relative mx-auto flex max-w-[1450px] flex-col gap-10 px-7 py-16 sm:px-10 md:px-14 lg:flex-row lg:items-center lg:justify-between lg:px-16 lg:py-20">
+      <div>
+        <p className="text-[7px] font-light uppercase tracking-[0.48em] text-[#C3AA96]">
+          Ready When You Are
+        </p>
+
+        <h3
+          className={`${bodoni.className} hls-bodoni mt-5 font-normal tracking-[-0.045em]`}
+        >
+          <span className="block text-[42px] leading-[0.94] text-[#F5F1EC] sm:text-[50px] lg:text-[54px]">
+            Make a little time
+          </span>
+
+          <span className="mt-1 block text-[44px] italic leading-[0.94] text-[#C9AD98] sm:text-[52px] lg:text-[56px]">
+            for yourself.
+          </span>
+        </h3>
+      </div>
+
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <a
+          href="tel:+19298339197"
+          className="group inline-flex min-w-[220px] items-center justify-between border border-[#EEE4DB]/60 px-7 py-4 text-[7px] font-light uppercase tracking-[0.34em] text-[#F4EEE8] transition-all duration-500 hover:bg-[#F4EEE8] hover:text-[#201D1A]"
+        >
+          <span>Book Appointment</span>
+
+          <ArrowRight
+            size={12}
+            strokeWidth={1}
+            className="ml-7 transition-transform duration-500 group-hover:translate-x-1"
+          />
+        </a>
+
+        <a
+          href="#services"
+          className="inline-flex min-w-[190px] items-center justify-center border border-[#EEE4DB]/20 px-7 py-4 text-[7px] font-light uppercase tracking-[0.34em] text-[#C9BFB7] transition-colors duration-500 hover:border-[#EEE4DB]/50 hover:text-white"
+        >
+          View Treatments
+        </a>
       </div>
     </div>
 
