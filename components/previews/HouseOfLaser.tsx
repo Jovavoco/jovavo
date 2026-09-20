@@ -145,10 +145,7 @@ export default function HouseOfLaser() {
   id="home"
   className="relative min-h-[100svh] overflow-hidden bg-[#17130F]"
 >
-  {/* =====================================================
-      BACKGROUND IMAGE
-  ===================================================== */}
-
+  {/* BACKGROUND IMAGE */}
   <img
     src="/previews/house-of-laser/spa-hero.png"
     alt="House of Laser & Spa treatment room"
@@ -157,147 +154,49 @@ export default function HouseOfLaser() {
 
   {/* LIGHT IMAGE TREATMENT */}
   <div className="absolute inset-0 bg-black/[0.03]" />
-
-  <div className="absolute inset-0 bg-gradient-to-b from-black/[0.08] via-transparent to-black/[0.18]" />
-
-  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.035),transparent_46%)]" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/[0.07] via-transparent to-black/[0.16]" />
 
   {/* =====================================================
-      ABSTRACT EDITORIAL LINEWORK
+      MINIMAL EDITORIAL LINEWORK
   ===================================================== */}
 
   <div
     aria-hidden="true"
     className="pointer-events-none absolute inset-0 z-10 overflow-hidden"
   >
-    {/* LARGE TOP-LEFT SWEEP */}
-    <div className="absolute -left-[270px] -top-[430px] hidden h-[800px] w-[800px] rounded-full border border-white/[0.14] md:block lg:-left-[250px] lg:-top-[450px] lg:h-[900px] lg:w-[900px]" />
+    {/* ONE LARGE SOFT ARC */}
+    <div className="absolute -right-[330px] top-[10%] hidden h-[720px] w-[720px] rounded-full border border-white/[0.10] lg:block xl:-right-[280px] xl:h-[800px] xl:w-[800px]" />
 
-    {/* INNER TOP-LEFT SWEEP */}
-    <div className="absolute -left-[185px] -top-[350px] hidden h-[620px] w-[620px] rounded-full border border-white/[0.055] lg:block" />
+    {/* LEFT VERTICAL LINE */}
+    <div className="absolute bottom-[14%] left-[8%] top-[24%] hidden w-px bg-gradient-to-b from-transparent via-white/[0.12] to-transparent lg:block" />
 
-    {/* BOTTOM-RIGHT LARGE SWEEP */}
-    <div className="absolute -bottom-[490px] -right-[330px] hidden h-[850px] w-[850px] rounded-full border border-white/[0.13] md:block lg:h-[930px] lg:w-[930px]" />
+    {/* RIGHT SHORT VERTICAL LINE */}
+    <div className="absolute right-[8%] top-[19%] hidden h-24 w-px bg-gradient-to-b from-white/[0.15] to-transparent lg:block" />
 
-    {/* BOTTOM-RIGHT INNER SWEEP */}
-    <div className="absolute -bottom-[315px] -right-[190px] hidden h-[560px] w-[560px] rounded-full border border-white/[0.055] lg:block" />
-
-    {/* =====================================================
-        CENTER OVAL FRAME
-    ===================================================== */}
-
-    <div className="absolute left-1/2 top-[51%] hidden h-[76%] w-[47%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] border border-white/[0.085] lg:block xl:w-[42%]" />
-
-    <div className="absolute left-[51.5%] top-[51%] hidden h-[65%] w-[37%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] border border-white/[0.035] xl:block" />
-
-    {/* =====================================================
-        LEFT VERTICAL GUIDE
-    ===================================================== */}
-
-    <div className="absolute bottom-[12%] left-[8%] top-[20%] hidden lg:block">
-      <div className="h-full w-px bg-gradient-to-b from-transparent via-white/[0.11] to-transparent" />
-
-      <div className="absolute left-1/2 top-[34%] h-[4px] w-[4px] -translate-x-1/2 rounded-full bg-white/25" />
-    </div>
-
-    {/* =====================================================
-        RIGHT VERTICAL GUIDE
-    ===================================================== */}
-
-    <div className="absolute bottom-[20%] right-[8%] top-[13%] hidden lg:block">
-      <div className="h-full w-px bg-gradient-to-b from-transparent via-white/[0.1] to-transparent" />
-
-      <div className="absolute left-1/2 top-[64%] h-[4px] w-[4px] -translate-x-1/2 rounded-full bg-white/25" />
-    </div>
-
-    {/* =====================================================
-        CENTER TOP LINE
-    ===================================================== */}
-
-    <div className="absolute left-1/2 top-[12%] hidden h-16 -translate-x-1/2 lg:block">
-      <div className="h-full w-px bg-gradient-to-b from-white/25 to-transparent" />
-    </div>
-
-    {/* =====================================================
-        LEFT HORIZONTAL MARK
-    ===================================================== */}
-
-    <div className="absolute left-[4%] top-[37%] hidden items-center gap-4 lg:flex">
-      <span className="h-px w-14 bg-white/[0.16]" />
-
+    {/* LEFT HORIZONTAL DETAIL */}
+    <div className="absolute left-[8%] top-[42%] hidden items-center gap-3 lg:flex">
+      <span className="h-px w-10 bg-white/[0.18]" />
       <span className="h-[3px] w-[3px] rounded-full bg-white/30" />
     </div>
 
-    {/* =====================================================
-        RIGHT HORIZONTAL MARK
-    ===================================================== */}
-
-    <div className="absolute right-[4%] top-[62%] hidden items-center gap-4 lg:flex">
+    {/* RIGHT HORIZONTAL DETAIL */}
+    <div className="absolute bottom-[29%] right-[8%] hidden items-center gap-3 lg:flex">
       <span className="h-[3px] w-[3px] rounded-full bg-white/30" />
-
-      <span className="h-px w-16 bg-white/[0.16]" />
+      <span className="h-px w-12 bg-white/[0.18]" />
     </div>
 
-    {/* =====================================================
-        LEFT CROSSHAIR
-    ===================================================== */}
-
-    <div className="absolute left-[14%] top-[58%] hidden h-10 w-10 lg:block">
-      <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/[0.11]" />
-
-      <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-white/[0.11]" />
-
-      <span className="absolute left-1/2 top-1/2 h-[3px] w-[3px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/30" />
-    </div>
-
-    {/* =====================================================
-        RIGHT SMALL CIRCLE
-    ===================================================== */}
-
-    <div className="absolute right-[14%] top-[27%] hidden h-[76px] w-[76px] rounded-full border border-white/[0.12] lg:block">
-      <div className="absolute left-1/2 top-1/2 h-[3px] w-[3px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/30" />
-
-      <div className="absolute left-1/2 top-full h-10 w-px -translate-x-1/2 bg-gradient-to-b from-white/[0.14] to-transparent" />
-    </div>
-
-    {/* =====================================================
-        TINY LEFT CIRCLE
-    ===================================================== */}
-
-    <div className="absolute bottom-[23%] left-[22%] hidden h-4 w-4 rounded-full border border-white/[0.16] xl:block" />
-
-    {/* =====================================================
-        TINY RIGHT LINE + DOT
-    ===================================================== */}
-
-    <div className="absolute right-[21%] top-[48%] hidden items-center gap-3 xl:flex">
-      <span className="h-px w-8 bg-white/[0.12]" />
-
-      <span className="h-[3px] w-[3px] rounded-full bg-white/25" />
-    </div>
-
-    {/* =====================================================
-        MOBILE ABSTRACT DETAILS
-    ===================================================== */}
-
-    <div className="absolute -right-[190px] top-[15%] h-[370px] w-[370px] rounded-full border border-white/[0.11] lg:hidden" />
-
-    <div className="absolute -right-[135px] top-[20%] h-[260px] w-[260px] rounded-full border border-white/[0.045] lg:hidden" />
-
-    <div className="absolute -bottom-[170px] -left-[190px] h-[370px] w-[370px] rounded-full border border-white/[0.09] lg:hidden" />
-
-    <div className="absolute bottom-[16%] right-[8%] h-16 w-px bg-gradient-to-b from-transparent via-white/[0.14] to-transparent lg:hidden" />
+    {/* MOBILE — ONE SUBTLE ARC ONLY */}
+    <div className="absolute -right-[210px] top-[18%] h-[380px] w-[380px] rounded-full border border-white/[0.09] lg:hidden" />
   </div>
 
   {/* =====================================================
-      DESKTOP NAVIGATION
+      DESKTOP NAV
   ===================================================== */}
 
   <header className="absolute left-0 right-0 top-0 z-30 hidden lg:block">
     <div className="mx-auto max-w-[1600px] px-12 pt-11 xl:px-16 xl:pt-14">
       <div className="grid grid-cols-[1fr_auto_1fr] items-start">
         {/* LOCATION */}
-
         <div>
           <p className="text-[7px] font-light uppercase tracking-[0.4em] text-white/65">
             Brooklyn
@@ -309,7 +208,6 @@ export default function HouseOfLaser() {
         </div>
 
         {/* BRAND */}
-
         <a
           href="#home"
           className="group flex flex-col items-center text-center"
@@ -322,7 +220,6 @@ export default function HouseOfLaser() {
         </a>
 
         {/* LINKS */}
-
         <nav className="flex items-center justify-end gap-9">
           <a
             href="#services"
@@ -350,7 +247,7 @@ export default function HouseOfLaser() {
   </header>
 
   {/* =====================================================
-      MOBILE NAVIGATION
+      MOBILE NAV
   ===================================================== */}
 
   <div className="absolute left-0 right-0 top-0 z-40 flex items-start justify-between px-5 pt-6 lg:hidden">
@@ -431,7 +328,6 @@ export default function HouseOfLaser() {
           className="group mt-8 flex items-center justify-between border-b border-white/35 pb-4 text-[7px] font-light uppercase tracking-[0.38em]"
         >
           <span>Book an Appointment</span>
-
           <ArrowRight size={12} strokeWidth={1} />
         </a>
       </div>
@@ -439,31 +335,14 @@ export default function HouseOfLaser() {
   )}
 
   {/* =====================================================
-      LEFT EDITORIAL DETAIL
-  ===================================================== */}
-
-  <div className="absolute bottom-[10%] left-12 z-20 hidden xl:block xl:left-16">
-    <div className="h-12 w-px bg-white/25" />
-
-    <p className="mt-5 text-[6px] font-light uppercase leading-[2.15] tracking-[0.42em] text-white/45">
-      Laser
-      <br />
-      Skincare
-      <br />
-      Self-Care
-    </p>
-  </div>
-
-  {/* =====================================================
       HERO CENTER
   ===================================================== */}
 
-  <div className="absolute inset-0 z-20 flex items-center justify-center px-5 pt-20 text-center sm:pt-24 lg:pt-28">
+  <div className="absolute inset-0 z-20 flex items-center justify-center px-5 pt-20 text-center sm:pt-24 lg:pt-24">
     <div className="hls-hero-text flex w-full max-w-[1000px] flex-col items-center">
       
       {/* EYEBROW */}
-
-      <div className="mb-7 flex items-center justify-center gap-4 sm:mb-8">
+      <div className="mb-7 flex items-center justify-center gap-4">
         <span className="h-px w-7 bg-white/35" />
 
         <p className="text-[6px] font-light uppercase tracking-[0.48em] text-white/70 sm:text-[7px]">
@@ -473,43 +352,37 @@ export default function HouseOfLaser() {
         <span className="h-px w-7 bg-white/35" />
       </div>
 
-      {/* MAIN TITLE */}
-
+      {/* TITLE */}
       <h1
         className={`${bodoni.className} hls-bodoni font-normal tracking-[-0.055em] text-[#FAF7F3]`}
       >
-        <span className="block text-[54px] leading-[0.86] sm:text-[67px] md:text-[80px] lg:text-[90px] xl:text-[98px]">
+        <span className="block text-[54px] leading-[0.87] sm:text-[67px] md:text-[80px] lg:text-[90px] xl:text-[98px]">
           Beauty
         </span>
 
-        <span className="mt-1 block text-[51px] italic leading-[0.86] text-[#F5EEE8] sm:text-[64px] md:text-[77px] lg:text-[87px] xl:text-[95px]">
+        <span className="mt-1 block text-[51px] italic leading-[0.87] text-[#F5EEE8] sm:text-[64px] md:text-[77px] lg:text-[87px] xl:text-[95px]">
           without limits.
         </span>
       </h1>
 
-      {/* TITLE DETAIL */}
-
-      <div className="mt-8 flex items-center justify-center gap-5">
-        <span className="h-px w-10 bg-white/30" />
-
-        <span className="h-[3px] w-[3px] rounded-full bg-white/45" />
-
-        <span className="h-px w-10 bg-white/30" />
+      {/* SIMPLE DIVIDER */}
+      <div className="mt-8 flex items-center gap-4">
+        <span className="h-px w-9 bg-white/30" />
+        <span className="h-[3px] w-[3px] rounded-full bg-white/40" />
+        <span className="h-px w-9 bg-white/30" />
       </div>
 
       {/* COPY */}
-
-      <p className="mt-6 max-w-[400px] text-[10px] font-light leading-[1.9] tracking-[0.035em] text-white/65 sm:text-[11px]">
+      <p className="mt-6 max-w-[390px] text-[10px] font-light leading-[1.9] tracking-[0.035em] text-white/65 sm:text-[11px]">
         Laser, skincare, and self-care designed around you.
       </p>
 
       {/* CTA */}
-
       <a
         href="#book"
-        className="group mt-9 flex items-center gap-6 text-white"
+        className="group mt-9 flex items-center gap-5 text-white"
       >
-        <span className="text-[7px] font-light uppercase tracking-[0.42em]">
+        <span className="text-[7px] font-light uppercase tracking-[0.4em]">
           Book an Appointment
         </span>
 
@@ -525,23 +398,27 @@ export default function HouseOfLaser() {
   </div>
 
   {/* =====================================================
-      RIGHT EDITORIAL DETAIL
+      DESKTOP BOTTOM DETAILS
   ===================================================== */}
 
-  <div className="absolute bottom-[10%] right-12 z-20 hidden text-right xl:block xl:right-16">
-    <p className="text-[6px] font-light uppercase leading-[2.15] tracking-[0.42em] text-white/45">
-      Confidence
-      <br />
-      Care
-      <br />
-      Beauty
+  <div className="absolute bottom-10 left-12 z-20 hidden items-center gap-5 lg:flex xl:bottom-14 xl:left-16">
+    <p className="text-[6px] font-light uppercase tracking-[0.4em] text-white/45">
+      Laser · Skincare · Self-Care
     </p>
 
-    <div className="ml-auto mt-5 h-px w-9 bg-white/25" />
+    <span className="h-px w-8 bg-white/25" />
+  </div>
+
+  <div className="absolute bottom-10 right-12 z-20 hidden items-center gap-5 lg:flex xl:bottom-14 xl:right-16">
+    <span className="h-px w-8 bg-white/25" />
+
+    <p className="text-[6px] font-light uppercase tracking-[0.4em] text-white/45">
+      A calmer, brighter you
+    </p>
   </div>
 
   {/* =====================================================
-      MOBILE BOTTOM DETAIL
+      MOBILE BOTTOM
   ===================================================== */}
 
   <div className="absolute bottom-7 left-5 right-5 z-20 flex items-center gap-4 lg:hidden">
