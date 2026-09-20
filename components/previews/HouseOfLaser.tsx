@@ -1588,6 +1588,108 @@ export default function HouseOfLaser() {
     </div>
   </div>
 </section>
+{/* =====================================================
+    FOOTER
+===================================================== */}
+
+<footer className="relative overflow-hidden bg-[#191815] px-6 pb-10 text-white md:px-10 lg:px-14">
+  <div className="mx-auto max-w-[1450px]">
+
+    {/* TOP DIVIDER */}
+    <div className="h-px w-full bg-white/[0.08]" />
+
+    <div className="grid gap-12 py-12 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr] lg:gap-16 lg:py-14">
+
+      {/* =====================================================
+          BRAND
+      ===================================================== */}
+
+      <div>
+        <p
+          className={`${bodoni.className} hls-bodoni text-[31px] font-normal tracking-[-0.035em] text-[#F4F0EC]`}
+        >
+          House of Laser
+        </p>
+
+        <p className="mt-1 text-[7px] font-light uppercase tracking-[0.42em] text-[#C7B29F]/55">
+          &amp; Spa · Brooklyn
+        </p>
+
+        <p className="mt-6 max-w-[320px] text-[11px] font-light leading-[1.9] text-white/35">
+          Laser, skincare, beauty, and self-care in Brooklyn,
+          New York.
+        </p>
+      </div>
+
+      {/* =====================================================
+          VISIT
+      ===================================================== */}
+
+      <div>
+        <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#C7B29F]">
+          Visit
+        </p>
+
+        <p className="mt-5 text-[11px] font-light leading-[1.9] text-white/40">
+          1690 E 14th St
+          <br />
+          Unit 2
+          <br />
+          Brooklyn, NY 11229
+        </p>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=1690+E+14th+St+Unit+2+Brooklyn+NY+11229"
+          target="_blank"
+          rel="noreferrer"
+          className="group mt-5 inline-flex items-center gap-4 text-[6px] font-light uppercase tracking-[0.36em] text-white/35 transition-colors duration-300 hover:text-white"
+        >
+          <span>Directions</span>
+
+          <span className="h-px w-7 bg-white/20 transition-all duration-500 group-hover:w-10 group-hover:bg-white/50" />
+        </a>
+      </div>
+
+      {/* =====================================================
+          CONNECT
+      ===================================================== */}
+
+      <div>
+        <p className="text-[6px] font-light uppercase tracking-[0.42em] text-[#C7B29F]">
+          Connect
+        </p>
+
+        <div className="mt-5 flex flex-col items-start gap-3">
+          <a
+            href="tel:+19298339197"
+            className="text-[11px] font-light text-white/40 transition-colors duration-300 hover:text-white"
+          >
+            (929) 833-9197
+          </a>
+
+          <a
+            href="https://www.instagram.com/houseoflaserspa/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-[11px] font-light text-white/40 transition-colors duration-300 hover:text-white"
+          >
+            @houseoflaserspa
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* =====================================================
+        FOOTER BOTTOM
+    ===================================================== */}
+
+    <div className="flex flex-col gap-4 border-t border-white/[0.07] pt-7 text-[6px] font-light uppercase tracking-[0.34em] text-white/20 sm:flex-row sm:items-center sm:justify-between">
+      <p>House of Laser &amp; Spa</p>
+
+      <p>Brooklyn · New York</p>
+    </div>
+  </div>
+</footer>
       </main>
     </div>
   );
