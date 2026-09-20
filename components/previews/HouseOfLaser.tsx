@@ -1415,13 +1415,13 @@ export default function HouseOfLaser() {
   id="experience"
   className="relative overflow-hidden bg-[#F3EEE8]"
 >
-  <div className="mx-auto max-w-[1600px] px-5 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20 xl:px-16">
+  <div className="mx-auto max-w-[1600px] px-5 py-10 sm:px-8 sm:py-12 lg:px-12 lg:py-14 xl:px-16">
 
     {/* =====================================================
         EXPERIENCE IMAGE
     ===================================================== */}
 
-    <div className="relative min-h-[610px] overflow-hidden rounded-[72px_72px_28px_28px] sm:min-h-[650px] sm:rounded-[120px_120px_32px_32px] lg:min-h-[690px] lg:rounded-[220px_220px_40px_40px]">
+    <div className="relative min-h-[460px] overflow-hidden rounded-[60px_60px_24px_24px] sm:min-h-[490px] sm:rounded-[100px_100px_28px_28px] lg:min-h-[510px] lg:rounded-[170px_170px_34px_34px] xl:min-h-[520px]">
       <img
         src="/previews/house-of-laser/experience-background.png"
         alt="House of Laser and Spa experience"
@@ -1434,15 +1434,15 @@ export default function HouseOfLaser() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(243,238,232,0.82)_0%,rgba(243,238,232,0.50)_40%,rgba(243,238,232,0.14)_76%,transparent_100%)]" />
 
       {/* ABSTRACT CURVES */}
-      <div className="pointer-events-none absolute -left-[17%] -top-[46%] hidden h-[760px] w-[760px] rounded-full border border-[#8F7C6E]/20 lg:block" />
+      <div className="pointer-events-none absolute -left-[14%] -top-[70%] hidden h-[650px] w-[650px] rounded-full border border-[#8F7C6E]/20 lg:block" />
 
-      <div className="pointer-events-none absolute -bottom-[58%] -right-[17%] hidden h-[720px] w-[720px] rounded-full border border-[#8F7C6E]/15 lg:block" />
+      <div className="pointer-events-none absolute -bottom-[85%] -right-[13%] hidden h-[620px] w-[620px] rounded-full border border-[#8F7C6E]/15 lg:block" />
 
       {/* LEFT MICRO DETAIL */}
-      <div className="absolute left-[6%] top-[12%] z-10 hidden lg:block">
-        <div className="h-12 w-px bg-[#8F7C6E]/30" />
+      <div className="absolute left-[6%] top-[11%] z-10 hidden lg:block">
+        <div className="h-9 w-px bg-[#8F7C6E]/30" />
 
-        <p className="mt-5 text-[6px] font-light uppercase leading-[2] tracking-[0.44em] text-[#79695F]/65">
+        <p className="mt-4 text-[6px] font-light uppercase leading-[2] tracking-[0.44em] text-[#79695F]/65">
           Brooklyn
           <br />
           New York
@@ -1450,7 +1450,7 @@ export default function HouseOfLaser() {
       </div>
 
       {/* RIGHT MICRO DETAIL */}
-      <div className="absolute right-[6%] top-[12%] z-10 hidden lg:block">
+      <div className="absolute right-[6%] top-[11%] z-10 hidden lg:block">
         <p className="text-right text-[6px] font-light uppercase leading-[2.1] tracking-[0.44em] text-[#79695F]/65">
           Relax
           <br />
@@ -1459,45 +1459,54 @@ export default function HouseOfLaser() {
           Renew
         </p>
 
-        <div className="ml-auto mt-5 h-px w-9 bg-[#8F7C6E]/30" />
+        <div className="ml-auto mt-4 h-px w-9 bg-[#8F7C6E]/30" />
       </div>
 
-      {/* CENTER CONTENT */}
-      <div className="relative z-10 flex min-h-[610px] items-center justify-center px-7 py-20 text-center sm:min-h-[650px] sm:px-10 lg:min-h-[690px]">
-        <div className="mx-auto flex max-w-[760px] flex-col items-center">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#927E70]/25 bg-[#F3EEE8]/20 backdrop-blur-[2px]">
+      {/* =====================================================
+          CENTER CONTENT
+      ===================================================== */}
+
+      <div className="relative z-10 flex min-h-[460px] items-center justify-center px-7 py-12 text-center sm:min-h-[490px] sm:px-10 sm:py-14 lg:min-h-[510px] lg:py-14 xl:min-h-[520px]">
+        <div className="mx-auto flex max-w-[720px] flex-col items-center">
+
+          {/* ICON */}
+          <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#927E70]/25 bg-[#F3EEE8]/20 backdrop-blur-[2px]">
             <Sparkles
-              size={13}
+              size={12}
               strokeWidth={1}
               className="text-[#927E70]"
             />
           </div>
 
-          <div className="mt-7 flex items-center gap-4">
+          {/* EYEBROW */}
+          <div className="mt-5 flex items-center gap-4">
             <span className="h-px w-8 bg-[#927E70]/35" />
 
-            <p className="text-[7px] font-light uppercase tracking-[0.5em] text-[#806E62]">
+            <p className="text-[7px] font-light uppercase tracking-[0.48em] text-[#806E62]">
               The Experience
             </p>
 
             <span className="h-px w-8 bg-[#927E70]/35" />
           </div>
 
+          {/* TITLE */}
           <h2
-            className={`${bodoni.className} hls-bodoni mt-8 font-normal tracking-[-0.055em]`}
+            className={`${bodoni.className} hls-bodoni mt-6 font-normal tracking-[-0.055em]`}
           >
-            <span className="block text-[50px] leading-[0.89] text-[#29231F] sm:text-[60px] md:text-[69px] lg:text-[76px] xl:text-[82px]">
+            <span className="block text-[46px] leading-[0.89] text-[#29231F] sm:text-[54px] md:text-[60px] lg:text-[64px] xl:text-[68px]">
               A little time
             </span>
 
-            <span className="mt-1 block text-[52px] italic leading-[0.89] text-[#967E6D] sm:text-[62px] md:text-[71px] lg:text-[78px] xl:text-[84px]">
+            <span className="mt-1 block text-[48px] italic leading-[0.89] text-[#967E6D] sm:text-[56px] md:text-[62px] lg:text-[66px] xl:text-[70px]">
               just for you.
             </span>
           </h2>
 
-          <div className="mt-8 h-px w-10 bg-[#8E7A6C]/35" />
+          {/* DIVIDER */}
+          <div className="mt-6 h-px w-10 bg-[#8E7A6C]/35" />
 
-          <p className="mt-7 max-w-[510px] text-[12px] font-light leading-[1.95] tracking-[0.015em] text-[#625A55] sm:text-[13px]">
+          {/* DESCRIPTION */}
+          <p className="mt-5 max-w-[500px] text-[11px] font-light leading-[1.85] tracking-[0.015em] text-[#625A55] sm:text-[12px]">
             Laser, skincare, beauty, and self-care in a warm Brooklyn
             space designed to make every visit feel personal.
           </p>
