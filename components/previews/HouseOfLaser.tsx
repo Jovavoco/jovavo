@@ -434,11 +434,7 @@ export default function HouseOfLaser() {
   </div>
 </section>
 
-        {/* =====================================================
-            ABOUT
-        ===================================================== */}
-
-{/* =====================================================
+ {/* =====================================================
     ABOUT — THE HOUSE
 ===================================================== */}
 
@@ -446,147 +442,254 @@ export default function HouseOfLaser() {
   id="about"
   className="relative overflow-hidden bg-[#F6F2EC]"
 >
-  {/* LARGE DECORATIVE ARC */}
-  <div className="pointer-events-none absolute -right-[230px] -top-[260px] hidden h-[1050px] w-[1050px] rounded-full border border-[#8E8177]/25 xl:block" />
+  {/* =====================================================
+      LARGE BACKGROUND LINEWORK
+  ===================================================== */}
 
-  <div className="relative mx-auto grid min-h-[820px] max-w-[1500px] lg:grid-cols-[1.08fr_0.92fr]">
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-0 overflow-hidden"
+  >
+    {/* HUGE RIGHT CIRCLE */}
+    <div className="absolute -right-[420px] -top-[360px] hidden h-[1120px] w-[1120px] rounded-full border border-[#8E8177]/20 lg:block" />
+
+    {/* SECOND OFFSET CIRCLE */}
+    <div className="absolute -right-[255px] -top-[185px] hidden h-[760px] w-[760px] rounded-full border border-[#8E8177]/10 xl:block" />
+
+    {/* BOTTOM LEFT SWEEP */}
+    <div className="absolute -bottom-[480px] -left-[360px] hidden h-[800px] w-[800px] rounded-full border border-[#8E8177]/14 lg:block" />
+
+    {/* LONG VERTICAL GUIDE */}
+    <div className="absolute bottom-[10%] left-[4.5%] top-[13%] hidden w-px bg-gradient-to-b from-transparent via-[#8E8177]/20 to-transparent xl:block" />
+
+    {/* TOP HORIZONTAL DETAIL */}
+    <div className="absolute left-[5%] top-[11%] hidden items-center gap-4 xl:flex">
+      <span className="h-[3px] w-[3px] rounded-full bg-[#8E8177]/45" />
+      <span className="h-px w-16 bg-[#8E8177]/25" />
+    </div>
+
+    {/* MOBILE ARC */}
+    <div className="absolute -right-[230px] top-[3%] h-[440px] w-[440px] rounded-full border border-[#8E8177]/12 lg:hidden" />
+  </div>
+
+  {/* =====================================================
+      MAIN LAYOUT
+  ===================================================== */}
+
+  <div className="relative mx-auto grid min-h-[850px] max-w-[1500px] lg:grid-cols-[1.03fr_0.97fr]">
 
     {/* =====================================================
-        LEFT SIDE
+        LEFT CONTENT
     ===================================================== */}
 
-    <div className="flex items-center px-6 py-20 sm:px-10 md:px-14 lg:px-16 lg:py-24 xl:px-20">
+    <div className="relative z-20 flex items-center px-6 py-20 sm:px-10 md:px-14 lg:px-16 lg:py-24 xl:px-20">
       <div className="w-full max-w-[650px]">
 
         {/* EYEBROW */}
-
         <div className="flex items-center gap-5">
-          <span className="h-px w-16 bg-[#8E8177]/55" />
+          <span className="h-px w-14 bg-[#8E8177]/50" />
 
-          <p className="text-[8px] font-normal uppercase tracking-[0.48em] text-[#4D4742] sm:text-[9px]">
+          <p className="text-[7px] font-normal uppercase tracking-[0.48em] text-[#4D4742] sm:text-[8px]">
             The House
           </p>
+
+          <span className="h-[3px] w-[3px] rounded-full bg-[#9B8374]/55" />
         </div>
 
         {/* TITLE */}
-
         <h2
-          className={`${bodoni.className} hls-bodoni mt-14 font-normal tracking-[-0.045em] text-[#211C18]`}
+          className={`${bodoni.className} hls-bodoni mt-14 font-normal tracking-[-0.05em] text-[#211C18]`}
         >
-          <span className="block text-[50px] leading-[0.92] sm:text-[62px] md:text-[72px] lg:text-[68px] xl:text-[78px]">
-            Beauty should feel
+          <span className="block text-[50px] leading-[0.91] sm:text-[62px] md:text-[72px] lg:text-[69px] xl:text-[79px]">
+            Beauty should
           </span>
 
-          <span className="mt-1 block text-[58px] italic leading-[0.9] text-[#917C6D] sm:text-[70px] md:text-[82px] lg:text-[78px] xl:text-[88px]">
-            personal.
+          <span className="block text-[50px] leading-[0.91] sm:text-[62px] md:text-[72px] lg:text-[69px] xl:text-[79px]">
+            feel{" "}
+            <span className="italic text-[#917C6D]">
+              personal.
+            </span>
           </span>
         </h2>
 
-        {/* COPY */}
+        {/* ABSTRACT TITLE DETAIL */}
+        <div className="mt-9 flex items-center gap-4">
+          <span className="h-px w-12 bg-[#8E8177]/35" />
+          <span className="h-[3px] w-[3px] rounded-full bg-[#8E8177]/50" />
+          <span className="h-px w-5 bg-[#8E8177]/25" />
+        </div>
 
-        <div className="mt-12 max-w-[570px] space-y-6">
-          <p className="text-[12px] font-light leading-[1.9] tracking-[0.09em] text-[#514B46] sm:text-[13px]">
+        {/* COPY */}
+        <div className="mt-9 max-w-[550px] space-y-5">
+          <p className="text-[12px] font-light leading-[1.95] tracking-[0.055em] text-[#514B46] sm:text-[13px]">
             House of Laser &amp; Spa brings together laser hair removal,
             skincare, beauty, and self-care in an intimate Brooklyn setting.
           </p>
 
-          <p className="text-[12px] font-light leading-[1.9] tracking-[0.09em] text-[#514B46] sm:text-[13px]">
+          <p className="text-[12px] font-light leading-[1.95] tracking-[0.055em] text-[#514B46] sm:text-[13px]">
             Every treatment is approached with intention — creating an
             experience that feels comfortable, considered, and entirely
             your own.
           </p>
         </div>
 
-        {/* DIVIDER */}
+        {/* =====================================================
+            SERVICE LABELS
+        ===================================================== */}
 
-        <div className="mt-12 h-px w-full bg-[#6F655D]/25" />
+        <div className="mt-11 border-y border-[#6F655D]/20">
+          <div className="grid grid-cols-3 py-7">
+            <div>
+              <p className="text-[7px] font-normal uppercase tracking-[0.38em] text-[#39332E] sm:text-[8px]">
+                Laser
+              </p>
+            </div>
 
-        {/* CATEGORIES */}
+            <div className="border-l border-[#6F655D]/20 pl-6 sm:pl-9">
+              <p className="text-[7px] font-normal uppercase tracking-[0.38em] text-[#39332E] sm:text-[8px]">
+                Skincare
+              </p>
+            </div>
 
-        <div className="grid grid-cols-3 py-8">
-          <div className="flex items-center">
-            <p className="text-[8px] font-normal uppercase tracking-[0.4em] text-[#39332E]">
-              Laser
-            </p>
-          </div>
-
-          <div className="flex items-center border-l border-[#6F655D]/25 pl-8 sm:pl-10">
-            <p className="text-[8px] font-normal uppercase tracking-[0.4em] text-[#39332E]">
-              Skincare
-            </p>
-          </div>
-
-          <div className="flex items-center border-l border-[#6F655D]/25 pl-8 sm:pl-10">
-            <p className="text-[8px] font-normal uppercase tracking-[0.4em] text-[#39332E]">
-              Self-Care
-            </p>
+            <div className="border-l border-[#6F655D]/20 pl-6 sm:pl-9">
+              <p className="text-[7px] font-normal uppercase tracking-[0.38em] text-[#39332E] sm:text-[8px]">
+                Self-Care
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* BUTTON */}
+        {/* =====================================================
+            CTA
+        ===================================================== */}
 
         <a
           href="#services"
-          className="group mt-7 inline-flex min-w-[310px] items-center justify-between border border-[#4E4741]/65 px-7 py-[18px] text-[8px] font-normal uppercase tracking-[0.36em] text-[#312C28] transition-all duration-500 hover:bg-[#2A2521] hover:text-[#F6F2EC] sm:min-w-[360px]"
+          className="group mt-9 inline-flex items-center gap-6 text-[#312C28]"
         >
-          <span>Discover Our Treatments</span>
+          <span className="text-[7px] font-normal uppercase tracking-[0.4em]">
+            Discover Our Treatments
+          </span>
 
-          <ArrowRight
-            size={15}
-            strokeWidth={1}
-            className="ml-8 transition-transform duration-500 group-hover:translate-x-1"
-          />
+          <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#665B53]/35 transition-all duration-500 group-hover:bg-[#2A2521] group-hover:text-[#F6F2EC]">
+            <ArrowRight
+              size={13}
+              strokeWidth={1}
+              className="transition-transform duration-500 group-hover:translate-x-[2px]"
+            />
+          </div>
         </a>
 
-        {/* SMALL BOTTOM TEXT */}
+        {/* BOTTOM DETAIL */}
+        <div className="mt-16 flex items-center gap-5">
+          <p className="text-[6px] font-normal uppercase tracking-[0.5em] text-[#9B8374]">
+            Beauty Lives Here
+          </p>
 
-        <p className="mt-16 text-[7px] font-normal uppercase tracking-[0.52em] text-[#9B8374]">
-          Beauty Lives Here
-        </p>
+          <span className="h-px w-12 bg-[#9B8374]/25" />
+        </div>
       </div>
     </div>
 
     {/* =====================================================
-        RIGHT IMAGE
+        RIGHT VISUAL
     ===================================================== */}
 
-    <div className="relative px-6 pb-8 sm:px-10 lg:px-0 lg:py-[58px] lg:pr-[58px]">
-      <div className="group relative h-[570px] overflow-hidden sm:h-[680px] lg:h-full lg:min-h-[700px]">
+    <div className="relative z-10 px-6 pb-10 sm:px-10 lg:px-0 lg:py-[54px] lg:pr-[58px]">
+
+      {/* LARGE CIRCLE BEHIND IMAGE */}
+      <div className="pointer-events-none absolute -right-[12%] top-[7%] hidden h-[82%] aspect-square rounded-full bg-[#E9E0D8]/70 lg:block" />
+
+      {/* OFFSET OUTLINE */}
+      <div className="pointer-events-none absolute -right-[18%] top-[3%] hidden h-[88%] aspect-square rounded-full border border-[#8E8177]/16 lg:block" />
+
+      {/* =====================================================
+          IMAGE — ORGANIC SHAPE
+      ===================================================== */}
+
+      <div className="group relative h-[560px] overflow-hidden rounded-[180px_180px_60px_180px] sm:h-[670px] sm:rounded-[240px_240px_80px_240px] lg:h-full lg:min-h-[710px] lg:rounded-[330px_70px_70px_330px]">
 
         <img
           src="/previews/house-of-laser/about-woman.png"
           alt="House of Laser & Spa beauty and self-care"
-          className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
+          className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.018]"
         />
 
-        {/* VERY SUBTLE IMAGE TONE */}
-        <div className="absolute inset-0 bg-[#392C23]/[0.03]" />
+        <div className="absolute inset-0 bg-[#392C23]/[0.025]" />
 
-        {/* IMAGE WORDS */}
+        {/* INNER CURVED LINE */}
+        <div className="pointer-events-none absolute -left-[45%] top-[11%] hidden h-[78%] w-[82%] rounded-[50%] border border-white/30 lg:block" />
 
-        <div className="absolute left-[15%] top-[20%] hidden text-white lg:block">
-          <div className="space-y-3">
-            <p className="text-[7px] font-light uppercase tracking-[0.48em] text-white/85">
-              Confidence
-            </p>
+        {/* IMAGE TEXT */}
+        <div className="absolute left-[14%] top-[18%] hidden text-white lg:block">
+          <p className="text-[6px] font-light uppercase tracking-[0.5em] text-white/85">
+            Confidence
+          </p>
 
-            <p className="text-[7px] font-light uppercase tracking-[0.48em] text-white/85">
-              Care
-            </p>
+          <p className="mt-3 text-[6px] font-light uppercase tracking-[0.5em] text-white/85">
+            Care
+          </p>
 
-            <p className="text-[7px] font-light uppercase tracking-[0.48em] text-white/85">
-              Beauty
-            </p>
+          <p className="mt-3 text-[6px] font-light uppercase tracking-[0.5em] text-white/85">
+            Beauty
+          </p>
 
-            <p className="text-[7px] font-light uppercase tracking-[0.48em] text-white/85">
-              You
-            </p>
-          </div>
+          <p className="mt-3 text-[6px] font-light uppercase tracking-[0.5em] text-white/85">
+            You
+          </p>
 
-          <div className="ml-1 mt-5 h-16 w-px bg-white/65" />
+          <div className="ml-[2px] mt-5 h-14 w-px bg-white/50" />
+        </div>
+
+        {/* BOTTOM IMAGE DETAIL */}
+        <div className="absolute bottom-[8%] right-[9%] hidden items-center gap-3 lg:flex">
+          <span className="h-px w-8 bg-white/45" />
+
+          <p className="text-[6px] font-light uppercase tracking-[0.42em] text-white/70">
+            Brooklyn
+          </p>
         </div>
       </div>
+
+      {/* =====================================================
+          FLOATING CIRCLE
+      ===================================================== */}
+
+      <div className="absolute -left-1 top-[49%] z-20 hidden h-[105px] w-[105px] items-center justify-center rounded-full border border-[#8D796B]/30 bg-[#F6F2EC]/90 backdrop-blur-sm lg:flex xl:-left-5 xl:h-[118px] xl:w-[118px]">
+        <div className="text-center">
+          <p
+            className={`${bodoni.className} hls-bodoni text-[18px] italic leading-none text-[#806B5D]`}
+          >
+            Made
+          </p>
+
+          <div className="mx-auto my-2 h-px w-5 bg-[#8D796B]/30" />
+
+          <p className="text-[5px] font-normal uppercase tracking-[0.38em] text-[#62574F]">
+            For You
+          </p>
+        </div>
+      </div>
+
+      {/* =====================================================
+          IMAGE-EDGE LINE
+      ===================================================== */}
+
+      <div className="absolute -left-[7%] bottom-[12%] hidden items-center gap-4 lg:flex">
+        <span className="h-[3px] w-[3px] rounded-full bg-[#8E8177]/45" />
+        <span className="h-px w-16 bg-[#8E8177]/25" />
+      </div>
     </div>
+  </div>
+
+  {/* =====================================================
+      BOTTOM ABSTRACT DETAIL
+  ===================================================== */}
+
+  <div className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 items-center gap-4 lg:flex">
+    <span className="h-px w-8 bg-[#8E8177]/20" />
+    <span className="h-[3px] w-[3px] rounded-full bg-[#8E8177]/35" />
+    <span className="h-px w-8 bg-[#8E8177]/20" />
   </div>
 </section>
 
