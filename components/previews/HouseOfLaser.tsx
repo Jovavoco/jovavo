@@ -137,283 +137,247 @@ export default function HouseOfLaser() {
       `}</style>
 
       <main>
-{/* =====================================================
-    HERO
-===================================================== */}
+        {/* =====================================================
+            HERO
+        ===================================================== */}
 
-<section
-  id="home"
-  className="relative min-h-[100svh] overflow-hidden bg-[#17130F]"
->
-  {/* =====================================================
-      BACKGROUND
-  ===================================================== */}
-
-  <img
-    src="/previews/house-of-laser/spa-hero.png"
-    alt="House of Laser & Spa treatment room"
-    className="hls-hero-image absolute inset-0 h-full w-full object-cover object-[58%_center] sm:object-center"
-  />
-
-  {/* KEEP IMAGE LIGHT / AIRY */}
-  <div className="absolute inset-0 bg-black/[0.03]" />
-
-  <div className="absolute inset-0 bg-gradient-to-b from-black/[0.08] via-transparent to-black/[0.18]" />
-
-  {/* SUBTLE CENTER GLOW */}
-  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_52%,rgba(255,255,255,0.035),transparent_42%)]" />
-
-  {/* =====================================================
-      DESKTOP NAV
-  ===================================================== */}
-
-  <header className="absolute left-0 right-0 top-0 z-30 hidden lg:block">
-    <div className="mx-auto max-w-[1600px] px-12 pt-11 xl:px-16 xl:pt-13">
-      <div className="grid grid-cols-[1fr_auto_1fr] items-start">
-        
-        {/* LOCATION */}
-        <div>
-          <p className="text-[7px] font-light uppercase tracking-[0.4em] text-white/65">
-            Brooklyn
-          </p>
-
-          <p className="mt-1 text-[6px] font-light uppercase tracking-[0.38em] text-white/40">
-            New York
-          </p>
-        </div>
-
-        {/* BRAND */}
-        <a
-          href="#home"
-          className="group flex flex-col items-center text-center"
+        <section
+          id="home"
+          className="relative min-h-[100svh] overflow-hidden bg-[#17130F]"
         >
-          <p className="whitespace-nowrap text-[9px] font-light uppercase tracking-[0.5em] text-white/90">
-            House of Laser &amp; Spa
-          </p>
-
-          <span className="mt-5 h-px w-9 bg-white/35 transition-all duration-500 group-hover:w-14" />
-        </a>
-
-        {/* LINKS */}
-        <nav className="flex items-center justify-end gap-9">
-          <a
-            href="#services"
-            className="text-[7px] font-light uppercase tracking-[0.34em] text-white/70 transition-colors duration-300 hover:text-white"
-          >
-            Services
-          </a>
-
-          <a
-            href="#about"
-            className="text-[7px] font-light uppercase tracking-[0.34em] text-white/70 transition-colors duration-300 hover:text-white"
-          >
-            About
-          </a>
-
-          <a
-            href="#contact"
-            className="text-[7px] font-light uppercase tracking-[0.34em] text-white/70 transition-colors duration-300 hover:text-white"
-          >
-            Visit
-          </a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  {/* =====================================================
-      MOBILE NAV
-  ===================================================== */}
-
-  <div className="absolute left-0 right-0 top-0 z-40 flex items-start justify-between px-5 pt-6 lg:hidden">
-    <a href="#home">
-      <p className="text-[10px] font-light uppercase tracking-[0.28em] text-white">
-        House of Laser &amp; Spa
-      </p>
-
-      <p className="mt-1.5 text-[6px] font-light uppercase tracking-[0.38em] text-white/50">
-        Brooklyn · New York
-      </p>
-    </a>
-
-    <button
-      type="button"
-      aria-label="Toggle navigation"
-      onClick={() => setMenuOpen((current) => !current)}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-black/[0.04] text-white backdrop-blur-sm transition-colors duration-300 hover:bg-white hover:text-[#29231F]"
-    >
-      {menuOpen ? (
-        <X size={16} strokeWidth={1} />
-      ) : (
-        <Menu size={16} strokeWidth={1} />
-      )}
-    </button>
-  </div>
-
-  {/* =====================================================
-      MOBILE MENU
-  ===================================================== */}
-
-  {menuOpen && (
-    <div className="absolute inset-x-0 top-0 z-30 bg-[#191715]/95 px-6 pb-10 pt-24 text-white backdrop-blur-xl lg:hidden">
-      <div className="flex flex-col">
-        <a
-          href="#services"
-          onClick={() => setMenuOpen(false)}
-          className={`${bodoni.className} hls-bodoni border-b border-white/10 py-4 text-[27px] font-normal tracking-[-0.025em]`}
-        >
-          Services
-        </a>
-
-        <a
-          href="#about"
-          onClick={() => setMenuOpen(false)}
-          className={`${bodoni.className} hls-bodoni border-b border-white/10 py-4 text-[27px] font-normal tracking-[-0.025em]`}
-        >
-          About
-        </a>
-
-        <a
-          href="#laser"
-          onClick={() => setMenuOpen(false)}
-          className={`${bodoni.className} hls-bodoni border-b border-white/10 py-4 text-[27px] font-normal tracking-[-0.025em]`}
-        >
-          Laser Hair Removal
-        </a>
-
-        <a
-          href="#facials"
-          onClick={() => setMenuOpen(false)}
-          className={`${bodoni.className} hls-bodoni border-b border-white/10 py-4 text-[27px] font-normal tracking-[-0.025em]`}
-        >
-          Facials &amp; Skincare
-        </a>
-
-        <a
-          href="#contact"
-          onClick={() => setMenuOpen(false)}
-          className={`${bodoni.className} hls-bodoni border-b border-white/10 py-4 text-[27px] font-normal tracking-[-0.025em]`}
-        >
-          Visit
-        </a>
-
-        <a
-          href="#book"
-          onClick={() => setMenuOpen(false)}
-          className="group mt-8 flex items-center justify-between border-b border-white/35 pb-4 text-[7px] font-light uppercase tracking-[0.38em]"
-        >
-          <span>Book an Appointment</span>
-
-          <ArrowRight size={12} strokeWidth={1} />
-        </a>
-      </div>
-    </div>
-  )}
-
-  {/* =====================================================
-      LEFT DECORATIVE DETAIL — DESKTOP
-  ===================================================== */}
-
-  <div className="absolute bottom-[11%] left-12 z-20 hidden xl:block xl:left-16">
-    <div className="h-12 w-px bg-white/25" />
-
-    <p className="mt-5 text-[6px] font-light uppercase leading-[2.1] tracking-[0.42em] text-white/45">
-      Laser
-      <br />
-      Skincare
-      <br />
-      Self-Care
-    </p>
-  </div>
-
-  {/* =====================================================
-      HERO CONTENT
-  ===================================================== */}
-
-  <div className="absolute inset-0 z-20 flex items-center justify-center px-5 pt-16 text-center sm:pt-20 lg:pt-24">
-    <div className="hls-hero-text flex w-full max-w-[1000px] flex-col items-center">
-
-      {/* EYEBROW */}
-      <div className="mb-7 flex items-center gap-4 sm:mb-8">
-        <span className="h-px w-7 bg-white/35" />
-
-        <p className="text-[6px] font-light uppercase tracking-[0.48em] text-white/70 sm:text-[7px]">
-          Beauty · Care · You
-        </p>
-
-        <span className="h-px w-7 bg-white/35" />
-      </div>
-
-      {/* TITLE */}
-      <h1
-        className={`${bodoni.className} hls-bodoni font-normal tracking-[-0.055em] text-[#FAF7F3]`}
-      >
-        <span className="block text-[54px] leading-[0.86] sm:text-[67px] md:text-[80px] lg:text-[90px] xl:text-[98px]">
-          Beauty
-        </span>
-
-        <span className="mt-1 block text-[51px] italic leading-[0.86] text-[#F5EEE8] sm:text-[64px] md:text-[77px] lg:text-[87px] xl:text-[95px]">
-          without limits.
-        </span>
-      </h1>
-
-      {/* SMALL COPY */}
-      <p className="mt-8 max-w-[400px] text-[10px] font-light leading-[1.9] tracking-[0.035em] text-white/65 sm:text-[11px]">
-        Laser, skincare, and self-care designed around you.
-      </p>
-
-      {/* EDITORIAL CTA */}
-      <a
-        href="#book"
-        className="group mt-9 flex items-center gap-6 text-white"
-      >
-        <span className="text-[7px] font-light uppercase tracking-[0.42em]">
-          Book an Appointment
-        </span>
-
-        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/35 transition-all duration-500 group-hover:bg-white group-hover:text-[#29231F]">
-          <ArrowRight
-            size={12}
-            strokeWidth={1}
-            className="transition-transform duration-500 group-hover:translate-x-[2px]"
+          <img
+            src="/previews/house-of-laser/spa-hero.png"
+            alt="House of Laser & Spa treatment room"
+            className="hls-hero-image absolute inset-0 h-full w-full object-cover object-[58%_center] sm:object-center"
           />
-        </div>
-      </a>
-    </div>
-  </div>
 
-  {/* =====================================================
-      RIGHT BOTTOM DETAIL
-  ===================================================== */}
+          {/* LIGHT OVERLAYS */}
 
-  <div className="absolute bottom-[10%] right-12 z-20 hidden text-right xl:block xl:right-16">
-    <p className="text-[6px] font-light uppercase leading-[2.1] tracking-[0.42em] text-white/45">
-      Confidence
-      <br />
-      Care
-      <br />
-      Beauty
-    </p>
+          <div className="absolute inset-0 bg-black/[0.04]" />
 
-    <div className="ml-auto mt-5 h-px w-9 bg-white/25" />
-  </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-black/[0.08]" />
 
-  {/* =====================================================
-      MOBILE BOTTOM
-  ===================================================== */}
+          {/* =====================================================
+              DESKTOP NAV
+          ===================================================== */}
 
-  <div className="absolute bottom-7 left-5 right-5 z-20 flex items-center gap-4 lg:hidden">
-    <p className="shrink-0 text-[6px] font-light uppercase tracking-[0.35em] text-white/50">
-      Brooklyn · NY
-    </p>
+          <div className="hls-hero-nav absolute left-0 right-0 top-0 z-30 hidden px-10 pt-12 lg:block xl:px-16 xl:pt-14">
+            <div className="relative mx-auto flex max-w-[1500px] items-start justify-between">
+              {/* LOCATION */}
 
-    <span className="h-px flex-1 bg-white/20" />
+              <p className="text-[8px] font-light uppercase tracking-[0.34em] text-white/75">
+                Brooklyn, NY
+              </p>
 
-    <p className="shrink-0 text-[6px] font-light uppercase tracking-[0.35em] text-white/50">
-      Beauty · Care · You
-    </p>
-  </div>
-</section>
+              {/* CENTER BRAND */}
+
+              <a
+                href="#home"
+                className="absolute left-1/2 -translate-x-1/2 text-center"
+              >
+                <p className="whitespace-nowrap text-[9px] font-light uppercase tracking-[0.46em] text-white/90">
+                  House of Laser &amp; Spa
+                </p>
+
+                <div className="mx-auto mt-5 h-px w-10 bg-white/40" />
+              </a>
+
+              {/* NAV LINKS */}
+
+              <nav className="flex items-center gap-9">
+                <a
+                  href="#services"
+                  className="text-[8px] font-light uppercase tracking-[0.3em] text-white/80 transition-opacity duration-300 hover:opacity-50"
+                >
+                  Services
+                </a>
+
+                <a
+                  href="#about"
+                  className="text-[8px] font-light uppercase tracking-[0.3em] text-white/80 transition-opacity duration-300 hover:opacity-50"
+                >
+                  About
+                </a>
+
+                <a
+                  href="#contact"
+                  className="text-[8px] font-light uppercase tracking-[0.3em] text-white/80 transition-opacity duration-300 hover:opacity-50"
+                >
+                  Contact
+                </a>
+              </nav>
+            </div>
+          </div>
+
+          {/* =====================================================
+              MOBILE NAV
+          ===================================================== */}
+
+          <div className="absolute left-0 right-0 top-0 z-40 flex items-center justify-between px-5 pt-6 lg:hidden">
+            <a href="#home">
+              <p className="text-[11px] font-light uppercase tracking-[0.24em] text-white">
+                House of Laser &amp; Spa
+              </p>
+
+              <p className="mt-1.5 text-[6px] uppercase tracking-[0.36em] text-white/55">
+                Brooklyn, New York
+              </p>
+            </a>
+
+            <button
+              type="button"
+              aria-label="Toggle navigation"
+              onClick={() => setMenuOpen((current) => !current)}
+              className="flex h-10 w-10 items-center justify-center border border-white/30 text-white backdrop-blur-sm"
+            >
+              {menuOpen ? (
+                <X size={17} strokeWidth={1.1} />
+              ) : (
+                <Menu size={17} strokeWidth={1.1} />
+              )}
+            </button>
+          </div>
+
+          {/* =====================================================
+              MOBILE MENU
+          ===================================================== */}
+
+          {menuOpen && (
+            <div className="absolute left-0 right-0 top-0 z-30 bg-[#17130F]/95 px-6 pb-10 pt-24 text-white backdrop-blur-xl lg:hidden">
+              <div className="flex flex-col">
+                <a
+                  href="#services"
+                  onClick={() => setMenuOpen(false)}
+                  className={`${bodoni.className} border-b border-white/10 py-4 text-[26px]`}
+                >
+                  Services
+                </a>
+
+                <a
+                  href="#about"
+                  onClick={() => setMenuOpen(false)}
+                  className={`${bodoni.className} border-b border-white/10 py-4 text-[26px]`}
+                >
+                  About
+                </a>
+
+                <a
+                  href="#laser"
+                  onClick={() => setMenuOpen(false)}
+                  className={`${bodoni.className} border-b border-white/10 py-4 text-[26px]`}
+                >
+                  Laser Hair Removal
+                </a>
+
+                <a
+                  href="#facials"
+                  onClick={() => setMenuOpen(false)}
+                  className={`${bodoni.className} border-b border-white/10 py-4 text-[26px]`}
+                >
+                  Facials &amp; Skincare
+                </a>
+
+                <a
+                  href="#contact"
+                  onClick={() => setMenuOpen(false)}
+                  className={`${bodoni.className} border-b border-white/10 py-4 text-[26px]`}
+                >
+                  Contact
+                </a>
+
+                <a
+                  href="#book"
+                  onClick={() => setMenuOpen(false)}
+                  className="mt-7 flex items-center justify-center border border-white/35 px-6 py-4 text-[7px] font-light uppercase tracking-[0.3em]"
+                >
+                  Book an Appointment
+                </a>
+              </div>
+            </div>
+          )}
+
+          {/* =====================================================
+              HERO CENTER
+          ===================================================== */}
+
+          <div className="absolute inset-0 z-20 flex items-center justify-center px-5 pt-14 text-center sm:pt-16 lg:pt-20">
+            <div className="hls-hero-text flex w-full max-w-[950px] flex-col items-center">
+              {/* MAIN TITLE */}
+
+              <h1
+                className={`${bodoni.className} hls-bodoni text-center font-normal text-[#FAF7F3]`}
+              >
+                <span className="hls-hero-thin">
+                  <span className="block text-[50px] leading-[0.9] tracking-[-0.03em] sm:text-[62px] md:text-[74px] lg:text-[82px] xl:text-[88px]">
+                    Beauty
+                  </span>
+
+                  <span className="mt-2 block whitespace-nowrap text-[37px] leading-[0.92] tracking-[-0.03em] sm:text-[46px] md:text-[56px] lg:text-[62px] xl:text-[66px]">
+                    <span className="italic">without</span>
+                    <span className="not-italic"> limits.</span>
+                  </span>
+                </span>
+              </h1>
+
+              {/* FINE DIVIDER */}
+
+              <div className="mt-8 h-px w-9 bg-white/40 sm:mt-9" />
+
+              {/* SERVICES */}
+
+              <div className="mt-5 flex items-center justify-center gap-3 sm:mt-6 sm:gap-4">
+                <span className="text-[6px] font-light uppercase tracking-[0.42em] text-white/75 sm:text-[7px]">
+                  Laser
+                </span>
+
+                <span className="text-[5px] text-white/35">•</span>
+
+                <span className="text-[6px] font-light uppercase tracking-[0.42em] text-white/75 sm:text-[7px]">
+                  Skincare
+                </span>
+
+                <span className="text-[5px] text-white/35">•</span>
+
+                <span className="text-[6px] font-light uppercase tracking-[0.42em] text-white/75 sm:text-[7px]">
+                  Self-Care
+                </span>
+              </div>
+
+              {/* BUTTON */}
+
+              <a
+                href="#book"
+                className="group mt-8 inline-flex items-center justify-center gap-5 border border-white/45 px-7 py-[13px] text-[7px] font-light uppercase tracking-[0.3em] text-white transition-all duration-500 hover:border-white hover:bg-white hover:text-[#28231F] sm:px-8"
+              >
+                Book an Appointment
+
+                <ArrowRight
+                  size={10}
+                  strokeWidth={1}
+                  className="transition-transform duration-500 group-hover:translate-x-1"
+                />
+              </a>
+            </div>
+          </div>
+
+          {/* =====================================================
+              HERO BOTTOM
+          ===================================================== */}
+
+          <div className="absolute bottom-10 right-10 z-20 hidden items-center gap-5 lg:flex xl:bottom-14 xl:right-16">
+            <div className="h-px w-7 bg-white/45" />
+
+            <p className="text-[7px] font-light uppercase tracking-[0.34em] text-white/65">
+              A calmer, brighter you
+            </p>
+          </div>
+
+          <div className="absolute bottom-7 left-6 z-20 lg:hidden">
+            <p className="text-[6px] font-light uppercase tracking-[0.32em] text-white/55">
+              A calmer, brighter you
+            </p>
+          </div>
+        </section>
 
         {/* =====================================================
             ABOUT
