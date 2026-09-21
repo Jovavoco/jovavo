@@ -1573,7 +1573,7 @@ export default function HouseOfLaser() {
 =================================================== */}
 
 <div
-  className={`
+  className="
     relative z-20
     w-full
     px-6 pt-10
@@ -1582,20 +1582,20 @@ export default function HouseOfLaser() {
     lg:w-[49%] lg:max-w-[720px]
     lg:px-0 lg:pt-0
     xl:w-[50%]
-  `}
+  "
 >
   {/* LABEL */}
   <div className="flex items-center gap-4 sm:gap-5">
     <span className="h-px w-9 bg-[#8D786A]/40 sm:w-12 lg:w-14" />
 
     <p
-      className={`
+      className="
         text-[8px] font-light uppercase
         tracking-[0.38em] text-[#806C60]
         sm:text-[9px] sm:tracking-[0.42em]
         lg:text-[9px]
         xl:text-[10px]
-      `}
+      "
     >
       Visit The House
     </p>
@@ -1606,7 +1606,7 @@ export default function HouseOfLaser() {
     className={`${bodoni.className} hls-bodoni mt-6 font-normal tracking-[-0.06em] sm:mt-7 lg:mt-8`}
   >
     <span
-      className={`
+      className="
         block
         text-[48px] leading-[0.88]
         text-[#27211D]
@@ -1616,13 +1616,13 @@ export default function HouseOfLaser() {
         lg:text-[64px]
         xl:text-[72px]
         2xl:text-[78px]
-      `}
+      "
     >
       Your beauty
     </span>
 
     <span
-      className={`
+      className="
         mt-1 block
         text-[50px] italic leading-[0.88]
         text-[#9B826F]
@@ -1632,7 +1632,7 @@ export default function HouseOfLaser() {
         lg:text-[66px]
         xl:text-[74px]
         2xl:text-[80px]
-      `}
+      "
     >
       destination.
     </span>
@@ -1640,14 +1640,14 @@ export default function HouseOfLaser() {
 
   {/* DESCRIPTION */}
   <p
-    className={`
+    className="
       mt-6 max-w-[390px]
       text-[13px] font-light leading-[1.8]
       tracking-[0.01em] text-[#625A54]
       sm:max-w-[460px] sm:text-[14px]
       lg:mt-7 lg:max-w-[500px] lg:text-[14px]
       xl:text-[15px]
-    `}
+    "
   >
     A warm Brooklyn studio for personalized laser, skincare,
     beauty, and self-care treatments.
@@ -1656,12 +1656,12 @@ export default function HouseOfLaser() {
   {/* LOCATION */}
   <div className="mt-5 flex items-center gap-4 sm:mt-6">
     <p
-      className={`
+      className="
         text-[8px] font-light uppercase
         tracking-[0.36em] text-[#9A8171]
         sm:text-[9px] sm:tracking-[0.42em]
         lg:text-[9px]
-      `}
+      "
     >
       Brooklyn · New York
     </p>
