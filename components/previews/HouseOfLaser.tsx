@@ -1568,40 +1568,107 @@ export default function HouseOfLaser() {
       Brooklyn.
     </p>
 
-    {/* ===================================================
-        INTRO
-    =================================================== */}
+{/* ===================================================
+    INTRO
+=================================================== */}
 
-    <div className="absolute left-[5.5%] top-[11%] w-[46%] max-w-[650px]">
-      <div className="flex items-center gap-4">
-        <span className="h-px w-12 bg-[#8D786A]/40" />
+<div
+  className="
+    relative z-20
+    w-full
+    px-6 pt-10
+    sm:px-9 sm:pt-12
+    lg:absolute lg:left-[5.5%] lg:top-[10%]
+    lg:w-[49%] lg:max-w-[720px]
+    lg:px-0 lg:pt-0
+    xl:w-[50%]
+  "
+>
+  {/* LABEL */}
+  <div className="flex items-center gap-4 sm:gap-5">
+    <span className="h-px w-9 bg-[#8D786A]/40 sm:w-12 lg:w-14" />
 
-        <p className="text-[6px] font-light uppercase tracking-[0.48em] text-[#806C60]">
-          Visit The House
-        </p>
-      </div>
+    <p
+      className="
+        text-[8px] font-light uppercase
+        tracking-[0.38em] text-[#806C60]
+        sm:text-[9px] sm:tracking-[0.42em]
+        lg:text-[9px]
+        xl:text-[10px]
+      "
+    >
+      Visit The House
+    </p>
+  </div>
 
-      <h3
-        className={`${bodoni.className} hls-bodoni mt-6 font-normal tracking-[-0.06em]`}
-      >
-        <span className="block text-[55px] leading-[0.88] text-[#27211D] xl:text-[63px]">
-          Your beauty
-        </span>
+  {/* HEADING */}
+  <h3
+    className={`${bodoni.className} hls-bodoni mt-6 font-normal tracking-[-0.06em] sm:mt-7 lg:mt-8`}
+  >
+    <span
+      className="
+        block
+        text-[48px] leading-[0.88]
+        text-[#27211D]
+        min-[390px]:text-[52px]
+        sm:text-[62px]
+        md:text-[68px]
+        lg:text-[64px]
+        xl:text-[72px]
+        2xl:text-[78px]
+      "
+    >
+      Your beauty
+    </span>
 
-        <span className="mt-1 block text-[57px] italic leading-[0.88] text-[#9B826F] xl:text-[65px]">
-          destination.
-        </span>
-      </h3>
+    <span
+      className="
+        mt-1 block
+        text-[50px] italic leading-[0.88]
+        text-[#9B826F]
+        min-[390px]:text-[54px]
+        sm:text-[64px]
+        md:text-[70px]
+        lg:text-[66px]
+        xl:text-[74px]
+        2xl:text-[80px]
+      "
+    >
+      destination.
+    </span>
+  </h3>
 
-      <p className="mt-5 max-w-[430px] text-[10px] font-light leading-[1.8] tracking-[0.02em] text-[#625A54] xl:text-[11px]">
-        A warm Brooklyn studio for personalized laser, skincare,
-        beauty, and self-care treatments.
-      </p>
+  {/* DESCRIPTION */}
+  <p
+    className="
+      mt-6 max-w-[390px]
+      text-[13px] font-light leading-[1.8]
+      tracking-[0.01em] text-[#625A54]
+      sm:max-w-[460px] sm:text-[14px]
+      lg:mt-7 lg:max-w-[500px] lg:text-[14px]
+      xl:text-[15px]
+    "
+  >
+    A warm Brooklyn studio for personalized laser, skincare,
+    beauty, and self-care treatments.
+  </p>
 
-      <p className="mt-4 text-[6px] font-light uppercase tracking-[0.46em] text-[#9A8171]">
-        Brooklyn · New York
-      </p>
-    </div>
+  {/* LOCATION */}
+  <div className="mt-5 flex items-center gap-4 sm:mt-6">
+    <p
+      className="
+        text-[8px] font-light uppercase
+        tracking-[0.36em] text-[#9A8171]
+        sm:text-[9px] sm:tracking-[0.42em]
+        lg:text-[9px]
+      "
+    >
+      Brooklyn · New York
+    </p>
+
+    <span className="h-px w-7 bg-[#8D786A]/25 sm:w-10" />
+  </div>
+</div>
 
     {/* ===================================================
         CONTACT DETAILS
