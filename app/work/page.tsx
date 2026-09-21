@@ -51,6 +51,16 @@ const concepts = [
     image: "/images/concepts/verra.png",
     services: ["Web Design", "Art Direction", "Responsive Design"],
   },
+  {
+    title: "Sorella",
+    category: "Restaurant · Hospitality · Web Design",
+    description:
+      "A self-initiated restaurant concept blending atmospheric imagery, editorial typography, and a refined digital dining experience.",
+    href: "/preview/sorella",
+    status: "Self-Initiated Concept",
+    image: "/images/concepts/sorella.png",
+    services: ["Web Design", "Art Direction", "Responsive Design"],
+  },
 ];
 
 /* =====================================================
