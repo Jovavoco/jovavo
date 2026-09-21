@@ -725,35 +725,41 @@ export default function HouseOfLaser() {
         LEFT COPY
     ===================================================== */}
 
-    <div className="absolute left-[6.4%] top-[10.5%] z-20 w-[29%] max-w-[470px]">
+    <div className="absolute left-[4.8%] top-[8%] z-20 w-[34%] max-w-[520px] xl:left-[5.5%] xl:top-[9%]">
+      {/* Soft localized contrast behind the copy */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -inset-x-10 -inset-y-10 -z-10 rounded-[60px] bg-[radial-gradient(ellipse_at_center,rgba(38,27,20,0.34)_0%,rgba(38,27,20,0.20)_42%,rgba(38,27,20,0.07)_68%,transparent_82%)] blur-[2px]"
+      />
+
       <div className="flex items-center gap-5">
-        <p className="text-[7px] font-light uppercase tracking-[0.48em] text-white/90">
+        <p className="text-[7px] font-light uppercase tracking-[0.48em] text-white/95 xl:text-[8px]">
           Services
         </p>
 
-        <span className="h-px w-[86px] bg-white/45" />
+        <span className="h-px w-[86px] bg-white/55" />
       </div>
 
       <h2
-        className={`${bodoni.className} hls-bodoni mt-10 font-normal tracking-[-0.055em] text-[#FBF8F4]`}
+        className={`${bodoni.className} hls-bodoni mt-10 font-normal tracking-[-0.055em] text-white [text-shadow:0_2px_20px_rgba(31,21,15,0.20)]`}
       >
         <span className="block text-[57px] leading-[0.9] xl:text-[66px] 2xl:text-[74px]">
           Treatments,
         </span>
 
-        <span className="mt-3 block text-[59px] italic leading-[0.9] text-[#F4EBE4] xl:text-[68px] 2xl:text-[76px]">
+        <span className="mt-3 block text-[59px] italic leading-[0.9] text-[#FFF9F5] xl:text-[68px] 2xl:text-[76px]">
           your way.
         </span>
       </h2>
 
-      <p className="mt-8 max-w-[390px] text-[11px] font-light leading-[1.9] tracking-[0.045em] text-white/85 xl:text-[12px]">
+      <p className="mt-8 max-w-[390px] text-[11px] font-light leading-[1.9] tracking-[0.045em] text-white/95 [text-shadow:0_1px_12px_rgba(31,21,15,0.30)] xl:max-w-[410px] xl:text-[12px]">
         Laser, skincare, and beauty treatments thoughtfully brought
         together in one warm, personal space.
       </p>
 
       <a
         href="#laser"
-        className="group mt-8 inline-flex min-w-[220px] items-center justify-between rounded-full bg-[#F8F4EF] px-7 py-[15px] text-[#302923] shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:bg-white"
+        className="group mt-8 inline-flex min-w-[220px] items-center justify-between rounded-full bg-[#F8F4EF]/95 px-7 py-[15px] text-[#302923] shadow-[0_10px_35px_rgba(32,23,17,0.10)] backdrop-blur-[2px] transition-all duration-500 hover:bg-white"
       >
         <span className="text-[7px] font-normal uppercase tracking-[0.34em]">
           Explore Services
