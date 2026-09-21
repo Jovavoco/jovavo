@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import HouseOfLaser from "@/components/previews/HouseOfLaser";
 import ClassiqueSalon from "@/components/previews/ClassiqueSalon";
 import Verra from "@/components/previews/Verra";
+import Sorella from "@/components/previews/Sorella";
 
 export default async function PreviewPage({
   params,
@@ -21,6 +22,10 @@ export default async function PreviewPage({
 
   if (slug === "verra") {
     return <Verra />;
+  }
+
+  if (slug === "sorella") {
+    return <Sorella />;
   }
 
   notFound();
