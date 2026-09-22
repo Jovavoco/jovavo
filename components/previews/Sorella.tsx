@@ -35,7 +35,7 @@ export default function SorellaPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F7F3EC] text-[#2D2925]">
+    <main className="min-h-screen overflow-x-hidden bg-[#F7F3EC] text-[#2D2925]">
       {/* =====================================================
           HEADER + HERO
       ===================================================== */}
@@ -44,11 +44,13 @@ export default function SorellaPage() {
         id="home"
         className="
           relative w-full
-          min-h-[720px]
-          max-h-[980px]
+          min-h-[640px]
           overflow-hidden
           bg-[#2B211A]
+          sm:min-h-[700px]
+          md:min-h-[720px]
           md:aspect-[16/10]
+          lg:max-h-[980px]
         "
       >
         {/* HERO IMAGE */}
@@ -72,8 +74,8 @@ export default function SorellaPage() {
             className="
               mx-auto flex w-full max-w-[1540px]
               items-start justify-between
-              px-7 pt-9
-              sm:px-10
+              px-5 pt-7
+              sm:px-10 sm:pt-9
               lg:px-[5.5rem] lg:pt-11
             "
           >
@@ -251,7 +253,7 @@ export default function SorellaPage() {
           >
             <h1
               className="
-                text-[46px]
+                text-[34px]
                 font-normal
                 leading-[0.98]
                 tracking-[-0.025em]
@@ -299,7 +301,7 @@ export default function SorellaPage() {
               href="/preview/sorella/menu"
               className="
                 group
-                mx-auto mt-16
+                mx-auto mt-12 sm:mt-16
                 inline-flex
                 items-center
                 gap-6
@@ -486,31 +488,31 @@ export default function SorellaPage() {
 
       <section
         className="
-          relative min-h-[620px]
-          overflow-hidden
+          relative overflow-hidden
+          bg-[#F3ECE2]
           sm:min-h-[680px]
           lg:min-h-[720px]
         "
       >
+        {/* MOBILE: full image width is visible with no side cropping */}
         <img
           src="/previews/sorella/sorella-menu-bg.png"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="relative block h-auto w-full object-contain sm:absolute sm:inset-0 sm:h-full sm:object-cover sm:object-center"
         />
 
         <div className="absolute inset-0 bg-[#F4EEE6]/[0.05]" />
 
         <div
           className="
-            relative z-10
-            flex min-h-[620px]
-            items-center justify-center
-            px-6 py-20
-            sm:min-h-[680px] sm:px-10
+            absolute inset-0 z-10
+            flex items-center justify-center
+            px-5 py-8
+            sm:relative sm:min-h-[680px] sm:px-10 sm:py-20
             lg:min-h-[720px] lg:px-24
           "
         >
-          <div className="mx-auto w-full max-w-[680px] text-center">
+          <div className="mx-auto w-full max-w-[680px] px-1 text-center sm:px-0">
             <p className="text-[9px] font-medium tracking-[0.28em] text-[#756D66]">
               THE MENU
             </p>
@@ -538,11 +540,13 @@ export default function SorellaPage() {
 
             <p
               className="
-                mx-auto mt-6
+                mx-auto mt-4
                 max-w-[500px]
-                text-[12px]
+                text-[10px]
                 font-normal
-                leading-[1.9]
+                leading-[1.65]
+                sm:text-[12px]
+                sm:leading-[1.9]
                 text-[#655D56]
               "
             >
@@ -554,7 +558,7 @@ export default function SorellaPage() {
               href="/preview/sorella/menu"
               className="
                 group
-                mx-auto mt-10
+                mx-auto mt-6 sm:mt-10
                 inline-flex
                 items-center gap-6
                 rounded-full
@@ -602,7 +606,7 @@ export default function SorellaPage() {
               </span>
             </Link>
 
-            <div className="mt-7 flex items-center justify-center gap-4">
+            <div className="mt-4 flex items-center justify-center gap-3 sm:mt-7 sm:gap-4">
               <span className="text-[7px] font-medium tracking-[0.21em] text-[#877E76]">
                 DINNER
               </span>
@@ -631,8 +635,8 @@ export default function SorellaPage() {
         className="
           relative overflow-hidden
           bg-[#F7F2EB]
-          px-6 py-20
-          sm:px-10
+          px-5 py-14
+          sm:px-10 sm:py-20
           md:px-14
           lg:px-24 lg:py-28
         "
@@ -654,7 +658,7 @@ export default function SorellaPage() {
           className="
             relative mx-auto grid
             max-w-[1380px]
-            gap-14
+            gap-10
             lg:grid-cols-[0.88fr_1.12fr]
             lg:items-center
             lg:gap-24
@@ -674,7 +678,7 @@ export default function SorellaPage() {
             <h2
               className="
                 max-w-[500px]
-                text-[40px]
+                text-[36px]
                 font-normal
                 leading-[1.03]
                 tracking-[-0.04em]
@@ -861,12 +865,12 @@ export default function SorellaPage() {
             <h2
               className="
                 mt-7
-                text-[42px]
+                text-[36px]
                 font-normal
                 leading-[1.02]
                 tracking-[-0.04em]
                 text-[#3A332D]
-                sm:text-[49px]
+                sm:text-[46px]
                 lg:text-[55px]
               "
               style={{
@@ -976,7 +980,7 @@ export default function SorellaPage() {
         className="
           relative overflow-hidden
           bg-[#F7F3EC]
-          px-6 py-16
+          px-5 py-14
           sm:px-10 sm:py-20
           md:px-14
           lg:px-24 lg:py-24
@@ -1142,10 +1146,10 @@ export default function SorellaPage() {
                 </Link>
               </div>
 
-              <div className="mt-5 flex items-center gap-3">
+              <div className="mt-5 flex max-w-full items-start gap-3">
                 <span className="h-[4px] w-[4px] rounded-full bg-[#B29E8F]" />
 
-                <p className="text-[7px] font-medium tracking-[0.17em] text-[#9B9188]">
+                <p className="max-w-[280px] text-[7px] font-medium leading-[1.7] tracking-[0.14em] text-[#9B9188] sm:max-w-none sm:tracking-[0.17em]">
                   CONCEPT DEMONSTRATION · RESERVATIONS ARE DISABLED
                 </p>
               </div>
@@ -1186,7 +1190,7 @@ export default function SorellaPage() {
           className="
             relative z-10
             mx-auto max-w-[1180px]
-            px-6 py-16
+            px-5 py-14
             sm:px-10 sm:py-20
             md:px-14
             lg:px-20
@@ -1295,7 +1299,7 @@ export default function SorellaPage() {
                   CONTACT SORELLA
 
                   <span className="text-[12px]">
-                    ↗
+                    →
                   </span>
                 </Link>
               </div>
@@ -1386,9 +1390,9 @@ export default function SorellaPage() {
         className="
           relative overflow-hidden
           bg-[#302923]
-          px-6 pb-8 pt-20
+          px-5 pb-8 pt-14
           text-[#F4EFE8]
-          sm:px-10
+          sm:px-10 sm:pt-20
           md:px-14
           lg:px-24 lg:pt-24
         "
@@ -1423,10 +1427,10 @@ export default function SorellaPage() {
               <h2
                 className="
                   mt-5
-                  text-[100px]
+                  text-[46px]
                   font-normal
                   leading-none
-                  tracking-[0.13em]
+                  tracking-[0.11em]
                   text-[#F7F1EA]
                   sm:text-[58px]
                   lg:text-[68px]
