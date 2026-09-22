@@ -513,7 +513,7 @@ export default function SorellaPage() {
           "
         >
           <div className="mx-auto w-full max-w-[680px] px-1 text-center sm:px-0">
-            <p className="text-[6px] font-medium tracking-[0.22em] sm:text-[9px] sm:tracking-[0.28em] text-[#756D66]">
+            <p className="text-[4px] font-medium tracking-[0.18em] sm:text-[9px] sm:tracking-[0.28em] text-[#756D66]">
               THE MENU
             </p>
 
@@ -542,7 +542,7 @@ export default function SorellaPage() {
               className="
                 mx-auto mt-4
                 max-w-[500px]
-                text-[8px]
+                text-[5px]
                 font-normal
                 leading-[1.55]
                 sm:text-[11px]
@@ -574,7 +574,7 @@ export default function SorellaPage() {
                 hover:bg-[#443E39]
               "
             >
-              <span className="pl-1 text-[7px] font-semibold tracking-[0.15em] sm:text-[9px] sm:tracking-[0.19em]">
+              <span className="pl-1 text-[4px] font-semibold tracking-[0.12em] sm:text-[9px] sm:tracking-[0.19em]">
                 EXPLORE THE MENU
               </span>
 
@@ -607,19 +607,19 @@ export default function SorellaPage() {
             </Link>
 
             <div className="mt-4 flex items-center justify-center gap-3 sm:mt-7 sm:gap-4">
-              <span className="text-[5px] font-medium tracking-[0.16em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
+              <span className="text-[3px] font-medium tracking-[0.12em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
                 DINNER
               </span>
 
               <span className="h-[2px] w-[2px] rounded-full bg-[#9E9389]" />
 
-              <span className="text-[5px] font-medium tracking-[0.16em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
+              <span className="text-[3px] font-medium tracking-[0.12em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
                 WINE
               </span>
 
               <span className="h-[2px] w-[2px] rounded-full bg-[#9E9389]" />
 
-              <span className="text-[5px] font-medium tracking-[0.16em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
+              <span className="text-[3px] font-medium tracking-[0.12em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
                 DESSERT
               </span>
             </div>
@@ -1420,7 +1420,7 @@ export default function SorellaPage() {
             "
           >
 <div>
-  <p className="text-[8px] font-medium tracking-[0.22em] text-white/40 sm:text-[15px] lg:text-[18px]">
+  <p className="text-[8px] font-medium tracking-[0.22em] text-white/40 sm:text-[11px] lg:text-[12px]">
     ITALIAN KITCHEN · NEW YORK
   </p>
 
@@ -1432,8 +1432,8 @@ export default function SorellaPage() {
                   leading-none
                   tracking-[0.11em]
                   text-[#F7F1EA]
-                  sm:text-[48px]
-                  lg:text-[58px]
+                  sm:text-[40px]
+                  lg:text-[46px]
                 "
                 style={{
                   fontFamily: '"Times New Roman", Times, serif',
