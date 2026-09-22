@@ -810,37 +810,46 @@ export default function SorellaPage() {
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
 
-        <div
-          className="
-            relative z-10
-            mx-auto flex min-h-[650px]
-            max-w-[1540px]
-            items-end
-            px-6 py-14
-            sm:min-h-[700px]
-            sm:px-10 sm:py-16
-            lg:min-h-[760px]
-            lg:items-center
-            lg:px-14 lg:py-20
-            xl:px-[5.5rem]
-          "
-        >
-          <div
-            className="
-              ml-auto w-full
-              rounded-[34px]
-              bg-[#F5EEE5]/95
-              px-7 py-9
-              shadow-[0_20px_60px_rgba(56,45,37,0.08)]
-              sm:max-w-[520px]
-              sm:px-10 sm:py-11
-              lg:w-[43%]
-              lg:max-w-[560px]
-              lg:bg-transparent
-              lg:px-0 lg:py-0
-              lg:shadow-none
-            "
-          >
+<div
+  className="
+    relative z-10
+    mx-auto flex min-h-[650px]
+    max-w-[1540px]
+    items-end
+    px-6 py-14
+    sm:min-h-[700px]
+    sm:px-10 sm:py-16
+    lg:min-h-[760px]
+    lg:items-center
+    lg:justify-end
+    lg:pl-14
+    lg:pr-8
+    lg:py-20
+    xl:pl-20
+    xl:pr-6
+    2xl:pr-0
+  "
+>
+  <div
+    className="
+      ml-auto w-full
+      rounded-[34px]
+      bg-[#F5EEE5]/95
+      px-7 py-9
+      shadow-[0_20px_60px_rgba(56,45,37,0.08)]
+      sm:max-w-[520px]
+      sm:px-10 sm:py-11
+      lg:mr-0
+      lg:w-[38%]
+      lg:max-w-[500px]
+      lg:translate-x-8
+      lg:bg-transparent
+      lg:px-0 lg:py-0
+      lg:shadow-none
+      xl:translate-x-12
+      2xl:translate-x-16
+    "
+  >
             <div className="flex items-center gap-4">
               <span className="h-px w-8 bg-[#A28A78]" />
 
