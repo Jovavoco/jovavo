@@ -630,7 +630,7 @@ export default function SorellaMenuPage() {
             <div className="mx-auto my-6 h-px w-11 bg-[#756559]/50" />
 
             <p
-              className="text-[15px] italic leading-[1.5] text-[#62534A] sm:text-[18px]"
+              className="text-[15px] font-semibold italic leading-[1.5] text-[#4A3D35] sm:text-[18px] sm:font-normal sm:text-[#62534A]"
               style={{
                 fontFamily: '"Times New Roman", Times, serif',
               }}
