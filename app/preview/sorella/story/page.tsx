@@ -542,7 +542,7 @@ export default function SorellaStoryPage() {
               >
                 EXPLORE THE MENU
 
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
@@ -836,7 +836,7 @@ export default function SorellaStoryPage() {
           GET IN TOUCH
 
           <span className="text-[11px] transition-transform group-hover:translate-x-1">
-            ↗
+            →
           </span>
         </Link>
       </div>
@@ -984,7 +984,7 @@ export default function SorellaStoryPage() {
                 VIEW THE MENU
 
                 <span className="text-[11px] transition-transform group-hover:translate-x-1">
-                  ↗
+                  →
                 </span>
               </Link>
 
@@ -1004,7 +1004,7 @@ export default function SorellaStoryPage() {
                 RESERVE A TABLE
 
                 <span className="text-[11px] transition-transform group-hover:translate-x-1">
-                  ↗
+                  →
                 </span>
               </Link>
             </div>
