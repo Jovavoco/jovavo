@@ -513,7 +513,7 @@ export default function SorellaPage() {
           "
         >
           <div className="mx-auto w-full max-w-[680px] px-1 text-center sm:px-0">
-            <p className="text-[4px] font-medium tracking-[0.18em] sm:text-[9px] sm:tracking-[0.28em] text-[#756D66]">
+            <p className="text-[6px] font-medium tracking-[0.20em] sm:text-[9px] sm:tracking-[0.28em] text-[#756D66]">
               THE MENU
             </p>
 
@@ -542,9 +542,9 @@ export default function SorellaPage() {
               className="
                 mx-auto mt-4
                 max-w-[500px]
-                text-[5px]
+                text-[7px]
                 font-normal
-                leading-[1.55]
+                leading-[1.65]
                 sm:text-[11px]
                 sm:leading-[1.9]
                 text-[#655D56]
@@ -558,14 +558,18 @@ export default function SorellaPage() {
               href="/preview/sorella/menu"
               className="
                 group
-                mx-auto mt-6 sm:mt-10
+                mx-auto mt-5 sm:mt-10
                 inline-flex
-                items-center gap-6
+                items-center gap-3
                 rounded-full
                 bg-[#514A44]
-                py-2.5
-                pl-7
-                pr-2.5
+                py-1.5
+                pl-4
+                pr-1.5
+                sm:gap-6
+                sm:py-2.5
+                sm:pl-7
+                sm:pr-2.5
                 text-[#F8F4EE]
                 shadow-[0_12px_32px_rgba(58,49,43,0.14)]
                 transition-all
@@ -574,16 +578,17 @@ export default function SorellaPage() {
                 hover:bg-[#443E39]
               "
             >
-              <span className="pl-1 text-[4px] font-semibold tracking-[0.12em] sm:text-[9px] sm:tracking-[0.19em]">
+              <span className="pl-1 text-[5px] font-semibold tracking-[0.13em] sm:text-[9px] sm:tracking-[0.19em]">
                 EXPLORE THE MENU
               </span>
 
               <span
                 className="
-                  flex h-10 w-10
+                  flex h-7 w-7
                   shrink-0
                   items-center justify-center
                   rounded-full
+                  sm:h-10 sm:w-10
                   bg-[#F4EFE8]
                   transition-transform
                   duration-300
@@ -607,19 +612,19 @@ export default function SorellaPage() {
             </Link>
 
             <div className="mt-4 flex items-center justify-center gap-3 sm:mt-7 sm:gap-4">
-              <span className="text-[3px] font-medium tracking-[0.12em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
+              <span className="text-[5px] font-medium tracking-[0.16em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
                 DINNER
               </span>
 
               <span className="h-[2px] w-[2px] rounded-full bg-[#9E9389]" />
 
-              <span className="text-[3px] font-medium tracking-[0.12em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
+              <span className="text-[5px] font-medium tracking-[0.16em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
                 WINE
               </span>
 
               <span className="h-[2px] w-[2px] rounded-full bg-[#9E9389]" />
 
-              <span className="text-[3px] font-medium tracking-[0.12em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
+              <span className="text-[5px] font-medium tracking-[0.16em] sm:text-[7px] sm:tracking-[0.21em] text-[#877E76]">
                 DESSERT
               </span>
             </div>
