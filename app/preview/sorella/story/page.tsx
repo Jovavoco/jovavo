@@ -42,7 +42,7 @@ export default function SorellaStoryPage() {
           <nav className="hidden items-center gap-9 md:flex lg:gap-11">
             <Link
               href="/preview/sorella/menu"
-              className="text-[7px] tracking-[0.28em] text-[#746A61]"
+              className="text-[7px] tracking-[0.28em] text-[#746A61] transition-colors duration-300 hover:text-[#332D28]"
             >
               MENU
             </Link>
@@ -55,21 +55,21 @@ export default function SorellaStoryPage() {
             </Link>
 
             <Link
-              href="/preview/sorella#private-dining"
-              className="text-[7px] tracking-[0.28em] text-[#746A61]"
+              href="/preview/sorella/private-dining"
+              className="text-[7px] tracking-[0.28em] text-[#746A61] transition-colors duration-300 hover:text-[#332D28]"
             >
               PRIVATE DINING
             </Link>
 
             <Link
-              href="/preview/sorella#contact"
-              className="text-[7px] tracking-[0.28em] text-[#746A61]"
+              href="/preview/sorella/contact"
+              className="text-[7px] tracking-[0.28em] text-[#746A61] transition-colors duration-300 hover:text-[#332D28]"
             >
               CONTACT
             </Link>
 
             <Link
-              href="/preview/sorella#reserve"
+              href="/preview/sorella/reservations"
               className="rounded-full bg-[#332D28] px-8 py-4 text-[7px] tracking-[0.28em] text-white"
             >
               RESERVE
@@ -111,7 +111,7 @@ export default function SorellaStoryPage() {
               </Link>
 
               <Link
-                href="/preview/sorella#private-dining"
+                href="/preview/sorella/private-dining"
                 onClick={() => setMobileOpen(false)}
                 className="text-[8px] tracking-[0.27em] text-[#756A61]"
               >
@@ -119,15 +119,7 @@ export default function SorellaStoryPage() {
               </Link>
 
               <Link
-                href="/preview/sorella#gallery"
-                onClick={() => setMobileOpen(false)}
-                className="text-[8px] tracking-[0.27em] text-[#756A61]"
-              >
-                GALLERY
-              </Link>
-
-              <Link
-                href="/preview/sorella#contact"
+                href="/preview/sorella/contact"
                 onClick={() => setMobileOpen(false)}
                 className="text-[8px] tracking-[0.27em] text-[#756A61]"
               >
@@ -135,7 +127,7 @@ export default function SorellaStoryPage() {
               </Link>
 
               <Link
-                href="/preview/sorella#reserve"
+                href="/preview/sorella/reservations"
                 onClick={() => setMobileOpen(false)}
                 className="mt-2 w-fit rounded-full bg-[#332D28] px-7 py-3.5 text-[7px] tracking-[0.28em] text-white"
               >
@@ -832,7 +824,7 @@ export default function SorellaStoryPage() {
         </p>
 
         <Link
-          href="/preview/sorella#contact"
+          href="/preview/sorella/contact"
           className="
             group mt-3 inline-flex items-center gap-3
             text-[8px] tracking-[0.2em]
@@ -997,7 +989,7 @@ export default function SorellaStoryPage() {
               </Link>
 
               <Link
-                href="/preview/sorella#reserve"
+                href="/preview/sorella/reservations"
                 className="
                   group inline-flex items-center gap-4
                   rounded-full
