@@ -233,7 +233,7 @@ function MenuItem({
   price,
 }: MenuItemType) {
   return (
-    <article className="border-b border-[#AFA093]/35 py-7 sm:py-8">
+    <article className="border-b border-[#AFA093]/35 py-6 sm:py-8">
       <div className="flex items-start justify-between gap-8">
         <div className="min-w-0 pr-4">
           <h3
@@ -273,7 +273,7 @@ function DarkMenuItem({
   price,
 }: MenuItemType) {
   return (
-    <article className="border-b border-white/15 py-7 sm:py-8">
+    <article className="border-b border-white/15 py-6 sm:py-8">
       <div className="flex items-start justify-between gap-8">
         <div className="min-w-0 pr-4">
           <h3
@@ -323,11 +323,11 @@ function ImageHeader({
   position?: string;
 }) {
   return (
-    <div className="relative h-[220px] overflow-hidden sm:h-[270px] lg:h-[320px]">
+    <div className="relative overflow-hidden bg-[#E9E0D5] sm:h-[270px] lg:h-[320px]">
       <img
         src={image}
         alt={alt}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="relative block h-auto w-full object-contain sm:absolute sm:inset-0 sm:h-full sm:object-cover"
         style={{
           objectPosition: position,
         }}
@@ -345,7 +345,7 @@ function ImageHeader({
 
       {/* TITLE */}
 
-      <div className="absolute inset-0 flex items-center justify-center px-6">
+      <div className="absolute inset-0 flex items-center justify-center px-5 sm:px-6">
         <div className="text-center">
           <span
             className={`mx-auto block h-px w-12 ${
@@ -469,10 +469,10 @@ export default function SorellaMenuPage() {
       ===================================================== */}
 
       <header className="relative z-50 border-b border-[#CFC3B6]/40 bg-[#F3EEE6]">
-        <div className="mx-auto flex max-w-[1500px] items-center justify-between px-6 py-7 sm:px-10 md:px-14 lg:px-20">
+        <div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-5 sm:px-10 sm:py-7 md:px-14 lg:px-20">
           <Link href="/preview/sorella">
             <span
-              className="block text-[26px] tracking-[0.28em] text-[#332D28]"
+              className="block text-[23px] tracking-[0.25em] text-[#332D28] sm:text-[26px] sm:tracking-[0.28em]"
               style={{
                 fontFamily: '"Times New Roman", Times, serif',
               }}
@@ -613,11 +613,11 @@ export default function SorellaMenuPage() {
           HERO
       ===================================================== */}
 
-      <section className="relative h-[360px] overflow-hidden sm:h-[430px] lg:h-[490px]">
+      <section className="relative overflow-hidden bg-[#E9E0D5] sm:h-[430px] lg:h-[490px]">
         <img
           src="/previews/sorella/sorella-menu-hero.png"
           alt="Sorella dinner table"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="relative block h-auto w-full object-contain sm:absolute sm:inset-0 sm:h-full sm:object-cover sm:object-center"
         />
 
         <div className="absolute inset-0 bg-[#F3EEE6]/5" />
@@ -629,7 +629,7 @@ export default function SorellaMenuPage() {
             </p>
 
             <h1
-              className="text-[56px] font-normal leading-[0.88] tracking-[-0.05em] text-[#302923] sm:text-[76px] lg:text-[92px]"
+              className="text-[46px] font-normal leading-[0.9] tracking-[-0.05em] text-[#302923] min-[390px]:text-[52px] sm:text-[76px] lg:text-[92px]"
               style={{
                 fontFamily: '"Times New Roman", Times, serif',
               }}
@@ -657,7 +657,7 @@ export default function SorellaMenuPage() {
       ===================================================== */}
 
       <section className="border-y border-[#CEC2B6]/45 bg-[#F3EEE6]">
-        <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-center gap-x-9 gap-y-5 px-6 py-8 sm:gap-x-12 lg:gap-x-14">
+        <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-center gap-x-6 gap-y-4 px-5 py-6 sm:gap-x-12 sm:gap-y-5 sm:px-6 sm:py-8 lg:gap-x-14">
           {[
             ["antipasti", "Antipasti"],
             ["pasta", "Pasta"],
@@ -670,7 +670,7 @@ export default function SorellaMenuPage() {
               key={id}
               type="button"
               onClick={() => scrollTo(id)}
-              className="group relative text-[16px] font-normal tracking-[-0.01em] text-[#6F6258] transition-colors duration-300 hover:text-[#302923] sm:text-[17px] lg:text-[18px]"
+              className="group relative text-[15px] font-normal tracking-[-0.01em] text-[#6F6258] transition-colors duration-300 hover:text-[#302923] sm:text-[17px] lg:text-[18px]"
               style={{
                 fontFamily: '"Times New Roman", Times, serif',
               }}
@@ -835,11 +835,11 @@ export default function SorellaMenuPage() {
           CLOSING
       ===================================================== */}
 
-      <section className="relative h-[270px] overflow-hidden sm:h-[320px] lg:h-[370px]">
+      <section className="relative overflow-hidden bg-[#E9E0D5] sm:h-[320px] lg:h-[370px]">
         <img
           src="/previews/sorella/sorella-menu-closing.jpg"
           alt="Sorella table after dinner"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="relative block h-auto w-full object-contain sm:absolute sm:inset-0 sm:h-full sm:object-cover sm:object-center"
         />
 
         <div className="absolute inset-0 bg-[#2B211A]/[0.04]" />
