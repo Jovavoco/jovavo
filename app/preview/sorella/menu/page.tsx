@@ -496,7 +496,7 @@ export default function SorellaMenuPage() {
             </Link>
 
             <Link
-              href="/preview/sorella#story"
+              href="/preview/sorella/story"
               className="text-[7px] tracking-[0.28em] text-[#746A61] transition-colors duration-300 hover:text-[#332D28]"
             >
               OUR STORY
@@ -518,7 +518,7 @@ export default function SorellaMenuPage() {
             </Link>
 
             <Link
-              href="/preview/sorella#reserve"
+              href="/preview/sorella/reservations"
               className="rounded-full bg-[#332D28] px-8 py-4 text-[7px] tracking-[0.28em] text-white"
             >
               RESERVE
@@ -556,7 +556,7 @@ export default function SorellaMenuPage() {
               </Link>
 
               <Link
-                href="/preview/sorella#story"
+                href="/preview/sorella/story"
                 onClick={() =>
                   setMobileOpen(false)
                 }
@@ -586,7 +586,7 @@ export default function SorellaMenuPage() {
               </Link>
 
               <Link
-                href="/preview/sorella#reserve"
+                href="/preview/sorella/reservations"
                 onClick={() =>
                   setMobileOpen(false)
                 }
