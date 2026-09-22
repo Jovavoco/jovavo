@@ -3,1068 +3,828 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const navItems = [
+/* =====================================================
+   MENU DATA
+===================================================== */
+
+const antipasti = [
   {
-    href: "/preview/sorella/menu",
-    label: "MENU",
+    name: "Focaccia della Casa",
+    description:
+      "Warm rosemary focaccia, whipped ricotta, Sicilian olive oil",
+    price: "12",
   },
   {
-    href: "/preview/sorella/story",
-    label: "OUR STORY",
+    name: "Burrata",
+    description:
+      "Heirloom tomato, basil, aged balsamic, extra virgin olive oil",
+    price: "19",
   },
   {
-    href: "/preview/sorella/private-dining",
-    label: "PRIVATE DINING",
+    name: "Carciofi",
+    description:
+      "Crispy artichokes, pecorino romano, lemon, parsley",
+    price: "17",
   },
   {
-    href: "/preview/sorella/contact",
-    label: "CONTACT",
+    name: "Polpo",
+    description:
+      "Charred octopus, gigante beans, tomato, oregano, salsa verde",
+    price: "22",
+  },
+  {
+    name: "Crudo di Tonno",
+    description:
+      "Yellowfin tuna, citrus, capers, Calabrian chile",
+    price: "23",
+  },
+  {
+    name: "Polpette",
+    description:
+      "Beef and pork meatballs, slow-cooked tomato, parmigiano",
+    price: "18",
   },
 ];
 
-export default function SorellaPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
+const pasta = [
+  {
+    name: "Rigatoni alla Vodka",
+    description:
+      "San Marzano tomato, Calabrian chile, cream, parmigiano",
+    price: "26",
+  },
+  {
+    name: "Cacio e Pepe",
+    description:
+      "Tonnarelli, pecorino romano, toasted black pepper",
+    price: "24",
+  },
+  {
+    name: "Pappardelle al Ragù",
+    description:
+      "Slow-braised beef and pork, tomato, parmigiano",
+    price: "29",
+  },
+  {
+    name: "Ravioli di Ricotta",
+    description:
+      "House ricotta, brown butter, sage, lemon, parmigiano",
+    price: "27",
+  },
+  {
+    name: "Spaghetti alle Vongole",
+    description:
+      "Little neck clams, white wine, garlic, parsley, chile",
+    price: "31",
+  },
+  {
+    name: "Paccheri",
+    description:
+      "Maine lobster, cherry tomato, basil, touch of chile",
+    price: "36",
+  },
+];
 
-  const scrollToTop = () => {
-    setMenuOpen(false);
+const secondi = [
+  {
+    name: "Branzino",
+    description:
+      "Mediterranean sea bass, roasted tomato, olive, caper, lemon",
+    price: "38",
+  },
+  {
+    name: "Pollo al Limone",
+    description:
+      "Roasted chicken, lemon, rosemary, natural jus",
+    price: "32",
+  },
+  {
+    name: "Salmone",
+    description:
+      "Roasted salmon, cannellini beans, escarole, salsa verde",
+    price: "36",
+  },
+  {
+    name: "Tagliata di Manzo",
+    description:
+      "Grilled New York strip, arugula, parmigiano, aged balsamic",
+    price: "48",
+  },
+];
 
-    document.getElementById("home")?.scrollIntoView({
+const contorni = [
+  {
+    name: "Patate Arrosto",
+    description: "Crispy potatoes, rosemary, sea salt",
+    price: "12",
+  },
+  {
+    name: "Broccolini",
+    description: "Garlic, lemon, Calabrian chile",
+    price: "13",
+  },
+  {
+    name: "Insalata Verde",
+    description:
+      "Little gem, herbs, parmigiano, lemon vinaigrette",
+    price: "12",
+  },
+  {
+    name: "Spinaci",
+    description:
+      "Wilted spinach, garlic, extra virgin olive oil",
+    price: "12",
+  },
+];
+
+const dolci = [
+  {
+    name: "Tiramisù",
+    description: "Espresso, mascarpone, cocoa",
+    price: "14",
+  },
+  {
+    name: "Olive Oil Cake",
+    description: "Citrus, mascarpone cream, pistachio",
+    price: "13",
+  },
+  {
+    name: "Panna Cotta",
+    description: "Vanilla bean, seasonal fruit, amaretti",
+    price: "13",
+  },
+  {
+    name: "Affogato",
+    description: "Vanilla gelato, espresso",
+    price: "10",
+  },
+];
+
+const cocktails = [
+  {
+    name: "Sorella Spritz",
+    description: "Aperitivo, prosecco, blood orange",
+    price: "17",
+  },
+  {
+    name: "Amalfi",
+    description: "Gin, limoncello, basil, lemon",
+    price: "18",
+  },
+  {
+    name: "Via Roma",
+    description:
+      "Bourbon, amaro, sweet vermouth, orange",
+    price: "19",
+  },
+  {
+    name: "Notte",
+    description: "Espresso, vodka, coffee liqueur",
+    price: "18",
+  },
+];
+
+const wines = [
+  {
+    name: "Prosecco",
+    description: "Veneto · NV",
+    price: "15",
+  },
+  {
+    name: "Pinot Grigio",
+    description: "Friuli · 2025",
+    price: "16",
+  },
+  {
+    name: "Vermentino",
+    description: "Sardegna · 2025",
+    price: "17",
+  },
+  {
+    name: "Chianti Classico",
+    description: "Toscana · 2024",
+    price: "18",
+  },
+  {
+    name: "Etna Rosso",
+    description: "Sicilia · 2024",
+    price: "19",
+  },
+  {
+    name: "Barbera d'Alba",
+    description: "Piemonte · 2024",
+    price: "20",
+  },
+];
+
+type MenuItemType = {
+  name: string;
+  description: string;
+  price: string;
+};
+
+/* =====================================================
+   LIGHT MENU ITEM
+===================================================== */
+
+function MenuItem({
+  name,
+  description,
+  price,
+}: MenuItemType) {
+  return (
+    <article className="border-b border-[#AFA093]/35 py-6 sm:py-8">
+      <div className="flex items-start justify-between gap-8">
+        <div className="min-w-0 pr-4">
+          <h3
+            className="text-[22px] font-normal leading-[1.08] tracking-[-0.025em] text-[#332C27] sm:text-[24px] lg:text-[26px]"
+            style={{
+              fontFamily: '"Times New Roman", Times, serif',
+            }}
+          >
+            {name}
+          </h3>
+
+          <p className="mt-3 max-w-[430px] text-[12px] font-light leading-[1.65] text-[#756A61] sm:text-[13px]">
+            {description}
+          </p>
+        </div>
+
+        <span
+          className="shrink-0 pt-1 text-[16px] italic text-[#75665B]"
+          style={{
+            fontFamily: '"Times New Roman", Times, serif',
+          }}
+        >
+          {price}
+        </span>
+      </div>
+    </article>
+  );
+}
+
+/* =====================================================
+   DARK MENU ITEM
+===================================================== */
+
+function DarkMenuItem({
+  name,
+  description,
+  price,
+}: MenuItemType) {
+  return (
+    <article className="border-b border-white/15 py-6 sm:py-8">
+      <div className="flex items-start justify-between gap-8">
+        <div className="min-w-0 pr-4">
+          <h3
+            className="text-[22px] font-normal leading-[1.08] tracking-[-0.025em] text-[#F7F2E9] sm:text-[24px] lg:text-[26px]"
+            style={{
+              fontFamily: '"Times New Roman", Times, serif',
+            }}
+          >
+            {name}
+          </h3>
+
+          <p className="mt-3 max-w-[430px] text-[12px] font-light leading-[1.65] text-white/50 sm:text-[13px]">
+            {description}
+          </p>
+        </div>
+
+        <span
+          className="shrink-0 pt-1 text-[16px] italic text-white/65"
+          style={{
+            fontFamily: '"Times New Roman", Times, serif',
+          }}
+        >
+          {price}
+        </span>
+      </div>
+    </article>
+  );
+}
+
+/* =====================================================
+   THIN IMAGE HEADER
+===================================================== */
+
+function ImageHeader({
+  image,
+  alt,
+  title,
+  subtitle,
+  dark = false,
+  position = "center",
+}: {
+  image: string;
+  alt: string;
+  title: string;
+  subtitle: string;
+  dark?: boolean;
+  position?: string;
+}) {
+  return (
+    <div className="relative overflow-hidden bg-[#E9E0D5] sm:h-[270px] lg:h-[320px]">
+      <img
+        src={image}
+        alt={alt}
+        className="relative block h-auto w-full object-contain sm:absolute sm:inset-0 sm:h-full sm:object-cover"
+        style={{
+          objectPosition: position,
+        }}
+      />
+
+      {/* SOFT OVERLAY */}
+
+      <div
+        className={`absolute inset-0 ${
+          dark
+            ? "bg-[#172015]/30 sm:bg-[#172015]/15"
+            : "bg-[#F3EEE6]/20 sm:bg-[#F3EEE6]/5"
+        }`}
+      />
+
+      {/* TITLE */}
+
+      <div className="absolute inset-0 flex items-center justify-center px-5 sm:px-6">
+        <div className="text-center">
+          <span
+            className={`mx-auto block h-px w-12 ${
+              dark
+                ? "bg-white/45"
+                : "bg-[#65584D]/40"
+            }`}
+          />
+
+          <h2
+            className={`mt-4 text-[36px] font-normal leading-[0.95] tracking-[-0.04em] [text-shadow:0_2px_16px_rgba(255,255,255,0.55)] sm:mt-5 sm:text-[56px] sm:[text-shadow:none] lg:text-[64px] ${
+              dark
+                ? "text-[#F8F3EA] [text-shadow:0_2px_16px_rgba(0,0,0,0.42)] sm:[text-shadow:none]"
+                : "text-[#332C27]"
+            }`}
+            style={{
+              fontFamily: '"Times New Roman", Times, serif',
+            }}
+          >
+            {title}
+          </h2>
+
+          <p
+            className={`mt-2 text-[14px] font-medium italic [text-shadow:0_1px_12px_rgba(255,255,255,0.55)] sm:mt-3 sm:text-[17px] sm:font-normal sm:[text-shadow:none] ${
+              dark
+                ? "text-white/90 [text-shadow:0_1px_12px_rgba(0,0,0,0.45)] sm:text-white/75 sm:[text-shadow:none]"
+                : "text-[#65574D]"
+            }`}
+            style={{
+              fontFamily: '"Times New Roman", Times, serif',
+            }}
+          >
+            {subtitle}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* =====================================================
+   STANDARD MENU SECTION
+   IMAGE FIRST → ITEMS SECOND
+===================================================== */
+
+function MenuSection({
+  id,
+  image,
+  alt,
+  title,
+  subtitle,
+  items,
+  background = "#F3EEE6",
+  imagePosition = "center",
+}: {
+  id: string;
+  image: string;
+  alt: string;
+  title: string;
+  subtitle: string;
+  items: MenuItemType[];
+  background?: string;
+  imagePosition?: string;
+}) {
+  return (
+    <section
+      id={id}
+      className="scroll-mt-0"
+      style={{
+        backgroundColor: background,
+      }}
+    >
+      {/* IMAGE */}
+
+      <ImageHeader
+        image={image}
+        alt={alt}
+        title={title}
+        subtitle={subtitle}
+        position={imagePosition}
+      />
+
+      {/* MENU ITEMS */}
+
+      <div className="px-6 py-14 sm:px-10 sm:py-16 lg:px-20 lg:py-20">
+        <div className="mx-auto max-w-[1120px]">
+          <div className="grid gap-x-24 md:grid-cols-2">
+            {items.map((item) => (
+              <MenuItem
+                key={item.name}
+                {...item}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+export default function SorellaMenuPage() {
+  const [mobileOpen, setMobileOpen] =
+    useState(false);
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   };
 
   return (
-    <main className="min-h-screen bg-[#F7F3EC] text-[#2D2925]">
+    <main className="min-h-screen overflow-hidden bg-[#F3EEE6] text-[#352E29]">
+
       {/* =====================================================
-          HEADER + HERO
+          HEADER
       ===================================================== */}
 
-      <section
-        id="home"
-        className="
-          relative w-full
-          min-h-[720px]
-          max-h-[980px]
-          overflow-hidden
-          bg-[#2B211A]
-          md:aspect-[16/10]
-        "
-      >
-        {/* HERO IMAGE */}
-
-        <img
-          src="/previews/sorella/sorella-hero.jpg"
-          alt="Sorella Italian restaurant interior"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-
-        {/* VERY LIGHT IMAGE OVERLAY */}
-
-        <div className="absolute inset-0 bg-[#160F0B]/[0.06]" />
-
-        {/* =====================================================
-            HEADER
-        ===================================================== */}
-
-        <header className="absolute inset-x-0 top-0 z-40">
-          <div
-            className="
-              mx-auto flex w-full max-w-[1540px]
-              items-start justify-between
-              px-7 pt-9
-              sm:px-10
-              lg:px-[5.5rem] lg:pt-11
-            "
-          >
-            {/* LOGO */}
-
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="text-left text-[#F7F1EA]"
+      <header className="relative z-50 border-b border-[#CFC3B6]/40 bg-[#F3EEE6]">
+        <div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-5 sm:px-10 sm:py-7 md:px-14 lg:px-20">
+          <Link href="/preview/sorella">
+            <span
+              className="block text-[23px] tracking-[0.25em] text-[#332D28] sm:text-[26px] sm:tracking-[0.28em]"
+              style={{
+                fontFamily: '"Times New Roman", Times, serif',
+              }}
             >
-              <span
-                className="
-                  block
-                  text-[28px]
-                  font-normal
-                  tracking-[0.24em]
-                  sm:text-[31px]
-                "
-                style={{
-                  fontFamily: '"Times New Roman", Times, serif',
-                }}
+              SORELLA
+            </span>
+
+            <span className="mt-1.5 block text-[5px] tracking-[0.35em] text-[#8B7F74]">
+              ITALIAN KITCHEN · NEW YORK
+            </span>
+          </Link>
+
+          {/* DESKTOP NAV */}
+
+          <nav className="hidden items-center gap-9 md:flex lg:gap-11">
+            <Link
+              href="/preview/sorella/menu"
+              className="border-b border-[#39312B] pb-2 text-[7px] tracking-[0.28em]"
+            >
+              MENU
+            </Link>
+
+            <Link
+              href="/preview/sorella#story"
+              className="text-[7px] tracking-[0.28em] text-[#746A61]"
+            >
+              OUR STORY
+            </Link>
+
+            <Link
+              href="/preview/sorella#private-dining"
+              className="text-[7px] tracking-[0.28em] text-[#746A61]"
+            >
+              PRIVATE DINING
+            </Link>
+
+
+            <Link
+              href="/preview/sorella#contact"
+              className="text-[7px] tracking-[0.28em] text-[#746A61]"
+            >
+              CONTACT
+            </Link>
+
+            <Link
+              href="/preview/sorella#reserve"
+              className="rounded-full bg-[#332D28] px-8 py-4 text-[7px] tracking-[0.28em] text-white"
+            >
+              RESERVE
+            </Link>
+          </nav>
+
+          {/* MOBILE BUTTON */}
+
+          <button
+            type="button"
+            aria-label="Toggle navigation"
+            onClick={() =>
+              setMobileOpen((open) => !open)
+            }
+            className="flex flex-col gap-[6px] md:hidden"
+          >
+            <span className="h-px w-6 bg-[#332D28]" />
+            <span className="h-px w-6 bg-[#332D28]" />
+          </button>
+        </div>
+
+        {/* MOBILE NAV */}
+
+        {mobileOpen && (
+          <div className="border-t border-[#CEC2B5]/50 bg-[#F3EEE6] px-6 py-7 md:hidden">
+            <div className="flex flex-col gap-5">
+              <Link
+                href="/preview/sorella/menu"
+                onClick={() =>
+                  setMobileOpen(false)
+                }
+                className="text-[8px] tracking-[0.27em]"
               >
-                SORELLA
-              </span>
-
-              <span
-                className="
-                  mt-2.5 hidden
-                  text-[7px]
-                  font-medium
-                  tracking-[0.3em]
-                  text-white/80
-                  sm:block
-                "
-              >
-                ITALIAN KITCHEN · NEW YORK
-              </span>
-            </button>
-
-            {/* DESKTOP NAV */}
-
-            <nav className="hidden items-center gap-8 md:flex lg:gap-10">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="
-                    relative
-                    py-2
-                    text-[10px]
-                    font-semibold
-                    tracking-[0.18em]
-                    text-white/90
-                    transition-colors
-                    duration-300
-                    hover:text-white
-                  "
-                >
-                  {item.label}
-                </Link>
-              ))}
+                MENU
+              </Link>
 
               <Link
-                href="/preview/sorella/reservations"
-                className="
-                  ml-2
-                  rounded-full
-                  bg-[#F5F0E8]
-                  px-8
-                  py-[15px]
-                  text-[9px]
-                  font-semibold
-                  tracking-[0.18em]
-                  text-[#3D352E]
-                  shadow-[0_8px_24px_rgba(0,0,0,0.10)]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-[1px]
-                  hover:bg-white
-                "
+                href="/preview/sorella#story"
+                onClick={() =>
+                  setMobileOpen(false)
+                }
+                className="text-[8px] tracking-[0.27em] text-[#756A61]"
+              >
+                OUR STORY
+              </Link>
+
+              <Link
+                href="/preview/sorella#private-dining"
+                onClick={() =>
+                  setMobileOpen(false)
+                }
+                className="text-[8px] tracking-[0.27em] text-[#756A61]"
+              >
+                PRIVATE DINING
+              </Link>
+
+              <Link
+                href="/preview/sorella#gallery"
+                onClick={() =>
+                  setMobileOpen(false)
+                }
+                className="text-[8px] tracking-[0.27em] text-[#756A61]"
+              >
+                GALLERY
+              </Link>
+
+              <Link
+                href="/preview/sorella#contact"
+                onClick={() =>
+                  setMobileOpen(false)
+                }
+                className="text-[8px] tracking-[0.27em] text-[#756A61]"
+              >
+                CONTACT
+              </Link>
+
+              <Link
+                href="/preview/sorella#reserve"
+                onClick={() =>
+                  setMobileOpen(false)
+                }
+                className="mt-2 w-fit rounded-full bg-[#332D28] px-7 py-3.5 text-[7px] tracking-[0.28em] text-white"
               >
                 RESERVE
               </Link>
-            </nav>
-
-            {/* MOBILE MENU BUTTON */}
-
-            <button
-              type="button"
-              onClick={() => setMenuOpen((open) => !open)}
-              aria-label="Toggle navigation"
-              aria-expanded={menuOpen}
-              className="
-                flex h-11 w-11
-                flex-col items-center justify-center
-                gap-[6px]
-                rounded-full
-                border border-white/55
-                bg-black/10
-                md:hidden
-              "
-            >
-              <span className="h-px w-[17px] bg-white" />
-              <span className="h-px w-[17px] bg-white" />
-            </button>
-          </div>
-
-          {/* MOBILE NAVIGATION */}
-
-          {menuOpen && (
-            <div
-              className="
-                mx-6 mt-4
-                rounded-[24px]
-                bg-[#302923]
-                px-7 py-7
-                shadow-2xl
-                sm:mx-10
-                md:hidden
-              "
-            >
-              <div className="flex flex-col items-start gap-6">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="
-                      text-[10px]
-                      font-semibold
-                      tracking-[0.18em]
-                      text-white/85
-                      transition-colors
-                      duration-300
-                      hover:text-white
-                    "
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-
-                <Link
-                  href="/preview/sorella/reservations"
-                  onClick={() => setMenuOpen(false)}
-                  className="
-                    mt-2
-                    rounded-full
-                    bg-[#F5F0E8]
-                    px-7 py-3.5
-                    text-[9px]
-                    font-semibold
-                    tracking-[0.18em]
-                    text-[#3C342D]
-                  "
-                >
-                  RESERVE
-                </Link>
-              </div>
             </div>
-          )}
-        </header>
+          </div>
+        )}
+      </header>
 
-        {/* =====================================================
-            HERO CONTENT
-        ===================================================== */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
-        <div className="absolute inset-0 z-20 flex items-center justify-center px-6">
-          <div
-            className="
-              w-full max-w-[760px]
-              -translate-y-[1%]
-              text-center
-              text-[#F8F2EB]
-            "
-          >
+      <section className="relative overflow-hidden bg-[#E9E0D5] sm:h-[430px] lg:h-[490px]">
+        <img
+          src="/previews/sorella/sorella-menu-hero.png"
+          alt="Sorella dinner table"
+          className="relative block h-auto w-full object-contain sm:absolute sm:inset-0 sm:h-full sm:object-cover sm:object-center"
+        />
+
+        <div className="absolute inset-0 bg-[#F3EEE6]/5" />
+
+        <div className="absolute inset-0 flex items-center justify-center px-6">
+          <div className="max-w-[760px] text-center">
+            <p className="mb-4 text-[8px] font-medium tracking-[0.34em] text-[#493E36] [text-shadow:0_1px_10px_rgba(255,255,255,0.7)] sm:mb-6 sm:text-[7px] sm:font-normal sm:tracking-[0.42em] sm:text-[#5E5249]/75 sm:[text-shadow:none]">
+              DINNER · NIGHTLY
+            </p>
+
             <h1
-              className="
-                text-[46px]
-                font-normal
-                leading-[0.98]
-                tracking-[-0.025em]
-                sm:text-[58px]
-                lg:text-[68px]
-                xl:text-[72px]
-              "
+              className="text-[43px] font-normal leading-[0.92] tracking-[-0.045em] text-[#2C241F] [text-shadow:0_2px_18px_rgba(255,255,255,0.7)] min-[390px]:text-[48px] sm:text-[76px] sm:[text-shadow:none] lg:text-[92px]"
               style={{
                 fontFamily: '"Times New Roman", Times, serif',
               }}
             >
-              Come for dinner.
-              <br />
-
-              <span className="italic">
-                Stay for the evening.
-              </span>
+              The Menu
             </h1>
 
-            <div className="mx-auto mt-8 h-px w-12 bg-white/60" />
-
-            {/* THICKER HERO SUBTEXT */}
+            <div className="mx-auto my-6 h-px w-11 bg-[#756559]/50" />
 
             <p
-              className="
-                mx-auto mt-7
-                max-w-[430px]
-                text-[9px]
-                font-semibold
-                uppercase
-                leading-[2.15]
-                tracking-[0.26em]
-                text-white/90
-                sm:text-[10px]
-              "
+              className="mx-auto max-w-[310px] text-[14px] font-medium italic leading-[1.45] text-[#493D35] [text-shadow:0_1px_12px_rgba(255,255,255,0.75)] sm:max-w-none sm:text-[18px] sm:font-normal sm:text-[#62534A] sm:[text-shadow:none]"
+              style={{
+                fontFamily: '"Times New Roman", Times, serif',
+              }}
             >
-              Italian cooking made for
-              <br />
-              evenings that linger.
+              Familiar Italian cooking, made for the middle of the table.
             </p>
-
-            {/* WHITE OUTLINED MENU CTA - LOWERED */}
-
-            <Link
-              href="/preview/sorella/menu"
-              className="
-                group
-                mx-auto mt-16
-                inline-flex
-                items-center
-                gap-6
-                rounded-full
-                border border-white/85
-                bg-transparent
-                py-2.5
-                pl-7
-                pr-2.5
-                text-white
-                transition-all
-                duration-300
-                hover:border-white
-                hover:bg-white
-                hover:text-[#3C342D]
-              "
-            >
-              <span
-                className="
-                  pl-1
-                  text-[9px]
-                  font-semibold
-                  tracking-[0.19em]
-                "
-              >
-                EXPLORE THE MENU
-              </span>
-
-              <span
-                className="
-                  flex h-10 w-10
-                  shrink-0
-                  items-center justify-center
-                  rounded-full
-                  border border-white/85
-                  bg-transparent
-                  text-white
-                  transition-all
-                  duration-300
-                  group-hover:translate-x-[2px]
-                  group-hover:border-[#514A44]
-                  group-hover:bg-[#514A44]
-                  group-hover:text-white
-                "
-              >
-                <span className="relative flex h-3 w-4 items-center">
-                  <span className="h-px w-4 bg-current" />
-
-                  <span
-                    className="
-                      absolute right-0
-                      h-[5px] w-[5px]
-                      rotate-45
-                      border-r border-t
-                      border-current
-                    "
-                  />
-                </span>
-              </span>
-            </Link>
           </div>
-        </div>
-
-        {/* LEFT HERO DETAIL */}
-
-        <div className="absolute bottom-[31%] left-[4%] z-20 hidden lg:block">
-          <p
-            className="
-              text-[8px]
-              font-medium
-              leading-[2.2]
-              tracking-[0.25em]
-              text-white/85
-            "
-          >
-            DINNER
-            <br />
-            NIGHTLY
-            <br />
-            5PM — LATE
-          </p>
-
-          <div className="mt-5 h-16 w-px bg-white/45" />
-        </div>
-
-        {/* RIGHT HERO DETAIL */}
-
-        <div className="absolute bottom-[34%] right-[3.3%] z-20 hidden text-right lg:block">
-          <p
-            className="
-              text-[8px]
-              font-medium
-              leading-[2.2]
-              tracking-[0.25em]
-              text-white/85
-            "
-          >
-            NEW YORK
-            <br />
-            EST. 2026
-          </p>
-
-          <div className="ml-auto mt-5 h-16 w-px bg-white/45" />
         </div>
       </section>
 
       {/* =====================================================
-          STORY
+          CATEGORY NAV
+          LARGER SERIF BUTTONS
+      ===================================================== */}
+
+      <section className="border-y border-[#CEC2B6]/45 bg-[#F3EEE6]">
+        <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-center gap-x-6 gap-y-4 px-5 py-6 sm:gap-x-12 sm:gap-y-5 sm:px-6 sm:py-8 lg:gap-x-14">
+          {[
+            ["antipasti", "Antipasti"],
+            ["pasta", "Pasta"],
+            ["secondi", "Secondi"],
+            ["contorni", "Contorni"],
+            ["dolci", "Dolci"],
+            ["drinks", "Cocktails & Wine"],
+          ].map(([id, label]) => (
+            <button
+              key={id}
+              type="button"
+              onClick={() => scrollTo(id)}
+              className="group relative text-[15px] font-normal tracking-[-0.01em] text-[#6F6258] transition-colors duration-300 hover:text-[#302923] sm:text-[17px] lg:text-[18px]"
+              style={{
+                fontFamily: '"Times New Roman", Times, serif',
+              }}
+            >
+              <span className="relative">
+                {label}
+
+                <span className="absolute -bottom-2 left-1/2 h-px w-0 -translate-x-1/2 bg-[#75665B] transition-all duration-300 group-hover:w-full" />
+              </span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* =====================================================
+          ANTIPASTI
+      ===================================================== */}
+
+      <MenuSection
+        id="antipasti"
+        image="/previews/sorella/sorella-antipasti.jpg"
+        alt="Antipasti table"
+        title="Antipasti"
+        subtitle="To begin"
+        items={antipasti}
+        background="#F3EEE6"
+      />
+
+      {/* =====================================================
+          PASTA
+      ===================================================== */}
+
+      <MenuSection
+        id="pasta"
+        image="/previews/sorella/sorella-pasta.jpg"
+        alt="Fresh Italian pasta"
+        title="Pasta"
+        subtitle="Made in house daily"
+        items={pasta}
+        background="#EAE0D5"
+      />
+
+      {/* =====================================================
+          SECONDI
+      ===================================================== */}
+
+      <MenuSection
+        id="secondi"
+        image="/previews/sorella/sorella-secondi.jpg"
+        alt="Italian secondi"
+        title="Secondi"
+        subtitle="From the kitchen"
+        items={secondi}
+        background="#F3EEE6"
+      />
+
+      {/* =====================================================
+          CONTORNI
+      ===================================================== */}
+
+      <MenuSection
+        id="contorni"
+        image="/previews/sorella/sorella-contorni.jpg"
+        alt="Italian side dishes"
+        title="Contorni"
+        subtitle="For the table"
+        items={contorni}
+        background="#E8DED2"
+      />
+
+      {/* =====================================================
+          DOLCI
+      ===================================================== */}
+
+      <MenuSection
+        id="dolci"
+        image="/previews/sorella/sorella-dolci.jpg"
+        alt="Italian desserts"
+        title="Dolci"
+        subtitle="Something sweet"
+        items={dolci}
+        background="#F3EEE6"
+      />
+
+      {/* =====================================================
+          COCKTAILS & WINE
       ===================================================== */}
 
       <section
-        className="
-          relative overflow-hidden
-          bg-[#F7F2EB]
-          px-6 py-20
-          sm:px-10
-          md:px-14
-          lg:px-24 lg:py-28
-        "
+        id="drinks"
+        className="scroll-mt-0 bg-[#555D4B]"
       >
-        <div
-          aria-hidden="true"
-          className="
-            pointer-events-none
-            absolute -left-40 top-1/2
-            h-[520px] w-[520px]
-            -translate-y-1/2
-            rounded-full
-            bg-[#E7DDD2]/40
-            blur-[100px]
-          "
+        {/* IMAGE FIRST */}
+
+        <ImageHeader
+          image="/previews/sorella/sorella-drinks.jpg"
+          alt="Cocktails and wine at Sorella"
+          title="Cocktails & Wine"
+          subtitle="Aperitivo to after dinner"
+          dark
         />
 
-        <div
-          className="
-            relative mx-auto grid
-            max-w-[1380px]
-            gap-14
-            lg:grid-cols-[0.88fr_1.12fr]
-            lg:items-center
-            lg:gap-24
-          "
-        >
-          {/* STORY COPY */}
+        {/* DRINK ITEMS */}
 
-          <div className="lg:pl-4">
-            <div className="mb-6 flex items-center gap-4">
-              <p className="text-[8px] font-medium tracking-[0.28em] text-[#887D73]">
-                A MODERN ITALIAN EXPERIENCE
-              </p>
+        <div className="px-6 py-14 text-white sm:px-10 sm:py-16 lg:px-20 lg:py-20">
+          <div className="mx-auto max-w-[1120px]">
+            <div className="grid gap-16 md:grid-cols-2 md:gap-24">
 
-              <span className="h-px w-8 bg-[#B1A59A]" />
-            </div>
+              {/* COCKTAILS */}
 
-            <h2
-              className="
-                max-w-[500px]
-                text-[40px]
-                font-normal
-                leading-[1.03]
-                tracking-[-0.04em]
-                text-[#39332E]
-                sm:text-[46px]
-                lg:text-[52px]
-              "
-              style={{
-                fontFamily: '"Times New Roman", Times, serif',
-              }}
-            >
-              Tradition feels
-              <br />
-
-              <span className="italic text-[#9A7D6B]">
-                different here.
-              </span>
-            </h2>
-
-            <p
-              className="
-                mt-7
-                max-w-[455px]
-                text-[11px]
-                font-normal
-                leading-[1.95]
-                text-[#6C645D]
-              "
-            >
-              Sorella is a neighborhood Italian restaurant where
-              familiar flavors meet a lighter, more modern point of
-              view. Our kitchen is guided by seasonality, simplicity,
-              and food that belongs in the middle of the table.
-            </p>
-
-            <p
-              className="mt-8 text-[18px] italic text-[#9A7D6B]"
-              style={{
-                fontFamily: '"Times New Roman", Times, serif',
-              }}
-            >
-              Buon cibo. Bella compagnia.
-            </p>
-
-            <Link
-              href="/preview/sorella/story"
-              className="group mt-8 flex w-fit items-center gap-4"
-            >
-              <span className="text-[9px] font-semibold tracking-[0.19em] text-[#5F5852]">
-                DISCOVER OUR STORY
-              </span>
-
-              <span className="relative flex h-3 w-9 items-center">
-                <span
-                  className="
-                    h-px w-8
-                    bg-[#8D8177]
-                    transition-all
-                    duration-300
-                    group-hover:w-9
-                  "
-                />
-
-                <span
-                  className="
-                    absolute right-0
-                    h-[5px] w-[5px]
-                    rotate-45
-                    border-r border-t
-                    border-[#8D8177]
-                  "
-                />
-              </span>
-            </Link>
-          </div>
-
-          {/* STORY IMAGE */}
-
-          <div className="relative lg:py-4">
-            <div
-              className="
-                relative overflow-hidden
-                rounded-[38px_38px_120px_38px]
-                bg-[#EEE6DC]
-                sm:rounded-[48px_48px_150px_48px]
-                lg:rounded-[60px_60px_190px_60px]
-              "
-            >
-              <img
-                src="/previews/sorella/sorella-brand.jpg"
-                alt="Sorella table setting"
-                className="block h-auto w-full object-contain"
-              />
-            </div>
-
-            <div
-              className="
-                absolute -bottom-5 left-7
-                hidden items-center gap-4
-                rounded-full
-                bg-[#F7F2EB]
-                px-6 py-3
-                shadow-[0_12px_35px_rgba(61,51,44,0.08)]
-                sm:flex
-              "
-            >
-              <span className="h-[4px] w-[4px] rounded-full bg-[#A88672]" />
-
-              <p className="text-[7px] font-medium tracking-[0.22em] text-[#7D7168]">
-                COME FOR DINNER · STAY FOR THE EVENING
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
-          MENU
-      ===================================================== */}
-
-      <section
-        className="
-          relative min-h-[620px]
-          overflow-hidden
-          sm:min-h-[680px]
-          lg:min-h-[720px]
-        "
-      >
-        <img
-          src="/previews/sorella/sorella-menu-bg.png"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-
-        <div className="absolute inset-0 bg-[#F4EEE6]/[0.05]" />
-
-        <div
-          className="
-            relative z-10
-            flex min-h-[620px]
-            items-center justify-center
-            px-6 py-20
-            sm:min-h-[680px] sm:px-10
-            lg:min-h-[720px] lg:px-24
-          "
-        >
-          <div className="mx-auto w-full max-w-[680px] text-center">
-            <p className="text-[9px] font-medium tracking-[0.28em] text-[#756D66]">
-              THE MENU
-            </p>
-
-            <h2
-              className="
-                mt-6
-                text-[42px]
-                font-normal
-                leading-[1.02]
-                tracking-[-0.04em]
-                text-[#332E2A]
-                sm:text-[50px]
-                lg:text-[58px]
-              "
-              style={{
-                fontFamily: '"Times New Roman", Times, serif',
-              }}
-            >
-              Made to be{" "}
-              <span className="italic text-[#9A7D6B]">
-                shared.
-              </span>
-            </h2>
-
-            <p
-              className="
-                mx-auto mt-6
-                max-w-[500px]
-                text-[12px]
-                font-normal
-                leading-[1.9]
-                text-[#655D56]
-              "
-            >
-              Seasonal Italian cooking, handmade pasta, and thoughtful
-              ingredients made for long dinners around the table.
-            </p>
-
-            <Link
-              href="/preview/sorella/menu"
-              className="
-                group
-                mx-auto mt-10
-                inline-flex
-                items-center gap-6
-                rounded-full
-                bg-[#514A44]
-                py-2.5
-                pl-7
-                pr-2.5
-                text-[#F8F4EE]
-                shadow-[0_12px_32px_rgba(58,49,43,0.14)]
-                transition-all
-                duration-300
-                hover:-translate-y-[1px]
-                hover:bg-[#443E39]
-              "
-            >
-              <span className="pl-1 text-[9px] font-semibold tracking-[0.19em]">
-                EXPLORE THE MENU
-              </span>
-
-              <span
-                className="
-                  flex h-10 w-10
-                  shrink-0
-                  items-center justify-center
-                  rounded-full
-                  bg-[#F4EFE8]
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-[2px]
-                "
-              >
-                <span className="relative flex h-3 w-4 items-center">
-                  <span className="h-px w-4 bg-[#514A44]" />
-
-                  <span
-                    className="
-                      absolute right-0
-                      h-[5px] w-[5px]
-                      rotate-45
-                      border-r border-t
-                      border-[#514A44]
-                    "
-                  />
-                </span>
-              </span>
-            </Link>
-
-            <div className="mt-7 flex items-center justify-center gap-4">
-              <span className="text-[7px] font-medium tracking-[0.21em] text-[#877E76]">
-                DINNER
-              </span>
-
-              <span className="h-[2px] w-[2px] rounded-full bg-[#9E9389]" />
-
-              <span className="text-[7px] font-medium tracking-[0.21em] text-[#877E76]">
-                WINE
-              </span>
-
-              <span className="h-[2px] w-[2px] rounded-full bg-[#9E9389]" />
-
-              <span className="text-[7px] font-medium tracking-[0.21em] text-[#877E76]">
-                DESSERT
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
-          PRIVATE DINING
-      ===================================================== */}
-
-      <section
-        className="
-          relative min-h-[650px]
-          overflow-hidden
-          bg-[#F3ECE2]
-          sm:min-h-[700px]
-          lg:min-h-[760px]
-        "
-      >
-        <img
-          src="/previews/sorella/sorella-private-dining.jpg"
-          alt="Private dining at Sorella"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-
-        <div
-          className="
-            relative z-10
-            mx-auto flex min-h-[650px]
-            max-w-[1540px]
-            items-end
-            px-6 py-14
-            sm:min-h-[700px]
-            sm:px-10 sm:py-16
-            lg:min-h-[760px]
-            lg:items-center
-            lg:px-14 lg:py-20
-            xl:px-[5.5rem]
-          "
-        >
-          <div
-            className="
-              ml-auto w-full
-              rounded-[34px]
-              bg-[#F5EEE5]/95
-              px-7 py-9
-              shadow-[0_20px_60px_rgba(56,45,37,0.08)]
-              sm:max-w-[520px]
-              sm:px-10 sm:py-11
-              lg:w-[43%]
-              lg:max-w-[560px]
-              lg:bg-transparent
-              lg:px-0 lg:py-0
-              lg:shadow-none
-            "
-          >
-            <div className="flex items-center gap-4">
-              <span className="h-px w-8 bg-[#A28A78]" />
-
-              <p className="text-[9px] font-medium tracking-[0.26em] text-[#8A7768]">
-                PRIVATE DINING
-              </p>
-            </div>
-
-            <h2
-              className="
-                mt-7
-                text-[42px]
-                font-normal
-                leading-[1.02]
-                tracking-[-0.04em]
-                text-[#3A332D]
-                sm:text-[49px]
-                lg:text-[55px]
-              "
-              style={{
-                fontFamily: '"Times New Roman", Times, serif',
-              }}
-            >
-              A more meaningful
-              <br />
-              <span className="italic text-[#9A7B67]">
-                gathering.
-              </span>
-            </h2>
-
-            <p
-              className="
-                mt-7
-                max-w-[430px]
-                text-[12px]
-                font-normal
-                leading-[1.9]
-                text-[#6D6259]
-              "
-            >
-              From intimate celebrations to larger dinners, our
-              private dining experience brings together seasonal
-              menus, thoughtful service, and a setting that feels
-              warm rather than formal.
-            </p>
-
-            <Link
-              href="/preview/sorella/private-dining"
-              className="
-                group mt-9
-                inline-flex
-                items-center gap-6
-                rounded-full
-                bg-[#65584D]
-                py-2.5
-                pl-7
-                pr-2.5
-                text-[#F8F3EC]
-                shadow-[0_12px_32px_rgba(55,45,38,0.12)]
-                transition-all
-                duration-300
-                hover:-translate-y-[1px]
-                hover:bg-[#564B42]
-              "
-            >
-              <span className="pl-1 text-[9px] font-semibold tracking-[0.19em]">
-                PRIVATE DINING
-              </span>
-
-              <span
-                className="
-                  flex h-10 w-10
-                  shrink-0
-                  items-center justify-center
-                  rounded-full
-                  bg-[#F3ECE4]
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-[2px]
-                "
-              >
-                <span className="relative flex h-3 w-4 items-center">
-                  <span className="h-px w-4 bg-[#62564C]" />
-
-                  <span
-                    className="
-                      absolute right-0
-                      h-[5px] w-[5px]
-                      rotate-45
-                      border-r border-t
-                      border-[#62564C]
-                    "
-                  />
-                </span>
-              </span>
-            </Link>
-
-            <div className="mt-8 flex items-center gap-3">
-              <span className="text-[7px] font-medium tracking-[0.2em] text-[#94867A]">
-                PEOPLE
-              </span>
-
-              <span className="h-[2px] w-[2px] rounded-full bg-[#A99A8E]" />
-
-              <span className="text-[7px] font-medium tracking-[0.2em] text-[#94867A]">
-                FOOD
-              </span>
-
-              <span className="h-[2px] w-[2px] rounded-full bg-[#A99A8E]" />
-
-              <span className="text-[7px] font-medium tracking-[0.2em] text-[#94867A]">
-                LATE EVENINGS
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
-          RESERVATIONS
-      ===================================================== */}
-
-      <section
-        className="
-          relative overflow-hidden
-          bg-[#F7F3EC]
-          px-6 py-16
-          sm:px-10 sm:py-20
-          md:px-14
-          lg:px-24 lg:py-24
-        "
-      >
-        <div
-          aria-hidden="true"
-          className="
-            pointer-events-none
-            absolute
-            -bottom-[45px]
-            left-1/2
-            -translate-x-1/2
-            select-none
-            whitespace-nowrap
-            text-[115px]
-            font-normal
-            italic
-            leading-none
-            tracking-[-0.07em]
-            text-[#9B887A]/[0.045]
-            sm:text-[165px]
-            lg:text-[220px]
-          "
-          style={{
-            fontFamily: '"Times New Roman", Times, serif',
-          }}
-        >
-          Sorella
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-[1180px]">
-          <div
-            className="
-              grid gap-10
-              lg:grid-cols-[.72fr_1.28fr]
-              lg:items-end
-              lg:gap-20
-            "
-          >
-            <div>
-              <div className="flex items-center gap-4">
-                <span className="h-px w-9 bg-[#B1A499]" />
-
-                <p className="text-[9px] font-medium tracking-[0.26em] text-[#887D73]">
-                  RESERVATIONS
-                </p>
-              </div>
-
-              <p
-                className="
-                  mt-4
-                  max-w-[230px]
-                  text-[16px]
-                  italic
-                  leading-[1.5]
-                  text-[#8A786B]
-                "
-                style={{
-                  fontFamily: '"Times New Roman", Times, serif',
-                }}
-              >
-                Dinner begins with a table.
-              </p>
-            </div>
-
-            <div>
-              <h2
-                className="
-                  max-w-[720px]
-                  text-[40px]
-                  font-normal
-                  leading-[1]
-                  tracking-[-0.04em]
-                  text-[#39332E]
-                  sm:text-[48px]
-                  lg:text-[55px]
-                "
-                style={{
-                  fontFamily: '"Times New Roman", Times, serif',
-                }}
-              >
-                Join us{" "}
-                <span className="italic text-[#9A7D6B]">
-                  for the evening.
-                </span>
-              </h2>
-
-              <div
-                className="
-                  mt-6
-                  flex flex-col gap-6
-                  border-t border-[#AA998D]/30
-                  pt-6
-                  sm:flex-row
-                  sm:items-center
-                  sm:justify-between
-                "
-              >
-                <p
-                  className="
-                    max-w-[430px]
-                    text-[12px]
-                    font-normal
-                    leading-[1.8]
-                    text-[#746B63]
-                    sm:text-[13px]
-                  "
-                >
-                  Choose your date, time and party size on our
-                  reservations page and imagine your evening at
-                  Sorella.
-                </p>
-
-                <Link
-                  href="/preview/sorella/reservations"
-                  className="
-                    group
-                    inline-flex w-fit
-                    items-center gap-5
-                    rounded-full
-                    bg-[#574E47]
-                    py-2.5
-                    pl-7
-                    pr-2.5
-                    text-[#F8F4EE]
-                    shadow-[0_8px_24px_rgba(57,48,41,0.10)]
-                    transition-all
-                    duration-300
-                    hover:-translate-y-[1px]
-                    hover:bg-[#49423C]
-                  "
-                >
-                  <span className="whitespace-nowrap text-[9px] font-semibold tracking-[0.19em]">
-                    RESERVE A TABLE
-                  </span>
-
-                  <span
-                    className="
-                      flex h-10 w-10
-                      items-center justify-center
-                      rounded-full
-                      bg-[#F5EFE7]
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-[2px]
-                    "
+              <div>
+                <div className="mb-3 flex items-center gap-4">
+                  <p
+                    className="shrink-0 text-[15px] italic text-white/65"
+                    style={{
+                      fontFamily: '"Times New Roman", Times, serif',
+                    }}
                   >
-                    <span className="relative flex h-3 w-4 items-center">
-                      <span className="h-px w-4 bg-[#574E47]" />
+                    Cocktails
+                  </p>
 
-                      <span
-                        className="
-                          absolute right-0
-                          h-[5px] w-[5px]
-                          rotate-45
-                          border-r border-t
-                          border-[#574E47]
-                        "
-                      />
-                    </span>
-                  </span>
-                </Link>
+                  <span className="h-px flex-1 bg-white/15" />
+                </div>
+
+                {cocktails.map((item) => (
+                  <DarkMenuItem
+                    key={item.name}
+                    {...item}
+                  />
+                ))}
               </div>
 
-              <div className="mt-5 flex items-center gap-3">
-                <span className="h-[4px] w-[4px] rounded-full bg-[#B29E8F]" />
+              {/* WINE */}
 
-                <p className="text-[7px] font-medium tracking-[0.17em] text-[#9B9188]">
-                  CONCEPT DEMONSTRATION · RESERVATIONS ARE DISABLED
-                </p>
+              <div>
+                <div className="mb-3 flex items-center gap-4">
+                  <p
+                    className="shrink-0 text-[15px] italic text-white/65"
+                    style={{
+                      fontFamily: '"Times New Roman", Times, serif',
+                    }}
+                  >
+                    Wine · By the Glass
+                  </p>
+
+                  <span className="h-px flex-1 bg-white/15" />
+                </div>
+
+                {wines.map((item) => (
+                  <DarkMenuItem
+                    key={item.name}
+                    {...item}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -1072,151 +832,40 @@ export default function SorellaPage() {
       </section>
 
       {/* =====================================================
-          CONTACT
+          CLOSING
       ===================================================== */}
 
-      <section className="relative overflow-hidden bg-[#E8DED2]">
-        <div
-          aria-hidden="true"
-          className="
-            pointer-events-none
-            absolute
-            -right-8 -top-6
-            select-none
-            text-[110px]
-            font-normal
-            italic
-            leading-none
-            tracking-[-0.06em]
-            text-[#8F7C6E]/[0.045]
-            sm:text-[150px]
-            lg:text-[190px]
-          "
-          style={{
-            fontFamily: '"Times New Roman", Times, serif',
-          }}
-        >
-          Ciao
-        </div>
+      <section className="relative overflow-hidden bg-[#E9E0D5] sm:h-[320px] lg:h-[370px]">
+        <img
+          src="/previews/sorella/sorella-menu-closing.jpg"
+          alt="Sorella table after dinner"
+          className="relative block h-auto w-full object-contain sm:absolute sm:inset-0 sm:h-full sm:object-cover sm:object-center"
+        />
 
-        <div
-          className="
-            relative z-10
-            mx-auto max-w-[1180px]
-            px-6 py-16
-            sm:px-10 sm:py-20
-            md:px-14
-            lg:px-20
-          "
-        >
-          <div
-            className="
-              grid gap-9
-              lg:grid-cols-[.55fr_1.45fr]
-              lg:items-end
-              lg:gap-16
-            "
-          >
-            <div>
-              <div className="flex items-center gap-4">
-                <span className="h-px w-9 bg-[#9C8B7E]" />
+        <div className="absolute inset-0 bg-[#2B211A]/[0.04]" />
 
-                <p className="text-[9px] font-medium tracking-[0.26em] text-[#8B7B70]">
-                  CONTACT
-                </p>
-              </div>
+        <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
+          <div className="max-w-[92%] rounded-[1.25rem] bg-[#F3EEE6]/78 px-4 py-5 text-center backdrop-blur-[2px] sm:max-w-[620px] sm:rounded-none sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none">
+            <p className="mb-3 text-[7px] font-medium tracking-[0.24em] text-[#55483F] sm:mb-4 sm:text-[8px] sm:font-normal sm:tracking-[0.32em] sm:text-[#66584E]/70">
+              FROM OUR TABLE TO YOURS
+            </p>
 
-              <p
-                className="
-                  mt-4
-                  max-w-[210px]
-                  text-[16px]
-                  italic
-                  leading-[1.5]
-                  text-[#8A786B]
-                "
-                style={{
-                  fontFamily: '"Times New Roman", Times, serif',
-                }}
-              >
-                Questions before your evening?
-              </p>
-            </div>
+            <h2
+              className="text-[34px] italic leading-none text-[#4E423A] sm:text-[54px] sm:text-[#5F5148]"
+              style={{
+                fontFamily: '"Times New Roman", Times, serif',
+              }}
+            >
+              Buon appetito.
+            </h2>
 
-            <div>
-              <h2
-                className="
-                  max-w-[720px]
-                  text-[39px]
-                  font-normal
-                  leading-[1]
-                  tracking-[-0.04em]
-                  text-[#352E29]
-                  sm:text-[47px]
-                  lg:text-[53px]
-                "
-                style={{
-                  fontFamily: '"Times New Roman", Times, serif',
-                }}
-              >
-                We would love{" "}
-                <span className="italic text-[#78675B]">
-                  to hear from you.
-                </span>
-              </h2>
+            <div className="mx-auto my-5 h-px w-10 bg-[#75675B]/50" />
 
-              <div
-                className="
-                  mt-6
-                  flex flex-col gap-6
-                  border-t border-[#A99688]/30
-                  pt-6
-                  sm:flex-row
-                  sm:items-center
-                  sm:justify-between
-                "
-              >
-                <p
-                  className="
-                    max-w-[430px]
-                    text-[12px]
-                    font-normal
-                    leading-[1.8]
-                    text-[#756A61]
-                    sm:text-[13px]
-                  "
-                >
-                  Get in touch about general questions, private
-                  dining, celebrations or your next evening at
-                  Sorella.
-                </p>
-
-                <Link
-                  href="/preview/sorella/contact"
-                  className="
-                    inline-flex w-fit
-                    items-center gap-4
-                    rounded-full
-                    border border-[#8D796B]/30
-                    px-7 py-3.5
-                    text-[9px]
-                    font-semibold
-                    tracking-[0.18em]
-                    text-[#66584F]
-                    transition-all
-                    duration-300
-                    hover:bg-[#342D28]
-                    hover:text-white
-                  "
-                >
-                  CONTACT SORELLA
-
-                  <span className="text-[12px]">
-                    ↗
-                  </span>
-                </Link>
-              </div>
-            </div>
+            <p className="mx-auto max-w-[310px] text-[7px] font-medium leading-[1.75] tracking-[0.09em] text-[#5B4E45] min-[390px]:text-[8px] sm:max-w-[540px] sm:text-[9px] sm:font-normal sm:leading-[2] sm:tracking-[0.14em] sm:text-[#74665B]">
+              MENU ITEMS ARE SUBJECT TO SEASONAL AVAILABILITY ·
+              PLEASE INFORM YOUR SERVER OF ANY ALLERGIES OR
+              DIETARY RESTRICTIONS
+            </p>
           </div>
         </div>
       </section>
@@ -1225,174 +874,56 @@ export default function SorellaPage() {
           FOOTER
       ===================================================== */}
 
-      <footer
-        className="
-          relative overflow-hidden
-          bg-[#302923]
-          px-6 pb-8 pt-20
-          text-[#F4EFE8]
-          sm:px-10
-          md:px-14
-          lg:px-24 lg:pt-24
-        "
-      >
-        <div
-          aria-hidden="true"
-          className="
-            pointer-events-none
-            absolute -bottom-48 -left-32
-            h-[460px] w-[460px]
-            rounded-full
-            bg-[#806F61]/10
-            blur-[100px]
-          "
-        />
+      <footer className="bg-[#302923] px-6 pb-9 pt-16 text-white sm:px-10 md:px-14 lg:px-20">
+        <div className="mx-auto max-w-[1250px]">
 
-        <div className="relative mx-auto max-w-[1380px]">
-          {/* FOOTER TOP */}
+          {/* MAIN FOOTER */}
 
-          <div
-            className="
-              grid gap-14 pb-16
-              lg:grid-cols-[1.25fr_.75fr]
-              lg:gap-24
-            "
-          >
-<div>
-  <p className="text-[18px] font-medium tracking-[0.27em] text-white/40 sm:text-[21px] lg:text-[24px]">
-    ITALIAN KITCHEN · NEW YORK
-  </p>
+          <div className="grid gap-12 border-b border-white/10 pb-14 md:grid-cols-[1.2fr_.8fr_.8fr]">
 
-              <h2
-                className="
-                  mt-5
-                  text-[100px]
-                  font-normal
-                  leading-none
-                  tracking-[0.13em]
-                  text-[#F7F1EA]
-                  sm:text-[58px]
-                  lg:text-[68px]
-                "
+            {/* BRAND */}
+
+            <div>
+              <Link
+                href="/preview/sorella"
+                className="inline-block text-[30px] tracking-[0.25em] text-white"
                 style={{
                   fontFamily: '"Times New Roman", Times, serif',
                 }}
               >
                 SORELLA
-              </h2>
+              </Link>
 
+              <p className="mt-4 text-[8px] tracking-[0.28em] text-white/40">
+                ITALIAN KITCHEN · NEW YORK
+              </p>
+
+              <Link
+                href="/preview/sorella"
+                className="mt-8 inline-flex border-b border-white/20 pb-1.5 text-[9px] tracking-[0.2em] text-white/55 transition-colors hover:text-white"
+              >
+                RETURN TO RESTAURANT
+              </Link>
+            </div>
+
+            {/* VISIT */}
+
+            <div>
               <p
-                className="
-                  mt-6
-                  max-w-[370px]
-                  text-[19px]
-                  italic
-                  leading-[1.45]
-                  text-[#CDBBAD]
-                "
+                className="mb-5 text-[14px] italic text-white/45"
                 style={{
                   fontFamily: '"Times New Roman", Times, serif',
                 }}
               >
-                Come for dinner. Stay for the evening.
+                Visit
               </p>
 
               <p
-                className="
-                  mt-6
-                  max-w-[390px]
-                  text-[11px]
-                  font-normal
-                  leading-[1.9]
-                  text-white/50
-                "
+                className="text-[13px] font-light leading-[1.9] text-white/65"
+                style={{
+                  fontFamily: '"Times New Roman", Times, serif',
+                }}
               >
-                Seasonal Italian cooking, warm hospitality and
-                evenings designed to unfold at their own pace.
-              </p>
-            </div>
-
-            {/* FOOTER RESERVATION CTA */}
-
-            <div className="flex items-end lg:justify-end">
-              <div className="w-full max-w-[390px]">
-                <p className="text-[8px] font-medium tracking-[0.23em] text-white/40">
-                  JOIN US FOR DINNER
-                </p>
-
-                <Link
-                  href="/preview/sorella/reservations"
-                  className="
-                    group mt-5
-                    flex w-full
-                    items-center justify-between
-                    rounded-full
-                    bg-[#F2EAE1]
-                    py-2.5
-                    pl-7
-                    pr-2.5
-                    text-[#413A34]
-                    transition-all
-                    duration-300
-                    hover:bg-white
-                  "
-                >
-                  <span className="text-[9px] font-semibold tracking-[0.19em]">
-                    RESERVE A TABLE
-                  </span>
-
-                  <span
-                    className="
-                      flex h-10 w-10
-                      shrink-0
-                      items-center justify-center
-                      rounded-full
-                      bg-[#5B5048]
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-[2px]
-                    "
-                  >
-                    <span className="relative flex h-3 w-4 items-center">
-                      <span className="h-px w-4 bg-[#F5EFE8]" />
-
-                      <span
-                        className="
-                          absolute right-0
-                          h-[5px] w-[5px]
-                          rotate-45
-                          border-r border-t
-                          border-[#F5EFE8]
-                        "
-                      />
-                    </span>
-                  </span>
-                </Link>
-
-                <p className="mt-4 text-[7px] font-medium tracking-[0.16em] text-white/30">
-                  CONCEPT PROJECT · RESERVATIONS DISABLED
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* FOOTER DETAILS */}
-
-          <div
-            className="
-              grid gap-10
-              border-t border-white/[0.09]
-              py-12
-              sm:grid-cols-2
-              lg:grid-cols-[1fr_1fr_1.1fr]
-            "
-          >
-            <div>
-              <p className="mb-5 text-[8px] font-medium tracking-[0.24em] text-white/35">
-                VISIT
-              </p>
-
-              <p className="text-[11px] font-normal leading-[1.9] text-white/60">
                 123 West Broadway
                 <br />
                 New York, NY 10013
@@ -1401,12 +932,24 @@ export default function SorellaPage() {
               </p>
             </div>
 
+            {/* HOURS */}
+
             <div>
-              <p className="mb-5 text-[8px] font-medium tracking-[0.24em] text-white/35">
-                HOURS
+              <p
+                className="mb-5 text-[14px] italic text-white/45"
+                style={{
+                  fontFamily: '"Times New Roman", Times, serif',
+                }}
+              >
+                Hours
               </p>
 
-              <p className="text-[11px] font-normal leading-[1.9] text-white/60">
+              <p
+                className="text-[13px] font-light leading-[1.9] text-white/65"
+                style={{
+                  fontFamily: '"Times New Roman", Times, serif',
+                }}
+              >
                 Mon–Thu · 5PM–11PM
                 <br />
                 Fri–Sat · 5PM–12AM
@@ -1414,139 +957,18 @@ export default function SorellaPage() {
                 Sun · 5PM–10PM
               </p>
             </div>
-
-            <div>
-              <p className="mb-5 text-[8px] font-medium tracking-[0.24em] text-white/35">
-                EXPLORE
-              </p>
-
-              <div className="flex flex-wrap gap-x-7 gap-y-4">
-                <Link
-                  href="/preview/sorella/menu"
-                  className="
-                    text-[9px]
-                    font-medium
-                    tracking-[0.16em]
-                    text-white/60
-                    transition-colors
-                    duration-300
-                    hover:text-white
-                  "
-                >
-                  MENU
-                </Link>
-
-                <Link
-                  href="/preview/sorella/story"
-                  className="
-                    text-[9px]
-                    font-medium
-                    tracking-[0.16em]
-                    text-white/60
-                    transition-colors
-                    duration-300
-                    hover:text-white
-                  "
-                >
-                  OUR STORY
-                </Link>
-
-                <Link
-                  href="/preview/sorella/private-dining"
-                  className="
-                    text-[9px]
-                    font-medium
-                    tracking-[0.16em]
-                    text-white/60
-                    transition-colors
-                    duration-300
-                    hover:text-white
-                  "
-                >
-                  PRIVATE DINING
-                </Link>
-
-                <Link
-                  href="/preview/sorella/contact"
-                  className="
-                    text-[9px]
-                    font-medium
-                    tracking-[0.16em]
-                    text-white/60
-                    transition-colors
-                    duration-300
-                    hover:text-white
-                  "
-                >
-                  CONTACT
-                </Link>
-
-                <Link
-                  href="/preview/sorella/reservations"
-                  className="
-                    text-[9px]
-                    font-medium
-                    tracking-[0.16em]
-                    text-white/60
-                    transition-colors
-                    duration-300
-                    hover:text-white
-                  "
-                >
-                  RESERVATIONS
-                </Link>
-              </div>
-            </div>
           </div>
 
           {/* FOOTER BOTTOM */}
 
-          <div
-            className="
-              flex flex-col gap-5
-              border-t border-white/[0.09]
-              pt-7
-              text-[7px]
-              font-medium
-              tracking-[0.16em]
-              text-white/30
-              sm:flex-row
-              sm:items-center
-              sm:justify-between
-            "
-          >
-            <p>© 2026 SORELLA · ALL RIGHTS RESERVED</p>
+          <div className="flex flex-col gap-4 pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-[8px] tracking-[0.18em] text-white/35 sm:text-[9px]">
+              INDEPENDENT CONCEPT · DESIGNED BY JOVAVO
+            </p>
 
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="
-                group flex w-fit
-                items-center gap-3
-                transition-colors
-                duration-300
-                hover:text-white/60
-              "
-            >
-              <span>BACK TO TOP</span>
-
-              <span className="relative h-7 w-7 rounded-full border border-white/20">
-                <span
-                  className="
-                    absolute
-                    left-1/2 top-[53%]
-                    h-[6px] w-[6px]
-                    -translate-x-1/2
-                    -translate-y-1/2
-                    rotate-45
-                    border-l border-t
-                    border-current
-                  "
-                />
-              </span>
-            </button>
-
-            <p>INDEPENDENT CONCEPT · DESIGNED BY JOVAVO</p>
+            <p className="text-[8px] tracking-[0.18em] text-white/35 sm:text-[9px]">
+              CONCEPT DEMONSTRATION · RESERVATIONS ARE DISABLED
+            </p>
           </div>
         </div>
       </footer>
