@@ -497,22 +497,22 @@ export default function SorellaMenuPage() {
 
             <Link
               href="/preview/sorella#story"
-              className="text-[7px] tracking-[0.28em] text-[#746A61]"
+              className="text-[7px] tracking-[0.28em] text-[#746A61] transition-colors duration-300 hover:text-[#332D28]"
             >
               OUR STORY
             </Link>
 
             <Link
-              href="/preview/sorella#private-dining"
-              className="text-[7px] tracking-[0.28em] text-[#746A61]"
+              href="/preview/sorella/private-dining"
+              className="text-[7px] tracking-[0.28em] text-[#746A61] transition-colors duration-300 hover:text-[#332D28]"
             >
               PRIVATE DINING
             </Link>
 
 
             <Link
-              href="/preview/sorella#contact"
-              className="text-[7px] tracking-[0.28em] text-[#746A61]"
+              href="/preview/sorella/contact"
+              className="text-[7px] tracking-[0.28em] text-[#746A61] transition-colors duration-300 hover:text-[#332D28]"
             >
               CONTACT
             </Link>
@@ -566,7 +566,7 @@ export default function SorellaMenuPage() {
               </Link>
 
               <Link
-                href="/preview/sorella#private-dining"
+                href="/preview/sorella/private-dining"
                 onClick={() =>
                   setMobileOpen(false)
                 }
@@ -576,17 +576,7 @@ export default function SorellaMenuPage() {
               </Link>
 
               <Link
-                href="/preview/sorella#gallery"
-                onClick={() =>
-                  setMobileOpen(false)
-                }
-                className="text-[8px] tracking-[0.27em] text-[#756A61]"
-              >
-                GALLERY
-              </Link>
-
-              <Link
-                href="/preview/sorella#contact"
+                href="/preview/sorella/contact"
                 onClick={() =>
                   setMobileOpen(false)
                 }
