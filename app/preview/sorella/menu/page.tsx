@@ -860,24 +860,19 @@ export default function SorellaMenuPage() {
             </h2>
 
             <div className="mx-auto my-3 h-px w-10 bg-[#75675B]/50 sm:my-5" />
+<p className="mx-auto text-[7px] leading-[1.6] tracking-[0.08em] text-[#74665B] sm:max-w-[540px] sm:text-[9px] sm:leading-[2] sm:tracking-[0.14em]">
+  <span className="block sm:inline">
+    MENU ITEMS ARE SUBJECT TO SEASONAL AVAILABILITY ·
+  </span>
 
-            <p className="mx-auto text-[7px] leading-[1.6] tracking-[0.08em] text-[#74665B] sm:max-w-[540px] sm:text-[9px] sm:leading-[2] sm:tracking-[0.14em]">
-              <span className="block sm:inline">
-                MENU ITEMS ARE SUBJECT TO
-              </span>
-              <span className="block sm:inline">
-                {" "}SEASONAL AVAILABILITY ·
-              </span>
-              <span className="block sm:inline">
-                {" "}PLEASE INFORM YOUR SERVER
-              </span>
-              <span className="block sm:inline">
-                {" "}OF ANY ALLERGIES OR
-              </span>
-              <span className="block sm:inline">
-                {" "}DIETARY RESTRICTIONS
-              </span>
-            </p>
+  <span className="block sm:inline">
+    {" "}PLEASE INFORM YOUR SERVER OF ANY ALLERGIES
+  </span>
+
+  <span className="block sm:inline">
+    {" "}OR DIETARY RESTRICTIONS
+  </span>
+</p>
           </div>
         </div>
       </section>
