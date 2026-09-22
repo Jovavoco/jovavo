@@ -104,80 +104,104 @@ export default function AboutPage() {
           HERO
       ========================================================= */}
 
-      <section className="mx-auto max-w-6xl px-5 pb-20 pt-28 sm:px-6 sm:pb-24 sm:pt-32 md:pt-36">
+      <section className="mx-auto max-w-[1440px] px-5 pb-20 pt-28 sm:px-7 sm:pb-24 sm:pt-32 lg:px-10 lg:pt-36 xl:px-12">
         <Reveal>
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
-            {/* HERO CONTENT */}
-
-            <div>
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#1b1713] text-white">
-                <Sparkles size={20} strokeWidth={1.6} />
+          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-stretch lg:gap-12 xl:gap-16">
+            <div className="flex flex-col justify-center py-2 lg:py-6">
+              <div className="flex items-center gap-5">
+                <p className="text-[9px] font-medium uppercase tracking-[0.42em] text-[#28231f]/75 sm:text-[10px]">
+                  About Jovavo
+                </p>
+                <span className="h-px w-16 bg-[#28231f]/30 sm:w-20" />
               </div>
 
-              <p className="text-[15px] font-semibold text-[#1b1713]/50">
-                About Jovavo
-              </p>
-
-              <h1 className="mt-3 max-w-2xl font-serif text-[3rem] font-light leading-[0.98] tracking-[-0.04em] sm:text-[3.8rem] md:text-[4.5rem]">
-                Building digital
-                <br />
-                experiences with
-                <br />
-                <span className="italic text-[#1b1713]/50">
-                  intention.
+              <h1 className="mt-9 max-w-[610px] font-serif font-light tracking-[-0.055em] text-[#17130f]">
+                <span className="block text-[3.75rem] leading-[0.88] sm:text-[4.6rem] lg:text-[4.8rem] xl:text-[5.65rem]">
+                  More than
+                </span>
+                <span className="block text-[3.75rem] leading-[0.88] sm:text-[4.6rem] lg:text-[4.8rem] xl:text-[5.65rem]">
+                  websites.
+                </span>
+                <span className="mt-2 block text-[3.85rem] italic leading-[0.9] text-[#8f8176] sm:text-[4.75rem] lg:text-[4.95rem] xl:text-[5.8rem]">
+                  Real growth.
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-[16px]">
-                Jovavo is a digital studio creating custom websites,
-                e-commerce experiences, and digital systems built around the
-                businesses that use them.
-              </p>
+              <div className="mt-9 max-w-[560px] space-y-5">
+                <p className="text-[14px] leading-[1.75] text-[#28231f]/65 sm:text-[15px]">
+                  Jovavo is a digital studio creating custom websites, e-commerce
+                  experiences, and digital systems built around the businesses
+                  that use them.
+                </p>
+                <p className="text-[14px] leading-[1.75] text-[#28231f]/65 sm:text-[15px]">
+                  We combine design, strategy, and development to create a
+                  polished online presence that not only looks professional,
+                  but helps you grow.
+                </p>
+              </div>
 
-              <p className="mt-3 max-w-xl text-[15px] leading-7 text-[#1b1713]/55 sm:text-[16px]">
-                We bring design and development together to create a polished
-                online presence that looks professional, works smoothly, and
-                can grow alongside your business.
-              </p>
+              <div className="mt-10 grid grid-cols-2 border-y border-[#28231f]/15 sm:grid-cols-4">
+                {[
+                  ["Custom", "Design"],
+                  ["Strategic", "Approach"],
+                  ["Ongoing", "Support"],
+                  ["Real", "Results"],
+                ].map(([top, bottom], index) => (
+                  <div
+                    key={`${top}-${bottom}`}
+                    className={`flex min-h-[92px] items-center justify-center px-3 text-center ${
+                      index % 2 !== 0 ? "border-l border-[#28231f]/15" : ""
+                    } ${index > 1 ? "border-t border-[#28231f]/15 sm:border-t-0" : ""} ${
+                      index === 2 ? "sm:border-l sm:border-[#28231f]/15" : ""
+                    }`}
+                  >
+                    <p className="text-[8px] font-medium uppercase leading-[1.65] tracking-[0.28em] text-[#28231f]/80 sm:text-[9px]">
+                      {top}<br />{bottom}
+                    </p>
+                  </div>
+                ))}
+              </div>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#1b1713] px-7 py-3.5 text-[14px] font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#302a24] sm:w-auto"
+                  className="group inline-flex min-w-[220px] items-center justify-between rounded-full bg-[#17130f] px-7 py-4 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#302a24]"
                 >
-                  Start a Project
-
-                  <ArrowUpRight
-                    size={16}
-                    strokeWidth={1.6}
-                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
+                  <span className="text-[9px] font-medium uppercase tracking-[0.28em]">
+                    Start a Project
+                  </span>
+                  <ArrowUpRight size={14} strokeWidth={1.5} />
                 </Link>
 
                 <Link
                   href="/work"
-                  className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-[#1b1713]/15 px-7 py-3.5 text-[14px] font-medium text-[#1b1713]/65 transition-all duration-300 hover:border-[#1b1713] hover:text-[#1b1713] sm:w-auto"
+                  className="group inline-flex min-w-[220px] items-center justify-between rounded-full border border-[#28231f]/20 px-7 py-4 text-[#28231f]/70 transition-all duration-300 hover:border-[#28231f]/45 hover:text-[#28231f]"
                 >
-                  View Our Work
-
-                  <ArrowUpRight
-                    size={16}
-                    strokeWidth={1.6}
-                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
+                  <span className="text-[9px] font-medium uppercase tracking-[0.28em]">
+                    View Our Work
+                  </span>
+                  <ArrowUpRight size={14} strokeWidth={1.5} />
                 </Link>
               </div>
             </div>
 
-            {/* HERO IMAGE */}
-
-            <div className="overflow-hidden rounded-[1.6rem] border border-[#1b1713]/10 bg-[#fffdf9] sm:rounded-[2rem]">
+            <div className="relative min-h-[470px] overflow-hidden rounded-[1.8rem] sm:min-h-[600px] lg:min-h-[720px] xl:min-h-[790px]">
               <img
-                src="/images/about/about-hero.jpg"
-                alt="About Jovavo workspace"
-                className="h-[360px] w-full object-cover transition-transform duration-700 hover:scale-[1.02] sm:h-[460px] lg:h-[560px]"
+                src="/images/about/jovavo-about-workspace.png"
+                alt="Jovavo creative workspace"
+                className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-[1200ms] ease-out hover:scale-[1.015]"
               />
             </div>
+          </div>
+
+          <div className="mt-10 flex items-center gap-5">
+            <p className="shrink-0 text-[8px] font-medium uppercase tracking-[0.34em] text-[#8f8176] sm:text-[9px]">
+              Ideas → Websites → Growth
+            </p>
+            <span className="h-px flex-1 bg-[#28231f]/15" />
+            <p className="hidden shrink-0 text-[8px] font-medium uppercase tracking-[0.34em] text-[#8f8176] sm:block sm:text-[9px]">
+              Built with intention
+            </p>
           </div>
         </Reveal>
       </section>
