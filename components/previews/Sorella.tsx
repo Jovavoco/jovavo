@@ -245,7 +245,7 @@ function MenuItem({
             {name}
           </h3>
 
-          <p className="mt-3 max-w-[430px] text-[12px] font-light leading-[1.65] text-[#756A61] sm:text-[13px]">
+          <p className="mt-3 max-w-[430px] text-[13px] font-medium leading-[1.6] text-[#5E544C] sm:text-[13px] sm:font-normal sm:text-[#756A61]">
             {description}
           </p>
         </div>
@@ -285,7 +285,7 @@ function DarkMenuItem({
             {name}
           </h3>
 
-          <p className="mt-3 max-w-[430px] text-[12px] font-light leading-[1.65] text-white/50 sm:text-[13px]">
+          <p className="mt-3 max-w-[430px] text-[13px] font-medium leading-[1.6] text-white/80 sm:text-[13px] sm:font-normal sm:text-white/50">
             {description}
           </p>
         </div>
@@ -369,7 +369,7 @@ function ImageHeader({
           </h2>
 
           <p
-            className={`mt-2 text-[14px] font-medium italic [text-shadow:0_1px_12px_rgba(255,255,255,0.55)] sm:mt-3 sm:text-[17px] sm:font-normal sm:[text-shadow:none] ${
+            className={`mt-2 text-[15px] font-semibold italic [text-shadow:0_1px_12px_rgba(255,255,255,0.65)] sm:mt-3 sm:text-[17px] sm:font-normal sm:[text-shadow:none] ${
               dark
                 ? "text-white/90 [text-shadow:0_1px_12px_rgba(0,0,0,0.45)] sm:text-white/75 sm:[text-shadow:none]"
                 : "text-[#65574D]"
@@ -845,13 +845,13 @@ export default function SorellaMenuPage() {
         <div className="absolute inset-0 bg-[#2B211A]/[0.04]" />
 
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6">
-          <div className="max-w-[92%] rounded-[1.25rem] bg-[#F3EEE6]/78 px-4 py-5 text-center backdrop-blur-[2px] sm:max-w-[620px] sm:rounded-none sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none">
-            <p className="mb-3 text-[7px] font-medium tracking-[0.24em] text-[#55483F] sm:mb-4 sm:text-[8px] sm:font-normal sm:tracking-[0.32em] sm:text-[#66584E]/70">
+          <div className="max-w-[92%] px-4 py-5 text-center sm:max-w-[620px] sm:px-0 sm:py-0">
+            <p className="mb-3 text-[8px] font-bold tracking-[0.22em] text-[#40352E] [text-shadow:0_1px_10px_rgba(255,255,255,0.9)] sm:mb-4 sm:font-normal sm:tracking-[0.32em] sm:text-[#66584E]/70 sm:[text-shadow:none]">
               FROM OUR TABLE TO YOURS
             </p>
 
             <h2
-              className="text-[34px] italic leading-none text-[#4E423A] sm:text-[54px] sm:text-[#5F5148]"
+              className="text-[36px] font-medium italic leading-none text-[#40352E] [text-shadow:0_2px_14px_rgba(255,255,255,0.9)] sm:text-[54px] sm:font-normal sm:text-[#5F5148] sm:[text-shadow:none]"
               style={{
                 fontFamily: '"Times New Roman", Times, serif',
               }}
@@ -861,7 +861,7 @@ export default function SorellaMenuPage() {
 
             <div className="mx-auto my-5 h-px w-10 bg-[#75675B]/50" />
 
-            <p className="mx-auto max-w-[310px] text-[7px] font-medium leading-[1.75] tracking-[0.09em] text-[#5B4E45] min-[390px]:text-[8px] sm:max-w-[540px] sm:text-[9px] sm:font-normal sm:leading-[2] sm:tracking-[0.14em] sm:text-[#74665B]">
+            <p className="mx-auto max-w-[320px] text-[8px] font-bold leading-[1.7] tracking-[0.08em] text-[#40352E] [text-shadow:0_1px_10px_rgba(255,255,255,0.95)] min-[390px]:text-[9px] sm:max-w-[540px] sm:text-[9px] sm:font-normal sm:leading-[2] sm:tracking-[0.14em] sm:text-[#74665B] sm:[text-shadow:none]">
               MENU ITEMS ARE SUBJECT TO SEASONAL AVAILABILITY ·
               PLEASE INFORM YOUR SERVER OF ANY ALLERGIES OR
               DIETARY RESTRICTIONS
