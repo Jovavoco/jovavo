@@ -104,10 +104,11 @@ export default function AboutPage() {
           HERO
       ========================================================= */}
 
-      <section className="mx-auto max-w-[1440px] px-5 pb-20 pt-28 sm:px-7 sm:pb-24 sm:pt-32 lg:px-10 lg:pt-36 xl:px-12">
+      <section className="mx-auto max-w-[1320px] px-5 pb-16 pt-24 sm:px-7 sm:pb-20 sm:pt-28 lg:px-10 lg:pt-32 xl:px-12">
         <Reveal>
-          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-stretch lg:gap-12 xl:gap-16">
-            <div className="flex flex-col justify-center py-2 lg:py-6">
+          <div className="grid gap-9 lg:grid-cols-[0.74fr_1.26fr] lg:items-stretch lg:gap-10 xl:gap-12">
+            {/* LEFT CONTENT */}
+            <div className="flex flex-col justify-center py-2 lg:py-4">
               <div className="flex items-center gap-5">
                 <p className="text-[9px] font-medium uppercase tracking-[0.42em] text-[#28231f]/75 sm:text-[10px]">
                   About Jovavo
@@ -115,32 +116,32 @@ export default function AboutPage() {
                 <span className="h-px w-16 bg-[#28231f]/30 sm:w-20" />
               </div>
 
-              <h1 className="mt-9 max-w-[610px] font-serif font-light tracking-[-0.055em] text-[#17130f]">
-                <span className="block text-[3.75rem] leading-[0.88] sm:text-[4.6rem] lg:text-[4.8rem] xl:text-[5.65rem]">
+              <h1 className="mt-7 max-w-[560px] font-serif font-light tracking-[-0.055em] text-[#17130f]">
+                <span className="block text-[3.35rem] leading-[0.88] sm:text-[4rem] lg:text-[4.25rem] xl:text-[4.9rem]">
                   More than
                 </span>
-                <span className="block text-[3.75rem] leading-[0.88] sm:text-[4.6rem] lg:text-[4.8rem] xl:text-[5.65rem]">
+                <span className="block text-[3.35rem] leading-[0.88] sm:text-[4rem] lg:text-[4.25rem] xl:text-[4.9rem]">
                   websites.
                 </span>
-                <span className="mt-2 block text-[3.85rem] italic leading-[0.9] text-[#8f8176] sm:text-[4.75rem] lg:text-[4.95rem] xl:text-[5.8rem]">
+                <span className="mt-2 block text-[3.45rem] italic leading-[0.9] text-[#8f8176] sm:text-[4.1rem] lg:text-[4.35rem] xl:text-[5rem]">
                   Real growth.
                 </span>
               </h1>
 
-              <div className="mt-9 max-w-[560px] space-y-5">
-                <p className="text-[14px] leading-[1.75] text-[#28231f]/65 sm:text-[15px]">
+              <div className="mt-7 max-w-[520px] space-y-4">
+                <p className="text-[13px] leading-[1.75] text-[#28231f]/65 sm:text-[14px]">
                   Jovavo is a digital studio creating custom websites, e-commerce
                   experiences, and digital systems built around the businesses
                   that use them.
                 </p>
-                <p className="text-[14px] leading-[1.75] text-[#28231f]/65 sm:text-[15px]">
+                <p className="text-[13px] leading-[1.75] text-[#28231f]/65 sm:text-[14px]">
                   We combine design, strategy, and development to create a
                   polished online presence that not only looks professional,
                   but helps you grow.
                 </p>
               </div>
 
-              <div className="mt-10 grid grid-cols-2 border-y border-[#28231f]/15 sm:grid-cols-4">
+              <div className="mt-8 grid grid-cols-2 border-y border-[#28231f]/15 sm:grid-cols-4">
                 {[
                   ["Custom", "Design"],
                   ["Strategic", "Approach"],
@@ -149,43 +150,56 @@ export default function AboutPage() {
                 ].map(([top, bottom], index) => (
                   <div
                     key={`${top}-${bottom}`}
-                    className={`flex min-h-[92px] items-center justify-center px-3 text-center ${
+                    className={`flex min-h-[78px] items-center justify-center px-3 text-center ${
                       index % 2 !== 0 ? "border-l border-[#28231f]/15" : ""
-                    } ${index > 1 ? "border-t border-[#28231f]/15 sm:border-t-0" : ""} ${
+                    } ${
+                      index > 1 ? "border-t border-[#28231f]/15 sm:border-t-0" : ""
+                    } ${
                       index === 2 ? "sm:border-l sm:border-[#28231f]/15" : ""
                     }`}
                   >
-                    <p className="text-[8px] font-medium uppercase leading-[1.65] tracking-[0.28em] text-[#28231f]/80 sm:text-[9px]">
-                      {top}<br />{bottom}
+                    <p className="text-[8px] font-medium uppercase leading-[1.65] tracking-[0.27em] text-[#28231f]/80">
+                      {top}
+                      <br />
+                      {bottom}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact"
-                  className="group inline-flex min-w-[220px] items-center justify-between rounded-full bg-[#17130f] px-7 py-4 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#302a24]"
+                  className="group inline-flex min-w-[205px] items-center justify-between rounded-full bg-[#17130f] px-7 py-[14px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#302a24]"
                 >
-                  <span className="text-[9px] font-medium uppercase tracking-[0.28em]">
+                  <span className="text-[8px] font-medium uppercase tracking-[0.28em]">
                     Start a Project
                   </span>
-                  <ArrowUpRight size={14} strokeWidth={1.5} />
+                  <ArrowUpRight
+                    size={14}
+                    strokeWidth={1.5}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
                 </Link>
 
                 <Link
                   href="/work"
-                  className="group inline-flex min-w-[220px] items-center justify-between rounded-full border border-[#28231f]/20 px-7 py-4 text-[#28231f]/70 transition-all duration-300 hover:border-[#28231f]/45 hover:text-[#28231f]"
+                  className="group inline-flex min-w-[205px] items-center justify-between rounded-full border border-[#28231f]/20 px-7 py-[14px] text-[#28231f]/70 transition-all duration-300 hover:border-[#28231f]/45 hover:text-[#28231f]"
                 >
-                  <span className="text-[9px] font-medium uppercase tracking-[0.28em]">
+                  <span className="text-[8px] font-medium uppercase tracking-[0.28em]">
                     View Our Work
                   </span>
-                  <ArrowUpRight size={14} strokeWidth={1.5} />
+                  <ArrowUpRight
+                    size={14}
+                    strokeWidth={1.5}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
                 </Link>
               </div>
             </div>
 
-            <div className="relative min-h-[470px] overflow-hidden rounded-[1.8rem] sm:min-h-[600px] lg:min-h-[720px] xl:min-h-[790px]">
+            {/* RIGHT IMAGE */}
+            <div className="relative min-h-[420px] overflow-hidden rounded-[1.7rem] sm:min-h-[520px] lg:min-h-[620px] xl:min-h-[680px]">
               <img
                 src="/images/about/jovavo-about-workspace.png"
                 alt="Jovavo creative workspace"
@@ -194,12 +208,12 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-10 flex items-center gap-5">
-            <p className="shrink-0 text-[8px] font-medium uppercase tracking-[0.34em] text-[#8f8176] sm:text-[9px]">
+          <div className="mt-8 flex items-center gap-5">
+            <p className="shrink-0 text-[7px] font-medium uppercase tracking-[0.34em] text-[#8f8176] sm:text-[8px]">
               Ideas → Websites → Growth
             </p>
             <span className="h-px flex-1 bg-[#28231f]/15" />
-            <p className="hidden shrink-0 text-[8px] font-medium uppercase tracking-[0.34em] text-[#8f8176] sm:block sm:text-[9px]">
+            <p className="hidden shrink-0 text-[7px] font-medium uppercase tracking-[0.34em] text-[#8f8176] sm:block sm:text-[8px]">
               Built with intention
             </p>
           </div>
