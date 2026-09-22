@@ -23,9 +23,45 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    "https://jovavo.com"
-  ),
+  metadataBase: new URL("https://jovavo.com"),
+
+  title: {
+    default: "Jovavo | Web Design & Digital Marketing",
+    template: "%s | Jovavo",
+  },
+
+  description:
+    "Jovavo is a web design and digital marketing company creating custom websites, e-commerce experiences, and digital solutions for businesses.",
+
+  applicationName: "Jovavo",
+
+  authors: [
+    {
+      name: "Jovavo",
+      url: "https://jovavo.com",
+    },
+  ],
+
+  creator: "Jovavo",
+  publisher: "Jovavo",
+
+  keywords: [
+    "Jovavo",
+    "Jovavo web design",
+    "web design",
+    "website development",
+    "custom websites",
+    "e-commerce web design",
+    "digital marketing",
+    "SEO",
+    "Google Ads",
+    "Meta Ads",
+    "Next.js development",
+  ],
+
+  alternates: {
+    canonical: "/",
+  },
 
   verification: {
     other: {
@@ -34,31 +70,11 @@ export const metadata: Metadata = {
     },
   },
 
-  title: {
-    default:
-      "Jovavo | Custom Websites & Digital Experiences",
-    template: "%s | Jovavo",
-  },
-
-  description:
-    "Jovavo designs and develops premium websites for businesses that want to stand out, grow online, and convert more customers.",
-
-  keywords: [
-    "Web Design",
-    "Website Development",
-    "Next.js",
-    "UI Design",
-    "Branding",
-    "SEO",
-    "Jovavo",
-  ],
-
   openGraph: {
-    title:
-      "Jovavo | Custom Websites & Digital Experiences",
+    title: "Jovavo | Web Design & Digital Marketing",
 
     description:
-      "Premium websites designed and developed for ambitious businesses.",
+      "Jovavo creates custom websites, e-commerce experiences, and digital solutions designed to help businesses grow online.",
 
     url: "https://jovavo.com",
 
@@ -73,7 +89,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Jovavo social preview image",
+        alt: "Jovavo Web Design & Digital Marketing",
       },
     ],
   },
@@ -81,19 +97,31 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title:
-      "Jovavo | Custom Websites & Digital Experiences",
+    title: "Jovavo | Web Design & Digital Marketing",
 
     description:
-      "Premium websites designed and developed for ambitious businesses.",
+      "Custom websites, e-commerce experiences, and digital solutions for businesses.",
 
-    images: [
-      "/og-image.png",
-    ],
+    images: ["/og-image.png"],
   },
 
   icons: {
     icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -110,20 +138,14 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <Schema />
 
-        <SiteChrome>
-          {children}
-        </SiteChrome>
+        <SiteChrome>{children}</SiteChrome>
 
         <MetaPixel />
       </body>
 
-      {process.env
-        .NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
+      {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
         <GoogleAnalytics
-          gaId={
-            process.env
-              .NEXT_PUBLIC_GA_MEASUREMENT_ID
-          }
+          gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
         />
       ) : null}
     </html>
