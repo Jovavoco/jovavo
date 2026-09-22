@@ -407,6 +407,80 @@ export default function SorellaPage() {
       </section>
 
       {/* =====================================================
+    EDITORIAL SECTION DIVIDER
+===================================================== */}
+
+<div className="relative bg-[#F3EEE6] py-5 sm:py-6 lg:py-7">
+  <div className="mx-auto flex max-w-[1500px] items-center px-6 sm:px-10 lg:px-14">
+
+    {/* LEFT LINE */}
+
+    <div className="h-px flex-1 bg-[#9A8372]/45" />
+
+    {/* CENTER OLIVE BRANCH */}
+
+    <div className="mx-5 flex items-center justify-center sm:mx-7">
+      <svg
+        viewBox="0 0 90 42"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-[30px] w-[64px] text-[#8A7464] sm:h-[34px] sm:w-[72px]"
+        aria-hidden="true"
+      >
+        {/* STEM */}
+        <path
+          d="M14 33C29 27 43 20 63 8"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+
+        {/* LEAVES */}
+        <path
+          d="M27 27C20 26 16 22 14 17C21 17 27 20 30 24C30 25 29 26 27 27Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M36 23C29 21 25 17 24 12C31 12 37 15 40 19C39 21 38 22 36 23Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M46 18C40 15 37 11 37 6C44 7 49 10 52 14C51 16 49 17 46 18Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M32 26C31 32 33 36 38 39C40 33 39 28 36 24C34 24 33 25 32 26Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M43 21C43 27 46 31 51 33C52 27 50 22 47 19C45 19 44 20 43 21Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M54 15C55 20 59 23 64 24C64 19 62 15 59 12C57 12 55 13 54 15Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M61 10C66 8 71 9 75 12C71 16 66 17 61 15C60 13 60 12 61 10Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+
+    {/* RIGHT LINE */}
+
+    <div className="h-px flex-1 bg-[#9A8372]/45" />
+
+  </div>
+</div>
+
+      {/* =====================================================
           MENU
       ===================================================== */}
 
@@ -1220,6 +1294,80 @@ export default function SorellaPage() {
           </div>
         </div>
       </section>
+
+      {/* =====================================================
+    EDITORIAL SECTION DIVIDER
+===================================================== */}
+
+<div className="relative bg-[#F3EEE6] py-5 sm:py-6 lg:py-7">
+  <div className="mx-auto flex max-w-[1500px] items-center px-6 sm:px-10 lg:px-14">
+
+    {/* LEFT LINE */}
+
+    <div className="h-px flex-1 bg-[#9A8372]/45" />
+
+    {/* CENTER OLIVE BRANCH */}
+
+    <div className="mx-5 flex items-center justify-center sm:mx-7">
+      <svg
+        viewBox="0 0 90 42"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-[30px] w-[64px] text-[#8A7464] sm:h-[34px] sm:w-[72px]"
+        aria-hidden="true"
+      >
+        {/* STEM */}
+        <path
+          d="M14 33C29 27 43 20 63 8"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+
+        {/* LEAVES */}
+        <path
+          d="M27 27C20 26 16 22 14 17C21 17 27 20 30 24C30 25 29 26 27 27Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M36 23C29 21 25 17 24 12C31 12 37 15 40 19C39 21 38 22 36 23Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M46 18C40 15 37 11 37 6C44 7 49 10 52 14C51 16 49 17 46 18Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M32 26C31 32 33 36 38 39C40 33 39 28 36 24C34 24 33 25 32 26Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M43 21C43 27 46 31 51 33C52 27 50 22 47 19C45 19 44 20 43 21Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M54 15C55 20 59 23 64 24C64 19 62 15 59 12C57 12 55 13 54 15Z"
+          fill="currentColor"
+        />
+
+        <path
+          d="M61 10C66 8 71 9 75 12C71 16 66 17 61 15C60 13 60 12 61 10Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+
+    {/* RIGHT LINE */}
+
+    <div className="h-px flex-1 bg-[#9A8372]/45" />
+
+  </div>
+</div>
 
       {/* =====================================================
           FOOTER
