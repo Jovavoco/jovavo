@@ -1,13 +1,18 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 const navItems = [
-  ["menu", "MENU"],
-  ["story", "OUR STORY"],
-  ["private-dining", "PRIVATE DINING"],
-  ["contact", "CONTACT"],
+  ["/preview/sorella/menu", "MENU", "menu"],
+  ["/preview/sorella/story", "OUR STORY", "story"],
+  ["/preview/sorella/private-dining", "PRIVATE DINING", "private-dining"],
+  ["/preview/sorella/contact", "CONTACT", "contact"],
 ];
 
 export default function SorellaPrivateDiningPage() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-[#F3EEE6] text-[#342D28]">
 
@@ -17,7 +22,6 @@ export default function SorellaPrivateDiningPage() {
 
       <header className="relative z-50 border-b border-[#9B897B]/20 bg-[#F3EEE6]">
         <div className="mx-auto flex h-[78px] max-w-[1500px] items-center justify-between px-6 sm:px-10 md:px-14 lg:px-20">
-
           <Link
             href="/preview/sorella"
             className="text-[24px] tracking-[0.08em] text-[#342D28]"
@@ -28,17 +32,15 @@ export default function SorellaPrivateDiningPage() {
             SORELLA
           </Link>
 
+          {/* DESKTOP NAV */}
+
           <nav className="hidden items-center gap-7 lg:flex">
-            {navItems.map(([slug, label]) => (
+            {navItems.map(([href, label, key]) => (
               <Link
-                key={slug}
-                href={
-                  slug === "gallery" || slug === "contact"
-                    ? `/preview/sorella#${slug}`
-                    : `/preview/sorella/${slug}`
-                }
-                className={`relative py-2 text-[8px] tracking-[0.22em] text-[#65594F] ${
-                  slug === "private-dining"
+                key={key}
+                href={href}
+                className={`relative py-2 text-[8px] tracking-[0.22em] text-[#65594F] transition-colors duration-300 hover:text-[#342D28] ${
+                  key === "private-dining"
                     ? "after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[#6D3235]"
                     : ""
                 }`}
@@ -46,15 +48,59 @@ export default function SorellaPrivateDiningPage() {
                 {label}
               </Link>
             ))}
+
+            <Link
+              href="/preview/sorella/reservations"
+              className="rounded-full bg-[#342D28] px-6 py-3 text-[8px] tracking-[0.22em] text-white"
+            >
+              RESERVE
+            </Link>
           </nav>
 
-          <Link
-            href="/preview/sorella#reserve"
-            className="rounded-full bg-[#342D28] px-6 py-3 text-[8px] tracking-[0.22em] text-white"
+          {/* MOBILE MENU BUTTON */}
+
+          <button
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((open) => !open)}
+            className="flex flex-col gap-[6px] lg:hidden"
           >
-            RESERVE
-          </Link>
+            <span className="h-px w-6 bg-[#342D28]" />
+            <span className="h-px w-6 bg-[#342D28]" />
+          </button>
         </div>
+
+        {/* MOBILE DROPDOWN */}
+
+        {mobileOpen && (
+          <div className="border-t border-[#9B897B]/20 bg-[#F3EEE6] px-6 py-7 lg:hidden">
+            <div className="flex flex-col gap-5">
+              {navItems.map(([href, label, key]) => (
+                <Link
+                  key={key}
+                  href={href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`w-fit text-[8px] tracking-[0.27em] ${
+                    key === "private-dining"
+                      ? "border-b border-[#6D3235] pb-1 text-[#342D28]"
+                      : "text-[#756A61]"
+                  }`}
+                >
+                  {label}
+                </Link>
+              ))}
+
+              <Link
+                href="/preview/sorella/reservations"
+                onClick={() => setMobileOpen(false)}
+                className="mt-2 w-fit rounded-full bg-[#342D28] px-7 py-3.5 text-[7px] tracking-[0.28em] text-white"
+              >
+                RESERVE
+              </Link>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* =====================================================
@@ -610,7 +656,7 @@ export default function SorellaPrivateDiningPage() {
                   PRIVATE DINING INQUIRY
 
                   <span className="text-[11px]">
-                    ↗
+                    →
                   </span>
                 </button>
               </div>
