@@ -630,7 +630,7 @@ export default function SorellaMenuPage() {
             <div className="mx-auto my-6 h-px w-11 bg-[#756559]/50" />
 
             <p
-              className="text-[16px] font-semibold italic leading-[1.55] text-[#4A3D35] sm:text-[18px] sm:font-normal sm:text-[#62534A]"
+              className="text-[16px] font-normal italic leading-[1.55] text-[#4A3D35] sm:text-[18px] sm:text-[#62534A]"
               style={{
                 fontFamily: '"Times New Roman", Times, serif',
               }}
@@ -845,13 +845,13 @@ export default function SorellaMenuPage() {
         <div className="absolute inset-0 bg-[#2B211A]/[0.04]" />
 
         <div className="absolute inset-0 flex items-center justify-center px-6">
-          <div className="max-w-[620px] text-center">
-            <p className="mb-4 text-[8px] tracking-[0.32em] text-[#66584E]/70">
+          <div className="max-w-[680px] px-2 text-center sm:px-0">
+            <p className="mb-2 text-[7px] tracking-[0.22em] text-[#66584E]/75 sm:mb-4 sm:text-[8px] sm:tracking-[0.32em]">
               FROM OUR TABLE TO YOURS
             </p>
 
             <h2
-              className="text-[42px] italic leading-none text-[#5F5148] sm:text-[54px]"
+              className="text-[40px] italic leading-none text-[#5F5148] sm:text-[54px]"
               style={{
                 fontFamily: '"Times New Roman", Times, serif',
               }}
@@ -859,9 +859,9 @@ export default function SorellaMenuPage() {
               Buon appetito.
             </h2>
 
-            <div className="mx-auto my-5 h-px w-10 bg-[#75675B]/50" />
+            <div className="mx-auto my-3 h-px w-10 bg-[#75675B]/50 sm:my-5" />
 
-            <p className="mx-auto max-w-[540px] text-[8px] leading-[2] tracking-[0.14em] text-[#74665B] sm:text-[9px]">
+            <p className="mx-auto max-w-[620px] text-[7px] leading-[1.55] tracking-[0.08em] text-[#74665B] sm:max-w-[540px] sm:text-[9px] sm:leading-[2] sm:tracking-[0.14em]">
               MENU ITEMS ARE SUBJECT TO SEASONAL AVAILABILITY ·
               PLEASE INFORM YOUR SERVER OF ANY ALLERGIES OR
               DIETARY RESTRICTIONS
