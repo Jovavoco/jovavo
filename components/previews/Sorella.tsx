@@ -520,7 +520,7 @@ export default function SorellaPage() {
             <h2
               className="
                 mt-6
-                text-[42px]
+                text-[18px]
                 font-normal
                 leading-[1.02]
                 tracking-[-0.04em]
@@ -550,8 +550,14 @@ export default function SorellaPage() {
                 text-[#655D56]
               "
             >
-              Seasonal Italian cooking, handmade pasta, and thoughtful
-              ingredients made for long dinners around the table.
+              <span className="block sm:hidden">
+                Seasonal Italian cooking, handmade pasta, and thoughtful ingredients
+                <br />
+                made for long dinners around the table.
+              </span>
+              <span className="hidden sm:inline">
+                Seasonal Italian cooking, handmade pasta, and thoughtful ingredients made for long dinners around the table.
+              </span>
             </p>
 
             <Link
@@ -578,7 +584,7 @@ export default function SorellaPage() {
                 hover:bg-[#443E39]
               "
             >
-              <span className="pl-1 text-[5px] font-semibold tracking-[0.13em] sm:text-[9px] sm:tracking-[0.19em]">
+              <span className="pl-1 text-[3px] font-semibold tracking-[0.13em] sm:text-[9px] sm:tracking-[0.19em]">
                 EXPLORE THE MENU
               </span>
 
