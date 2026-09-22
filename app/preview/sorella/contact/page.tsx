@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const navItems = [
-  ["menu", "MENU"],
-  ["story", "OUR STORY"],
-  ["private-dining", "PRIVATE DINING"],
-  ["contact", "CONTACT"],
+  ["/preview/sorella/menu", "MENU", "menu"],
+  ["/preview/sorella#story", "OUR STORY", "story"],
+  ["/preview/sorella/private-dining", "PRIVATE DINING", "private-dining"],
+  ["/preview/sorella/contact", "CONTACT", "contact"],
 ];
 
 export default function SorellaContactPage() {
@@ -29,12 +29,12 @@ export default function SorellaContactPage() {
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
-            {navItems.map(([slug, label]) => (
+            {navItems.map(([href, label, key]) => (
               <Link
-                key={slug}
-                href={`/preview/sorella/${slug}`}
-                className={`relative py-2 text-[8px] tracking-[0.22em] text-[#65594F] ${
-                  slug === "contact"
+                key={key}
+                href={href}
+                className={`relative py-2 text-[8px] tracking-[0.22em] text-[#65594F] transition-colors duration-300 hover:text-[#342D28] ${
+                  key === "contact"
                     ? "after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[#6D3235]"
                     : ""
                 }`}
