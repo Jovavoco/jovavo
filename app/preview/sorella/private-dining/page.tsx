@@ -232,98 +232,152 @@ export default function SorellaPrivateDiningPage() {
         </div>
       </section>
 
+{/* =====================================================
+    EXPERIENCE
+===================================================== */}
+
+<section className="bg-[#EEE6DC]">
+  <div className="mx-auto max-w-[1500px] px-4 py-12 sm:px-6 md:px-8 lg:px-10 lg:py-14">
+
+    <div className="grid items-center gap-10 lg:grid-cols-[1.28fr_.72fr] lg:gap-14">
+
       {/* =====================================================
-          EXPERIENCE
+          IMAGE
       ===================================================== */}
 
-      <section className="bg-[#E8DED2]">
-        <div className="mx-auto max-w-[1320px] px-6 py-14 sm:px-10 md:px-14 lg:px-20 lg:py-16">
+      <div className="relative">
 
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
+        <div className="overflow-hidden rounded-[6px_60px_6px_6px] sm:rounded-[6px_90px_6px_6px] lg:rounded-[6px_110px_6px_6px]">
 
-            {/* IMAGE */}
+          <img
+            src="/previews/sorella/sorella-private-dining.jpg"
+            alt="A gathering at Sorella"
+            className="
+              block
+              h-auto
+              w-full
+              object-contain
+              brightness-[1.08]
+              contrast-[0.96]
+              saturate-[0.92]
+            "
+          />
 
-            <div className="relative">
-
-              <div className="overflow-hidden rounded-[6px_80px_6px_6px] sm:rounded-[6px_110px_6px_6px]">
-                <img
-                  src="/previews/sorella/sorella-private-dining1.jpg"
-                  alt="A gathering at Sorella"
-                  className="h-[400px] w-full object-cover sm:h-[470px] lg:h-[510px]"
-                />
-              </div>
-
-              <div className="absolute -bottom-4 right-6 rounded-full bg-[#F3EEE6] px-6 py-3 sm:right-8">
-
-                <p
-                  className="text-[13px] italic text-[#756459]"
-                  style={{
-                    fontFamily: '"Times New Roman", Times, serif',
-                  }}
-                >
-                  Made for gathering.
-                </p>
-              </div>
-            </div>
-
-            {/* COPY */}
-
-            <div className="lg:pl-4">
-
-              <div className="mb-4 flex items-center gap-4">
-                <span className="h-px w-10 bg-[#947F70]" />
-
-                <p className="text-[8px] tracking-[0.32em] text-[#88766A]">
-                  THE EXPERIENCE
-                </p>
-              </div>
-
-              <h2
-                className="text-[38px] font-normal leading-[1] tracking-[-0.04em] text-[#352E29] sm:text-[46px] lg:text-[53px]"
-                style={{
-                  fontFamily: '"Times New Roman", Times, serif',
-                }}
-              >
-                Dinner,
-                <br />
-
-                <span className="italic text-[#7D6A5D]">
-                  made yours.
-                </span>
-              </h2>
-
-              <p className="mt-5 max-w-[440px] text-[12px] font-light leading-[1.8] text-[#74675D] sm:text-[13px]">
-                Private dining at Sorella is built around
-                generous food, an easy atmosphere and the
-                feeling that the table belongs entirely to
-                your group for the evening.
-              </p>
-
-              <p className="mt-3 max-w-[440px] text-[12px] font-light leading-[1.8] text-[#74675D] sm:text-[13px]">
-                Our imagined private dining experience includes
-                family-style menus, optional wine pairings and
-                flexible arrangements for intimate celebrations.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-2">
-
-                {[
-                  "CELEBRATIONS",
-                  "PRIVATE DINNERS",
-                  "GROUP DINING",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-[#8D796B]/25 px-4 py-2 text-[7px] tracking-[0.18em] text-[#77675C]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+
+        {/* SMALL IMAGE LABEL */}
+
+        <div className="absolute -bottom-4 right-5 rounded-full bg-[#F7F2EC]/95 px-5 py-2.5 shadow-[0_8px_25px_rgba(65,52,42,0.06)] sm:right-8 sm:px-6 sm:py-3">
+
+          <p
+            className="text-[12px] italic text-[#69594F] sm:text-[13px]"
+            style={{
+              fontFamily: '"Times New Roman", Times, serif',
+            }}
+          >
+            Made for gathering.
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* =====================================================
+          COPY
+      ===================================================== */}
+
+      <div className="px-1 sm:px-2 lg:pl-2">
+
+        {/* EYEBROW */}
+
+        <div className="mb-4 flex items-center gap-4">
+
+          <span className="h-px w-10 bg-[#9B887A]" />
+
+          <p className="text-[8px] font-medium tracking-[0.32em] text-[#79695E]">
+            THE EXPERIENCE
+          </p>
+
+        </div>
+
+        {/* HEADING */}
+
+        <h2
+          className="
+            text-[38px]
+            font-normal
+            leading-[0.98]
+            tracking-[-0.04em]
+            text-[#302A26]
+            sm:text-[46px]
+            lg:text-[50px]
+            xl:text-[54px]
+          "
+          style={{
+            fontFamily: '"Times New Roman", Times, serif',
+          }}
+        >
+          Dinner,
+          <br />
+
+          <span className="italic text-[#756258]">
+            made yours.
+          </span>
+
+        </h2>
+
+        {/* DESCRIPTION */}
+
+        <p className="mt-5 max-w-[420px] text-[13px] font-normal leading-[1.75] text-[#655A52]">
+          Private dining at Sorella is built around generous food,
+          an easy atmosphere and the feeling that the table belongs
+          entirely to your group for the evening.
+        </p>
+
+        <p className="mt-3 max-w-[420px] text-[13px] font-normal leading-[1.75] text-[#655A52]">
+          Our imagined private dining experience includes family-style
+          menus, optional wine pairings and flexible arrangements for
+          intimate celebrations.
+        </p>
+
+        {/* TAGS */}
+
+        <div className="mt-7 flex flex-wrap gap-2">
+
+          {[
+            "CELEBRATIONS",
+            "PRIVATE DINNERS",
+            "GROUP DINING",
+          ].map((item) => (
+
+            <span
+              key={item}
+              className="
+                rounded-full
+                border
+                border-[#806D60]/25
+                bg-[#F5EEE7]/35
+                px-4
+                py-2
+                text-[7px]
+                font-medium
+                tracking-[0.18em]
+                text-[#66584F]
+              "
+            >
+              {item}
+            </span>
+
+          ))}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       {/* =====================================================
           DETAILS
