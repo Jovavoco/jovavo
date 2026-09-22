@@ -844,7 +844,7 @@ export default function SorellaMenuPage() {
 
         <div className="absolute inset-0 bg-[#2B211A]/[0.04]" />
 
-        <div className="absolute inset-0 flex items-center justify-center px-6">
+        <div className="absolute inset-0 flex items-center justify-center px-6 pt-8 sm:pt-10">
           <div className="max-w-[680px] px-2 text-center sm:px-0">
             <p className="mb-2 text-[7px] tracking-[0.22em] text-[#66584E]/75 sm:mb-4 sm:text-[8px] sm:tracking-[0.32em]">
               FROM OUR TABLE TO YOURS
