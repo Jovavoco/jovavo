@@ -630,12 +630,22 @@ export default function SorellaMenuPage() {
             <div className="mx-auto my-6 h-px w-11 bg-[#756559]/50" />
 
             <p
-              className="text-[15px] font-semibold italic leading-[1.5] text-[#4A3D35] sm:text-[18px] sm:font-normal sm:text-[#62534A]"
+              className="text-[16px] font-semibold italic leading-[1.55] text-[#4A3D35] sm:text-[18px] sm:font-normal sm:text-[#62534A]"
               style={{
                 fontFamily: '"Times New Roman", Times, serif',
               }}
             >
-              Familiar Italian cooking, made for the middle of the table.
+              <span className="block sm:inline">
+                Familiar Italian cooking,
+              </span>
+
+              <span className="block sm:inline">
+                {" "}made for the middle
+              </span>
+
+              <span className="block sm:inline">
+                {" "}of the table.
+              </span>
             </p>
           </div>
         </div>
