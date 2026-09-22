@@ -1,18 +1,23 @@
 export default function Schema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["Organization", "ProfessionalService"],
+
+    "@id": "https://jovavo.com/#organization",
 
     name: "Jovavo",
 
     url: "https://jovavo.com",
 
-    logo: "https://jovavo.com/og-image.png",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://jovavo.com/og-image.png",
+    },
 
     image: "https://jovavo.com/og-image.png",
 
     description:
-      "Jovavo creates custom websites and manages Google and Meta advertising campaigns for businesses looking to grow online, generate leads, and convert more customers.",
+      "Jovavo is a web design and digital marketing company creating custom websites, e-commerce experiences, and digital solutions for businesses.",
 
     email: "contact@jovavo.com",
 
@@ -22,18 +27,15 @@ export default function Schema() {
     },
 
     serviceType: [
-      "Website Creation",
-      "Custom Website Design",
+      "Web Design",
       "Website Development",
+      "Custom Websites",
       "Website Redesign",
       "Landing Page Design",
-      "Ecommerce Website Development",
+      "E-commerce Website Development",
       "Google Ads Management",
       "Meta Ads Management",
-      "Facebook Advertising",
-      "Instagram Advertising",
       "Search Engine Optimization",
-      "Conversion Rate Optimization",
     ],
 
     sameAs: [
@@ -42,18 +44,17 @@ export default function Schema() {
     ],
 
     knowsAbout: [
+      "Web Design",
+      "Website Development",
+      "E-commerce",
       "Next.js",
       "React",
-      "Tailwind CSS",
       "Google Ads",
       "Meta Ads",
-      "Facebook Ads",
-      "Instagram Ads",
       "SEO",
       "UI Design",
       "UX Design",
-      "Website Performance",
-      "Responsive Design",
+      "Responsive Web Design",
     ],
   };
 
