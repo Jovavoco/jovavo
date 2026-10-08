@@ -124,7 +124,7 @@ export default function ClassiqueSalon() {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#F8F5F0] text-[#241F1B]">
+    <div className="min-h-screen overflow-x-hidden bg-[#F7F3ED] text-[#171411]">
       <style jsx global>{`
         html {
           scroll-behavior: smooth;
@@ -195,35 +195,36 @@ export default function ClassiqueSalon() {
         }
       `}</style>
 
-      {/* TOP BAR */}
-      <div className="bg-[#28211D] px-6 py-2.5 text-center text-[9px] uppercase tracking-[0.3em] text-white/70">
-        Staten Island, New York · Established for over 30 years
-      </div>
-
       {/* NAVIGATION */}
       <header
         className={`sticky top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "border-b border-black/[0.06] bg-[#F8F5F0]/90 shadow-[0_10px_40px_rgba(36,31,27,0.06)] backdrop-blur-xl"
-            : "bg-[#F8F5F0]"
+            ? "border-b border-black/[0.055] bg-[#FAF8F4]/95 shadow-[0_8px_28px_rgba(36,31,27,0.035)] backdrop-blur-xl"
+            : "bg-[#FAF8F4]"
         }`}
       >
         <div
           className={`mx-auto flex max-w-[1450px] items-center justify-between px-6 transition-all duration-500 md:px-10 lg:px-14 ${
-            scrolled ? "py-4" : "py-5"
+            scrolled ? "py-3.5" : "py-4"
           }`}
         >
-          <a href="#home">
-            <p className="font-serif text-[27px] leading-none tracking-[-0.025em]">
-              Classique
+          <a href="#home" className="group flex flex-col items-center">
+            <p
+              className="text-[22px] font-light uppercase leading-none tracking-[0.28em] text-[#211D1A] sm:text-[24px]"
+              style={{
+                fontFamily: '"Times New Roman", Times, serif',
+                fontWeight: 400,
+              }}
+            >
+              CLASSIQUE
             </p>
 
-            <p className="mt-1.5 text-[8px] uppercase tracking-[0.42em] text-[#947761]">
-              Salon & Spa
+            <p className="mt-2 text-[6px] font-medium uppercase tracking-[0.52em] text-[#8C7C70]">
+              SALON & SPA
             </p>
           </a>
 
-          <nav className="hidden items-center gap-9 lg:flex">
+          <nav className="hidden items-center gap-10 lg:flex">
             {[
               ["About", "#about"],
               ["Services", "#services"],
@@ -233,7 +234,7 @@ export default function ClassiqueSalon() {
               <a
                 key={label}
                 href={href}
-                className="relative text-[10px] uppercase tracking-[0.2em] text-[#5F554D] transition-colors duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-[#A98A72] after:transition-all after:duration-300 hover:text-[#241F1B] hover:after:w-full"
+                className="relative text-[8px] font-medium uppercase tracking-[0.24em] text-[#514943] transition-colors duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-[#8E7A6C] after:transition-all after:duration-300 hover:text-[#171411] hover:after:w-full"
               >
                 {label}
               </a>
@@ -241,7 +242,7 @@ export default function ClassiqueSalon() {
 
             <a
               href="tel:7186677600"
-              className="group flex items-center gap-3 rounded-full bg-[#28211D] px-6 py-3.5 text-[10px] uppercase tracking-[0.18em] text-white shadow-[0_10px_30px_rgba(40,33,29,0.15)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#9A7963]"
+              className="group flex items-center gap-4 border border-[#211D1A] bg-[#211D1A] px-6 py-3 text-[8px] font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:bg-transparent hover:text-[#211D1A]"
             >
               Book Appointment
 
@@ -256,14 +257,14 @@ export default function ClassiqueSalon() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setMenuOpen((current) => !current)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 lg:hidden"
+            className="flex h-9 w-9 items-center justify-center border border-black/[0.08] lg:hidden"
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {menuOpen && (
-          <div className="border-t border-black/[0.06] bg-[#F8F5F0] px-6 py-7 lg:hidden">
+          <div className="border-t border-black/[0.05] bg-[#FAF8F4] px-6 py-7 lg:hidden">
             <div className="flex flex-col gap-5">
               {[
                 ["About", "#about"],
@@ -295,104 +296,27 @@ export default function ClassiqueSalon() {
 
       <main>
         {/* HERO */}
-        <section
-          id="home"
-          className="relative px-4 pb-8 pt-4 md:px-6 md:pb-12 lg:px-8"
-        >
-          <div className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-[#D8C2AF]/20 blur-[120px] classique-glow" />
-
-          <div className="mx-auto grid min-h-[720px] max-w-[1450px] overflow-hidden rounded-[32px] bg-[#EEE7DF] shadow-[0_25px_80px_rgba(54,44,36,0.09)] lg:grid-cols-[0.82fr_1.18fr] lg:rounded-[42px]">
-            <div className="relative z-10 flex items-center px-7 py-20 sm:px-10 md:px-14 lg:px-16 xl:px-20">
-              <div className="max-w-[580px] classique-hero-copy">
-                <div className="mb-7 flex items-center gap-4">
-                  <div className="h-px w-9 bg-[#A98A72]" />
-
-                  <p className="text-[9px] uppercase tracking-[0.32em] text-[#8B705C]">
-                    Classique Salon & Spa
-                  </p>
-                </div>
-
-                <h1 className="font-serif text-[56px] font-normal leading-[0.94] tracking-[-0.045em] sm:text-[68px] md:text-[82px] lg:text-[76px] xl:text-[92px]">
-                  Beauty,
-                  <br />
-                  <span className="italic text-[#9C7B64]">
-                    refined.
-                  </span>
-                </h1>
-
-                <p className="mt-8 max-w-[470px] text-[15px] leading-7 text-[#675D55]">
-                  More than three decades of artistry, experience, and
-                  personalized beauty care in Staten Island.
-                </p>
-
-                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href="tel:7186677600"
-                    className="group flex items-center justify-center gap-3 rounded-full bg-[#28211D] px-7 py-4 text-[10px] uppercase tracking-[0.2em] text-white shadow-[0_12px_30px_rgba(40,33,29,0.14)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#9C7B64]"
-                  >
-                    Book an Appointment
-
-                    <ArrowRight
-                      size={14}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                  </a>
-
-                  <a
-                    href="#services"
-                    className="flex items-center justify-center rounded-full border border-[#28211D]/15 bg-white/40 px-7 py-4 text-[10px] uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-1 hover:bg-white"
-                  >
-                    Explore Services
-                  </a>
-                </div>
-
-                <div className="mt-12 flex flex-wrap gap-3">
-                  <div className="rounded-full border border-black/[0.07] bg-white/55 px-5 py-3 backdrop-blur-sm">
-                    <p className="text-[9px] uppercase tracking-[0.18em] text-[#806F63]">
-                      30+ Years
-                    </p>
-                  </div>
-
-                  <div className="rounded-full border border-black/[0.07] bg-white/55 px-5 py-3 backdrop-blur-sm">
-                    <p className="text-[9px] uppercase tracking-[0.18em] text-[#806F63]">
-                      Full Service Salon & Spa
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* HERO PHOTO */}
-            <div className="relative min-h-[500px] overflow-hidden lg:m-4 lg:ml-0 lg:min-h-[690px] lg:rounded-[34px]">
-              <img
-                src="/previews/classique/hero.jpg"
-                alt="Classique Salon & Spa"
-                className="classique-hero-image absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] hover:scale-[1.025]"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
-
-              <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8">
-                <div className="classique-float inline-flex max-w-[330px] items-center gap-4 rounded-[24px] border border-white/20 bg-black/25 px-5 py-4 text-white shadow-xl backdrop-blur-xl">
-                  <Sparkles
-                    size={17}
-                    strokeWidth={1.3}
-                    className="shrink-0 text-white/80"
-                  />
-
-                  <div>
-                    <p className="font-serif text-xl">
-                      Staten Island
-                    </p>
-
-                    <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-white/65">
-                      Style with experience behind it
-                    </p>
-                  </div>
-                </div>
-              </div>
+        <section id="home" className="relative min-h-[700px] overflow-hidden lg:min-h-[760px]">
+          <img src="/previews/classique/hero.jpg" alt="Classique Salon & Spa" className="absolute inset-0 h-full w-full object-cover object-center" />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="relative z-10 flex min-h-[700px] items-center justify-center px-6 text-center text-white lg:min-h-[760px]">
+            <div>
+              <p className="text-[9px] tracking-[0.42em] text-white/85">BEAUTY LIVES HERE</p>
+              <h1
+                className="mt-7 text-[48px] font-light leading-none tracking-[0.16em] sm:text-[66px] lg:text-[78px]"
+                style={{ fontFamily: '"Times New Roman", Times, serif', fontWeight: 400 }}
+              >
+                CLASSIQUE
+              </h1>
+              <p className="mt-3 text-[18px] tracking-[0.42em] sm:text-[23px]">SALON</p>
+              <div className="mx-auto mt-7 h-px w-12 bg-white/70" />
+              <p className="mt-7 font-serif text-[18px] italic leading-[1.5] sm:text-[21px]">Where timeless beauty<br />meets modern style.</p>
+              <a href="tel:7186677600" className="group mx-auto mt-9 inline-flex items-center gap-8 bg-[#F8F5F0] px-8 py-4 text-[8px] tracking-[0.15em] text-[#211C18]">
+                BOOK APPOINTMENT <ArrowRight size={13} />
+              </a>
             </div>
           </div>
+          <p className="absolute bottom-7 right-10 z-10 hidden text-[7px] tracking-[0.34em] text-white/65 sm:block">HAIR · BEAUTY · CONFIDENCE</p>
         </section>
 
         {/* ABOUT */}
