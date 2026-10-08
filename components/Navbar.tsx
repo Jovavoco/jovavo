@@ -1,103 +1,313 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Work", href: "/work" },
   { name: "Services", href: "/services" },
   { name: "Process", href: "/process" },
-  { name: "FAQ", href: "/faq" },
   { name: "About", href: "/about" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  /* =========================================================
+     NAVBAR COLOR LOGIC
+
+     HOME PAGE:
+     - White initially because the hero is dark
+     - Black after scrolling because navbar becomes cream
+
+     ALL OTHER PAGES:
+     - Black initially because backgrounds are light
+     - Black after scrolling
+  ========================================================= */
+
+  const isHomePage = pathname === "/";
+
+  const useWhiteNav =
+    isHomePage && !scrolled && !menuOpen;
+
+  /* =========================================================
+     SCROLL STATE
+  ========================================================= */
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+    };
+  }, []);
+
+  /* =========================================================
+     CLOSE MOBILE MENU WHEN PAGE CHANGES
+  ========================================================= */
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4 md:px-6 md:pt-6">
-      {/* =========================================================
-          MOBILE NAVBAR
-      ========================================================= */}
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
+      {/* =====================================================
+          DESKTOP NAVIGATION
+      ===================================================== */}
 
-      <div className="mx-auto w-full max-w-md md:hidden">
-        {/* MOBILE TOP BAR */}
-
+      <div
+        className={`pointer-events-auto hidden transition-all duration-500 md:block ${
+          scrolled
+            ? "border-b border-[#1b1713]/10 bg-[#f8f5ef]/92 shadow-[0_8px_30px_rgba(27,23,19,0.04)] backdrop-blur-xl"
+            : "bg-transparent"
+        }`}
+      >
         <nav
-          aria-label="Mobile navigation"
-          className="pointer-events-auto flex items-center justify-between gap-3 rounded-full border border-white/30 bg-[#f8f4ed]/90 px-4 py-3 shadow-[0_12px_35px_rgba(27,23,19,0.12)] backdrop-blur-2xl"
+          aria-label="Main navigation"
+          className={`mx-auto flex max-w-[1440px] items-center justify-between px-8 transition-all duration-500 lg:px-12 xl:px-16 ${
+            scrolled
+              ? "h-[76px]"
+              : "h-[96px]"
+          }`}
         >
+          {/* =================================================
+              LOGO
+          ================================================= */}
+
           <Link
             href="/"
             aria-label="Jovavo home"
-            className="shrink-0 font-serif text-lg font-light tracking-[0.18em] text-[#1b1713] transition-opacity duration-300 hover:opacity-70"
+            className={`shrink-0 font-serif text-[24px] font-light tracking-[0.12em] transition-all duration-500 hover:opacity-60 ${
+              useWhiteNav
+                ? "text-white"
+                : "text-[#1b1713]"
+            }`}
           >
             JOVAVO
           </Link>
 
-          <Link
-            href="/contact"
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#1b1713] px-4 py-2.5 text-[9px] uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-[#2a241f] active:scale-[0.98]"
-          >
-            Start Project
-          </Link>
-        </nav>
+          {/* =================================================
+              CENTER LINKS
+          ================================================= */}
 
-        {/* MOBILE PAGE LINKS */}
-
-        <div className="pointer-events-auto mx-auto mt-2 w-[calc(100%-1rem)] rounded-full border border-white/25 bg-[#f8f4ed]/88 p-1.5 shadow-[0_10px_30px_rgba(27,23,19,0.1)] backdrop-blur-2xl">
-          <div className="grid grid-cols-5 gap-0.5">
+          <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-8 lg:gap-10 xl:gap-12">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="flex min-h-10 min-w-0 items-center justify-center rounded-full px-0.5 text-center text-[8px] uppercase tracking-[0.04em] text-[#1b1713]/60 transition-all duration-300 hover:bg-white/70 hover:text-[#1b1713] active:bg-white min-[390px]:text-[8.5px] min-[390px]:tracking-[0.06em]"
+                className={`group relative py-3 text-[10px] font-medium uppercase tracking-[0.2em] transition-colors duration-500 ${
+                  useWhiteNav
+                    ? "text-white/65 hover:text-white"
+                    : "text-[#1b1713]/60 hover:text-[#1b1713]"
+                }`}
               >
                 {item.name}
+
+                <span
+                  className={`absolute bottom-1 left-0 h-px w-0 transition-all duration-300 group-hover:w-full ${
+                    useWhiteNav
+                      ? "bg-white"
+                      : "bg-[#1b1713]"
+                  }`}
+                />
               </Link>
             ))}
           </div>
-        </div>
+
+          {/* =================================================
+              CONSULTATION CTA
+          ================================================= */}
+
+          <Link
+            href="/consultation"
+            className={`group inline-flex shrink-0 items-center justify-center gap-2.5 rounded-full border px-5 py-3 text-[9px] font-medium uppercase tracking-[0.16em] transition-all duration-300 lg:px-6 lg:text-[10px] ${
+              useWhiteNav
+                ? "border-white/45 bg-white/[0.04] text-white backdrop-blur-sm hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-[#1b1713]"
+                : "border-[#1b1713] bg-[#1b1713] text-white hover:-translate-y-0.5 hover:bg-[#302a24]"
+            }`}
+          >
+            Book a Consultation
+
+            <ArrowUpRight
+              size={13}
+              strokeWidth={1.5}
+              className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          </Link>
+        </nav>
       </div>
 
-      {/* =========================================================
-          DESKTOP NAVBAR
-      ========================================================= */}
+      {/* =====================================================
+          MOBILE NAVIGATION
+      ===================================================== */}
 
-      <nav
-        aria-label="Main navigation"
-        className="pointer-events-auto mx-auto hidden max-w-7xl items-center justify-between rounded-full border border-[#d8d0c5]/70 bg-[#f8f4ed]/70 px-8 py-4 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl md:flex"
-      >
-        {/* DESKTOP LOGO */}
+      <div className="pointer-events-auto md:hidden">
+        {/* =================================================
+            MOBILE TOP BAR
+        ================================================= */}
 
-        <Link
-          href="/"
-          aria-label="Jovavo home"
-          className="shrink-0 font-serif text-2xl font-light tracking-[0.25em] text-[#1b1713] transition-opacity duration-300 hover:opacity-70"
+        <div
+          className={`transition-all duration-500 ${
+            scrolled || menuOpen
+              ? "border-b border-[#1b1713]/10 bg-[#f8f5ef]/95 backdrop-blur-xl"
+              : useWhiteNav
+                ? "bg-gradient-to-b from-black/30 to-transparent"
+                : "bg-transparent"
+          }`}
         >
-          JOVAVO
-        </Link>
+          <nav
+            aria-label="Mobile navigation"
+            className="flex h-[76px] items-center justify-between px-5"
+          >
+            {/* =================================================
+                MOBILE LOGO
+            ================================================= */}
 
-        {/* DESKTOP LINKS */}
-
-        <div className="flex items-center gap-5 lg:gap-8 xl:gap-10">
-          {navigation.map((item) => (
             <Link
-              key={item.name}
-              href={item.href}
-              className="group relative text-[10px] uppercase tracking-[0.18em] text-[#1b1713]/65 transition-colors duration-300 hover:text-[#1b1713] lg:text-[11px] lg:tracking-[0.22em] xl:tracking-[0.28em]"
+              href="/"
+              aria-label="Jovavo home"
+              onClick={() => setMenuOpen(false)}
+              className={`font-serif text-[21px] font-light tracking-[0.12em] transition-colors duration-500 ${
+                useWhiteNav
+                  ? "text-white"
+                  : "text-[#1b1713]"
+              }`}
             >
-              {item.name}
-
-              <span className="absolute -bottom-2 left-1/2 h-px w-0 -translate-x-1/2 bg-[#1b1713] transition-all duration-300 group-hover:w-full" />
+              JOVAVO
             </Link>
-          ))}
+
+            {/* =================================================
+                MOBILE MENU BUTTON
+            ================================================= */}
+
+            <button
+              type="button"
+              aria-label={
+                menuOpen
+                  ? "Close menu"
+                  : "Open menu"
+              }
+              aria-expanded={menuOpen}
+              onClick={() =>
+                setMenuOpen((open) => !open)
+              }
+              className={`flex h-10 items-center justify-center gap-2 rounded-full border px-4 text-[9px] font-medium uppercase tracking-[0.16em] transition-all duration-300 ${
+                useWhiteNav
+                  ? "border-white/35 bg-white/[0.04] text-white backdrop-blur-sm"
+                  : "border-[#1b1713]/15 text-[#1b1713] hover:border-[#1b1713]/30"
+              }`}
+            >
+              {menuOpen ? (
+                <>
+                  Close
+
+                  <X
+                    size={14}
+                    strokeWidth={1.5}
+                  />
+                </>
+              ) : (
+                <>
+                  Menu
+
+                  <Menu
+                    size={14}
+                    strokeWidth={1.5}
+                  />
+                </>
+              )}
+            </button>
+          </nav>
         </div>
 
-        {/* DESKTOP CTA */}
+        {/* =================================================
+            MOBILE MENU
+        ================================================= */}
 
-        <Link
-          href="/contact"
-          className="shrink-0 rounded-full border border-[#1b1713]/15 bg-[#1b1713] px-5 py-3 text-[10px] uppercase tracking-[0.22em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2a241f] hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)] lg:px-6 lg:text-[11px] lg:tracking-[0.28em]"
+        <div
+          className={`overflow-hidden border-b border-[#1b1713]/10 bg-[#f8f5ef]/98 backdrop-blur-xl transition-all duration-500 ${
+            menuOpen
+              ? "max-h-[520px] opacity-100"
+              : "pointer-events-none max-h-0 opacity-0"
+          }`}
         >
-          Start Project
-        </Link>
-      </nav>
+          <div className="px-5 pb-7 pt-3">
+            {/* =============================================
+                LINKS
+            ============================================= */}
+
+            <div className="border-t border-[#1b1713]/10">
+              {navigation.map(
+                (item, index) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() =>
+                      setMenuOpen(false)
+                    }
+                    className="group flex items-center justify-between border-b border-[#1b1713]/10 py-5"
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className="text-[9px] font-medium tracking-[0.15em] text-[#1b1713]/30">
+                        0{index + 1}
+                      </span>
+
+                      <span className="font-serif text-[1.65rem] font-light tracking-[-0.02em] text-[#1b1713]">
+                        {item.name}
+                      </span>
+                    </div>
+
+                    <ArrowUpRight
+                      size={17}
+                      strokeWidth={1.4}
+                      className="text-[#1b1713]/35 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
+                  </Link>
+                )
+              )}
+            </div>
+
+            {/* =============================================
+                CONSULTATION CTA
+            ============================================= */}
+
+            <Link
+              href="/consultation"
+              onClick={() =>
+                setMenuOpen(false)
+              }
+              className="group mt-6 flex w-full items-center justify-between rounded-full bg-[#1b1713] px-6 py-4 text-white transition-all duration-300 active:scale-[0.99]"
+            >
+              <span className="text-[10px] font-medium uppercase tracking-[0.16em]">
+                Book a Consultation
+              </span>
+
+              <ArrowUpRight
+                size={15}
+                strokeWidth={1.5}
+                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
