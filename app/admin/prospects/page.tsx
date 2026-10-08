@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import {
-  ArrowLeft,
+  CalendarClock,
   CalendarDays,
   CircleDollarSign,
   ExternalLink,
@@ -10,9 +10,14 @@ import {
   Search,
   Users,
 } from "lucide-react";
+
 import { createClient } from "@/utils/supabase/server";
 
 export const dynamic = "force-dynamic";
+
+/* =========================================================
+   TYPES
+========================================================= */
 
 type Prospect = {
   id: string;
@@ -34,6 +39,10 @@ type Prospect = {
   quoted_price: number | string | null;
   created_at: string;
 };
+
+/* =========================================================
+   HELPERS
+========================================================= */
 
 function formatMoney(
   value: number | string | null | undefined
@@ -96,12 +105,16 @@ function statusClasses(status: string) {
   }
 }
 
+/* =========================================================
+   PAGE
+========================================================= */
+
 export default async function ProspectsPage() {
   const supabase = await createClient();
 
-  // -------------------------------------------------------
-  // AUTHENTICATION
-  // -------------------------------------------------------
+  /* =========================================================
+     AUTHENTICATION
+  ========================================================= */
 
   const {
     data: { user },
@@ -111,6 +124,10 @@ export default async function ProspectsPage() {
     redirect("/admin/login");
   }
 
+  /* =========================================================
+     ADMIN AUTHORIZATION
+  ========================================================= */
+
   const { data: isAdmin, error: adminError } =
     await supabase.rpc("is_admin");
 
@@ -118,9 +135,9 @@ export default async function ProspectsPage() {
     redirect("/admin/login");
   }
 
-  // -------------------------------------------------------
-  // LOAD PROSPECTS
-  // -------------------------------------------------------
+  /* =========================================================
+     LOAD PROSPECTS
+  ========================================================= */
 
   const { data, error } = await supabase
     .from("prospects")
@@ -152,9 +169,9 @@ export default async function ProspectsPage() {
 
   const prospects = (data ?? []) as Prospect[];
 
-  // -------------------------------------------------------
-  // STATS
-  // -------------------------------------------------------
+  /* =========================================================
+     STATS
+  ========================================================= */
 
   const warmLeads = prospects.filter(
     (prospect) => prospect.lead_source === "Warm Lead"
@@ -182,42 +199,25 @@ export default async function ProspectsPage() {
       return total + Number(value);
     }, 0);
 
+  /* =========================================================
+     PAGE
+  ========================================================= */
+
   return (
-    <main className="min-h-screen bg-[#f8f5ef] text-[#1b1713]">
-      {/* HEADER */}
-
-      <header className="border-b border-[#ded7cd] bg-[#fffdf9]">
-        <div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
-          <div className="flex items-center gap-5">
-            <Link
-              href="/admin"
-              className="font-serif text-[22px] tracking-[0.18em]"
-            >
-              JOVAVO
-            </Link>
-
-            <div className="hidden h-5 w-px bg-[#ded7cd] sm:block" />
-
-            <span className="hidden text-xs uppercase tracking-[0.16em] text-[#817970] sm:block">
-              Administration
-            </span>
-          </div>
-
-          <Link
-            href="/admin"
-            className="flex items-center gap-2 text-xs font-medium text-[#655e56] transition hover:text-[#1b1713]"
-          >
-            <ArrowLeft size={14} />
-            Dashboard
-          </Link>
-        </div>
-      </header>
+    <main className="min-h-screen bg-[#f8f5ef] pt-[96px] text-[#1b1713] md:pt-[104px]">
+      {/* =====================================================
+          ADMIN LAYOUT
+      ===================================================== */}
 
       <div className="mx-auto grid max-w-[1500px] lg:grid-cols-[220px_1fr]">
-        {/* SIDEBAR */}
+        {/* ===================================================
+            SIDEBAR
+        =================================================== */}
 
-        <aside className="hidden min-h-[calc(100vh-81px)] border-r border-[#ded7cd] px-5 py-8 lg:block">
+        <aside className="hidden min-h-[calc(100vh-104px)] border-r border-[#ded7cd] px-5 py-8 lg:block">
           <nav className="space-y-2">
+            {/* DASHBOARD */}
+
             <Link
               href="/admin"
               className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-[#655e56] transition hover:bg-[#f1ece3] hover:text-[#1b1713]"
@@ -226,12 +226,24 @@ export default async function ProspectsPage() {
               Dashboard
             </Link>
 
+            {/* PROSPECTS */}
+
             <Link
               href="/admin/prospects"
               className="flex items-center gap-3 rounded-xl bg-[#1b1713] px-4 py-3 text-sm text-white"
             >
               <Users size={17} />
               Prospects
+            </Link>
+
+            {/* CONSULTATIONS */}
+
+            <Link
+              href="/admin/consultations"
+              className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-[#655e56] transition hover:bg-[#f1ece3] hover:text-[#1b1713]"
+            >
+              <CalendarClock size={17} />
+              Consultations
             </Link>
           </nav>
 
@@ -241,15 +253,20 @@ export default async function ProspectsPage() {
             </p>
 
             <p className="mt-2 px-4 text-xs leading-5 text-[#817970]">
-              Manage leads, follow-ups and client opportunities.
+              Manage leads, follow-ups, consultations and client
+              opportunities.
             </p>
           </div>
         </aside>
 
-        {/* CONTENT */}
+        {/* ===================================================
+            CONTENT
+        =================================================== */}
 
         <section className="min-w-0 px-5 py-8 sm:px-8 lg:px-10 lg:py-10">
-          {/* PAGE HEADING */}
+          {/* =================================================
+              PAGE HEADING
+          ================================================= */}
 
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -276,11 +293,17 @@ export default async function ProspectsPage() {
             </Link>
           </div>
 
-          {/* STATS */}
+          {/* =================================================
+              STATS
+          ================================================= */}
 
           <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {/* TOTAL PROSPECTS */}
+
             <div className="rounded-[22px] border border-[#e2dbd1] bg-[#fffdf9] p-5">
-              <Users size={17} />
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f1ece3]">
+                <Users size={17} />
+              </div>
 
               <p className="mt-5 font-serif text-3xl">
                 {prospects.length}
@@ -291,8 +314,12 @@ export default async function ProspectsPage() {
               </p>
             </div>
 
+            {/* WARM LEADS */}
+
             <div className="rounded-[22px] border border-[#e2dbd1] bg-[#fffdf9] p-5">
-              <Users size={17} />
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f1ece3]">
+                <Users size={17} />
+              </div>
 
               <p className="mt-5 font-serif text-3xl">
                 {warmLeads}
@@ -303,8 +330,12 @@ export default async function ProspectsPage() {
               </p>
             </div>
 
+            {/* FOLLOW UPS */}
+
             <div className="rounded-[22px] border border-[#e2dbd1] bg-[#fffdf9] p-5">
-              <CalendarDays size={17} />
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f1ece3]">
+                <CalendarDays size={17} />
+              </div>
 
               <p className="mt-5 font-serif text-3xl">
                 {needsFollowUp}
@@ -315,8 +346,12 @@ export default async function ProspectsPage() {
               </p>
             </div>
 
+            {/* PIPELINE */}
+
             <div className="rounded-[22px] border border-[#e2dbd1] bg-[#fffdf9] p-5">
-              <CircleDollarSign size={17} />
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f1ece3]">
+                <CircleDollarSign size={17} />
+              </div>
 
               <p className="mt-5 font-serif text-3xl">
                 {formatMoney(openPipeline)}
@@ -328,7 +363,9 @@ export default async function ProspectsPage() {
             </div>
           </div>
 
-          {/* TOOLBAR */}
+          {/* =================================================
+              TOOLBAR
+          ================================================= */}
 
           <div className="mt-8 flex flex-col gap-3 rounded-[22px] border border-[#e2dbd1] bg-[#fffdf9] p-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3 text-sm text-[#706960]">
@@ -350,7 +387,9 @@ export default async function ProspectsPage() {
             </p>
           </div>
 
-          {/* EMPTY STATE */}
+          {/* =================================================
+              EMPTY STATE / PROSPECTS
+          ================================================= */}
 
           {prospects.length === 0 ? (
             <div className="mt-4 rounded-[28px] border border-[#ded7cd] bg-[#fffdf9] px-6 py-16 text-center">
@@ -378,7 +417,9 @@ export default async function ProspectsPage() {
             </div>
           ) : (
             <>
-              {/* DESKTOP TABLE */}
+              {/* =============================================
+                  DESKTOP TABLE
+              ============================================= */}
 
               <div className="mt-4 hidden overflow-hidden rounded-[24px] border border-[#e2dbd1] bg-[#fffdf9] lg:block">
                 <div className="overflow-x-auto">
@@ -520,7 +561,9 @@ export default async function ProspectsPage() {
                 </div>
               </div>
 
-              {/* MOBILE CARDS */}
+              {/* =============================================
+                  MOBILE CARDS
+              ============================================= */}
 
               <div className="mt-4 space-y-3 lg:hidden">
                 {prospects.map((prospect) => (
